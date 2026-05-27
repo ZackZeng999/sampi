@@ -28,30 +28,26 @@ from sam3.model_builder import build_sam3_image_model
 
 LOGGER = logging.getLogger("openpi_sam_dim_server")
 
-# Default LLM config for prompt extraction. You can edit these directly in code.
+# Default LLM config for prompt extraction. Keep secrets out of source code.
 DEFAULT_LLM_SERVER_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"
 DEFAULT_LLM_MODEL = "qwen3-vl-8b-instruct"
-DEFAULT_LLM_API_KEY = "sk-731781a388b64e22b90341f192834152"
+DEFAULT_LLM_API_KEY = ""
+DEFAULT_LLM_API_KEY_FILE = "/root/proj/qwen_api_key.txt"
 
 
 EXTRACT_SYSTEM_PROMPT = """
-You help convert a robot manipulation task into simple noun phrases that are suitable for SAM-style segmentation.
-Follow these rules inspired by the SAM3 agent:
-- Return only the primary physical objects that matter for the manipulation task.
+You are a robot manipulation prompt refinement assistant. Your job is to map task-relevant physical objects to short SAM-segmentable noun phrases while preserving source-object identity.
+Core rules:
+- Keep every later prompt tied to a source_prompt derived from the original robot task.
 - Use short simple noun phrases, not full referring expressions.
 - No articles, no possessives, no numbers, no verbs.
-- Prefer whole objects, not object parts.
-- If the task mentions relationships, containers, or supports, keep the actual object categories.
-- If a phrase is too specific for segmentation, generalize it slightly while keeping visual usefulness.
-- Use the image to resolve colors or object categories when the task text is ambiguous.
-- Be conservative when rewriting task wording. Prefer the original object category whenever it is reasonably compatible with the scene.
-- Only replace a prompt when the original wording is clearly mismatched with the scene, too niche for SAM, or very unlikely to segment successfully.
-- Do not casually change colors. By default, return the object category without a color modifier.
-- Only add or correct a color when color is clearly visible, materially disambiguates the object, or the original color description is obviously wrong.
-- If the simulator name is odd or niche and likely to fail, replace it with a nearby visual alias or broader category, but keep the replacement semantically close.
-- Good replacements are conservative object aliases such as bowl, plate, cup, mug, drawer handle, dessert, candy bar. Use color+object only when needed.
-- If a task object may be recognized under multiple reasonable visual names, prefer the simplest and most segmentable object phrase first.
-- Output strict JSON of the form {"prompts": ["prompt one", "prompt two"]} and nothing else.
+- Prefer whole physical objects over object parts, unless the task truly requires an articulated part such as microwave door.
+- Focus on manipulated objects, target receptacles/supports, and necessary articulated parts.
+- Do not introduce unrelated visible objects just because they are easy to segment.
+- Do not casually change colors. Add color only when it is clearly visible and needed for disambiguation.
+- Conservative replacements should stay very close to the source prompt.
+- Aggressive replacements may use broader visual aliases, but only for source prompts that failed in previous rounds.
+- Output strict JSON only, in the exact schema requested by the current round.
 """.strip()
 
 
@@ -82,6 +78,25 @@ def _dedupe(items: list[str]) -> list[str]:
         if normalized and normalized not in deduped:
             deduped.append(normalized)
     return deduped
+
+
+def _read_api_key_file(path: str) -> str:
+    if not path:
+        return ""
+    path = os.path.expanduser(path)
+    if not os.path.exists(path):
+        return ""
+    with open(path, encoding="utf-8") as file:
+        return _normalize_api_key(file.read())
+
+
+def _normalize_api_key(api_key: str | None) -> str:
+    if not api_key:
+        return ""
+    api_key = api_key.strip()
+    if len(api_key) >= 2 and api_key[0] == api_key[-1] and api_key[0] in {"'", '"'}:
+        return api_key[1:-1].strip()
+    return api_key
 
 
 def _extract_json_blob(text: str) -> str:
@@ -163,14 +178,21 @@ class SamAgentService:
     ) -> dict[str, Any]:
         max_prompts = min(max_prompts or self._extract_max_prompts, 3)
         max_rounds = max_rounds or self._extract_max_rounds
-        stop_after_successful_prompts = min(2, max_prompts)
         if not task_description.strip():
-            return {"prompts": [], "used_prompts": [], "extractor_enabled": self.extractor_enabled()}
+            return {
+                "prompts": [],
+                "used_prompts": [],
+                "source_prompts": [],
+                "prompt_trace": [],
+                "extractor_enabled": self.extractor_enabled(),
+            }
         if not self.extractor_enabled():
             LOGGER.warning("/extract requested but LLM server/model is not configured.")
             return {
                 "prompts": [],
                 "used_prompts": [],
+                "source_prompts": [],
+                "prompt_trace": [],
                 "extractor_enabled": False,
                 "reason": "Set --llm-server-url and --llm-model on the SAM server.",
             }
@@ -186,90 +208,270 @@ class SamAgentService:
             used: list[str] = []
             evaluation_trace: list[dict[str, Any]] = []
             candidate_budget = max(max_prompts, min(6, max_prompts * 2))
-            modes = ["importance_only", "conservative", "aggressive"][:max_rounds]
 
-            last_mode = modes[-1]
-            for round_idx, mode in enumerate(modes):
-                response_text = self._generate_candidate_prompts(
+            response_text = self._generate_source_prompts(
+                image_path=image_path,
+                task_description=task_description,
+                remaining_slots=candidate_budget,
+            )
+            source_candidates = self._parse_source_prompt_candidates(response_text)[:candidate_budget]
+            source_states: list[dict[str, Any]] = []
+            for priority, source in enumerate(source_candidates, start=1):
+                state = {
+                    "source_prompt": source["source_prompt"],
+                    "source_role": source.get("source_role", "unknown"),
+                    "selected_prompt": None,
+                    "selected_round": None,
+                    "selected_score": 0.0,
+                    "attempts": [],
+                }
+                source_states.append(state)
+                attempt = self._evaluate_source_candidate(
+                    image=image,
+                    state=state,
+                    prompt=state["source_prompt"],
+                    mode="importance_only",
+                    priority=priority,
+                    used=used,
+                    evaluation_trace=evaluation_trace,
+                )
+                if attempt["accepted"]:
+                    self._select_attempt(state, attempt)
+
+            if self._selected_prompt_count(source_states) >= max_prompts or max_rounds <= 1:
+                return self._build_extract_response(
+                    source_states,
+                    used_prompts=used,
+                    evaluation_trace=evaluation_trace,
+                    max_prompts=max_prompts,
+                    fallback_mode="importance_only",
+                )
+
+            if max_rounds >= 2:
+                self._run_refinement_round(
+                    image=image,
                     image_path=image_path,
                     task_description=task_description,
-                    used_prompts=used,
-                    failed_prompts=[entry["prompt"] for entry in evaluation_trace if not entry["accepted"]],
-                    remaining_slots=candidate_budget,
-                    round_idx=round_idx,
-                    mode=mode,
+                    source_states=source_states,
+                    used=used,
+                    evaluation_trace=evaluation_trace,
+                    mode="conservative",
+                    max_candidates_per_source=3,
+                    allow_successful_replacements=True,
                 )
-                candidates = self._parse_prompt_candidates(response_text)
-                candidates = [p for p in candidates if p not in used]
-                if not candidates:
-                    LOGGER.info("Extractor %s round produced no new prompts.", mode)
-                    continue
+            if self._selected_prompt_count(source_states) >= max_prompts or max_rounds <= 2:
+                return self._build_extract_response(
+                    source_states,
+                    used_prompts=used,
+                    evaluation_trace=evaluation_trace,
+                    max_prompts=max_prompts,
+                    fallback_mode="conservative",
+                )
 
-                accepted_in_order: list[str] = []
-                for priority, prompt in enumerate(candidates, start=1):
-                    used.append(prompt)
-                    mask, scores = self._predict_mask(
-                        image,
-                        prompt,
-                        score_threshold=self._extract_accept_score_threshold,
-                        max_masks=3,
-                        allow_fallback=False,
-                    )
-                    best_score = max(scores) if scores else 0.0
-                    accepted = bool(mask.any())
-                    evaluation_trace.append(
-                        {
-                            "mode": mode,
-                            "priority": priority,
-                            "prompt": prompt,
-                            "scores": [float(score) for score in scores],
-                            "best_score": float(best_score),
-                            "accepted": accepted,
-                        }
-                    )
-                    if accepted:
-                        accepted_in_order.append(prompt)
-                        LOGGER.info(
-                            "Extractor accepted prompt %r in %s mode at priority %s with best_score=%.3f and scores=%s",
-                            prompt,
-                            mode,
-                            priority,
-                            best_score,
-                            scores,
-                        )
-                    else:
-                        LOGGER.info(
-                            "Extractor rejected prompt %r in %s mode at priority %s with best_score=%.3f and scores=%s (need best_score >= %.2f)",
-                            prompt,
-                            mode,
-                            priority,
-                            best_score,
-                            scores,
-                            self._extract_accept_score_threshold,
-                        )
-                    if len(accepted_in_order) >= max_prompts:
-                        break
-
-                if len(accepted_in_order) >= stop_after_successful_prompts:
-                    return {
-                        "prompts": accepted_in_order[:max_prompts],
-                        "used_prompts": _dedupe(used),
-                        "extractor_enabled": True,
-                        "mode_used": mode,
-                        "evaluation_trace": evaluation_trace,
-                    }
-
-            final_prompts = [entry["prompt"] for entry in evaluation_trace if entry["accepted"]][:max_prompts]
-            return {
-                "prompts": final_prompts,
-                "used_prompts": _dedupe(used),
-                "extractor_enabled": True,
-                "mode_used": last_mode,
-                "evaluation_trace": evaluation_trace,
-            }
+            if max_rounds >= 3:
+                self._run_refinement_round(
+                    image=image,
+                    image_path=image_path,
+                    task_description=task_description,
+                    source_states=source_states,
+                    used=used,
+                    evaluation_trace=evaluation_trace,
+                    mode="aggressive",
+                    max_candidates_per_source=5,
+                    allow_successful_replacements=False,
+                )
+            return self._build_extract_response(
+                source_states,
+                used_prompts=used,
+                evaluation_trace=evaluation_trace,
+                max_prompts=max_prompts,
+                fallback_mode="aggressive",
+            )
         finally:
             if image_path and os.path.exists(image_path):
                 os.remove(image_path)
+
+    def _evaluate_source_candidate(
+        self,
+        *,
+        image: np.ndarray | None,
+        state: dict[str, Any],
+        prompt: str,
+        mode: str,
+        priority: int,
+        used: list[str],
+        evaluation_trace: list[dict[str, Any]],
+    ) -> dict[str, Any]:
+        prompt = str(prompt).strip().lower()
+        used.append(prompt)
+        mask, scores = self._predict_mask(
+            image,
+            prompt,
+            score_threshold=self._extract_accept_score_threshold,
+            max_masks=3,
+            allow_fallback=False,
+        )
+        best_score = max(scores) if scores else 0.0
+        attempt = {
+            "mode": mode,
+            "priority": priority,
+            "source_prompt": state["source_prompt"],
+            "source_role": state.get("source_role", "unknown"),
+            "prompt": prompt,
+            "scores": [float(score) for score in scores],
+            "best_score": float(best_score),
+            "accepted": bool(mask.any()),
+        }
+        state["attempts"].append(attempt)
+        evaluation_trace.append(attempt.copy())
+        if attempt["accepted"]:
+            LOGGER.info(
+                "Extractor accepted prompt %r for source %r in %s mode at priority %s with best_score=%.3f and scores=%s",
+                prompt,
+                state["source_prompt"],
+                mode,
+                priority,
+                best_score,
+                scores,
+            )
+        else:
+            LOGGER.info(
+                "Extractor rejected prompt %r for source %r in %s mode at priority %s with best_score=%.3f and scores=%s (need best_score >= %.2f)",
+                prompt,
+                state["source_prompt"],
+                mode,
+                priority,
+                best_score,
+                scores,
+                self._extract_accept_score_threshold,
+            )
+        return attempt
+
+    def _select_attempt(self, state: dict[str, Any], attempt: dict[str, Any]) -> None:
+        state["selected_prompt"] = attempt["prompt"]
+        state["selected_round"] = attempt["mode"]
+        state["selected_score"] = float(attempt["best_score"])
+
+    def _selected_prompt_count(self, source_states: list[dict[str, Any]]) -> int:
+        return len(_dedupe([state["selected_prompt"] for state in source_states if state.get("selected_prompt")]))
+
+    def _run_refinement_round(
+        self,
+        *,
+        image: np.ndarray | None,
+        image_path: str | None,
+        task_description: str,
+        source_states: list[dict[str, Any]],
+        used: list[str],
+        evaluation_trace: list[dict[str, Any]],
+        mode: str,
+        max_candidates_per_source: int,
+        allow_successful_replacements: bool,
+    ) -> None:
+        failed_states = [state for state in source_states if not state.get("selected_prompt")]
+        if not failed_states and not allow_successful_replacements:
+            return
+        response_text = self._generate_replacement_prompts(
+            image_path=image_path,
+            task_description=task_description,
+            source_states=source_states,
+            mode=mode,
+            max_candidates_per_source=max_candidates_per_source,
+            allow_successful_replacements=allow_successful_replacements,
+        )
+        valid_sources = [state["source_prompt"] for state in source_states]
+        if mode == "aggressive":
+            valid_sources = [state["source_prompt"] for state in failed_states]
+        replacement_map = self._parse_replacement_candidates(response_text, valid_sources=valid_sources)
+        state_by_source = {state["source_prompt"]: state for state in source_states}
+        for source_prompt, replacement_info in replacement_map.items():
+            state = state_by_source.get(source_prompt)
+            if state is None:
+                continue
+            already_selected = bool(state.get("selected_prompt"))
+            if mode == "aggressive" and already_selected:
+                continue
+            if already_selected and not (
+                allow_successful_replacements and replacement_info.get("replace_successful", False)
+            ):
+                continue
+
+            accepted_attempts: list[dict[str, Any]] = []
+            tried_for_source = {attempt["prompt"] for attempt in state.get("attempts", [])}
+            candidates = [
+                candidate
+                for candidate in replacement_info.get("candidates", [])
+                if candidate and candidate not in tried_for_source and candidate != source_prompt
+            ]
+            for priority, candidate in enumerate(candidates[:max_candidates_per_source], start=1):
+                attempt = self._evaluate_source_candidate(
+                    image=image,
+                    state=state,
+                    prompt=candidate,
+                    mode=mode,
+                    priority=priority,
+                    used=used,
+                    evaluation_trace=evaluation_trace,
+                )
+                if attempt["accepted"]:
+                    accepted_attempts.append(attempt)
+
+            if not accepted_attempts:
+                continue
+            best_attempt = max(
+                enumerate(accepted_attempts),
+                key=lambda item: (item[1]["best_score"], -item[0]),
+            )[1]
+            if already_selected and best_attempt["best_score"] < float(state.get("selected_score", 0.0)):
+                LOGGER.info(
+                    "Keeping original successful prompt %r for source %r because conservative replacement %r scored lower (%.3f < %.3f).",
+                    state.get("selected_prompt"),
+                    source_prompt,
+                    best_attempt["prompt"],
+                    best_attempt["best_score"],
+                    state.get("selected_score", 0.0),
+                )
+                continue
+            self._select_attempt(state, best_attempt)
+
+    def _build_extract_response(
+        self,
+        source_states: list[dict[str, Any]],
+        *,
+        used_prompts: list[str],
+        evaluation_trace: list[dict[str, Any]],
+        max_prompts: int,
+        fallback_mode: str,
+    ) -> dict[str, Any]:
+        selected_states = [state for state in source_states if state.get("selected_prompt")]
+        prompts = _dedupe([state["selected_prompt"] for state in selected_states])[:max_prompts]
+        selected_modes = [state["selected_round"] for state in selected_states if state.get("selected_round")]
+        mode_used = selected_modes[-1] if selected_modes else fallback_mode
+        prompt_trace = []
+        for state in source_states:
+            prompt_trace.append(
+                {
+                    "source_prompt": state["source_prompt"],
+                    "source_role": state.get("source_role", "unknown"),
+                    "selected_prompt": state.get("selected_prompt"),
+                    "selected_round": state.get("selected_round"),
+                    "selected_score": float(state.get("selected_score", 0.0)),
+                    "status": "selected" if state.get("selected_prompt") else "failed",
+                    "attempts": state.get("attempts", []),
+                }
+            )
+        return {
+            "prompts": prompts,
+            "used_prompts": _dedupe(used_prompts),
+            "source_prompts": [
+                {"source_prompt": state["source_prompt"], "source_role": state.get("source_role", "unknown")}
+                for state in source_states
+            ],
+            "prompt_trace": prompt_trace,
+            "extractor_enabled": True,
+            "mode_used": mode_used,
+            "evaluation_trace": evaluation_trace,
+        }
 
     def _predict_mask(
         self,
@@ -365,65 +567,27 @@ class SamAgentService:
             kept_scores.append(float(scores_np[idx]))
         return union_mask, kept_scores
 
-    def _generate_candidate_prompts(
+    def _generate_source_prompts(
         self,
         *,
         image_path: str | None,
         task_description: str,
-        used_prompts: list[str],
-        failed_prompts: list[str],
         remaining_slots: int,
-        round_idx: int,
-        mode: str,
     ) -> str:
-        retry_text = ""
-        if used_prompts:
-            retry_text += f" Previously tried prompts: {used_prompts}."
-        if failed_prompts:
-            retry_text += f" The following prompts failed to produce useful SAM masks and should not be repeated as-is: {failed_prompts}."
-        if mode == "importance_only":
-            mode_text = (
-                " Rank the most important task-relevant object prompts from highest importance to lowest importance."
-                " Use the exact object wording from the task whenever possible. Do not rewrite, simplify, paraphrase, generalize, or replace the object phrases in this stage."
-                " Your job in this stage is only to decide which prompts are most important, not to improve them."
-                " Return only object prompts that are explicitly supported by the task description."
-            )
-        elif mode == "conservative":
-            mode_text = (
-                " The original important prompts did not work well enough. Rank the most important task-relevant prompts from highest importance to lowest importance."
-                " You may now use only conservative wording changes. Keep the original object meaning whenever possible."
-                " Only do mild semantic replacement when the task wording is clearly too niche or slightly mismatched for SAM."
-                " Do not casually change colors. Usually return only the object category without color."
-                " Add or correct color only when it is clearly visible and necessary for disambiguation."
-            )
-        else:
-            mode_text = (
-                " The conservative prompts did not work well enough. Rank the most important task-relevant prompts from highest importance to lowest importance."
-                " You may now use more aggressive but still task-relevant visual paraphrases to help SAM segment the object."
-                " You may replace a niche simulator object name with a broader or more segmentable visual description such as dessert, candy bar, black object, bowl, or cup when appropriate."
-                " Keep replacements semantically close to the intended target role in the task."
-            )
         user_text = (
-            f"Task description: {task_description}."
-            f" Return at most {remaining_slots} prompts in ranked order of importance."
-            " Focus on the manipulated object(s), target receptacle/support, or other primary physical objects needed for the task."
-            " Do not return relations like left/right/on top of/in front of as standalone prompts."
-            " Return prompts ordered from most important to least important."
-            " Preserve importance ordering in your returned prompt list."
-            " Prefer prompts that SAM can segment reliably over exact wording from the task description, except in importance_only mode where wording should stay unchanged."
-            " Output strict JSON only in the form {\"prompts\": [\"most important\", \"second\", \"third\"]}."
-            f"{mode_text}"
-            f"{retry_text}"
+            f"Task description: {task_description}. "
+            f"Return at most {remaining_slots} source prompts in ranked order of task importance. "
+            "This is the importance_only round. Use exact object wording from the task whenever possible. "
+            "Do not rewrite, simplify, paraphrase, generalize, or replace object phrases in this round. "
+            "Return primary manipulated objects, target receptacles/supports, and necessary articulated parts only. "
+            "If the task uses an implicit object part that is necessary for manipulation, such as close it for microwave, you may include a conservative articulated part like microwave door. "
+            "Assign source_role as one of manipulated_object, target_receptacle, support, articulated_part, or other. "
+            "Output strict JSON only in this form: "
+            "{\"source_prompts\": [{\"source_prompt\": \"alphabet soup\", \"source_role\": \"manipulated_object\"}, "
+            "{\"source_prompt\": \"basket\", \"source_role\": \"target_receptacle\"}]}"
         )
-        content: list[dict[str, Any]] = []
-        if image_path:
-            content.append({"type": "image", "image": image_path})
-        content.append({"type": "text", "text": user_text})
-        messages = [
-            {"role": "system", "content": EXTRACT_SYSTEM_PROMPT},
-            {"role": "user", "content": content},
-        ]
-        LOGGER.info("Extractor round %s for task %r", round_idx + 1, task_description)
+        messages = self._build_llm_messages(image_path=image_path, user_text=user_text)
+        LOGGER.info("Extractor source round for task %r", task_description)
         response_text = send_generate_request(
             messages,
             server_url=self._llm_server_url,
@@ -435,18 +599,165 @@ class SamAgentService:
             raise RuntimeError("LLM extractor returned no text")
         return response_text
 
-    def _parse_prompt_candidates(self, response_text: str) -> list[str]:
+    def _generate_replacement_prompts(
+        self,
+        *,
+        image_path: str | None,
+        task_description: str,
+        source_states: list[dict[str, Any]],
+        mode: str,
+        max_candidates_per_source: int,
+        allow_successful_replacements: bool,
+    ) -> str:
+        state_summary = [
+            {
+                "source_prompt": state["source_prompt"],
+                "source_role": state.get("source_role", "unknown"),
+                "selected_prompt": state.get("selected_prompt"),
+                "selected_round": state.get("selected_round"),
+                "attempts": [
+                    {
+                        "round": attempt["mode"],
+                        "prompt": attempt["prompt"],
+                        "accepted": attempt["accepted"],
+                        "best_score": attempt["best_score"],
+                        "scores": attempt["scores"],
+                    }
+                    for attempt in state.get("attempts", [])
+                ],
+            }
+            for state in source_states
+        ]
+        if mode == "conservative":
+            mode_text = (
+                "This is the conservative refinement round. Only refine source_prompts whose first-round attempt failed. "
+                "Source prompts that already succeeded should be kept unchanged by default. If a successful source prompt is clearly too broad, too narrow, or semantically risky, you may cautiously propose replacements for it, but set replace_successful to true and explain why. "
+                "If those cautious replacements fail, the service will fall back to the previously successful prompt. "
+                "For each failed source_prompt, propose 1 to "
+                f"{max_candidates_per_source} close semantic aliases derived from that source_prompt and the task. "
+                "Good conservative examples: chocolate pudding -> chocolate dessert, pudding cup, dessert; "
+                "alphabet soup -> soup can, can; salad dressing -> dressing bottle, bottle. "
+                "Do not propose unrelated visible objects."
+            )
+        else:
+            mode_text = (
+                "This is the aggressive refinement round. Only refine source_prompts that failed in all previous rounds. "
+                "Never replace or modify any source_prompt that already has selected_prompt. "
+                "For each still-failed source_prompt, read the previous attempts and failures, then propose 1 to "
+                f"{max_candidates_per_source} broader but still task-derived visual aliases. "
+                "Good aggressive examples: cream cheese -> box, carton; alphabet soup -> can; bbq sauce -> bottle. "
+                "Even in aggressive mode, every candidate must remain semantically tied to its source_prompt and task role. "
+                "Do not propose unrelated objects such as robot arm, floor, phone, or toilet unless the source_prompt itself really refers to that object."
+            )
+        user_text = (
+            f"Task description: {task_description}. "
+            f"Current source prompt states and SAM validation results: {json.dumps(state_summary, ensure_ascii=True)}. "
+            f"{mode_text} "
+            "Output strict JSON only in this form: "
+            "{\"replacements\": [{\"source_prompt\": \"alphabet soup\", \"candidates\": [\"soup can\", \"can\"], "
+            "\"replace_successful\": false, \"reason\": \"original source prompt failed in SAM\"}]}"
+        )
+        messages = self._build_llm_messages(image_path=image_path, user_text=user_text)
+        LOGGER.info("Extractor %s refinement round for task %r", mode, task_description)
+        response_text = send_generate_request(
+            messages,
+            server_url=self._llm_server_url,
+            model=self._llm_model,
+            api_key=self._llm_api_key,
+            max_tokens=self._llm_max_tokens,
+        )
+        if not response_text:
+            raise RuntimeError("LLM extractor returned no text")
+        return response_text
+
+    def _build_llm_messages(self, *, image_path: str | None, user_text: str) -> list[dict[str, Any]]:
+        content: list[dict[str, Any]] = []
+        if image_path:
+            content.append({"type": "image", "image": image_path})
+        content.append({"type": "text", "text": user_text})
+        return [
+            {"role": "system", "content": EXTRACT_SYSTEM_PROMPT},
+            {"role": "user", "content": content},
+        ]
+
+    def _parse_source_prompt_candidates(self, response_text: str) -> list[dict[str, str]]:
         blob = _extract_json_blob(response_text)
         data = json.loads(blob)
         if isinstance(data, dict):
-            prompts = data.get("prompts", data.get("objects", []))
+            raw_sources = data.get("source_prompts", data.get("sources", data.get("prompts", data.get("objects", []))))
         elif isinstance(data, list):
-            prompts = data
+            raw_sources = data
         else:
-            prompts = []
-        if isinstance(prompts, str):
-            prompts = [prompts]
-        return _dedupe([str(prompt).strip().lower() for prompt in prompts if str(prompt).strip()])
+            raw_sources = []
+        if isinstance(raw_sources, (str, dict)):
+            raw_sources = [raw_sources]
+
+        sources: list[dict[str, str]] = []
+        seen: set[str] = set()
+        for item in raw_sources:
+            if isinstance(item, dict):
+                prompt = item.get("source_prompt", item.get("prompt", item.get("text", item.get("name", ""))))
+                role = item.get("source_role", item.get("role", "unknown"))
+            else:
+                prompt = item
+                role = "unknown"
+            prompt = str(prompt).strip().lower()
+            role = str(role).strip().lower() or "unknown"
+            if prompt and prompt not in seen:
+                sources.append({"source_prompt": prompt, "source_role": role})
+                seen.add(prompt)
+        return sources
+
+    def _parse_replacement_candidates(
+        self,
+        response_text: str,
+        *,
+        valid_sources: list[str],
+    ) -> dict[str, dict[str, Any]]:
+        valid_lookup = {str(source).strip().lower(): str(source).strip().lower() for source in valid_sources}
+        blob = _extract_json_blob(response_text)
+        data = json.loads(blob)
+        if isinstance(data, dict) and "source_prompt" in data:
+            raw_replacements = [data]
+        elif isinstance(data, dict):
+            raw_replacements = data.get("replacements", data.get("refinements", data.get("sources", [])))
+            if isinstance(raw_replacements, dict):
+                raw_replacements = [
+                    {"source_prompt": source, "candidates": candidates}
+                    for source, candidates in raw_replacements.items()
+                ]
+        elif isinstance(data, list):
+            raw_replacements = data
+        else:
+            raw_replacements = []
+        if isinstance(raw_replacements, dict):
+            raw_replacements = [raw_replacements]
+
+        replacements: dict[str, dict[str, Any]] = {}
+        for item in raw_replacements:
+            if not isinstance(item, dict):
+                continue
+            source = str(
+                item.get("source_prompt", item.get("source", item.get("original_prompt", item.get("prompt", ""))))
+            ).strip().lower()
+            if source not in valid_lookup:
+                continue
+            raw_candidates = item.get(
+                "candidates",
+                item.get("replacement_prompts", item.get("replacements", item.get("aliases", item.get("candidate", [])))),
+            )
+            if isinstance(raw_candidates, str):
+                raw_candidates = [raw_candidates]
+            candidates = _dedupe([str(candidate).strip().lower() for candidate in raw_candidates if str(candidate).strip()])
+            replace_successful = item.get("replace_successful", False)
+            if isinstance(replace_successful, str):
+                replace_successful = replace_successful.strip().lower() in {"true", "yes", "1"}
+            replacements[source] = {
+                "candidates": candidates,
+                "replace_successful": bool(replace_successful),
+                "reason": str(item.get("reason", "")),
+            }
+        return replacements
 
 
 class SamRequestHandler(BaseHTTPRequestHandler):
@@ -515,6 +826,7 @@ def main() -> None:
     parser.add_argument("--llm-server-url", default=os.environ.get("SAM3_AGENT_LLM_SERVER_URL", DEFAULT_LLM_SERVER_URL))
     parser.add_argument("--llm-model", default=os.environ.get("SAM3_AGENT_MODEL", DEFAULT_LLM_MODEL))
     parser.add_argument("--llm-api-key", default=os.environ.get("SAM3_AGENT_API_KEY", DEFAULT_LLM_API_KEY))
+    parser.add_argument("--llm-api-key-file", default=os.environ.get("SAM3_AGENT_API_KEY_FILE", DEFAULT_LLM_API_KEY_FILE))
     parser.add_argument("--llm-max-tokens", type=int, default=int(os.environ.get("SAM3_AGENT_MAX_TOKENS", "512")))
     parser.add_argument("--extract-max-prompts", type=int, default=int(os.environ.get("SAM3_EXTRACT_MAX_PROMPTS", "3")))
     parser.add_argument("--extract-max-rounds", type=int, default=int(os.environ.get("SAM3_EXTRACT_MAX_ROUNDS", "3")))
@@ -522,13 +834,21 @@ def main() -> None:
     args = parser.parse_args()
 
     logging.basicConfig(level=logging.INFO, force=True)
+    llm_api_key = _normalize_api_key(args.llm_api_key) or _read_api_key_file(args.llm_api_key_file)
+    if args.llm_api_key:
+        LOGGER.info("Using LLM API key from --llm-api-key or SAM3_AGENT_API_KEY.")
+    elif llm_api_key:
+        LOGGER.info("Using LLM API key from %s.", args.llm_api_key_file)
+    else:
+        LOGGER.warning("No LLM API key configured. /extract requests may fail.")
+
     SamRequestHandler.service = SamAgentService(
         args.checkpoint_path,
         device=args.device,
         confidence_threshold=args.confidence_threshold,
         llm_server_url=args.llm_server_url,
         llm_model=args.llm_model,
-        llm_api_key=args.llm_api_key,
+        llm_api_key=llm_api_key,
         llm_max_tokens=args.llm_max_tokens,
         extract_max_prompts=args.extract_max_prompts,
         extract_max_rounds=args.extract_max_rounds,

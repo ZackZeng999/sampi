@@ -1,0 +1,1004 @@
+[robosuite WARNING] No private macro file found! (macros.py:53)
+[robosuite WARNING] It is recommended to use a private macro file (macros.py:54)
+[robosuite WARNING] To setup, run: python /root/proj/openpi/examples/libero/.venv/lib/python3.8/site-packages/robosuite/scripts/setup_macros.py (macros.py:55)
+INFO:root:Task suite: libero_90
+INFO:root:Waiting for server at ws://0.0.0.0:8000...
+INFO:root:Using SAM dim-background preprocessing for views: ['base']
+  0%|          | 0/90 [00:00<?, ?it/s]/root/proj/openpi/examples/libero/.venv/lib/python3.8/site-packages/numba/np/arraymath.py:3845: DeprecationWarning: `np.MachAr` is deprecated (NumPy 1.22).
+  @overload(np.MachAr)
+[Warning]: datasets path /root/proj/openpi/third_party/libero/libero/libero/../datasets does not exist!
+[Warning]: datasets path /root/proj/openpi/third_party/libero/libero/libero/../datasets does not exist!
+
+  0%|          | 0/20 [00:00<?, ?it/s][AINFO:root:
+Task: close the top drawer of the cabinet
+INFO:root:Starting episode 1...
+INFO:root:SAM extract took 1.251s for task 'close the top drawer of the cabinet' and returned prompts=['drawer', 'cabinet']
+INFO:root:SAM segment/dim took 0.550s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.194s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.421s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.452s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.461s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.451s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.431s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.441s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.462s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.111s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.336s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.364s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.161s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.340s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.447s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.454s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.447s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.456s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.456s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.469s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.443s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.460s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.434s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.456s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.449s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.444s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.447s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.442s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.461s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.457s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.459s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.465s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.465s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.446s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.460s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.448s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.455s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.452s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.453s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.444s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.440s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.435s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.446s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.441s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.441s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.457s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.201s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.440s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.445s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.458s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.456s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.447s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.446s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.440s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.444s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.443s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.445s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.454s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.453s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.446s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.465s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.460s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.457s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.196s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.458s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.338s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.121s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.332s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.343s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.131s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.685s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.113s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.542s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.136s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.536s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.131s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.538s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.140s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.539s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.131s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.536s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.130s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.542s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.136s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.539s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.135s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.542s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.112s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.568s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.449s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.445s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.449s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.460s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.450s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.435s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.456s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 1
+INFO:root:# successes: 0 (0.0%)
+
+  5%|▌         | 1/20 [01:07<21:14, 67.10s/it][AINFO:root:
+Task: close the top drawer of the cabinet
+INFO:root:Starting episode 2...
+INFO:root:SAM segment/dim took 0.428s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.461s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.459s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.442s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.455s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.451s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.446s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.456s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.451s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.449s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.201s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.449s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.452s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.464s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.455s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.455s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.457s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.450s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.453s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.445s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.454s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.442s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.441s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.111s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.325s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.123s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.345s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.147s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.327s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.121s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.539s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.134s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.538s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.135s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.553s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.450s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.457s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.430s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.451s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.456s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.460s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.203s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.468s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.485s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.201s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.465s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.201s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.451s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.460s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.455s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.201s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.458s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.453s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.455s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.201s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.456s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.449s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.460s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.457s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.454s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.446s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.448s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.443s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.470s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.465s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.454s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.464s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.450s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.454s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.203s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.478s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.459s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.196s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.466s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.462s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.507s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.431s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.203s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.464s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.453s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.201s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.455s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.459s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.448s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.201s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.458s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.203s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.441s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.202s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.457s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.201s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.500s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.441s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.111s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.323s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.123s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.325s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.124s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.350s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.134s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.446s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.469s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.451s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.202s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.454s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.201s and produced 10 actions (using first 5 for this chunk)
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 2
+INFO:root:# successes: 0 (0.0%)
+
+ 10%|█         | 2/20 [02:11<19:44, 65.80s/it][AINFO:root:
+Task: close the top drawer of the cabinet
+INFO:root:Starting episode 3...
+INFO:root:SAM segment/dim took 0.581s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.134s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.539s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.133s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.544s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.132s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.549s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.132s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.534s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.132s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.538s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.131s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.544s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.132s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.539s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.130s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.537s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.131s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.537s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.131s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.546s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.137s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.539s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.131s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.540s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.124s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.538s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.133s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.534s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.150s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.534s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.131s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.556s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.131s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.550s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.132s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.548s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.132s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.545s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.131s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.541s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.135s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.557s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.439s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.439s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.433s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.431s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.445s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.445s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.450s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.448s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.449s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.201s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.434s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.453s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.451s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.439s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.440s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.450s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.451s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.112s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.333s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.131s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.349s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.146s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.331s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.454s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.429s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.464s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.443s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.445s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.459s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.462s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.455s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.449s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.456s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.444s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.466s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.455s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.456s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.459s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.455s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.454s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.442s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.450s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.459s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.450s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.459s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.196s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.460s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.455s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.454s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.441s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.462s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.463s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.468s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.463s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.448s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.465s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.452s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.464s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.449s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.448s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.460s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.462s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.201s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.452s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 3
+INFO:root:# successes: 0 (0.0%)
+
+ 15%|█▌        | 3/20 [03:18<18:41, 65.95s/it][AINFO:root:
+Task: close the top drawer of the cabinet
+INFO:root:Starting episode 4...
+INFO:root:SAM segment/dim took 0.457s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.456s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.457s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.332s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.472s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.196s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.468s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.125s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.335s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.123s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.332s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.143s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.353s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.133s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.677s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.122s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.539s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.130s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.534s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.132s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.538s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.131s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.561s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.443s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.456s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.457s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.447s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.457s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.202s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.451s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.202s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.455s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.453s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.449s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.447s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.462s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.203s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.456s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.452s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.454s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.476s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.457s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.204s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.465s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.465s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.455s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.467s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.465s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.467s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.458s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.204s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.463s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.473s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.203s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.464s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.204s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.467s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.460s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.457s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.203s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.469s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.451s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.203s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.461s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.467s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.459s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.455s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.201s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.473s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.201s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.471s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.459s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.116s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.323s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.151s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.352s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.148s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.325s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.203s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.456s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.467s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.457s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.459s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.483s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.456s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.457s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.460s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.453s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.457s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.470s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.458s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.203s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.443s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.454s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.454s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.203s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.466s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.459s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.465s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.465s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.458s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.468s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.203s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.452s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.203s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.452s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.453s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.204s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.475s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 4
+INFO:root:# successes: 0 (0.0%)
+
+ 20%|██        | 4/20 [04:23<17:29, 65.58s/it][AINFO:root:
+Task: close the top drawer of the cabinet
+INFO:root:Starting episode 5...
+INFO:root:SAM segment/dim took 0.369s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.459s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.202s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.452s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.204s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.448s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.202s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.463s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.456s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.491s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.455s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.461s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.459s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.447s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.427s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.426s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.426s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.430s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.462s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.201s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.456s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.456s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.456s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.116s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.330s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.112s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.318s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.146s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.335s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.149s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.615s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.137s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.533s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.135s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.545s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.130s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.537s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.131s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.536s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.139s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.506s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.425s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.201s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.425s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.423s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.447s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.201s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.446s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.438s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.437s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.439s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.432s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.458s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.201s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.463s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.453s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.451s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.448s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.448s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.455s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.464s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.462s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.458s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.466s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.463s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.469s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.474s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.461s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.451s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.204s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.452s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.469s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.464s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.469s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.462s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.458s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.464s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.461s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.436s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.435s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.201s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.454s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.454s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.444s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.458s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.457s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.119s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.334s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.132s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.336s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.146s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.347s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.138s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.535s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.146s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.562s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.223s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.424s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.456s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.465s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.448s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.445s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.201s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.456s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.432s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:Success: False
+INFO:root:# episodes completed so far: 5
+INFO:root:# successes: 0 (0.0%)
+
+ 25%|██▌       | 5/20 [05:28<16:23, 65.56s/it][AINFO:root:
+Task: close the top drawer of the cabinet
+INFO:root:Starting episode 6...
+INFO:root:SAM segment/dim took 0.451s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.201s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.333s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.448s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.452s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.458s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.451s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.465s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.466s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.498s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.458s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.470s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.470s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.461s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.428s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.433s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.423s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.433s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.438s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.443s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.437s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.430s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.430s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.447s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.445s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.431s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.458s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.445s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.436s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.118s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.336s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.131s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.341s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.133s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.344s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.137s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.541s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.131s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.565s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.450s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.463s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.444s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.441s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.201s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.459s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.437s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.436s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.440s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.452s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.450s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.453s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.437s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.424s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.425s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.432s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.431s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.433s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.426s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.437s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.451s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.462s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.449s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.444s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.454s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.453s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.450s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.452s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.452s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.438s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.457s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.455s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.198s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.457s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.434s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.455s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.446s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.460s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.452s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.200s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.444s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.458s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.456s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.197s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.459s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.199s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.458s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.130s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.397s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.130s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.333s for views=['base'] using prompts=['drawer', 'cabinet']
+INFO:root:OpenPI infer took 0.326s and produced 10 actions (using first 5 for this chunk)

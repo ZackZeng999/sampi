@@ -1,0 +1,2935 @@
++-----------------------------------------------AutoDL-------
+----------------------------------------------+
+目录说明:
+╔═════════════════╦════════╦════╦════════════════════════════
+═════════════════════════════════════════════╗
+║目录             ║名称    ║速度║说明
+                                             ║
+╠═════════════════╬════════╬════╬════════════════════════════
+═════════════════════════════════════════════╣
+║/                ║系 统 盘║一般║实例关机数据不会丢失，可存放
+代码等。会随保存镜像一起保存。               ║
+║/root/autodl-tmp ║数 据 盘║ 快 ║实例关机数据不会丢失，可存放
+读写IO要求高的数据。但不会随保存镜像一起保存 ║
+╚═════════════════╩════════╩════╩════════════════════════════
+═════════════════════════════════════════════╝
+CPU ：16 核心
+内存：62 GB
+GPU ：NVIDIA GeForce RTX 4080 SUPER, 1
+存储：
+  系 统 盘/               ：88% 27G/30G
+  数 据 盘/root/autodl-tmp：83% 165G/200G
++------------------------------------------------------------
+----------------------------------------------+
+*注意:
+1.系统盘较小请将大的数据存放于数据盘或文件存储中，重置系统时
+数据盘和文件存储中的数据不受影响
+2.清理系统盘请参考：https://www.autodl.com/docs/qa1/
+3.终端中长期执行命令请使用screen等工具开后台运行，确保程序不
+受SSH连接中断影响：https://www.autodl.com/docs/daemon/
+(base) root@autodl-container-ec8046bda4-559d01cb:~/proj/openp
+i# cd /root/proj/openpi
+export HF_LEROBOT_HOME=/root/autodl-tmp/datasets
+(base) root@autodl-container-ec8046bda4-559d01cb:~/proj/openp
+i# conda activate openpi
+(openpi) root@autodl-container-ec8046bda4-559d01cb:~/proj/ope
+npi# source .venv/bin/activate
+(openpi) (openpi) root@autodl-container-ec8046bda4-559d01cb:~
+/proj/openpi# XLA_PYTHON_CLIENT_MEM_FRACTION=0.95 python scri
+pts/train.py pi05_libero_sam_dim_expert_lora \
+  --exp-name=sam_dim_expert_lora \
+  --resume \
+  --no-wandb-enabled \
+  --batch-size=32 \
+  --num-train-steps=25500 \
+  --save-interval=1000 \
+  --keep-period=4250 \
+  --checkpoint-base-dir=/root/autodl-tmp/openpi_checkpoints
+23:33:49.467 [I] Running on: autodl-container-ec8046bda4-559d
+01cb                                 (3004:train.py:196)
+INFO:2026-05-26 23:33:49,881:jax._src.xla_bridge:925: Unable
+to initialize backend 'rocm': module 'jaxlib.xla_extension' h
+as no attribute 'GpuAllocatorConfig'
+23:33:49.881 [I] Unable to initialize backend 'rocm': module
+'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+(3004:xla_bridge.py:925)
+INFO:2026-05-26 23:33:49,883:jax._src.xla_bridge:925: Unable
+to initialize backend 'tpu': INTERNAL: Failed to open libtpu.
+so: libtpu.so: cannot open shared object file: No such file o
+r directory
+23:33:49.883 [I] Unable to initialize backend 'tpu': INTERNAL
+: Failed to open libtpu.so: libtpu.so: cannot open shared obj
+ect file: No such file or directory (3004:xla_bridge.py:925)
+23:33:50.774 [I] Created BasePyTreeCheckpointHandler: use_ocd
+bt=True, use_zarr3=False, pytree_metadata_options=PyTreeMetad
+ataOptions(support_rich_types=False), array_metadata_store=<o
+rbax.checkpoint._src.metadata.array_metadata_store.Store obje
+ct at 0x7fa22273d890> (3004:base_pytree_checkpoint_handler.py
+:334)
+23:33:50.774 [I] Created BasePyTreeCheckpointHandler: use_ocd
+bt=True, use_zarr3=False, pytree_metadata_options=PyTreeMetad
+ataOptions(support_rich_types=False), array_metadata_store=<o
+rbax.checkpoint._src.metadata.array_metadata_store.Store obje
+ct at 0x7fa22273d890> (3004:base_pytree_checkpoint_handler.py
+:334)
+23:33:50.774 [I] [thread=MainThread] Failed to get flag value
+ for EXPERIMENTAL_ORBAX_USE_DISTRIBUTED_PROCESS_ID. (3004:mul
+tihost.py:390)
+23:33:50.774 [I] [process=0][thread=MainThread] CheckpointMan
+ager init: checkpointers=None, item_names=None, item_handlers
+={'assets': <openpi.training.checkpoints.CallbackHandler obje
+ct at 0x7fa0f98c6690>, 'train_state': <orbax.checkpoint._src.
+handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler ob
+ject at 0x7fa0f991b610>, 'params': <orbax.checkpoint._src.han
+dlers.pytree_checkpoint_handler.PyTreeCheckpointHandler objec
+t at 0x7fa0f9964110>}, handler_registry=None (3004:checkpoint
+_manager.py:620)
+23:33:50.775 [I] Deferred registration for item: "assets". Ad
+ding handler `<openpi.training.checkpoints.CallbackHandler ob
+ject at 0x7fa0f98c6690>` for item "assets" and save args `<cl
+ass 'openpi.training.checkpoints.CallbackSave'>` and restore
+args `<class 'openpi.training.checkpoints.CallbackRestore'>`
+to `_handler_registry`. (3004:composite_checkpoint_handler.py
+:234)
+23:33:50.775 [I] Deferred registration for item: "train_state
+". Adding handler `<orbax.checkpoint._src.handlers.pytree_che
+ckpoint_handler.PyTreeCheckpointHandler object at 0x7fa0f991b
+610>` for item "train_state" and save args `<class 'orbax.che
+ckpoint._src.handlers.pytree_checkpoint_handler.PyTreeSaveArg
+s'>` and restore args `<class 'orbax.checkpoint._src.handlers
+.pytree_checkpoint_handler.PyTreeRestoreArgs'>` to `_handler_
+registry`. (3004:composite_checkpoint_handler.py:234)
+23:33:50.775 [I] Deferred registration for item: "params". Ad
+ding handler `<orbax.checkpoint._src.handlers.pytree_checkpoi
+nt_handler.PyTreeCheckpointHandler object at 0x7fa0f9964110>`
+ for item "params" and save args `<class 'orbax.checkpoint._s
+rc.handlers.pytree_checkpoint_handler.PyTreeSaveArgs'>` and r
+estore args `<class 'orbax.checkpoint._src.handlers.pytree_ch
+eckpoint_handler.PyTreeRestoreArgs'>` to `_handler_registry`.
+ (3004:composite_checkpoint_handler.py:234)
+23:33:50.775 [I] Deferred registration for item: "metrics". A
+dding handler `<orbax.checkpoint._src.handlers.json_checkpoin
+t_handler.JsonCheckpointHandler object at 0x7fa0f98c5b90>` fo
+r item "metrics" and save args `<class 'orbax.checkpoint._src
+.handlers.json_checkpoint_handler.JsonSaveArgs'>` and restore
+ args `<class 'orbax.checkpoint._src.handlers.json_checkpoint
+_handler.JsonRestoreArgs'>` to `_handler_registry`. (3004:com
+posite_checkpoint_handler.py:234)
+23:33:50.775 [I] Initialized registry DefaultCheckpointHandle
+rRegistry({('assets', <class 'openpi.training.checkpoints.Cal
+lbackSave'>): <openpi.training.checkpoints.CallbackHandler ob
+ject at 0x7fa0f98c6690>, ('assets', <class 'openpi.training.c
+heckpoints.CallbackRestore'>): <openpi.training.checkpoints.C
+allbackHandler object at 0x7fa0f98c6690>, ('train_state', <cl
+ass 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler
+.PyTreeSaveArgs'>): <orbax.checkpoint._src.handlers.pytree_ch
+eckpoint_handler.PyTreeCheckpointHandler object at 0x7fa0f991
+b610>, ('train_state', <class 'orbax.checkpoint._src.handlers
+.pytree_checkpoint_handler.PyTreeRestoreArgs'>): <orbax.check
+point._src.handlers.pytree_checkpoint_handler.PyTreeCheckpoin
+tHandler object at 0x7fa0f991b610>, ('params', <class 'orbax.
+checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeSave
+Args'>): <orbax.checkpoint._src.handlers.pytree_checkpoint_ha
+ndler.PyTreeCheckpointHandler object at 0x7fa0f9964110>, ('pa
+rams', <class 'orbax.checkpoint._src.handlers.pytree_checkpoi
+nt_handler.PyTreeRestoreArgs'>): <orbax.checkpoint._src.handl
+ers.pytree_checkpoint_handler.PyTreeCheckpointHandler object
+at 0x7fa0f9964110>, ('metrics', <class 'orbax.checkpoint._src
+.handlers.json_checkpoint_handler.JsonSaveArgs'>): <orbax.che
+ckpoint._src.handlers.json_checkpoint_handler.JsonCheckpointH
+andler object at 0x7fa0f98c5b90>, ('metrics', <class 'orbax.c
+heckpoint._src.handlers.json_checkpoint_handler.JsonRestoreAr
+gs'>): <orbax.checkpoint._src.handlers.json_checkpoint_handle
+r.JsonCheckpointHandler object at 0x7fa0f98c5b90>}). (3004:co
+mposite_checkpoint_handler.py:502)
+23:33:50.775 [I] orbax-checkpoint version: 0.11.13
+                                     (3004:abstract_checkpoin
+ter.py:35)
+23:33:50.775 [I] [process=0][thread=MainThread] Using barrier
+_sync_fn: <function get_barrier_sync_fn.<locals>.<lambda> at
+0x7fa0f94c4900> timeout: 7200 secs and primary_host=0 for asy
+nc checkpoint writes (3004:async_checkpointer.py:170)
+23:33:50.779 [I] Read Metadata={'item_handlers': {'assets': '
+openpi.training.checkpoints.CallbackHandler', 'params': 'orba
+x.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCh
+eckpointHandler', 'train_state': 'orbax.checkpoint._src.handl
+ers.pytree_checkpoint_handler.PyTreeCheckpointHandler'}, 'met
+rics': {}, 'performance_metrics': {}, 'init_timestamp_nsecs':
+ 1779653103052301122, 'commit_timestamp_nsecs': 1779653116126
+880933, 'custom_metadata': {}} from /root/autodl-tmp/openpi_c
+heckpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lor
+a/2000/_CHECKPOINT_METADATA (3004:checkpoint.py:226)
+23:33:50.779 [W] Missing metrics for step 2000
+                                     (3004:checkpoint_manager
+.py:1654)
+23:33:50.780 [E] File /root/autodl-tmp/openpi_checkpoints/pi0
+5_libero_sam_dim_expert_lora/sam_dim_expert_lora/2000/metrics
+/metrics not found. (3004:checkpoint_manager.py:1655)
+23:33:50.781 [W] Missing metrics for step 8000
+                                     (3004:checkpoint_manager
+.py:1654)
+23:33:50.781 [E] File /root/autodl-tmp/openpi_checkpoints/pi0
+5_libero_sam_dim_expert_lora/sam_dim_expert_lora/8000/metrics
+/metrics not found. (3004:checkpoint_manager.py:1655)
+23:33:50.781 [W] Missing metrics for step 4000
+                                     (3004:checkpoint_manager
+.py:1654)
+23:33:50.781 [E] File /root/autodl-tmp/openpi_checkpoints/pi0
+5_libero_sam_dim_expert_lora/sam_dim_expert_lora/4000/metrics
+/metrics not found. (3004:checkpoint_manager.py:1655)
+23:33:50.782 [W] Missing metrics for step 6000
+                                     (3004:checkpoint_manager
+.py:1654)
+23:33:50.782 [E] File /root/autodl-tmp/openpi_checkpoints/pi0
+5_libero_sam_dim_expert_lora/sam_dim_expert_lora/6000/metrics
+/metrics not found. (3004:checkpoint_manager.py:1655)
+23:33:50.782 [W] Missing metrics for step 8499
+                                     (3004:checkpoint_manager
+.py:1654)
+23:33:50.783 [E] File /root/autodl-tmp/openpi_checkpoints/pi0
+5_libero_sam_dim_expert_lora/sam_dim_expert_lora/8499/metrics
+/metrics not found. (3004:checkpoint_manager.py:1655)
+23:33:50.783 [I] Found 5 checkpoint steps in /root/autodl-tmp
+/openpi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_e
+xpert_lora (3004:checkpoint_manager.py:1701)
+23:33:50.783 [I] [process=0][thread=MainThread] CheckpointMan
+ager created,  primary_host=0, CheckpointManagerOptions=Check
+pointManagerOptions(save_interval_steps=1, max_to_keep=1, kee
+p_time_interval=None, keep_period=4250, should_keep_fn=None,
+best_fn=None, best_mode='max', keep_checkpoints_without_metri
+cs=True, step_prefix=None, step_format_fixed_length=None, ste
+p_name_format=None, create=False, cleanup_tmp_directories=Fal
+se, save_on_steps=frozenset(), single_host_load_and_broadcast
+=False, todelete_subdir=None, enable_background_delete=False,
+ read_only=False, enable_async_checkpointing=True, async_opti
+ons=AsyncOptions(timeout_secs=7200, barrier_sync_fn=None, pos
+t_finalization_callback=None, create_directories_asynchronous
+ly=True), multiprocessing_options=MultiprocessingOptions(prim
+ary_host=0, active_processes=None, barrier_sync_key_prefix=No
+ne), should_save_fn=None, file_options=FileOptions(path_permi
+ssion_mode=None), save_root_metadata=True, temporary_path_cla
+ss=None, save_decision_policy=None, prevent_write_metrics=Fal
+se), root_directory=/root/autodl-tmp/openpi_checkpoints/pi05_
+libero_sam_dim_expert_lora/sam_dim_expert_lora: <orbax.checkp
+oint.checkpoint_manager.CheckpointManager object at 0x7fa0f99
+7ad10> (3004:checkpoint_manager.py:801)
+23:33:50.894 [I] Loaded norm stats from /root/proj/openpi/ass
+ets/pi05_libero_sam_dim_expert_lora/physical-intelligence/lib
+ero_sam_dim (3004:config.py:197)
+23:33:50.895 [I] data_config: DataConfig(repo_id='physical-in
+telligence/libero_sam_dim', asset_id='physical-intelligence/l
+ibero_sam_dim', norm_stats={'state': NormStats(mean=array([-0
+.04652611,  0.03439558,  0.76453263,  2.97220063, -0.22040515
+,
+       -0.1256201 ,  0.02691563, -0.02719223]), std=array([0.
+10494592, 0.15176666, 0.37852946, 0.34429887, 0.90696377,
+       0.32537863, 0.01417543, 0.01405817]), q01=array([-3.99
+227868e-01, -2.68878135e-01,  3.80015922e-02,  1.50832780e+00
+,
+       -2.72100443e+00, -1.08132181e+00,  1.73520013e-03, -4.
+00442422e-02]), q99=array([ 1.35320103e-01,  3.35663146e-01,
+ 1.26987248e+00,  3.27650592e+00,
+        2.40543680e+00,  5.97152898e-01,  4.03033407e-02, -1.
+78783794e-03])), 'actions': NormStats(mean=array([ 0.055158
+,  0.08770469, -0.08735654,  0.00071009,  0.00547124,
+       -0.00553777, -0.04559308]), std=array([0.3318792 , 0.3
+7581694, 0.44810221, 0.03933446, 0.0635809 ,
+       0.07857436, 0.99896008]), q01=array([-0.70725   , -0.7
+98375  , -0.9375    , -0.11467779, -0.16425   ,
+       -0.22404901, -1.        ]), q99=array([0.937125  , 0.8
+6775   , 0.937125  , 0.13150757, 0.1917    ,
+       0.3374295 , 0.9996    ]))}, repack_transforms=Group(in
+puts=[RepackTransform(structure={'observation/image': 'image'
+, 'observation/wrist_image': 'wrist_image', 'observation/stat
+e': 'state', 'actions': 'actions', 'prompt': 'prompt'})], out
+puts=()), data_transforms=Group(inputs=[LiberoInputs(model_ty
+pe=<ModelType.PI05: 'pi05'>)], outputs=[LiberoOutputs()]), mo
+del_transforms=Group(inputs=[InjectDefaultPrompt(prompt=None)
+, ResizeImages(height=224, width=224), TokenizePrompt(tokeniz
+er=<openpi.models.tokenizer.PaligemmaTokenizer object at 0x7f
+a0f9a84790>, discrete_state_input=False), PadStatesAndActions
+(model_action_dim=32)], outputs=()), use_quantile_norm=True,
+action_sequence_keys=('actions',), prompt_from_task=True, rld
+s_data_dir=None, action_space=None, datasets=()) (3004:data_l
+oader.py:243)
+Resolving data files: 100%|██████████████████████████████████
+███████████████████████████████████████| 1693/1693 [00:00<00:
+00, 26587.08it/s]
+Loading dataset shards: 100%|████████████████████████████████
+█████████████████████████████████████████████| 63/63 [00:00<0
+0:00, 111.26it/s]
+23:33:59.773 [I] local_batch_size: 32
+                                     (3004:data_loader.py:324
+)
+23:34:17.006 [I] Initialized data loader:
+[0].images['base_0_rgb']: (32, 224, 224, 3)@float32
+[0].images['left_wrist_0_rgb']: (32, 224, 224, 3)@float32
+[0].images['right_wrist_0_rgb']: (32, 224, 224, 3)@float32
+[0].image_masks['base_0_rgb']: (32,)@bool
+[0].image_masks['left_wrist_0_rgb']: (32,)@bool
+[0].image_masks['right_wrist_0_rgb']: (32,)@bool
+[0].state: (32, 32)@float32
+[0].tokenized_prompt: (32, 200)@int32
+[0].tokenized_prompt_mask: (32, 200)@bool
+[1]: (32, 10, 32)@float32 (3004:train.py:227)
+23:34:18.032 [I] Initialized train state:
+['PaliGemma']['img']['Transformer']['encoder_norm']['bias'].v
+alue: (1152,)@bfloat16
+['PaliGemma']['img']['Transformer']['encoder_norm']['scale'].
+value: (1152,)@bfloat16
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNor
+m_0']['bias'].value: (27, 1152)@bfloat16
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNor
+m_0']['scale'].value: (27, 1152)@bfloat16
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNor
+m_1']['bias'].value: (27, 1152)@bfloat16
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNor
+m_1']['scale'].value: (27, 1152)@bfloat16
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock
+_0']['Dense_0']['bias'].value: (27, 4304)@bfloat16
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock
+_0']['Dense_0']['kernel'].value: (27, 1152, 4304)@bfloat16
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock
+_0']['Dense_1']['bias'].value: (27, 1152)@bfloat16
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock
+_0']['Dense_1']['kernel'].value: (27, 4304, 1152)@bfloat16
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHea
+dDotProductAttention_0']['key']['bias'].value: (27, 16, 72)@b
+float16
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHea
+dDotProductAttention_0']['key']['kernel'].value: (27, 1152, 1
+6, 72)@bfloat16
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHea
+dDotProductAttention_0']['out']['bias'].value: (27, 1152)@bfl
+oat16
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHea
+dDotProductAttention_0']['out']['kernel'].value: (27, 16, 72,
+ 1152)@bfloat16
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHea
+dDotProductAttention_0']['query']['bias'].value: (27, 16, 72)
+@bfloat16
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHea
+dDotProductAttention_0']['query']['kernel'].value: (27, 1152,
+ 16, 72)@bfloat16
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHea
+dDotProductAttention_0']['value']['bias'].value: (27, 16, 72)
+@bfloat16
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHea
+dDotProductAttention_0']['value']['kernel'].value: (27, 1152,
+ 16, 72)@bfloat16
+['PaliGemma']['img']['embedding']['bias'].value: (1152,)@bflo
+at16
+['PaliGemma']['img']['embedding']['kernel'].value: (14, 14, 3
+, 1152)@bfloat16
+['PaliGemma']['img']['head']['bias'].value: (2048,)@bfloat16
+['PaliGemma']['img']['head']['kernel'].value: (1152, 2048)@bf
+loat16
+['PaliGemma']['img']['pos_embedding'].value: (1, 256, 1152)@b
+float16
+['PaliGemma']['llm']['embedder']['input_embedding'].value: (2
+57152, 2048)@bfloat16
+['PaliGemma']['llm']['final_norm']['scale'].value: (2048,)@bf
+loat16
+['PaliGemma']['llm']['final_norm_1']['Dense_0']['bias'].value
+: (3072,)@bfloat16
+['PaliGemma']['llm']['final_norm_1']['Dense_0']['kernel'].val
+ue: (1024, 3072)@bfloat16
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum']['w'
+].value: (18, 8, 256, 2048)@bfloat16
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum_1']['
+lora_a'].value: (18, 8, 256, 32)@float32
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum_1']['
+lora_b'].value: (18, 8, 32, 1024)@float32
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum_1']['
+w'].value: (18, 8, 256, 1024)@bfloat16
+['PaliGemma']['llm']['layers']['attn']['kv_einsum']['w'].valu
+e: (18, 2, 1, 2048, 256)@bfloat16
+['PaliGemma']['llm']['layers']['attn']['kv_einsum_1']['lora_a
+'].value: (18, 2, 1, 1024, 32)@float32
+['PaliGemma']['llm']['layers']['attn']['kv_einsum_1']['lora_b
+'].value: (18, 2, 1, 32, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['kv_einsum_1']['w'].va
+lue: (18, 2, 1, 1024, 256)@bfloat16
+['PaliGemma']['llm']['layers']['attn']['q_einsum']['w'].value
+: (18, 8, 2048, 256)@bfloat16
+['PaliGemma']['llm']['layers']['attn']['q_einsum_1']['lora_a'
+].value: (18, 8, 1024, 32)@float32
+['PaliGemma']['llm']['layers']['attn']['q_einsum_1']['lora_b'
+].value: (18, 8, 32, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['q_einsum_1']['w'].val
+ue: (18, 8, 1024, 256)@bfloat16
+['PaliGemma']['llm']['layers']['mlp']['gating_einsum'].value:
+ (18, 2, 2048, 16384)@bfloat16
+['PaliGemma']['llm']['layers']['mlp']['linear'].value: (18, 1
+6384, 2048)@bfloat16
+['PaliGemma']['llm']['layers']['mlp_1']['gating_einsum'].valu
+e: (18, 2, 1024, 4096)@bfloat16
+['PaliGemma']['llm']['layers']['mlp_1']['gating_einsum_lora_a
+'].value: (18, 2, 1024, 32)@float32
+['PaliGemma']['llm']['layers']['mlp_1']['gating_einsum_lora_b
+'].value: (18, 2, 32, 4096)@float32
+['PaliGemma']['llm']['layers']['mlp_1']['linear'].value: (18,
+ 4096, 1024)@bfloat16
+['PaliGemma']['llm']['layers']['mlp_1']['linear_lora_a'].valu
+e: (18, 4096, 32)@float32
+['PaliGemma']['llm']['layers']['mlp_1']['linear_lora_b'].valu
+e: (18, 32, 1024)@float32
+['PaliGemma']['llm']['layers']['pre_attention_norm']['scale']
+.value: (18, 2048)@bfloat16
+['PaliGemma']['llm']['layers']['pre_attention_norm_1']['Dense
+_0']['bias'].value: (18, 3072)@bfloat16
+['PaliGemma']['llm']['layers']['pre_attention_norm_1']['Dense
+_0']['kernel'].value: (18, 1024, 3072)@bfloat16
+['PaliGemma']['llm']['layers']['pre_ffw_norm']['scale'].value
+: (18, 2048)@bfloat16
+['PaliGemma']['llm']['layers']['pre_ffw_norm_1']['Dense_0']['
+bias'].value: (18, 3072)@bfloat16
+['PaliGemma']['llm']['layers']['pre_ffw_norm_1']['Dense_0']['
+kernel'].value: (18, 1024, 3072)@bfloat16
+['action_in_proj']['bias'].value: (1024,)@bfloat16
+['action_in_proj']['kernel'].value: (32, 1024)@bfloat16
+['action_out_proj']['bias'].value: (32,)@bfloat16
+['action_out_proj']['kernel'].value: (1024, 32)@bfloat16
+['time_mlp_in']['bias'].value: (1024,)@bfloat16
+['time_mlp_in']['kernel'].value: (1024, 1024)@bfloat16
+['time_mlp_out']['bias'].value: (1024,)@bfloat16
+['time_mlp_out']['kernel'].value: (1024, 1024)@bfloat16 (3004
+:train.py:238)
+23:34:18.036 [I] Restoring checkpoint from /root/autodl-tmp/o
+penpi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_exp
+ert_lora/8499. (3004:checkpointer.py:298)
+/root/proj/openpi/.venv/lib/python3.11/site-packages/orbax/ch
+eckpoint/_src/serialization/type_handlers.py:1251: UserWarnin
+g: Sharding info not provided when restoring. Populating shar
+ding info from sharding file. Please note restoration time wi
+ll be slightly increased due to reading from file. Note also
+that this option is unsafe when restoring on a different topo
+logy than the checkpoint was saved with.
+  warnings.warn(
+23:34:23.597 [I] [process=0] /jax/checkpoint/read/bytes_per_s
+ec: 1.1 GiB/s (total bytes: 6.3 GiB) (time elapsed: 5 seconds
+) (per-host) (3004:base_pytree_checkpoint_handler.py:114)
+23:34:23.761 [I] [process=0] /jax/checkpoint/read/bytes_per_s
+ec: 1.0 GiB/s (total bytes: 168.8 MiB) (time elapsed: 163 mil
+liseconds) (per-host) (3004:base_pytree_checkpoint_handler.py
+:114)
+23:34:23.762 [I] Finished restoring checkpoint in 5.73 second
+s from /root/autodl-tmp/openpi_checkpoints/pi05_libero_sam_di
+m_expert_lora/sam_dim_expert_lora/8499. (3004:checkpointer.py
+:309)
+23:34:23.762 [I] {'step': 8499, 'event_type': 'restore', 'dir
+ectory': '/root/autodl-tmp/openpi_checkpoints/pi05_libero_sam
+_dim_expert_lora/sam_dim_expert_lora', 'checkpointer_start_ti
+me': 1779809658.0364814, 'checkpointer_duration_secs': 5.7259
+0970993042, 'checkpoint_manager_start_time': 1779809658.03608
+1, 'checkpoint_manager_duration_secs': 5.726312875747681} (30
+04:standard_logger.py:34)
+Step 8500: grad_norm=0.0037, loss=0.0038, param_norm=1832.559
+9
+
+Step 8600: grad_norm=0.0032, loss=0.0028, param_norm=1832.560
+3
+
+Step 8700: grad_norm=0.0034, loss=0.0031, param_norm=1832.560
+5
+
+Step 8800: grad_norm=0.0029, loss=0.0026, param_norm=1832.560
+9
+
+Step 8900: grad_norm=0.0035, loss=0.0032, param_norm=1832.561
+2
+
+Step 9000: grad_norm=0.0036, loss=0.0031, param_norm=1832.561
+9
+
+ 35%|███████████████████████████▌
+                      | 9000/25500 [41:17<22:14:10,  4.85s/it
+]00:15:41.527 [I] [process=0][thread=MainThread][wait_until_f
+inished] No Save Finalize thread to wait for. Returning. (300
+4:checkpoint_manager.py:1987)
+00:15:41.528 [I] [process=0] Saving checkpoint at step 9000
+                                     (3004:checkpoint_manager
+.py:1408)
+00:15:41.529 [I] [process=0] Started async saving checkpoint
+to /root/autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_ex
+pert_lora/sam_dim_expert_lora/9000. (3004:async_checkpointer.
+py:439)
+00:15:41.531 [I] Using ThreadSafeKeyValueSignalingClient
+                                     (3004:signaling_client.p
+y:332)
+00:15:41.547 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/9000.orbax-checkpoint-tmp-0 (3004:atomicity.py:144)
+00:15:41.550 [I] Wrote Metadata={'item_handlers': None, 'metr
+ics': {}, 'performance_metrics': {}, 'init_timestamp_nsecs':
+1779812141548570184, 'commit_timestamp_nsecs': None, 'custom_
+metadata': {}}, json={"item_handlers": null, "metrics": {}, "
+performance_metrics": {}, "init_timestamp_nsecs": 17798121415
+48570184, "commit_timestamp_nsecs": null, "custom_metadata":
+{}} to /root/autodl-tmp/openpi_checkpoints/pi05_libero_sam_di
+m_expert_lora/sam_dim_expert_lora/9000.orbax-checkpoint-tmp-0
+/_CHECKPOINT_METADATA (3004:checkpoint.py:186)
+00:15:41.553 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/9000.orbax-checkpoint-tmp-0/assets.orbax-checkpoint-tmp
+-1 (3004:atomicity.py:144)
+00:15:41.553 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/9000.orbax-checkpoint-tmp-0/params.orbax-checkpoint-tmp
+-2 (3004:atomicity.py:144)
+00:15:41.553 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/9000.orbax-checkpoint-tmp-0/train_state.orbax-checkpoin
+t-tmp-3 (3004:atomicity.py:144)
+00:15:41.569 [I] Transferring arrays to host memory with opti
+ons: use_replica_parallel=True, enable_pinned_host_transfer=F
+alse (3004:replica_slices.py:341)
+00:15:45.763 [I] Transferring arrays to host memory with opti
+ons: use_replica_parallel=True, enable_pinned_host_transfer=F
+alse (3004:replica_slices.py:341)
+00:15:45.769 [I] Array name: 'params.PaliGemma.llm.layers.mlp
+.gating_einsum.value', global shape: (18, 2, 2048, 16384), wr
+ite shape: (18, 2, 2048, 16384), chosen chunk shape: (18, 2,
+2048, 8192) (3004:tensorstore_utils.py:408)
+00:15:45.791 [I] [process=0][thread=array_type_handler] Wrote
+ 61 array_metadata.ArrayMetadata to /root/autodl-tmp/openpi_c
+heckpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lor
+a/9000.orbax-checkpoint-tmp-0/params.orbax-checkpoint-tmp-2/a
+rray_metadatas/process_0 (3004:array_metadata_store.py:198)
+00:15:45.970 [I] [process=0] /jax/checkpoint/write/blocking_b
+ytes_per_sec: 1.4 GiB/s (total bytes: 6.3 GiB) (time elapsed:
+ 4 seconds) (per-host) (3004:base_pytree_checkpoint_handler.p
+y:114)
+00:15:45.973 [I] [process=0] /jax/checkpoint/write/blocking_b
+ytes_per_sec: 38.1 MiB/s (total bytes: 168.8 MiB) (time elaps
+ed: 4 seconds) (per-host) (3004:base_pytree_checkpoint_handle
+r.py:114)
+00:15:45.977 [I] [process=0][thread=async_save] Background sa
+ve thread started.                   (3004:async_checkpointer
+.py:77)
+00:15:45.977 [I] Finished blocking save in 4.45 seconds. Cont
+inuing to save asynchronously to /root/autodl-tmp/openpi_chec
+kpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/9
+000. (3004:async_checkpointer.py:548)
+00:15:45.977 [I] Deleting Checkpoint[step=2000 | time=2026-05
+-24 20:05:16.126881+00:00]: (Reason: old checkpoint). (3004:c
+heckpoint_manager.py:1963)
+00:15:45.977 [I] Deleting Checkpoint[step=4000 | time=2026-05
+-24 22:47:33.647289+00:00]: (Reason: old checkpoint). (3004:c
+heckpoint_manager.py:1963)
+00:15:45.977 [I] Deleting Checkpoint[step=6000 | time=2026-05
+-25 01:29:51.796489+00:00]: (Reason: old checkpoint). (3004:c
+heckpoint_manager.py:1963)
+00:15:45.977 [I] Deleting Checkpoint[step=8000 | time=2026-05
+-25 04:11:48.186100+00:00]: (Reason: old checkpoint). (3004:c
+heckpoint_manager.py:1963)
+00:15:45.977 [I] Deleting Checkpoint[step=8499 | time=2026-05
+-25 04:52:12.173013+00:00]: (Reason: old checkpoint). (3004:c
+heckpoint_manager.py:1963)
+00:15:45.978 [I] [process=0][thread=MainThread][step=9000] St
+arting CheckpointManager Save Finalize thread=save_finalize (
+3004:checkpoint_manager.py:1453)
+00:15:45.978 [I] [process=0][thread=save_finalize] Waiting fo
+r background save thread=async_save. (3004:async_checkpointer
+.py:258)
+00:15:45.979 [I] {'step': 9000, 'event_type': 'save', 'direct
+ory': '/root/autodl-tmp/openpi_checkpoints/pi05_libero_sam_di
+m_expert_lora/sam_dim_expert_lora', 'reached_preemption': Fal
+se, 'preemption_received_at': None, 'synchronous': False, 'wa
+it_for_prev_start_time': 1779812141.5270803, 'wait_for_prev_d
+uration_secs': 0.00037217140197753906, 'checkpointer_blocking
+_start_time': 1779812141.528439, 'checkpointer_blocking_durat
+ion_secs': 4.448960065841675, 'get_old_steps_start_time': 177
+9812145.9774373, 'get_old_steps_duration_secs': 0.00044894218
+44482422, 'checkpoint_manager_blocking_start_time': 177981214
+1.5264277, 'checkpoint_manager_blocking_duration_secs': 4.452
+622652053833} (3004:standard_logger.py:34)
+ 35%|███████████████████████████▌
+                      | 9001/25500 [41:22<34:40:26,  7.57s/it
+]00:15:45.986 [I] [process=0][thread=array_type_handler] Wrot
+e 23 array_metadata.ArrayMetadata to /root/autodl-tmp/openpi_
+checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lo
+ra/9000.orbax-checkpoint-tmp-0/train_state.orbax-checkpoint-t
+mp-3/array_metadatas/process_0 (3004:array_metadata_store.py:
+198)
+ 35%|███████████████████████████▌
+                      | 9003/25500 [41:27<23:58:52,  5.23s/it
+]00:15:55.259 [I] [process=0] /jax/checkpoint/write/bytes_per
+_sec: 472.1 MiB/s (total bytes: 6.3 GiB) (time elapsed: 13 se
+conds) (per-host) (3004:base_pytree_checkpoint_handler.py:114
+)
+00:15:55.260 [I] [process=0] /jax/checkpoint/write/bytes_per_
+sec: 12.3 MiB/s (total bytes: 168.8 MiB) (time elapsed: 13 se
+conds) (per-host) (3004:base_pytree_checkpoint_handler.py:114
+)
+00:15:55.260 [I] [process=0][thread=async_save] 5 Handler Com
+mit operations completed.            (3004:async_checkpointer
+.py:87)
+00:15:55.260 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/9000.orb
+ax-checkpoint-tmp-0/assets.orbax-checkpoint-tmp-1 to /root/au
+todl-tmp/openpi_checkpoints/pi05_libero_sam_dim_expert_lora/s
+am_dim_expert_lora/9000.orbax-checkpoint-tmp-0/assets (3004:a
+tomicity.py:289)
+00:15:55.262 [I] Updated Metadata={'item_handlers': {'assets'
+: 'openpi.training.checkpoints.CallbackHandler', 'params': 'o
+rbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTre
+eCheckpointHandler', 'train_state': 'orbax.checkpoint._src.ha
+ndlers.pytree_checkpoint_handler.PyTreeCheckpointHandler'}, '
+metrics': {}, 'performance_metrics': {}, 'init_timestamp_nsec
+s': 1779812141548570184, 'commit_timestamp_nsecs': None, 'cus
+tom_metadata': {}} to /root/autodl-tmp/openpi_checkpoints/pi0
+5_libero_sam_dim_expert_lora/sam_dim_expert_lora/9000.orbax-c
+heckpoint-tmp-0/_CHECKPOINT_METADATA (3004:checkpoint.py:245)
+00:15:55.263 [I] [process=0][thread=async_save] Skipped cross
+-host ArrayMetadata validation because only one process is fo
+und: process_index=0. (3004:array_metadata_store.py:362)
+00:15:55.267 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/9000.orb
+ax-checkpoint-tmp-0/train_state.orbax-checkpoint-tmp-3 to /ro
+ot/autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_expert_l
+ora/sam_dim_expert_lora/9000.orbax-checkpoint-tmp-0/train_sta
+te (3004:atomicity.py:289)
+00:15:55.269 [I] [process=0][thread=async_save] Skipped cross
+-host ArrayMetadata validation because only one process is fo
+und: process_index=0. (3004:array_metadata_store.py:362)
+00:15:55.272 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/9000.orb
+ax-checkpoint-tmp-0/params.orbax-checkpoint-tmp-2 to /root/au
+todl-tmp/openpi_checkpoints/pi05_libero_sam_dim_expert_lora/s
+am_dim_expert_lora/9000.orbax-checkpoint-tmp-0/params (3004:a
+tomicity.py:289)
+00:15:55.273 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/9000.orb
+ax-checkpoint-tmp-0 to /root/autodl-tmp/openpi_checkpoints/pi
+05_libero_sam_dim_expert_lora/sam_dim_expert_lora/9000 (3004:
+atomicity.py:289)
+00:15:55.273 [I] [process=0][thread=async_save] Finished savi
+ng checkpoint (finalized tmp dir) to `/root/autodl-tmp/openpi
+_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_l
+ora/9000`. (3004:atomicity.py:573)
+00:15:55.273 [I] Finished asynchronous save (blocking + backg
+round) in 13.75 seconds to /root/autodl-tmp/openpi_checkpoint
+s/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/9000 (3
+004:async_checkpointer.py:412)
+00:15:55.273 [I] [process=0][thread=async_save] Background sa
+ve thread done.                      (3004:async_checkpointer
+.py:143)
+00:15:55.274 [I] [process=0][thread=save_finalize] Done with
+waiting for background save thread=async_save. (3004:async_ch
+eckpointer.py:266)
+00:15:55.274 [I] [process=0][thread=save_finalize] No errors
+found in background save thread=async_save. (3004:async_check
+pointer.py:276)
+00:15:55.276 [I] Deleted step 2000.
+                                     (3004:deleter.py:114)
+00:15:55.279 [I] Deleted step 4000.
+                                     (3004:deleter.py:114)
+00:15:55.281 [I] Deleted step 6000.
+                                     (3004:deleter.py:114)
+00:15:55.284 [I] Deleted step 8000.
+                                     (3004:deleter.py:114)
+00:15:55.286 [I] Deleted step 8499.
+                                     (3004:deleter.py:114)
+00:15:55.287 [I] [process=0][thread=save_finalize][step=9000]
+ CheckpointManager Save Finalize is syncing with other hosts.
+.. (3004:checkpoint_manager.py:2095)
+00:15:55.287 [I] [process=0][thread=save_finalize][step=9000]
+ CheckpointManager Save Finalize is done on all hosts. (3004:
+checkpoint_manager.py:2110)
+Step 9100: grad_norm=0.0031, loss=0.0027, param_norm=1832.562
+1
+
+Step 9200: grad_norm=0.0030, loss=0.0026, param_norm=1832.562
+5
+
+Step 9300: grad_norm=0.0030, loss=0.0027, param_norm=1832.562
+7
+
+Step 9400: grad_norm=0.0030, loss=0.0027, param_norm=1832.563
+1
+
+Step 9500: grad_norm=0.0031, loss=0.0028, param_norm=1832.563
+4
+
+Step 9600: grad_norm=0.0033, loss=0.0028, param_norm=1832.563
+7
+
+Step 9700: grad_norm=0.0030, loss=0.0025, param_norm=1832.564
+3
+
+Step 9800: grad_norm=0.0032, loss=0.0028, param_norm=1832.564
+8
+
+Step 9900: grad_norm=0.0031, loss=0.0027, param_norm=1832.565
+1
+
+Step 10000: grad_norm=0.0030, loss=0.0026, param_norm=1832.56
+54
+
+ 39%|█████████████████████████████▍
+                   | 10000/25500 [2:02:19<20:53:24,  4.85s/it
+]01:36:43.052 [I] [process=0][thread=MainThread][wait_until_f
+inished] No Save Finalize thread to wait for. Returning. (300
+4:checkpoint_manager.py:1987)
+01:36:43.053 [I] [process=0] Saving checkpoint at step 10000
+                                     (3004:checkpoint_manager
+.py:1408)
+01:36:43.054 [I] [process=0] Started async saving checkpoint
+to /root/autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_ex
+pert_lora/sam_dim_expert_lora/10000. (3004:async_checkpointer
+.py:439)
+01:36:43.068 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/10000.orbax-checkpoint-tmp-4 (3004:atomicity.py:144)
+01:36:43.073 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/10000.orbax-checkpoint-tmp-4/assets.orbax-checkpoint-tm
+p-5 (3004:atomicity.py:144)
+01:36:43.073 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/10000.orbax-checkpoint-tmp-4/params.orbax-checkpoint-tm
+p-6 (3004:atomicity.py:144)
+01:36:43.074 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/10000.orbax-checkpoint-tmp-4/train_state.orbax-checkpoi
+nt-tmp-7 (3004:atomicity.py:144)
+01:36:43.084 [I] Transferring arrays to host memory with opti
+ons: use_replica_parallel=True, enable_pinned_host_transfer=F
+alse (3004:replica_slices.py:341)
+01:36:47.179 [I] Transferring arrays to host memory with opti
+ons: use_replica_parallel=True, enable_pinned_host_transfer=F
+alse (3004:replica_slices.py:341)
+01:36:47.183 [I] Array name: 'params.PaliGemma.llm.layers.mlp
+.gating_einsum.value', global shape: (18, 2, 2048, 16384), wr
+ite shape: (18, 2, 2048, 16384), chosen chunk shape: (18, 2,
+2048, 8192) (3004:tensorstore_utils.py:408)
+01:36:47.209 [I] [process=0][thread=array_type_handler] Wrote
+ 61 array_metadata.ArrayMetadata to /root/autodl-tmp/openpi_c
+heckpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lor
+a/10000.orbax-checkpoint-tmp-4/params.orbax-checkpoint-tmp-6/
+array_metadatas/process_0 (3004:array_metadata_store.py:198)
+01:36:47.368 [I] [process=0] /jax/checkpoint/write/blocking_b
+ytes_per_sec: 1.5 GiB/s (total bytes: 6.3 GiB) (time elapsed:
+ 4 seconds) (per-host) (3004:base_pytree_checkpoint_handler.p
+y:114)
+01:36:47.372 [I] [process=0] /jax/checkpoint/write/blocking_b
+ytes_per_sec: 39.2 MiB/s (total bytes: 168.8 MiB) (time elaps
+ed: 4 seconds) (per-host) (3004:base_pytree_checkpoint_handle
+r.py:114)
+01:36:47.377 [I] [process=0][thread=async_save] Background sa
+ve thread started.                   (3004:async_checkpointer
+.py:77)
+01:36:47.377 [I] Finished blocking save in 4.32 seconds. Cont
+inuing to save asynchronously to /root/autodl-tmp/openpi_chec
+kpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/1
+0000. (3004:async_checkpointer.py:548)
+01:36:47.377 [I] Deleting Checkpoint[step=9000 | time=2026-05
+-26 16:15:45.977422+00:00]: (Reason: old checkpoint). (3004:c
+heckpoint_manager.py:1963)
+01:36:47.378 [I] [process=0][thread=MainThread][step=10000] S
+tarting CheckpointManager Save Finalize thread=save_finalize
+(3004:checkpoint_manager.py:1453)
+01:36:47.378 [I] [process=0][thread=array_type_handler] Wrote
+ 23 array_metadata.ArrayMetadata to /root/autodl-tmp/openpi_c
+heckpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lor
+a/10000.orbax-checkpoint-tmp-4/train_state.orbax-checkpoint-t
+mp-7/array_metadatas/process_0 (3004:array_metadata_store.py:
+198)
+01:36:47.379 [I] [process=0][thread=save_finalize] Waiting fo
+r background save thread=async_save. (3004:async_checkpointer
+.py:258)
+01:36:47.379 [I] {'step': 10000, 'event_type': 'save', 'direc
+tory': '/root/autodl-tmp/openpi_checkpoints/pi05_libero_sam_d
+im_expert_lora/sam_dim_expert_lora', 'reached_preemption': Fa
+lse, 'preemption_received_at': None, 'synchronous': False, 'w
+ait_for_prev_start_time': 1779817003.052139, 'wait_for_prev_d
+uration_secs': 0.0003199577331542969, 'checkpointer_blocking_
+start_time': 1779817003.0533054, 'checkpointer_blocking_durat
+ion_secs': 4.324432849884033, 'get_old_steps_start_time': 177
+9817007.377857, 'get_old_steps_duration_secs': 0.000237464904
+78515625, 'checkpoint_manager_blocking_start_time': 177981700
+3.0515711, 'checkpoint_manager_blocking_duration_secs': 4.327
+563762664795} (3004:standard_logger.py:34)
+ 39%|█████████████████████████████▍
+                   | 10003/25500 [2:02:28<22:26:42,  5.21s/it
+]01:36:57.535 [I] [process=0] /jax/checkpoint/write/bytes_per
+_sec: 447.6 MiB/s (total bytes: 6.3 GiB) (time elapsed: 14 se
+conds) (per-host) (3004:base_pytree_checkpoint_handler.py:114
+)
+01:36:57.535 [I] [process=0] /jax/checkpoint/write/bytes_per_
+sec: 11.7 MiB/s (total bytes: 168.8 MiB) (time elapsed: 14 se
+conds) (per-host) (3004:base_pytree_checkpoint_handler.py:114
+)
+01:36:57.535 [I] [process=0][thread=async_save] 5 Handler Com
+mit operations completed.            (3004:async_checkpointer
+.py:87)
+01:36:57.536 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/10000.or
+bax-checkpoint-tmp-4/assets.orbax-checkpoint-tmp-5 to /root/a
+utodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_expert_lora/
+sam_dim_expert_lora/10000.orbax-checkpoint-tmp-4/assets (3004
+:atomicity.py:289)
+01:36:57.542 [I] [process=0][thread=async_save] Skipped cross
+-host ArrayMetadata validation because only one process is fo
+und: process_index=0. (3004:array_metadata_store.py:362)
+01:36:57.546 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/10000.or
+bax-checkpoint-tmp-4/train_state.orbax-checkpoint-tmp-7 to /r
+oot/autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_expert_
+lora/sam_dim_expert_lora/10000.orbax-checkpoint-tmp-4/train_s
+tate (3004:atomicity.py:289)
+01:36:57.549 [I] [process=0][thread=async_save] Skipped cross
+-host ArrayMetadata validation because only one process is fo
+und: process_index=0. (3004:array_metadata_store.py:362)
+01:36:57.553 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/10000.or
+bax-checkpoint-tmp-4/params.orbax-checkpoint-tmp-6 to /root/a
+utodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_expert_lora/
+sam_dim_expert_lora/10000.orbax-checkpoint-tmp-4/params (3004
+:atomicity.py:289)
+01:36:57.553 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/10000.or
+bax-checkpoint-tmp-4 to /root/autodl-tmp/openpi_checkpoints/p
+i05_libero_sam_dim_expert_lora/sam_dim_expert_lora/10000 (300
+4:atomicity.py:289)
+01:36:57.555 [I] [process=0][thread=async_save] Finished savi
+ng checkpoint (finalized tmp dir) to `/root/autodl-tmp/openpi
+_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_l
+ora/10000`. (3004:atomicity.py:573)
+01:36:57.555 [I] Finished asynchronous save (blocking + backg
+round) in 14.50 seconds to /root/autodl-tmp/openpi_checkpoint
+s/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/10000 (
+3004:async_checkpointer.py:412)
+01:36:57.555 [I] [process=0][thread=async_save] Background sa
+ve thread done.                      (3004:async_checkpointer
+.py:143)
+01:36:57.555 [I] [process=0][thread=save_finalize] Done with
+waiting for background save thread=async_save. (3004:async_ch
+eckpointer.py:266)
+01:36:57.556 [I] [process=0][thread=save_finalize] No errors
+found in background save thread=async_save. (3004:async_check
+pointer.py:276)
+ 39%|█████████████████████████████▍
+                   | 10004/25500 [2:02:33<22:12:21,  5.16s/it
+]01:36:57.956 [I] Deleted step 9000.
+                                      (3004:deleter.py:114)
+01:36:57.956 [I] [process=0][thread=save_finalize][step=10000
+] CheckpointManager Save Finalize is syncing with other hosts
+... (3004:checkpoint_manager.py:2095)
+01:36:57.956 [I] [process=0][thread=save_finalize][step=10000
+] CheckpointManager Save Finalize is done on all hosts. (3004
+:checkpoint_manager.py:2110)
+Step 10100: grad_norm=0.0030, loss=0.0025, param_norm=1832.56
+54
+
+Step 10200: grad_norm=0.0032, loss=0.0028, param_norm=1832.56
+58
+
+Step 10300: grad_norm=0.0032, loss=0.0027, param_norm=1832.56
+62
+
+Step 10400: grad_norm=0.0031, loss=0.0028, param_norm=1832.56
+67
+
+Step 10500: grad_norm=0.0033, loss=0.0029, param_norm=1832.56
+70
+
+Step 10600: grad_norm=0.0032, loss=0.0028, param_norm=1832.56
+73
+
+Step 10700: grad_norm=0.0033, loss=0.0029, param_norm=1832.56
+76
+
+Step 10800: grad_norm=0.0031, loss=0.0027, param_norm=1832.56
+81
+
+Step 10900: grad_norm=0.0033, loss=0.0028, param_norm=1832.56
+84
+
+Step 11000: grad_norm=0.0028, loss=0.0024, param_norm=1832.56
+90
+
+ 43%|████████████████████████████████▎
+                   | 11000/25500 [3:23:19<19:33:34,  4.86s/it
+]02:57:43.697 [I] [process=0][thread=MainThread][wait_until_f
+inished] No Save Finalize thread to wait for. Returning. (300
+4:checkpoint_manager.py:1987)
+02:57:43.698 [I] [process=0] Saving checkpoint at step 11000
+                                     (3004:checkpoint_manager
+.py:1408)
+02:57:43.699 [I] [process=0] Started async saving checkpoint
+to /root/autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_ex
+pert_lora/sam_dim_expert_lora/11000. (3004:async_checkpointer
+.py:439)
+02:57:43.712 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/11000.orbax-checkpoint-tmp-8 (3004:atomicity.py:144)
+02:57:43.716 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/11000.orbax-checkpoint-tmp-8/assets.orbax-checkpoint-tm
+p-9 (3004:atomicity.py:144)
+02:57:43.718 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/11000.orbax-checkpoint-tmp-8/params.orbax-checkpoint-tm
+p-10 (3004:atomicity.py:144)
+02:57:43.718 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/11000.orbax-checkpoint-tmp-8/train_state.orbax-checkpoi
+nt-tmp-11 (3004:atomicity.py:144)
+02:57:43.729 [I] Transferring arrays to host memory with opti
+ons: use_replica_parallel=True, enable_pinned_host_transfer=F
+alse (3004:replica_slices.py:341)
+02:57:47.876 [I] Transferring arrays to host memory with opti
+ons: use_replica_parallel=True, enable_pinned_host_transfer=F
+alse (3004:replica_slices.py:341)
+02:57:47.879 [I] Array name: 'params.PaliGemma.llm.layers.mlp
+.gating_einsum.value', global shape: (18, 2, 2048, 16384), wr
+ite shape: (18, 2, 2048, 16384), chosen chunk shape: (18, 2,
+2048, 8192) (3004:tensorstore_utils.py:408)
+02:57:47.899 [I] [process=0][thread=array_type_handler] Wrote
+ 61 array_metadata.ArrayMetadata to /root/autodl-tmp/openpi_c
+heckpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lor
+a/11000.orbax-checkpoint-tmp-8/params.orbax-checkpoint-tmp-10
+/array_metadatas/process_0 (3004:array_metadata_store.py:198)
+02:57:48.025 [I] [process=0] /jax/checkpoint/write/blocking_b
+ytes_per_sec: 1.5 GiB/s (total bytes: 6.3 GiB) (time elapsed:
+ 4 seconds) (per-host) (3004:base_pytree_checkpoint_handler.p
+y:114)
+02:57:48.031 [I] [process=0] /jax/checkpoint/write/blocking_b
+ytes_per_sec: 39.1 MiB/s (total bytes: 168.8 MiB) (time elaps
+ed: 4 seconds) (per-host) (3004:base_pytree_checkpoint_handle
+r.py:114)
+02:57:48.036 [I] [process=0][thread=async_save] Background sa
+ve thread started.                   (3004:async_checkpointer
+.py:77)
+02:57:48.036 [I] Finished blocking save in 4.34 seconds. Cont
+inuing to save asynchronously to /root/autodl-tmp/openpi_chec
+kpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/1
+1000. (3004:async_checkpointer.py:548)
+02:57:48.036 [I] Deleting Checkpoint[step=10000 | time=2026-0
+5-26 17:36:47.377819+00:00]: (Reason: old checkpoint). (3004:
+checkpoint_manager.py:1963)
+02:57:48.037 [I] [process=0][thread=MainThread][step=11000] S
+tarting CheckpointManager Save Finalize thread=save_finalize
+(3004:checkpoint_manager.py:1453)
+02:57:48.037 [I] [process=0][thread=save_finalize] Waiting fo
+r background save thread=async_save. (3004:async_checkpointer
+.py:258)
+02:57:48.037 [I] {'step': 11000, 'event_type': 'save', 'direc
+tory': '/root/autodl-tmp/openpi_checkpoints/pi05_libero_sam_d
+im_expert_lora/sam_dim_expert_lora', 'reached_preemption': Fa
+lse, 'preemption_received_at': None, 'synchronous': False, 'w
+ait_for_prev_start_time': 1779821863.6978097, 'wait_for_prev_
+duration_secs': 0.0002815723419189453, 'checkpointer_blocking
+_start_time': 1779821863.6987686, 'checkpointer_blocking_dura
+tion_secs': 4.338117361068726, 'get_old_steps_start_time': 17
+79821868.0369172, 'get_old_steps_duration_secs': 0.0001313686
+3708496094, 'checkpoint_manager_blocking_start_time': 1779821
+863.6973014, 'checkpoint_manager_blocking_duration_secs': 4.3
+40398788452148} (3004:standard_logger.py:34)
+ 43%|████████████████████████████████▎
+                   | 11001/25500 [3:23:24<30:21:05,  7.54s/it
+]02:57:48.038 [I] [process=0][thread=array_type_handler] Wrot
+e 23 array_metadata.ArrayMetadata to /root/autodl-tmp/openpi_
+checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lo
+ra/11000.orbax-checkpoint-tmp-8/train_state.orbax-checkpoint-
+tmp-11/array_metadatas/process_0 (3004:array_metadata_store.p
+y:198)
+ 43%|████████████████████████████████▎
+                   | 11003/25500 [3:23:29<21:01:18,  5.22s/it
+]02:57:56.418 [I] [process=0] /jax/checkpoint/write/bytes_per
+_sec: 509.7 MiB/s (total bytes: 6.3 GiB) (time elapsed: 12 se
+conds) (per-host) (3004:base_pytree_checkpoint_handler.py:114
+)
+02:57:56.419 [I] [process=0] /jax/checkpoint/write/bytes_per_
+sec: 13.3 MiB/s (total bytes: 168.8 MiB) (time elapsed: 12 se
+conds) (per-host) (3004:base_pytree_checkpoint_handler.py:114
+)
+02:57:56.419 [I] [process=0][thread=async_save] 5 Handler Com
+mit operations completed.            (3004:async_checkpointer
+.py:87)
+02:57:56.420 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/11000.or
+bax-checkpoint-tmp-8/assets.orbax-checkpoint-tmp-9 to /root/a
+utodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_expert_lora/
+sam_dim_expert_lora/11000.orbax-checkpoint-tmp-8/assets (3004
+:atomicity.py:289)
+02:57:56.424 [I] [process=0][thread=async_save] Skipped cross
+-host ArrayMetadata validation because only one process is fo
+und: process_index=0. (3004:array_metadata_store.py:362)
+02:57:56.428 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/11000.or
+bax-checkpoint-tmp-8/train_state.orbax-checkpoint-tmp-11 to /
+root/autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_expert
+_lora/sam_dim_expert_lora/11000.orbax-checkpoint-tmp-8/train_
+state (3004:atomicity.py:289)
+02:57:56.431 [I] [process=0][thread=async_save] Skipped cross
+-host ArrayMetadata validation because only one process is fo
+und: process_index=0. (3004:array_metadata_store.py:362)
+02:57:56.435 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/11000.or
+bax-checkpoint-tmp-8/params.orbax-checkpoint-tmp-10 to /root/
+autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_expert_lora
+/sam_dim_expert_lora/11000.orbax-checkpoint-tmp-8/params (300
+4:atomicity.py:289)
+02:57:56.435 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/11000.or
+bax-checkpoint-tmp-8 to /root/autodl-tmp/openpi_checkpoints/p
+i05_libero_sam_dim_expert_lora/sam_dim_expert_lora/11000 (300
+4:atomicity.py:289)
+02:57:56.436 [I] [process=0][thread=async_save] Finished savi
+ng checkpoint (finalized tmp dir) to `/root/autodl-tmp/openpi
+_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_l
+ora/11000`. (3004:atomicity.py:573)
+02:57:56.436 [I] Finished asynchronous save (blocking + backg
+round) in 12.74 seconds to /root/autodl-tmp/openpi_checkpoint
+s/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/11000 (
+3004:async_checkpointer.py:412)
+02:57:56.436 [I] [process=0][thread=async_save] Background sa
+ve thread done.                      (3004:async_checkpointer
+.py:143)
+02:57:56.437 [I] [process=0][thread=save_finalize] Done with
+waiting for background save thread=async_save. (3004:async_ch
+eckpointer.py:266)
+02:57:56.437 [I] [process=0][thread=save_finalize] No errors
+found in background save thread=async_save. (3004:async_check
+pointer.py:276)
+02:57:56.842 [I] Deleted step 10000.
+                                     (3004:deleter.py:114)
+02:57:56.842 [I] [process=0][thread=save_finalize][step=11000
+] CheckpointManager Save Finalize is syncing with other hosts
+... (3004:checkpoint_manager.py:2095)
+02:57:56.842 [I] [process=0][thread=save_finalize][step=11000
+] CheckpointManager Save Finalize is done on all hosts. (3004
+:checkpoint_manager.py:2110)
+Step 11100: grad_norm=0.0033, loss=0.0029, param_norm=1832.56
+93
+
+Step 11200: grad_norm=0.0033, loss=0.0028, param_norm=1832.56
+97
+
+Step 11300: grad_norm=0.0028, loss=0.0024, param_norm=1832.56
+99
+
+Step 11400: grad_norm=0.0031, loss=0.0028, param_norm=1832.57
+03
+
+Step 11500: grad_norm=0.0031, loss=0.0026, param_norm=1832.57
+09
+
+Step 11600: grad_norm=0.0033, loss=0.0029, param_norm=1832.57
+12
+
+Step 11700: grad_norm=0.0034, loss=0.0030, param_norm=1832.57
+15
+
+Step 11800: grad_norm=0.0032, loss=0.0028, param_norm=1832.57
+21
+
+Step 11900: grad_norm=0.0035, loss=0.0030, param_norm=1832.57
+25
+
+Step 12000: grad_norm=0.0034, loss=0.0029, param_norm=1832.57
+28
+
+ 47%|███████████████████████████████████▎
+                   | 12000/25500 [4:44:21<18:12:43,  4.86s/it
+]04:18:45.240 [I] [process=0][thread=MainThread][wait_until_f
+inished] No Save Finalize thread to wait for. Returning. (300
+4:checkpoint_manager.py:1987)
+04:18:45.241 [I] [process=0] Saving checkpoint at step 12000
+                                     (3004:checkpoint_manager
+.py:1408)
+04:18:45.241 [I] [process=0] Started async saving checkpoint
+to /root/autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_ex
+pert_lora/sam_dim_expert_lora/12000. (3004:async_checkpointer
+.py:439)
+04:18:45.250 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/12000.orbax-checkpoint-tmp-12 (3004:atomicity.py:144)
+04:18:45.258 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/12000.orbax-checkpoint-tmp-12/assets.orbax-checkpoint-t
+mp-13 (3004:atomicity.py:144)
+04:18:45.258 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/12000.orbax-checkpoint-tmp-12/params.orbax-checkpoint-t
+mp-14 (3004:atomicity.py:144)
+04:18:45.258 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/12000.orbax-checkpoint-tmp-12/train_state.orbax-checkpo
+int-tmp-15 (3004:atomicity.py:144)
+04:18:45.271 [I] Transferring arrays to host memory with opti
+ons: use_replica_parallel=True, enable_pinned_host_transfer=F
+alse (3004:replica_slices.py:341)
+04:18:49.435 [I] Transferring arrays to host memory with opti
+ons: use_replica_parallel=True, enable_pinned_host_transfer=F
+alse (3004:replica_slices.py:341)
+04:18:49.441 [I] Array name: 'params.PaliGemma.llm.layers.mlp
+.gating_einsum.value', global shape: (18, 2, 2048, 16384), wr
+ite shape: (18, 2, 2048, 16384), chosen chunk shape: (18, 2,
+2048, 8192) (3004:tensorstore_utils.py:408)
+04:18:49.459 [I] [process=0][thread=array_type_handler] Wrote
+ 61 array_metadata.ArrayMetadata to /root/autodl-tmp/openpi_c
+heckpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lor
+a/12000.orbax-checkpoint-tmp-12/params.orbax-checkpoint-tmp-1
+4/array_metadatas/process_0 (3004:array_metadata_store.py:198
+)
+04:18:49.627 [I] [process=0] /jax/checkpoint/write/blocking_b
+ytes_per_sec: 1.4 GiB/s (total bytes: 6.3 GiB) (time elapsed:
+ 4 seconds) (per-host) (3004:base_pytree_checkpoint_handler.p
+y:114)
+04:18:49.632 [I] [process=0] /jax/checkpoint/write/blocking_b
+ytes_per_sec: 38.5 MiB/s (total bytes: 168.8 MiB) (time elaps
+ed: 4 seconds) (per-host) (3004:base_pytree_checkpoint_handle
+r.py:114)
+04:18:49.661 [I] [process=0][thread=async_save] Background sa
+ve thread started.                   (3004:async_checkpointer
+.py:77)
+04:18:49.662 [I] Finished blocking save in 4.42 seconds. Cont
+inuing to save asynchronously to /root/autodl-tmp/openpi_chec
+kpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/1
+2000. (3004:async_checkpointer.py:548)
+04:18:49.662 [I] Deleting Checkpoint[step=11000 | time=2026-0
+5-26 18:57:48.036900+00:00]: (Reason: old checkpoint). (3004:
+checkpoint_manager.py:1963)
+04:18:49.662 [I] [process=0][thread=array_type_handler] Wrote
+ 23 array_metadata.ArrayMetadata to /root/autodl-tmp/openpi_c
+heckpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lor
+a/12000.orbax-checkpoint-tmp-12/train_state.orbax-checkpoint-
+tmp-15/array_metadatas/process_0 (3004:array_metadata_store.p
+y:198)
+04:18:49.662 [I] [process=0][thread=MainThread][step=12000] S
+tarting CheckpointManager Save Finalize thread=save_finalize
+(3004:checkpoint_manager.py:1453)
+04:18:49.663 [I] [process=0][thread=save_finalize] Waiting fo
+r background save thread=async_save. (3004:async_checkpointer
+.py:258)
+04:18:49.663 [I] {'step': 12000, 'event_type': 'save', 'direc
+tory': '/root/autodl-tmp/openpi_checkpoints/pi05_libero_sam_d
+im_expert_lora/sam_dim_expert_lora', 'reached_preemption': Fa
+lse, 'preemption_received_at': None, 'synchronous': False, 'w
+ait_for_prev_start_time': 1779826725.2401133, 'wait_for_prev_
+duration_secs': 0.00028014183044433594, 'checkpointer_blockin
+g_start_time': 1779826725.241091, 'checkpointer_blocking_dura
+tion_secs': 4.421083688735962, 'get_old_steps_start_time': 17
+79826729.6622024, 'get_old_steps_duration_secs': 0.0003163814
+5446777344, 'checkpoint_manager_blocking_start_time': 1779826
+725.2396262, 'checkpoint_manager_blocking_duration_secs': 4.4
+2365574836731} (3004:standard_logger.py:34)
+ 47%|███████████████████████████████████▎
+                   | 12004/25500 [4:44:35<19:11:12,  5.12s/it
+]04:19:00.260 [I] [process=0] /jax/checkpoint/write/bytes_per
+_sec: 431.6 MiB/s (total bytes: 6.3 GiB) (time elapsed: 15 se
+conds) (per-host) (3004:base_pytree_checkpoint_handler.py:114
+)
+04:19:00.260 [I] [process=0] /jax/checkpoint/write/bytes_per_
+sec: 11.2 MiB/s (total bytes: 168.8 MiB) (time elapsed: 15 se
+conds) (per-host) (3004:base_pytree_checkpoint_handler.py:114
+)
+04:19:00.260 [I] [process=0][thread=async_save] 5 Handler Com
+mit operations completed.            (3004:async_checkpointer
+.py:87)
+04:19:00.261 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/12000.or
+bax-checkpoint-tmp-12/assets.orbax-checkpoint-tmp-13 to /root
+/autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_expert_lor
+a/sam_dim_expert_lora/12000.orbax-checkpoint-tmp-12/assets (3
+004:atomicity.py:289)
+04:19:00.263 [I] [process=0][thread=async_save] Skipped cross
+-host ArrayMetadata validation because only one process is fo
+und: process_index=0. (3004:array_metadata_store.py:362)
+04:19:00.267 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/12000.or
+bax-checkpoint-tmp-12/train_state.orbax-checkpoint-tmp-15 to
+/root/autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_exper
+t_lora/sam_dim_expert_lora/12000.orbax-checkpoint-tmp-12/trai
+n_state (3004:atomicity.py:289)
+04:19:00.269 [I] [process=0][thread=async_save] Skipped cross
+-host ArrayMetadata validation because only one process is fo
+und: process_index=0. (3004:array_metadata_store.py:362)
+04:19:00.272 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/12000.or
+bax-checkpoint-tmp-12/params.orbax-checkpoint-tmp-14 to /root
+/autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_expert_lor
+a/sam_dim_expert_lora/12000.orbax-checkpoint-tmp-12/params (3
+004:atomicity.py:289)
+04:19:00.272 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/12000.or
+bax-checkpoint-tmp-12 to /root/autodl-tmp/openpi_checkpoints/
+pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/12000 (30
+04:atomicity.py:289)
+04:19:00.273 [I] [process=0][thread=async_save] Finished savi
+ng checkpoint (finalized tmp dir) to `/root/autodl-tmp/openpi
+_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_l
+ora/12000`. (3004:atomicity.py:573)
+04:19:00.273 [I] Finished asynchronous save (blocking + backg
+round) in 15.03 seconds to /root/autodl-tmp/openpi_checkpoint
+s/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/12000 (
+3004:async_checkpointer.py:412)
+04:19:00.273 [I] [process=0][thread=async_save] Background sa
+ve thread done.                      (3004:async_checkpointer
+.py:143)
+04:19:00.273 [I] [process=0][thread=save_finalize] Done with
+waiting for background save thread=async_save. (3004:async_ch
+eckpointer.py:266)
+04:19:00.273 [I] [process=0][thread=save_finalize] No errors
+found in background save thread=async_save. (3004:async_check
+pointer.py:276)
+04:19:00.700 [I] Deleted step 11000.
+                                     (3004:deleter.py:114)
+04:19:00.701 [I] [process=0][thread=save_finalize][step=12000
+] CheckpointManager Save Finalize is syncing with other hosts
+... (3004:checkpoint_manager.py:2095)
+04:19:00.701 [I] [process=0][thread=save_finalize][step=12000
+] CheckpointManager Save Finalize is done on all hosts. (3004
+:checkpoint_manager.py:2110)
+Step 12100: grad_norm=0.0031, loss=0.0027, param_norm=1832.57
+29
+
+Step 12200: grad_norm=0.0030, loss=0.0026, param_norm=1832.57
+31
+
+Step 12300: grad_norm=0.0033, loss=0.0029, param_norm=1832.57
+32
+
+Step 12400: grad_norm=0.0033, loss=0.0029, param_norm=1832.57
+36
+
+Step 12500: grad_norm=0.0032, loss=0.0026, param_norm=1832.57
+37
+
+Step 12600: grad_norm=0.0031, loss=0.0025, param_norm=1832.57
+37
+
+Step 12700: grad_norm=0.0034, loss=0.0027, param_norm=1832.57
+43
+
+Step 12800: grad_norm=0.0033, loss=0.0028, param_norm=1832.57
+45
+
+Step 12900: grad_norm=0.0033, loss=0.0027, param_norm=1832.57
+48
+
+Step 13000: grad_norm=0.0033, loss=0.0029, param_norm=1832.57
+51
+
+ 51%|██████████████████████████████████████▏
+                   | 13000/25500 [6:05:23<16:51:34,  4.86s/it
+]05:39:47.853 [I] [process=0][thread=MainThread][wait_until_f
+inished] No Save Finalize thread to wait for. Returning. (300
+4:checkpoint_manager.py:1987)
+05:39:47.854 [I] [process=0] Saving checkpoint at step 13000
+                                     (3004:checkpoint_manager
+.py:1408)
+05:39:47.855 [I] [process=0] Started async saving checkpoint
+to /root/autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_ex
+pert_lora/sam_dim_expert_lora/13000. (3004:async_checkpointer
+.py:439)
+05:39:47.865 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/13000.orbax-checkpoint-tmp-16 (3004:atomicity.py:144)
+05:39:47.870 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/13000.orbax-checkpoint-tmp-16/assets.orbax-checkpoint-t
+mp-17 (3004:atomicity.py:144)
+05:39:47.870 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/13000.orbax-checkpoint-tmp-16/params.orbax-checkpoint-t
+mp-18 (3004:atomicity.py:144)
+05:39:47.870 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/13000.orbax-checkpoint-tmp-16/train_state.orbax-checkpo
+int-tmp-19 (3004:atomicity.py:144)
+05:39:47.878 [I] Transferring arrays to host memory with opti
+ons: use_replica_parallel=True, enable_pinned_host_transfer=F
+alse (3004:replica_slices.py:341)
+05:39:52.660 [I] Transferring arrays to host memory with opti
+ons: use_replica_parallel=True, enable_pinned_host_transfer=F
+alse (3004:replica_slices.py:341)
+05:39:52.665 [I] Array name: 'params.PaliGemma.llm.layers.mlp
+.gating_einsum.value', global shape: (18, 2, 2048, 16384), wr
+ite shape: (18, 2, 2048, 16384), chosen chunk shape: (18, 2,
+2048, 8192) (3004:tensorstore_utils.py:408)
+05:39:52.684 [I] [process=0][thread=array_type_handler] Wrote
+ 61 array_metadata.ArrayMetadata to /root/autodl-tmp/openpi_c
+heckpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lor
+a/13000.orbax-checkpoint-tmp-16/params.orbax-checkpoint-tmp-1
+8/array_metadatas/process_0 (3004:array_metadata_store.py:198
+)
+05:39:52.789 [I] [process=0] /jax/checkpoint/write/blocking_b
+ytes_per_sec: 1.3 GiB/s (total bytes: 6.3 GiB) (time elapsed:
+ 4 seconds) (per-host) (3004:base_pytree_checkpoint_handler.p
+y:114)
+05:39:52.791 [I] [process=0] /jax/checkpoint/write/blocking_b
+ytes_per_sec: 34.3 MiB/s (total bytes: 168.8 MiB) (time elaps
+ed: 4 seconds) (per-host) (3004:base_pytree_checkpoint_handle
+r.py:114)
+05:39:52.800 [I] [process=0][thread=async_save] Background sa
+ve thread started.                   (3004:async_checkpointer
+.py:77)
+05:39:52.800 [I] Finished blocking save in 4.95 seconds. Cont
+inuing to save asynchronously to /root/autodl-tmp/openpi_chec
+kpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/1
+3000. (3004:async_checkpointer.py:548)
+05:39:52.801 [I] [process=0][thread=array_type_handler] Wrote
+ 23 array_metadata.ArrayMetadata to /root/autodl-tmp/openpi_c
+heckpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lor
+a/13000.orbax-checkpoint-tmp-16/train_state.orbax-checkpoint-
+tmp-19/array_metadatas/process_0 (3004:array_metadata_store.p
+y:198)
+05:39:52.802 [I] Deleting Checkpoint[step=12000 | time=2026-0
+5-26 20:18:49.662187+00:00]: (Reason: old checkpoint). (3004:
+checkpoint_manager.py:1963)
+05:39:52.802 [I] [process=0][thread=MainThread][step=13000] S
+tarting CheckpointManager Save Finalize thread=save_finalize
+(3004:checkpoint_manager.py:1453)
+05:39:52.803 [I] [process=0][thread=save_finalize] Waiting fo
+r background save thread=async_save. (3004:async_checkpointer
+.py:258)
+05:39:52.803 [I] {'step': 13000, 'event_type': 'save', 'direc
+tory': '/root/autodl-tmp/openpi_checkpoints/pi05_libero_sam_d
+im_expert_lora/sam_dim_expert_lora', 'reached_preemption': Fa
+lse, 'preemption_received_at': None, 'synchronous': False, 'w
+ait_for_prev_start_time': 1779831587.8538642, 'wait_for_prev_
+duration_secs': 0.0002193450927734375, 'checkpointer_blocking
+_start_time': 1779831587.854598, 'checkpointer_blocking_durat
+ion_secs': 4.94742226600647, 'get_old_steps_start_time': 1779
+831592.8020494, 'get_old_steps_duration_secs': 0.000818014144
+8974609, 'checkpoint_manager_blocking_start_time': 1779831587
+.8534868, 'checkpoint_manager_blocking_duration_secs': 4.9499
+88842010498} (3004:standard_logger.py:34)
+ 51%|██████████████████████████████████████▏
+                   | 13003/25500 [6:05:34<18:24:18,  5.30s/it
+]05:40:01.216 [I] [process=0] /jax/checkpoint/write/bytes_per
+_sec: 485.2 MiB/s (total bytes: 6.3 GiB) (time elapsed: 13 se
+conds) (per-host) (3004:base_pytree_checkpoint_handler.py:114
+)
+05:40:01.216 [I] [process=0] /jax/checkpoint/write/bytes_per_
+sec: 12.6 MiB/s (total bytes: 168.8 MiB) (time elapsed: 13 se
+conds) (per-host) (3004:base_pytree_checkpoint_handler.py:114
+)
+05:40:01.217 [I] [process=0][thread=async_save] 5 Handler Com
+mit operations completed.            (3004:async_checkpointer
+.py:87)
+05:40:01.218 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/13000.or
+bax-checkpoint-tmp-16/assets.orbax-checkpoint-tmp-17 to /root
+/autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_expert_lor
+a/sam_dim_expert_lora/13000.orbax-checkpoint-tmp-16/assets (3
+004:atomicity.py:289)
+05:40:01.222 [I] [process=0][thread=async_save] Skipped cross
+-host ArrayMetadata validation because only one process is fo
+und: process_index=0. (3004:array_metadata_store.py:362)
+05:40:01.226 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/13000.or
+bax-checkpoint-tmp-16/train_state.orbax-checkpoint-tmp-19 to
+/root/autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_exper
+t_lora/sam_dim_expert_lora/13000.orbax-checkpoint-tmp-16/trai
+n_state (3004:atomicity.py:289)
+05:40:01.230 [I] [process=0][thread=async_save] Skipped cross
+-host ArrayMetadata validation because only one process is fo
+und: process_index=0. (3004:array_metadata_store.py:362)
+05:40:01.233 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/13000.or
+bax-checkpoint-tmp-16/params.orbax-checkpoint-tmp-18 to /root
+/autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_expert_lor
+a/sam_dim_expert_lora/13000.orbax-checkpoint-tmp-16/params (3
+004:atomicity.py:289)
+05:40:01.233 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/13000.or
+bax-checkpoint-tmp-16 to /root/autodl-tmp/openpi_checkpoints/
+pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/13000 (30
+04:atomicity.py:289)
+05:40:01.235 [I] [process=0][thread=async_save] Finished savi
+ng checkpoint (finalized tmp dir) to `/root/autodl-tmp/openpi
+_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_l
+ora/13000`. (3004:atomicity.py:573)
+05:40:01.235 [I] Finished asynchronous save (blocking + backg
+round) in 13.38 seconds to /root/autodl-tmp/openpi_checkpoint
+s/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/13000 (
+3004:async_checkpointer.py:412)
+05:40:01.235 [I] [process=0][thread=async_save] Background sa
+ve thread done.                      (3004:async_checkpointer
+.py:143)
+05:40:01.235 [I] [process=0][thread=save_finalize] Done with
+waiting for background save thread=async_save. (3004:async_ch
+eckpointer.py:266)
+05:40:01.235 [I] [process=0][thread=save_finalize] No errors
+found in background save thread=async_save. (3004:async_check
+pointer.py:276)
+05:40:01.637 [I] Deleted step 12000.
+                                     (3004:deleter.py:114)
+05:40:01.637 [I] [process=0][thread=save_finalize][step=13000
+] CheckpointManager Save Finalize is syncing with other hosts
+... (3004:checkpoint_manager.py:2095)
+05:40:01.637 [I] [process=0][thread=save_finalize][step=13000
+] CheckpointManager Save Finalize is done on all hosts. (3004
+:checkpoint_manager.py:2110)
+Step 13100: grad_norm=0.0034, loss=0.0029, param_norm=1832.57
+53
+
+Step 13200: grad_norm=0.0036, loss=0.0030, param_norm=1832.57
+53
+
+Step 13300: grad_norm=0.0033, loss=0.0028, param_norm=1832.57
+56
+
+Step 13400: grad_norm=0.0035, loss=0.0027, param_norm=1832.57
+56
+
+Step 13500: grad_norm=0.0033, loss=0.0029, param_norm=1832.57
+62
+
+Step 13600: grad_norm=0.0037, loss=0.0031, param_norm=1832.57
+65
+
+Step 13700: grad_norm=0.0033, loss=0.0027, param_norm=1832.57
+65
+
+Step 13800: grad_norm=0.0036, loss=0.0029, param_norm=1832.57
+68
+
+Step 13900: grad_norm=0.0036, loss=0.0029, param_norm=1832.57
+68
+
+Step 14000: grad_norm=0.0032, loss=0.0026, param_norm=1832.57
+71
+
+ 55%|█████████████████████████████████████████▏
+                   | 14000/25500 [7:26:25<15:29:32,  4.85s/it
+]07:00:48.958 [I] [process=0][thread=MainThread][wait_until_f
+inished] No Save Finalize thread to wait for. Returning. (300
+4:checkpoint_manager.py:1987)
+07:00:48.959 [I] [process=0] Saving checkpoint at step 14000
+                                     (3004:checkpoint_manager
+.py:1408)
+07:00:48.959 [I] [process=0] Started async saving checkpoint
+to /root/autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_ex
+pert_lora/sam_dim_expert_lora/14000. (3004:async_checkpointer
+.py:439)
+07:00:48.972 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/14000.orbax-checkpoint-tmp-20 (3004:atomicity.py:144)
+07:00:48.977 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/14000.orbax-checkpoint-tmp-20/assets.orbax-checkpoint-t
+mp-21 (3004:atomicity.py:144)
+07:00:48.977 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/14000.orbax-checkpoint-tmp-20/params.orbax-checkpoint-t
+mp-22 (3004:atomicity.py:144)
+07:00:48.977 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/14000.orbax-checkpoint-tmp-20/train_state.orbax-checkpo
+int-tmp-23 (3004:atomicity.py:144)
+07:00:48.988 [I] Transferring arrays to host memory with opti
+ons: use_replica_parallel=True, enable_pinned_host_transfer=F
+alse (3004:replica_slices.py:341)
+07:00:53.122 [I] Transferring arrays to host memory with opti
+ons: use_replica_parallel=True, enable_pinned_host_transfer=F
+alse (3004:replica_slices.py:341)
+07:00:53.128 [I] Array name: 'params.PaliGemma.llm.layers.mlp
+.gating_einsum.value', global shape: (18, 2, 2048, 16384), wr
+ite shape: (18, 2, 2048, 16384), chosen chunk shape: (18, 2,
+2048, 8192) (3004:tensorstore_utils.py:408)
+07:00:53.147 [I] [process=0][thread=array_type_handler] Wrote
+ 61 array_metadata.ArrayMetadata to /root/autodl-tmp/openpi_c
+heckpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lor
+a/14000.orbax-checkpoint-tmp-20/params.orbax-checkpoint-tmp-2
+2/array_metadatas/process_0 (3004:array_metadata_store.py:198
+)
+07:00:53.413 [I] [process=0] /jax/checkpoint/write/blocking_b
+ytes_per_sec: 1.4 GiB/s (total bytes: 6.3 GiB) (time elapsed:
+ 4 seconds) (per-host) (3004:base_pytree_checkpoint_handler.p
+y:114)
+07:00:53.418 [I] [process=0] /jax/checkpoint/write/blocking_b
+ytes_per_sec: 38.0 MiB/s (total bytes: 168.8 MiB) (time elaps
+ed: 4 seconds) (per-host) (3004:base_pytree_checkpoint_handle
+r.py:114)
+07:00:53.427 [I] [process=0][thread=async_save] Background sa
+ve thread started.                   (3004:async_checkpointer
+.py:77)
+07:00:53.428 [I] Finished blocking save in 4.47 seconds. Cont
+inuing to save asynchronously to /root/autodl-tmp/openpi_chec
+kpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/1
+4000. (3004:async_checkpointer.py:548)
+07:00:53.430 [I] Deleting Checkpoint[step=13000 | time=2026-0
+5-26 21:39:52.802033+00:00]: (Reason: old checkpoint). (3004:
+checkpoint_manager.py:1963)
+07:00:53.431 [I] [process=0][thread=MainThread][step=14000] S
+tarting CheckpointManager Save Finalize thread=save_finalize
+(3004:checkpoint_manager.py:1453)
+07:00:53.432 [I] [process=0][thread=save_finalize] Waiting fo
+r background save thread=async_save. (3004:async_checkpointer
+.py:258)
+07:00:53.432 [I] {'step': 14000, 'event_type': 'save', 'direc
+tory': '/root/autodl-tmp/openpi_checkpoints/pi05_libero_sam_d
+im_expert_lora/sam_dim_expert_lora', 'reached_preemption': Fa
+lse, 'preemption_received_at': None, 'synchronous': False, 'w
+ait_for_prev_start_time': 1779836448.9582078, 'wait_for_prev_
+duration_secs': 0.00027489662170410156, 'checkpointer_blockin
+g_start_time': 1779836448.9591196, 'checkpointer_blocking_dur
+ation_secs': 4.471114873886108, 'get_old_steps_start_time': 1
+779836453.4302666, 'get_old_steps_duration_secs': 0.001003980
+6365966797, 'checkpoint_manager_blocking_start_time': 1779836
+448.9577425, 'checkpoint_manager_blocking_duration_secs': 4.4
+75068807601929} (3004:standard_logger.py:34)
+ 55%|█████████████████████████████████████████▏
+                   | 14001/25500 [7:26:29<24:10:30,  7.57s/it
+]07:00:53.437 [I] [process=0][thread=array_type_handler] Wrot
+e 23 array_metadata.ArrayMetadata to /root/autodl-tmp/openpi_
+checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lo
+ra/14000.orbax-checkpoint-tmp-20/train_state.orbax-checkpoint
+-tmp-23/array_metadatas/process_0 (3004:array_metadata_store.
+py:198)
+ 55%|█████████████████████████████████████████▏
+                   | 14003/25500 [7:26:34<16:43:20,  5.24s/it
+]07:01:01.555 [I] [process=0] /jax/checkpoint/write/bytes_per
+_sec: 514.6 MiB/s (total bytes: 6.3 GiB) (time elapsed: 12 se
+conds) (per-host) (3004:base_pytree_checkpoint_handler.py:114
+)
+07:01:01.555 [I] [process=0] /jax/checkpoint/write/bytes_per_
+sec: 13.4 MiB/s (total bytes: 168.8 MiB) (time elapsed: 12 se
+conds) (per-host) (3004:base_pytree_checkpoint_handler.py:114
+)
+07:01:01.555 [I] [process=0][thread=async_save] 5 Handler Com
+mit operations completed.            (3004:async_checkpointer
+.py:87)
+07:01:01.556 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/14000.or
+bax-checkpoint-tmp-20/assets.orbax-checkpoint-tmp-21 to /root
+/autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_expert_lor
+a/sam_dim_expert_lora/14000.orbax-checkpoint-tmp-20/assets (3
+004:atomicity.py:289)
+07:01:01.559 [I] [process=0][thread=async_save] Skipped cross
+-host ArrayMetadata validation because only one process is fo
+und: process_index=0. (3004:array_metadata_store.py:362)
+07:01:01.563 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/14000.or
+bax-checkpoint-tmp-20/train_state.orbax-checkpoint-tmp-23 to
+/root/autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_exper
+t_lora/sam_dim_expert_lora/14000.orbax-checkpoint-tmp-20/trai
+n_state (3004:atomicity.py:289)
+07:01:01.565 [I] [process=0][thread=async_save] Skipped cross
+-host ArrayMetadata validation because only one process is fo
+und: process_index=0. (3004:array_metadata_store.py:362)
+07:01:01.568 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/14000.or
+bax-checkpoint-tmp-20/params.orbax-checkpoint-tmp-22 to /root
+/autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_expert_lor
+a/sam_dim_expert_lora/14000.orbax-checkpoint-tmp-20/params (3
+004:atomicity.py:289)
+07:01:01.568 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/14000.or
+bax-checkpoint-tmp-20 to /root/autodl-tmp/openpi_checkpoints/
+pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/14000 (30
+04:atomicity.py:289)
+07:01:01.569 [I] [process=0][thread=async_save] Finished savi
+ng checkpoint (finalized tmp dir) to `/root/autodl-tmp/openpi
+_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_l
+ora/14000`. (3004:atomicity.py:573)
+07:01:01.569 [I] Finished asynchronous save (blocking + backg
+round) in 12.61 seconds to /root/autodl-tmp/openpi_checkpoint
+s/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/14000 (
+3004:async_checkpointer.py:412)
+07:01:01.569 [I] [process=0][thread=async_save] Background sa
+ve thread done.                      (3004:async_checkpointer
+.py:143)
+07:01:01.570 [I] [process=0][thread=save_finalize] Done with
+waiting for background save thread=async_save. (3004:async_ch
+eckpointer.py:266)
+07:01:01.570 [I] [process=0][thread=save_finalize] No errors
+found in background save thread=async_save. (3004:async_check
+pointer.py:276)
+07:01:01.978 [I] Deleted step 13000.
+                                     (3004:deleter.py:114)
+07:01:01.978 [I] [process=0][thread=save_finalize][step=14000
+] CheckpointManager Save Finalize is syncing with other hosts
+... (3004:checkpoint_manager.py:2095)
+07:01:01.978 [I] [process=0][thread=save_finalize][step=14000
+] CheckpointManager Save Finalize is done on all hosts. (3004
+:checkpoint_manager.py:2110)
+Step 14100: grad_norm=0.0032, loss=0.0028, param_norm=1832.57
+75
+
+Step 14200: grad_norm=0.0033, loss=0.0027, param_norm=1832.57
+78
+
+Step 14300: grad_norm=0.0035, loss=0.0030, param_norm=1832.57
+81
+
+Step 14400: grad_norm=0.0035, loss=0.0030, param_norm=1832.57
+84
+
+Step 14500: grad_norm=0.0034, loss=0.0029, param_norm=1832.57
+87
+
+Step 14600: grad_norm=0.0033, loss=0.0029, param_norm=1832.57
+87
+
+Step 14700: grad_norm=0.0033, loss=0.0028, param_norm=1832.57
+90
+
+Step 14800: grad_norm=0.0034, loss=0.0029, param_norm=1832.57
+90
+
+Step 14900: grad_norm=0.0037, loss=0.0032, param_norm=1832.57
+93
+
+Step 15000: grad_norm=0.0037, loss=0.0030, param_norm=1832.57
+96
+
+ 59%|████████████████████████████████████████████
+                   | 15000/25500 [8:47:26<14:10:22,  4.86s/it
+]08:21:50.594 [I] [process=0][thread=MainThread][wait_until_f
+inished] No Save Finalize thread to wait for. Returning. (300
+4:checkpoint_manager.py:1987)
+08:21:50.594 [I] [process=0] Saving checkpoint at step 15000
+                                     (3004:checkpoint_manager
+.py:1408)
+08:21:50.595 [I] [process=0] Started async saving checkpoint
+to /root/autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_ex
+pert_lora/sam_dim_expert_lora/15000. (3004:async_checkpointer
+.py:439)
+08:21:50.603 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/15000.orbax-checkpoint-tmp-24 (3004:atomicity.py:144)
+08:21:50.610 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/15000.orbax-checkpoint-tmp-24/assets.orbax-checkpoint-t
+mp-25 (3004:atomicity.py:144)
+08:21:50.610 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/15000.orbax-checkpoint-tmp-24/params.orbax-checkpoint-t
+mp-26 (3004:atomicity.py:144)
+08:21:50.611 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/15000.orbax-checkpoint-tmp-24/train_state.orbax-checkpo
+int-tmp-27 (3004:atomicity.py:144)
+08:21:50.620 [I] Transferring arrays to host memory with opti
+ons: use_replica_parallel=True, enable_pinned_host_transfer=F
+alse (3004:replica_slices.py:341)
+08:21:54.831 [I] Transferring arrays to host memory with opti
+ons: use_replica_parallel=True, enable_pinned_host_transfer=F
+alse (3004:replica_slices.py:341)
+08:21:54.837 [I] Array name: 'params.PaliGemma.llm.layers.mlp
+.gating_einsum.value', global shape: (18, 2, 2048, 16384), wr
+ite shape: (18, 2, 2048, 16384), chosen chunk shape: (18, 2,
+2048, 8192) (3004:tensorstore_utils.py:408)
+08:21:54.857 [I] [process=0][thread=array_type_handler] Wrote
+ 61 array_metadata.ArrayMetadata to /root/autodl-tmp/openpi_c
+heckpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lor
+a/15000.orbax-checkpoint-tmp-24/params.orbax-checkpoint-tmp-2
+6/array_metadatas/process_0 (3004:array_metadata_store.py:198
+)
+08:21:54.964 [I] [process=0] /jax/checkpoint/write/blocking_b
+ytes_per_sec: 1.4 GiB/s (total bytes: 6.3 GiB) (time elapsed:
+ 4 seconds) (per-host) (3004:base_pytree_checkpoint_handler.p
+y:114)
+08:21:54.970 [I] [process=0] /jax/checkpoint/write/blocking_b
+ytes_per_sec: 38.7 MiB/s (total bytes: 168.8 MiB) (time elaps
+ed: 4 seconds) (per-host) (3004:base_pytree_checkpoint_handle
+r.py:114)
+08:21:54.973 [I] [process=0][thread=async_save] Background sa
+ve thread started.                   (3004:async_checkpointer
+.py:77)
+08:21:54.973 [I] Finished blocking save in 4.38 seconds. Cont
+inuing to save asynchronously to /root/autodl-tmp/openpi_chec
+kpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/1
+5000. (3004:async_checkpointer.py:548)
+08:21:54.974 [I] Deleting Checkpoint[step=14000 | time=2026-0
+5-26 23:00:53.430250+00:00]: (Reason: old checkpoint). (3004:
+checkpoint_manager.py:1963)
+08:21:54.974 [I] [process=0][thread=MainThread][step=15000] S
+tarting CheckpointManager Save Finalize thread=save_finalize
+(3004:checkpoint_manager.py:1453)
+08:21:54.974 [I] [process=0][thread=save_finalize] Waiting fo
+r background save thread=async_save. (3004:async_checkpointer
+.py:258)
+08:21:54.975 [I] {'step': 15000, 'event_type': 'save', 'direc
+tory': '/root/autodl-tmp/openpi_checkpoints/pi05_libero_sam_d
+im_expert_lora/sam_dim_expert_lora', 'reached_preemption': Fa
+lse, 'preemption_received_at': None, 'synchronous': False, 'w
+ait_for_prev_start_time': 1779841310.5941641, 'wait_for_prev_
+duration_secs': 0.000232696533203125, 'checkpointer_blocking_
+start_time': 1779841310.5949225, 'checkpointer_blocking_durat
+ion_secs': 4.379089117050171, 'get_old_steps_start_time': 177
+9841314.9740894, 'get_old_steps_duration_secs': 0.00016641616
+821289062, 'checkpoint_manager_blocking_start_time': 17798413
+10.593778, 'checkpoint_manager_blocking_duration_secs': 4.381
+168365478516} (3004:standard_logger.py:34)
+ 59%|████████████████████████████████████████████
+                   | 15001/25500 [8:47:31<22:00:09,  7.54s/it
+]08:21:54.981 [I] [process=0][thread=array_type_handler] Wrot
+e 23 array_metadata.ArrayMetadata to /root/autodl-tmp/openpi_
+checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lo
+ra/15000.orbax-checkpoint-tmp-24/train_state.orbax-checkpoint
+-tmp-27/array_metadatas/process_0 (3004:array_metadata_store.
+py:198)
+ 59%|████████████████████████████████████████████▏
+                   | 15003/25500 [8:47:36<15:13:57,  5.22s/it
+]08:22:04.061 [I] [process=0] /jax/checkpoint/write/bytes_per
+_sec: 481.4 MiB/s (total bytes: 6.3 GiB) (time elapsed: 13 se
+conds) (per-host) (3004:base_pytree_checkpoint_handler.py:114
+)
+08:22:04.061 [I] [process=0] /jax/checkpoint/write/bytes_per_
+sec: 12.5 MiB/s (total bytes: 168.8 MiB) (time elapsed: 13 se
+conds) (per-host) (3004:base_pytree_checkpoint_handler.py:114
+)
+08:22:04.061 [I] [process=0][thread=async_save] 5 Handler Com
+mit operations completed.            (3004:async_checkpointer
+.py:87)
+08:22:04.062 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/15000.or
+bax-checkpoint-tmp-24/assets.orbax-checkpoint-tmp-25 to /root
+/autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_expert_lor
+a/sam_dim_expert_lora/15000.orbax-checkpoint-tmp-24/assets (3
+004:atomicity.py:289)
+08:22:04.065 [I] [process=0][thread=async_save] Skipped cross
+-host ArrayMetadata validation because only one process is fo
+und: process_index=0. (3004:array_metadata_store.py:362)
+08:22:04.067 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/15000.or
+bax-checkpoint-tmp-24/train_state.orbax-checkpoint-tmp-27 to
+/root/autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_exper
+t_lora/sam_dim_expert_lora/15000.orbax-checkpoint-tmp-24/trai
+n_state (3004:atomicity.py:289)
+08:22:04.069 [I] [process=0][thread=async_save] Skipped cross
+-host ArrayMetadata validation because only one process is fo
+und: process_index=0. (3004:array_metadata_store.py:362)
+08:22:04.072 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/15000.or
+bax-checkpoint-tmp-24/params.orbax-checkpoint-tmp-26 to /root
+/autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_expert_lor
+a/sam_dim_expert_lora/15000.orbax-checkpoint-tmp-24/params (3
+004:atomicity.py:289)
+08:22:04.072 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/15000.or
+bax-checkpoint-tmp-24 to /root/autodl-tmp/openpi_checkpoints/
+pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/15000 (30
+04:atomicity.py:289)
+08:22:04.073 [I] [process=0][thread=async_save] Finished savi
+ng checkpoint (finalized tmp dir) to `/root/autodl-tmp/openpi
+_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_l
+ora/15000`. (3004:atomicity.py:573)
+08:22:04.073 [I] Finished asynchronous save (blocking + backg
+round) in 13.48 seconds to /root/autodl-tmp/openpi_checkpoint
+s/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/15000 (
+3004:async_checkpointer.py:412)
+08:22:04.073 [I] [process=0][thread=async_save] Background sa
+ve thread done.                      (3004:async_checkpointer
+.py:143)
+08:22:04.073 [I] [process=0][thread=save_finalize] Done with
+waiting for background save thread=async_save. (3004:async_ch
+eckpointer.py:266)
+08:22:04.073 [I] [process=0][thread=save_finalize] No errors
+found in background save thread=async_save. (3004:async_check
+pointer.py:276)
+08:22:04.494 [I] Deleted step 14000.
+                                     (3004:deleter.py:114)
+08:22:04.494 [I] [process=0][thread=save_finalize][step=15000
+] CheckpointManager Save Finalize is syncing with other hosts
+... (3004:checkpoint_manager.py:2095)
+08:22:04.494 [I] [process=0][thread=save_finalize][step=15000
+] CheckpointManager Save Finalize is done on all hosts. (3004
+:checkpoint_manager.py:2110)
+Step 15100: grad_norm=0.0035, loss=0.0029, param_norm=1832.58
+00
+
+Step 15200: grad_norm=0.0031, loss=0.0024, param_norm=1832.58
+03
+
+Step 15300: grad_norm=0.0033, loss=0.0027, param_norm=1832.58
+07
+
+Step 15400: grad_norm=0.0038, loss=0.0031, param_norm=1832.58
+11
+
+Step 15500: grad_norm=0.0033, loss=0.0027, param_norm=1832.58
+12
+
+Step 15600: grad_norm=0.0036, loss=0.0029, param_norm=1832.58
+14
+
+Step 15700: grad_norm=0.0035, loss=0.0029, param_norm=1832.58
+14
+
+Step 15800: grad_norm=0.0036, loss=0.0031, param_norm=1832.58
+17
+
+Step 15900: grad_norm=0.0035, loss=0.0027, param_norm=1832.58
+23
+
+Step 16000: grad_norm=0.0034, loss=0.0027, param_norm=1832.58
+26
+
+ 63%|██████████████████████████████████████████████▍
+                  | 16000/25500 [10:08:32<12:50:00,  4.86s/it
+]09:42:56.725 [I] [process=0][thread=MainThread][wait_until_f
+inished] No Save Finalize thread to wait for. Returning. (300
+4:checkpoint_manager.py:1987)
+09:42:56.726 [I] [process=0] Saving checkpoint at step 16000
+                                     (3004:checkpoint_manager
+.py:1408)
+09:42:56.727 [I] [process=0] Started async saving checkpoint
+to /root/autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_ex
+pert_lora/sam_dim_expert_lora/16000. (3004:async_checkpointer
+.py:439)
+09:42:56.735 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/16000.orbax-checkpoint-tmp-28 (3004:atomicity.py:144)
+09:42:56.741 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/16000.orbax-checkpoint-tmp-28/assets.orbax-checkpoint-t
+mp-29 (3004:atomicity.py:144)
+09:42:56.743 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/16000.orbax-checkpoint-tmp-28/params.orbax-checkpoint-t
+mp-30 (3004:atomicity.py:144)
+09:42:56.743 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/16000.orbax-checkpoint-tmp-28/train_state.orbax-checkpo
+int-tmp-31 (3004:atomicity.py:144)
+09:42:56.751 [I] Transferring arrays to host memory with opti
+ons: use_replica_parallel=True, enable_pinned_host_transfer=F
+alse (3004:replica_slices.py:341)
+09:43:00.993 [I] Transferring arrays to host memory with opti
+ons: use_replica_parallel=True, enable_pinned_host_transfer=F
+alse (3004:replica_slices.py:341)
+09:43:00.998 [I] Array name: 'params.PaliGemma.llm.layers.mlp
+.gating_einsum.value', global shape: (18, 2, 2048, 16384), wr
+ite shape: (18, 2, 2048, 16384), chosen chunk shape: (18, 2,
+2048, 8192) (3004:tensorstore_utils.py:408)
+09:43:01.016 [I] [process=0][thread=array_type_handler] Wrote
+ 61 array_metadata.ArrayMetadata to /root/autodl-tmp/openpi_c
+heckpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lor
+a/16000.orbax-checkpoint-tmp-28/params.orbax-checkpoint-tmp-3
+0/array_metadatas/process_0 (3004:array_metadata_store.py:198
+)
+09:43:01.117 [I] [process=0] /jax/checkpoint/write/blocking_b
+ytes_per_sec: 1.4 GiB/s (total bytes: 6.3 GiB) (time elapsed:
+ 4 seconds) (per-host) (3004:base_pytree_checkpoint_handler.p
+y:114)
+09:43:01.123 [I] [process=0] /jax/checkpoint/write/blocking_b
+ytes_per_sec: 38.5 MiB/s (total bytes: 168.8 MiB) (time elaps
+ed: 4 seconds) (per-host) (3004:base_pytree_checkpoint_handle
+r.py:114)
+09:43:01.129 [I] [process=0][thread=async_save] Background sa
+ve thread started.                   (3004:async_checkpointer
+.py:77)
+09:43:01.130 [I] Finished blocking save in 4.40 seconds. Cont
+inuing to save asynchronously to /root/autodl-tmp/openpi_chec
+kpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/1
+6000. (3004:async_checkpointer.py:548)
+09:43:01.130 [I] Deleting Checkpoint[step=15000 | time=2026-0
+5-27 00:21:54.974049+00:00]: (Reason: old checkpoint). (3004:
+checkpoint_manager.py:1963)
+09:43:01.130 [I] [process=0][thread=MainThread][step=16000] S
+tarting CheckpointManager Save Finalize thread=save_finalize
+(3004:checkpoint_manager.py:1453)
+09:43:01.130 [I] [process=0][thread=save_finalize] Waiting fo
+r background save thread=async_save. (3004:async_checkpointer
+.py:258)
+09:43:01.131 [I] {'step': 16000, 'event_type': 'save', 'direc
+tory': '/root/autodl-tmp/openpi_checkpoints/pi05_libero_sam_d
+im_expert_lora/sam_dim_expert_lora', 'reached_preemption': Fa
+lse, 'preemption_received_at': None, 'synchronous': False, 'w
+ait_for_prev_start_time': 1779846176.7257385, 'wait_for_prev_
+duration_secs': 0.00023698806762695312, 'checkpointer_blockin
+g_start_time': 1779846176.7265103, 'checkpointer_blocking_dur
+ation_secs': 4.403902530670166, 'get_old_steps_start_time': 1
+779846181.1304386, 'get_old_steps_duration_secs': 0.000114917
+75512695312, 'checkpoint_manager_blocking_start_time': 177984
+6176.725363, 'checkpoint_manager_blocking_duration_secs': 4.4
+06062126159668} (3004:standard_logger.py:34)
+ 63%|██████████████████████████████████████████████▍
+                  | 16001/25500 [10:08:37<19:57:01,  7.56s/it
+]09:43:01.131 [I] [process=0][thread=array_type_handler] Wrot
+e 23 array_metadata.ArrayMetadata to /root/autodl-tmp/openpi_
+checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lo
+ra/16000.orbax-checkpoint-tmp-28/train_state.orbax-checkpoint
+-tmp-31/array_metadatas/process_0 (3004:array_metadata_store.
+py:198)
+ 63%|██████████████████████████████████████████████▍
+                  | 16004/25500 [10:08:47<13:30:09,  5.12s/it
+]09:43:12.399 [I] [process=0] /jax/checkpoint/write/bytes_per
+_sec: 413.6 MiB/s (total bytes: 6.3 GiB) (time elapsed: 15 se
+conds) (per-host) (3004:base_pytree_checkpoint_handler.py:114
+)
+09:43:12.399 [I] [process=0] /jax/checkpoint/write/bytes_per_
+sec: 10.8 MiB/s (total bytes: 168.8 MiB) (time elapsed: 15 se
+conds) (per-host) (3004:base_pytree_checkpoint_handler.py:114
+)
+09:43:12.399 [I] [process=0][thread=async_save] 5 Handler Com
+mit operations completed.            (3004:async_checkpointer
+.py:87)
+09:43:12.400 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/16000.or
+bax-checkpoint-tmp-28/assets.orbax-checkpoint-tmp-29 to /root
+/autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_expert_lor
+a/sam_dim_expert_lora/16000.orbax-checkpoint-tmp-28/assets (3
+004:atomicity.py:289)
+09:43:12.403 [I] [process=0][thread=async_save] Skipped cross
+-host ArrayMetadata validation because only one process is fo
+und: process_index=0. (3004:array_metadata_store.py:362)
+09:43:12.407 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/16000.or
+bax-checkpoint-tmp-28/train_state.orbax-checkpoint-tmp-31 to
+/root/autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_exper
+t_lora/sam_dim_expert_lora/16000.orbax-checkpoint-tmp-28/trai
+n_state (3004:atomicity.py:289)
+09:43:12.408 [I] [process=0][thread=async_save] Skipped cross
+-host ArrayMetadata validation because only one process is fo
+und: process_index=0. (3004:array_metadata_store.py:362)
+09:43:12.412 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/16000.or
+bax-checkpoint-tmp-28/params.orbax-checkpoint-tmp-30 to /root
+/autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_expert_lor
+a/sam_dim_expert_lora/16000.orbax-checkpoint-tmp-28/params (3
+004:atomicity.py:289)
+09:43:12.412 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/16000.or
+bax-checkpoint-tmp-28 to /root/autodl-tmp/openpi_checkpoints/
+pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/16000 (30
+04:atomicity.py:289)
+09:43:12.413 [I] [process=0][thread=async_save] Finished savi
+ng checkpoint (finalized tmp dir) to `/root/autodl-tmp/openpi
+_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_l
+ora/16000`. (3004:atomicity.py:573)
+09:43:12.413 [I] Finished asynchronous save (blocking + backg
+round) in 15.69 seconds to /root/autodl-tmp/openpi_checkpoint
+s/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/16000 (
+3004:async_checkpointer.py:412)
+09:43:12.413 [I] [process=0][thread=async_save] Background sa
+ve thread done.                      (3004:async_checkpointer
+.py:143)
+09:43:12.413 [I] [process=0][thread=save_finalize] Done with
+waiting for background save thread=async_save. (3004:async_ch
+eckpointer.py:266)
+09:43:12.413 [I] [process=0][thread=save_finalize] No errors
+found in background save thread=async_save. (3004:async_check
+pointer.py:276)
+09:43:12.895 [I] Deleted step 15000.
+                                     (3004:deleter.py:114)
+09:43:12.895 [I] [process=0][thread=save_finalize][step=16000
+] CheckpointManager Save Finalize is syncing with other hosts
+... (3004:checkpoint_manager.py:2095)
+09:43:12.895 [I] [process=0][thread=save_finalize][step=16000
+] CheckpointManager Save Finalize is done on all hosts. (3004
+:checkpoint_manager.py:2110)
+Step 16100: grad_norm=0.0034, loss=0.0027, param_norm=1832.58
+26
+
+Step 16200: grad_norm=0.0033, loss=0.0027, param_norm=1832.58
+26
+
+Step 16300: grad_norm=0.0037, loss=0.0028, param_norm=1832.58
+29
+
+Step 16400: grad_norm=0.0035, loss=0.0027, param_norm=1832.58
+31
+
+Step 16500: grad_norm=0.0036, loss=0.0028, param_norm=1832.58
+33
+
+Step 16600: grad_norm=0.0035, loss=0.0028, param_norm=1832.58
+34
+
+Step 16700: grad_norm=0.0033, loss=0.0026, param_norm=1832.58
+37
+
+Step 16800: grad_norm=0.0032, loss=0.0027, param_norm=1832.58
+37
+
+Step 16900: grad_norm=0.0038, loss=0.0031, param_norm=1832.58
+37
+
+Step 17000: grad_norm=0.0035, loss=0.0027, param_norm=1832.58
+40
+
+ 67%|█████████████████████████████████████████████████▎
+                  | 17000/25500 [11:29:40<11:28:34,  4.86s/it
+]11:04:04.420 [I] [process=0][thread=MainThread][wait_until_f
+inished] No Save Finalize thread to wait for. Returning. (300
+4:checkpoint_manager.py:1987)
+11:04:04.420 [I] [process=0] Saving checkpoint at step 17000
+                                     (3004:checkpoint_manager
+.py:1408)
+11:04:04.421 [I] [process=0] Started async saving checkpoint
+to /root/autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_ex
+pert_lora/sam_dim_expert_lora/17000. (3004:async_checkpointer
+.py:439)
+11:04:04.434 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/17000.orbax-checkpoint-tmp-32 (3004:atomicity.py:144)
+11:04:04.440 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/17000.orbax-checkpoint-tmp-32/assets.orbax-checkpoint-t
+mp-33 (3004:atomicity.py:144)
+11:04:04.440 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/17000.orbax-checkpoint-tmp-32/params.orbax-checkpoint-t
+mp-34 (3004:atomicity.py:144)
+11:04:04.440 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/17000.orbax-checkpoint-tmp-32/train_state.orbax-checkpo
+int-tmp-35 (3004:atomicity.py:144)
+11:04:04.451 [I] Transferring arrays to host memory with opti
+ons: use_replica_parallel=True, enable_pinned_host_transfer=F
+alse (3004:replica_slices.py:341)
+11:04:08.633 [I] Transferring arrays to host memory with opti
+ons: use_replica_parallel=True, enable_pinned_host_transfer=F
+alse (3004:replica_slices.py:341)
+11:04:08.638 [I] Array name: 'params.PaliGemma.llm.layers.mlp
+.gating_einsum.value', global shape: (18, 2, 2048, 16384), wr
+ite shape: (18, 2, 2048, 16384), chosen chunk shape: (18, 2,
+2048, 8192) (3004:tensorstore_utils.py:408)
+11:04:08.662 [I] [process=0][thread=array_type_handler] Wrote
+ 61 array_metadata.ArrayMetadata to /root/autodl-tmp/openpi_c
+heckpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lor
+a/17000.orbax-checkpoint-tmp-32/params.orbax-checkpoint-tmp-3
+4/array_metadatas/process_0 (3004:array_metadata_store.py:198
+)
+11:04:08.758 [I] [process=0] /jax/checkpoint/write/blocking_b
+ytes_per_sec: 1.5 GiB/s (total bytes: 6.3 GiB) (time elapsed:
+ 4 seconds) (per-host) (3004:base_pytree_checkpoint_handler.p
+y:114)
+11:04:08.763 [I] [process=0] /jax/checkpoint/write/blocking_b
+ytes_per_sec: 39.0 MiB/s (total bytes: 168.8 MiB) (time elaps
+ed: 4 seconds) (per-host) (3004:base_pytree_checkpoint_handle
+r.py:114)
+11:04:08.767 [I] [process=0][thread=async_save] Background sa
+ve thread started.                   (3004:async_checkpointer
+.py:77)
+11:04:08.768 [I] Finished blocking save in 4.35 seconds. Cont
+inuing to save asynchronously to /root/autodl-tmp/openpi_chec
+kpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/1
+7000. (3004:async_checkpointer.py:548)
+11:04:08.768 [I] Deleting Checkpoint[step=16000 | time=2026-0
+5-27 01:43:01.130426+00:00]: (Reason: old checkpoint). (3004:
+checkpoint_manager.py:1963)
+11:04:08.769 [I] [process=0][thread=MainThread][step=17000] S
+tarting CheckpointManager Save Finalize thread=save_finalize
+(3004:checkpoint_manager.py:1453)
+11:04:08.769 [I] [process=0][thread=save_finalize] Waiting fo
+r background save thread=async_save. (3004:async_checkpointer
+.py:258)
+11:04:08.770 [I] {'step': 17000, 'event_type': 'save', 'direc
+tory': '/root/autodl-tmp/openpi_checkpoints/pi05_libero_sam_d
+im_expert_lora/sam_dim_expert_lora', 'reached_preemption': Fa
+lse, 'preemption_received_at': None, 'synchronous': False, 'w
+ait_for_prev_start_time': 1779851044.4201224, 'wait_for_prev_
+duration_secs': 0.00026726722717285156, 'checkpointer_blockin
+g_start_time': 1779851044.421043, 'checkpointer_blocking_dura
+tion_secs': 4.347506999969482, 'get_old_steps_start_time': 17
+79851048.768585, 'get_old_steps_duration_secs': 0.00036191940
+30761719, 'checkpoint_manager_blocking_start_time': 177985104
+4.419712, 'checkpoint_manager_blocking_duration_secs': 4.3505
+92136383057} (3004:standard_logger.py:34)
+ 67%|█████████████████████████████████████████████████▎
+                  | 17001/25500 [11:29:44<17:48:42,  7.54s/it
+]11:04:08.770 [I] [process=0][thread=array_type_handler] Wrot
+e 23 array_metadata.ArrayMetadata to /root/autodl-tmp/openpi_
+checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lo
+ra/17000.orbax-checkpoint-tmp-32/train_state.orbax-checkpoint
+-tmp-35/array_metadatas/process_0 (3004:array_metadata_store.
+py:198)
+ 67%|█████████████████████████████████████████████████▎
+                  | 17003/25500 [11:29:50<12:20:15,  5.23s/it
+]11:04:17.371 [I] [process=0] /jax/checkpoint/write/bytes_per
+_sec: 500.6 MiB/s (total bytes: 6.3 GiB) (time elapsed: 12 se
+conds) (per-host) (3004:base_pytree_checkpoint_handler.py:114
+)
+11:04:17.371 [I] [process=0] /jax/checkpoint/write/bytes_per_
+sec: 13.0 MiB/s (total bytes: 168.8 MiB) (time elapsed: 12 se
+conds) (per-host) (3004:base_pytree_checkpoint_handler.py:114
+)
+11:04:17.372 [I] [process=0][thread=async_save] 5 Handler Com
+mit operations completed.            (3004:async_checkpointer
+.py:87)
+11:04:17.373 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/17000.or
+bax-checkpoint-tmp-32/assets.orbax-checkpoint-tmp-33 to /root
+/autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_expert_lor
+a/sam_dim_expert_lora/17000.orbax-checkpoint-tmp-32/assets (3
+004:atomicity.py:289)
+11:04:17.376 [I] [process=0][thread=async_save] Skipped cross
+-host ArrayMetadata validation because only one process is fo
+und: process_index=0. (3004:array_metadata_store.py:362)
+11:04:17.380 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/17000.or
+bax-checkpoint-tmp-32/train_state.orbax-checkpoint-tmp-35 to
+/root/autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_exper
+t_lora/sam_dim_expert_lora/17000.orbax-checkpoint-tmp-32/trai
+n_state (3004:atomicity.py:289)
+11:04:17.383 [I] [process=0][thread=async_save] Skipped cross
+-host ArrayMetadata validation because only one process is fo
+und: process_index=0. (3004:array_metadata_store.py:362)
+11:04:17.388 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/17000.or
+bax-checkpoint-tmp-32/params.orbax-checkpoint-tmp-34 to /root
+/autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_expert_lor
+a/sam_dim_expert_lora/17000.orbax-checkpoint-tmp-32/params (3
+004:atomicity.py:289)
+11:04:17.388 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/17000.or
+bax-checkpoint-tmp-32 to /root/autodl-tmp/openpi_checkpoints/
+pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/17000 (30
+04:atomicity.py:289)
+11:04:17.389 [I] [process=0][thread=async_save] Finished savi
+ng checkpoint (finalized tmp dir) to `/root/autodl-tmp/openpi
+_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_l
+ora/17000`. (3004:atomicity.py:573)
+11:04:17.389 [I] Finished asynchronous save (blocking + backg
+round) in 12.97 seconds to /root/autodl-tmp/openpi_checkpoint
+s/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/17000 (
+3004:async_checkpointer.py:412)
+11:04:17.389 [I] [process=0][thread=async_save] Background sa
+ve thread done.                      (3004:async_checkpointer
+.py:143)
+11:04:17.390 [I] [process=0][thread=save_finalize] Done with
+waiting for background save thread=async_save. (3004:async_ch
+eckpointer.py:266)
+11:04:17.390 [I] [process=0][thread=save_finalize] No errors
+found in background save thread=async_save. (3004:async_check
+pointer.py:276)
+11:04:17.861 [I] Deleted step 16000.
+                                     (3004:deleter.py:114)
+11:04:17.861 [I] [process=0][thread=save_finalize][step=17000
+] CheckpointManager Save Finalize is syncing with other hosts
+... (3004:checkpoint_manager.py:2095)
+11:04:17.861 [I] [process=0][thread=save_finalize][step=17000
+] CheckpointManager Save Finalize is done on all hosts. (3004
+:checkpoint_manager.py:2110)
+Step 17100: grad_norm=0.0036, loss=0.0028, param_norm=1832.58
+44
+
+Step 17200: grad_norm=0.0033, loss=0.0024, param_norm=1832.58
+44
+
+Step 17300: grad_norm=0.0034, loss=0.0027, param_norm=1832.58
+46
+
+Step 17400: grad_norm=0.0033, loss=0.0028, param_norm=1832.58
+50
+
+Step 17500: grad_norm=0.0038, loss=0.0028, param_norm=1832.58
+53
+
+Step 17600: grad_norm=0.0036, loss=0.0027, param_norm=1832.58
+53
+
+Step 17700: grad_norm=0.0034, loss=0.0027, param_norm=1832.58
+53
+
+Step 17800: grad_norm=0.0036, loss=0.0027, param_norm=1832.58
+56
+
+Step 17900: grad_norm=0.0037, loss=0.0029, param_norm=1832.58
+59
+
+Step 18000: grad_norm=0.0038, loss=0.0029, param_norm=1832.58
+62
+
+ 71%|████████████████████████████████████████████████████▏
+                  | 18000/25500 [12:50:49<10:08:15,  4.87s/it
+]12:25:13.634 [I] [process=0][thread=MainThread][wait_until_f
+inished] No Save Finalize thread to wait for. Returning. (300
+4:checkpoint_manager.py:1987)
+12:25:13.635 [I] [process=0] Saving checkpoint at step 18000
+                                     (3004:checkpoint_manager
+.py:1408)
+12:25:13.636 [I] [process=0] Started async saving checkpoint
+to /root/autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_ex
+pert_lora/sam_dim_expert_lora/18000. (3004:async_checkpointer
+.py:439)
+12:25:13.650 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/18000.orbax-checkpoint-tmp-36 (3004:atomicity.py:144)
+12:25:13.657 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/18000.orbax-checkpoint-tmp-36/assets.orbax-checkpoint-t
+mp-37 (3004:atomicity.py:144)
+12:25:13.657 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/18000.orbax-checkpoint-tmp-36/params.orbax-checkpoint-t
+mp-38 (3004:atomicity.py:144)
+12:25:13.657 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/18000.orbax-checkpoint-tmp-36/train_state.orbax-checkpo
+int-tmp-39 (3004:atomicity.py:144)
+12:25:13.672 [I] Transferring arrays to host memory with opti
+ons: use_replica_parallel=True, enable_pinned_host_transfer=F
+alse (3004:replica_slices.py:341)
+12:25:17.879 [I] Transferring arrays to host memory with opti
+ons: use_replica_parallel=True, enable_pinned_host_transfer=F
+alse (3004:replica_slices.py:341)
+12:25:17.884 [I] Array name: 'params.PaliGemma.llm.layers.mlp
+.gating_einsum.value', global shape: (18, 2, 2048, 16384), wr
+ite shape: (18, 2, 2048, 16384), chosen chunk shape: (18, 2,
+2048, 8192) (3004:tensorstore_utils.py:408)
+12:25:17.901 [I] [process=0][thread=array_type_handler] Wrote
+ 61 array_metadata.ArrayMetadata to /root/autodl-tmp/openpi_c
+heckpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lor
+a/18000.orbax-checkpoint-tmp-36/params.orbax-checkpoint-tmp-3
+8/array_metadatas/process_0 (3004:array_metadata_store.py:198
+)
+12:25:18.003 [I] [process=0] /jax/checkpoint/write/blocking_b
+ytes_per_sec: 1.5 GiB/s (total bytes: 6.3 GiB) (time elapsed:
+ 4 seconds) (per-host) (3004:base_pytree_checkpoint_handler.p
+y:114)
+12:25:18.004 [I] [process=0] /jax/checkpoint/write/blocking_b
+ytes_per_sec: 38.8 MiB/s (total bytes: 168.8 MiB) (time elaps
+ed: 4 seconds) (per-host) (3004:base_pytree_checkpoint_handle
+r.py:114)
+12:25:18.014 [I] [process=0][thread=async_save] Background sa
+ve thread started.                   (3004:async_checkpointer
+.py:77)
+12:25:18.014 [I] Finished blocking save in 4.38 seconds. Cont
+inuing to save asynchronously to /root/autodl-tmp/openpi_chec
+kpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/1
+8000. (3004:async_checkpointer.py:548)
+12:25:18.015 [I] Preserving Checkpoint[step=17000 | time=2026
+-05-27 03:04:08.768563+00:00]: (Reason: on keep_period=4250).
+ (3004:checkpoint_manager.py:1949)
+12:25:18.016 [I] [process=0][thread=MainThread][step=18000] S
+tarting CheckpointManager Save Finalize thread=save_finalize
+(3004:checkpoint_manager.py:1453)
+12:25:18.016 [I] [process=0][thread=array_type_handler] Wrote
+ 23 array_metadata.ArrayMetadata to /root/autodl-tmp/openpi_c
+heckpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lor
+a/18000.orbax-checkpoint-tmp-36/train_state.orbax-checkpoint-
+tmp-39/array_metadatas/process_0 (3004:array_metadata_store.p
+y:198)
+12:25:18.017 [I] [process=0][thread=save_finalize] Waiting fo
+r background save thread=async_save. (3004:async_checkpointer
+.py:258)
+12:25:18.017 [I] {'step': 18000, 'event_type': 'save', 'direc
+tory': '/root/autodl-tmp/openpi_checkpoints/pi05_libero_sam_d
+im_expert_lora/sam_dim_expert_lora', 'reached_preemption': Fa
+lse, 'preemption_received_at': None, 'synchronous': False, 'w
+ait_for_prev_start_time': 1779855913.6339462, 'wait_for_prev_
+duration_secs': 0.0003676414489746094, 'checkpointer_blocking
+_start_time': 1779855913.6352355, 'checkpointer_blocking_dura
+tion_secs': 4.379865646362305, 'get_old_steps_start_time': 17
+79855918.0151289, 'get_old_steps_duration_secs': 0.0011115074
+157714844, 'checkpoint_manager_blocking_start_time': 17798559
+13.6332908, 'checkpoint_manager_blocking_duration_secs': 4.38
+4055137634277} (3004:standard_logger.py:34)
+ 71%|████████████████████████████████████████████████████▏
+                  | 18003/25500 [12:50:59<10:53:51,  5.23s/it
+]12:25:25.825 [I] [process=0] /jax/checkpoint/write/bytes_per
+_sec: 531.8 MiB/s (total bytes: 6.3 GiB) (time elapsed: 12 se
+conds) (per-host) (3004:base_pytree_checkpoint_handler.py:114
+)
+12:25:25.825 [I] [process=0] /jax/checkpoint/write/bytes_per_
+sec: 13.9 MiB/s (total bytes: 168.8 MiB) (time elapsed: 12 se
+conds) (per-host) (3004:base_pytree_checkpoint_handler.py:114
+)
+12:25:25.826 [I] [process=0][thread=async_save] 5 Handler Com
+mit operations completed.            (3004:async_checkpointer
+.py:87)
+12:25:25.826 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/18000.or
+bax-checkpoint-tmp-36/assets.orbax-checkpoint-tmp-37 to /root
+/autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_expert_lor
+a/sam_dim_expert_lora/18000.orbax-checkpoint-tmp-36/assets (3
+004:atomicity.py:289)
+12:25:25.830 [I] [process=0][thread=async_save] Skipped cross
+-host ArrayMetadata validation because only one process is fo
+und: process_index=0. (3004:array_metadata_store.py:362)
+12:25:25.834 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/18000.or
+bax-checkpoint-tmp-36/train_state.orbax-checkpoint-tmp-39 to
+/root/autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_exper
+t_lora/sam_dim_expert_lora/18000.orbax-checkpoint-tmp-36/trai
+n_state (3004:atomicity.py:289)
+12:25:25.839 [I] [process=0][thread=async_save] Skipped cross
+-host ArrayMetadata validation because only one process is fo
+und: process_index=0. (3004:array_metadata_store.py:362)
+12:25:25.842 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/18000.or
+bax-checkpoint-tmp-36/params.orbax-checkpoint-tmp-38 to /root
+/autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_expert_lor
+a/sam_dim_expert_lora/18000.orbax-checkpoint-tmp-36/params (3
+004:atomicity.py:289)
+12:25:25.843 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/18000.or
+bax-checkpoint-tmp-36 to /root/autodl-tmp/openpi_checkpoints/
+pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/18000 (30
+04:atomicity.py:289)
+12:25:25.844 [I] [process=0][thread=async_save] Finished savi
+ng checkpoint (finalized tmp dir) to `/root/autodl-tmp/openpi
+_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_l
+ora/18000`. (3004:atomicity.py:573)
+12:25:25.844 [I] Finished asynchronous save (blocking + backg
+round) in 12.21 seconds to /root/autodl-tmp/openpi_checkpoint
+s/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/18000 (
+3004:async_checkpointer.py:412)
+12:25:25.844 [I] [process=0][thread=async_save] Background sa
+ve thread done.                      (3004:async_checkpointer
+.py:143)
+12:25:25.845 [I] [process=0][thread=save_finalize] Done with
+waiting for background save thread=async_save. (3004:async_ch
+eckpointer.py:266)
+12:25:25.845 [I] [process=0][thread=save_finalize] No errors
+found in background save thread=async_save. (3004:async_check
+pointer.py:276)
+12:25:25.845 [I] [process=0][thread=save_finalize][step=18000
+] CheckpointManager Save Finalize is syncing with other hosts
+... (3004:checkpoint_manager.py:2095)
+12:25:25.845 [I] [process=0][thread=save_finalize][step=18000
+] CheckpointManager Save Finalize is done on all hosts. (3004
+:checkpoint_manager.py:2110)
+Step 18100: grad_norm=0.0035, loss=0.0027, param_norm=1832.58
+65
+
+Step 18200: grad_norm=0.0035, loss=0.0026, param_norm=1832.58
+68
+
+Step 18300: grad_norm=0.0036, loss=0.0029, param_norm=1832.58
+68
+
+Step 18400: grad_norm=0.0036, loss=0.0028, param_norm=1832.58
+68
+
+Step 18500: grad_norm=0.0039, loss=0.0033, param_norm=1832.58
+72
+
+Step 18600: grad_norm=0.0035, loss=0.0027, param_norm=1832.58
+72
+
+Step 18700: grad_norm=0.0037, loss=0.0030, param_norm=1832.58
+72
+
+Step 18800: grad_norm=0.0040, loss=0.0027, param_norm=1832.58
+74
+
+Step 18900: grad_norm=0.0034, loss=0.0027, param_norm=1832.58
+74
+
+Step 19000: grad_norm=0.0039, loss=0.0028, param_norm=1832.58
+74
+
+ 75%|████████████████████████████████████████████████████████
+███████████▊                       | 19000/25500 [14:11:52<8:
+47:04,  4.87s/it]13:46:16.714 [I] [process=0][thread=MainThre
+ad][wait_until_finished] No Save Finalize thread to wait for.
+ Returning. (3004:checkpoint_manager.py:1987)
+13:46:16.715 [I] [process=0] Saving checkpoint at step 19000
+                                     (3004:checkpoint_manager
+.py:1408)
+13:46:16.717 [I] [process=0] Started async saving checkpoint
+to /root/autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_ex
+pert_lora/sam_dim_expert_lora/19000. (3004:async_checkpointer
+.py:439)
+13:46:16.731 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/19000.orbax-checkpoint-tmp-40 (3004:atomicity.py:144)
+13:46:16.738 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/19000.orbax-checkpoint-tmp-40/assets.orbax-checkpoint-t
+mp-41 (3004:atomicity.py:144)
+13:46:16.738 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/19000.orbax-checkpoint-tmp-40/params.orbax-checkpoint-t
+mp-42 (3004:atomicity.py:144)
+13:46:16.738 [I] Creating tmp directory /root/autodl-tmp/open
+pi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert
+_lora/19000.orbax-checkpoint-tmp-40/train_state.orbax-checkpo
+int-tmp-43 (3004:atomicity.py:144)
+13:46:16.753 [I] Transferring arrays to host memory with opti
+ons: use_replica_parallel=True, enable_pinned_host_transfer=F
+alse (3004:replica_slices.py:341)
+13:46:21.045 [I] Transferring arrays to host memory with opti
+ons: use_replica_parallel=True, enable_pinned_host_transfer=F
+alse (3004:replica_slices.py:341)
+13:46:21.051 [I] Array name: 'params.PaliGemma.llm.layers.mlp
+.gating_einsum.value', global shape: (18, 2, 2048, 16384), wr
+ite shape: (18, 2, 2048, 16384), chosen chunk shape: (18, 2,
+2048, 8192) (3004:tensorstore_utils.py:408)
+13:46:21.071 [I] [process=0][thread=array_type_handler] Wrote
+ 61 array_metadata.ArrayMetadata to /root/autodl-tmp/openpi_c
+heckpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lor
+a/19000.orbax-checkpoint-tmp-40/params.orbax-checkpoint-tmp-4
+2/array_metadatas/process_0 (3004:array_metadata_store.py:198
+)
+13:46:21.178 [I] [process=0] /jax/checkpoint/write/blocking_b
+ytes_per_sec: 1.4 GiB/s (total bytes: 6.3 GiB) (time elapsed:
+ 4 seconds) (per-host) (3004:base_pytree_checkpoint_handler.p
+y:114)
+13:46:21.183 [I] [process=0] /jax/checkpoint/write/blocking_b
+ytes_per_sec: 37.9 MiB/s (total bytes: 168.8 MiB) (time elaps
+ed: 4 seconds) (per-host) (3004:base_pytree_checkpoint_handle
+r.py:114)
+13:46:21.188 [I] [process=0][thread=async_save] Background sa
+ve thread started.                   (3004:async_checkpointer
+.py:77)
+13:46:21.189 [I] Finished blocking save in 4.47 seconds. Cont
+inuing to save asynchronously to /root/autodl-tmp/openpi_chec
+kpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/1
+9000. (3004:async_checkpointer.py:548)
+13:46:21.189 [I] [process=0][thread=array_type_handler] Wrote
+ 23 array_metadata.ArrayMetadata to /root/autodl-tmp/openpi_c
+heckpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lor
+a/19000.orbax-checkpoint-tmp-40/train_state.orbax-checkpoint-
+tmp-43/array_metadatas/process_0 (3004:array_metadata_store.p
+y:198)
+13:46:21.190 [I] Preserving Checkpoint[step=17000 | time=2026
+-05-27 03:04:08.768563+00:00]: (Reason: on keep_period=4250).
+ (3004:checkpoint_manager.py:1949)
+13:46:21.190 [I] Deleting Checkpoint[step=18000 | time=2026-0
+5-27 04:25:18.015112+00:00]: (Reason: old checkpoint). (3004:
+checkpoint_manager.py:1963)
+13:46:21.190 [I] [process=0][thread=MainThread][step=19000] S
+tarting CheckpointManager Save Finalize thread=save_finalize
+(3004:checkpoint_manager.py:1453)
+13:46:21.191 [I] [process=0][thread=save_finalize] Waiting fo
+r background save thread=async_save. (3004:async_checkpointer
+.py:258)
+13:46:21.191 [I] {'step': 19000, 'event_type': 'save', 'direc
+tory': '/root/autodl-tmp/openpi_checkpoints/pi05_libero_sam_d
+im_expert_lora/sam_dim_expert_lora', 'reached_preemption': Fa
+lse, 'preemption_received_at': None, 'synchronous': False, 'w
+ait_for_prev_start_time': 1779860776.7145388, 'wait_for_prev_
+duration_secs': 0.00038623809814453125, 'checkpointer_blockin
+g_start_time': 1779860776.7158787, 'checkpointer_blocking_dur
+ation_secs': 4.474043369293213, 'get_old_steps_start_time': 1
+779860781.189945, 'get_old_steps_duration_secs': 0.0008921623
+229980469, 'checkpoint_manager_blocking_start_time': 17798607
+76.7139082, 'checkpoint_manager_blocking_duration_secs': 4.47
+7388381958008} (3004:standard_logger.py:34)
+ 75%|████████████████████████████████████████████████████████
+███████████▊                       | 19003/25500 [14:12:02<9:
+27:25,  5.24s/it]13:46:29.710 [I] [process=0] /jax/checkpoint
+/write/bytes_per_sec: 498.9 MiB/s (total bytes: 6.3 GiB) (tim
+e elapsed: 12 seconds) (per-host) (3004:base_pytree_checkpoin
+t_handler.py:114)
+13:46:29.711 [I] [process=0] /jax/checkpoint/write/bytes_per_
+sec: 13.0 MiB/s (total bytes: 168.8 MiB) (time elapsed: 12 se
+conds) (per-host) (3004:base_pytree_checkpoint_handler.py:114
+)
+13:46:29.711 [I] [process=0][thread=async_save] 5 Handler Com
+mit operations completed.            (3004:async_checkpointer
+.py:87)
+13:46:29.711 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/19000.or
+bax-checkpoint-tmp-40/assets.orbax-checkpoint-tmp-41 to /root
+/autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_expert_lor
+a/sam_dim_expert_lora/19000.orbax-checkpoint-tmp-40/assets (3
+004:atomicity.py:289)
+13:46:29.714 [I] [process=0][thread=async_save] Skipped cross
+-host ArrayMetadata validation because only one process is fo
+und: process_index=0. (3004:array_metadata_store.py:362)
+13:46:29.718 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/19000.or
+bax-checkpoint-tmp-40/train_state.orbax-checkpoint-tmp-43 to
+/root/autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_exper
+t_lora/sam_dim_expert_lora/19000.orbax-checkpoint-tmp-40/trai
+n_state (3004:atomicity.py:289)
+13:46:29.720 [I] [process=0][thread=async_save] Skipped cross
+-host ArrayMetadata validation because only one process is fo
+und: process_index=0. (3004:array_metadata_store.py:362)
+13:46:29.724 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/19000.or
+bax-checkpoint-tmp-40/params.orbax-checkpoint-tmp-42 to /root
+/autodl-tmp/openpi_checkpoints/pi05_libero_sam_dim_expert_lor
+a/sam_dim_expert_lora/19000.orbax-checkpoint-tmp-40/params (3
+004:atomicity.py:289)
+13:46:29.724 [I] Renaming /root/autodl-tmp/openpi_checkpoints
+/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/19000.or
+bax-checkpoint-tmp-40 to /root/autodl-tmp/openpi_checkpoints/
+pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/19000 (30
+04:atomicity.py:289)
+13:46:29.725 [I] [process=0][thread=async_save] Finished savi
+ng checkpoint (finalized tmp dir) to `/root/autodl-tmp/openpi
+_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_l
+ora/19000`. (3004:atomicity.py:573)
+13:46:29.725 [I] Finished asynchronous save (blocking + backg
+round) in 13.01 seconds to /root/autodl-tmp/openpi_checkpoint
+s/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lora/19000 (
+3004:async_checkpointer.py:412)
+13:46:29.725 [I] [process=0][thread=async_save] Background sa
+ve thread done.                      (3004:async_checkpointer
+.py:143)
+13:46:29.726 [I] [process=0][thread=save_finalize] Done with
+waiting for background save thread=async_save. (3004:async_ch
+eckpointer.py:266)
+13:46:29.726 [I] [process=0][thread=save_finalize] No errors
+found in background save thread=async_save. (3004:async_check
+pointer.py:276)
+13:46:29.729 [I] Deleted step 18000.
+                                     (3004:deleter.py:114)
+13:46:29.729 [I] [process=0][thread=save_finalize][step=19000
+] CheckpointManager Save Finalize is syncing with other hosts
+... (3004:checkpoint_manager.py:2095)
+13:46:29.729 [I] [process=0][thread=save_finalize][step=19000
+] CheckpointManager Save Finalize is done on all hosts. (3004
+:checkpoint_manager.py:2110)
+Step 19100: grad_norm=0.0036, loss=0.0028, param_norm=1832.58
+78
+
+Step 19200: grad_norm=0.0034, loss=0.0026, param_norm=1832.58
+81
+
+Step 19300: grad_norm=0.0035, loss=0.0026, param_norm=1832.58
+81
+
+Step 19400: grad_norm=0.0035, loss=0.0026, param_norm=1832.58
+83
+
+Step 19500: grad_norm=0.0038, loss=0.0029, param_norm=1832.58
+85
+
+Step 19600: grad_norm=0.0037, loss=0.0029, param_norm=1832.58
+89
+
+Step 19700: grad_norm=0.0037, loss=0.0030, param_norm=1832.58
+89
+
+ 78%|████████████████████████████████████████████████████████
+██████████████▌                    | 19768/25500 [15:13:58<7:
+44:02,  4.86s/it] 78%|███████████████████████████████████████
+███████████████████████████████▌                    | 19768/2
+5500 [15:14:03<7:44:58,  4.87s/it]
+Traceback (most recent call last):
+  File "/root/proj/openpi/scripts/train.py", line 280, in <mo
+dule>
+    main(_config.cli())
+  File "/root/proj/openpi/scripts/train.py", line 261, in mai
+n
+    train_state, info = ptrain_step(train_rng, train_state, b
+atch)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^
+  File "/root/proj/openpi/.venv/lib/python3.11/site-packages/
+flax/nnx/variablelib.py", line 887, in _variable_state_unflat
+ten
+    def _variable_state_unflatten(
+
+KeyboardInterrupt
+
+(openpi) (openpi) root@autodl-container-ec8046bda4-559d01cb:~
+/proj/openpi# XLA_PYTHON_CLIENT_MEM_FRACTION=0.95 python scri
+pts/train.py pi05_libero_sam_dim_expert_lora   --exp-name=sam
+_dim_expert_lora   --resume   --no-wandb-enabled   --batch-si
+ze=32   --num-train-steps=25501   --save-interval=4250   --ke
+ep-period=4250   --checkpoint-base-dir=/root/autodl-tmp/openp
+i_checkpoints
+14:52:27.224 [I] Running on: autodl-container-ec8046bda4-559d
+01cb                                 (59633:train.py:196)
+INFO:2026-05-27 14:52:27,569:jax._src.xla_bridge:925: Unable
+to initialize backend 'rocm': module 'jaxlib.xla_extension' h
+as no attribute 'GpuAllocatorConfig'
+14:52:27.569 [I] Unable to initialize backend 'rocm': module
+'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+(59633:xla_bridge.py:925)
+INFO:2026-05-27 14:52:27,570:jax._src.xla_bridge:925: Unable
+to initialize backend 'tpu': INTERNAL: Failed to open libtpu.
+so: libtpu.so: cannot open shared object file: No such file o
+r directory
+14:52:27.570 [I] Unable to initialize backend 'tpu': INTERNAL
+: Failed to open libtpu.so: libtpu.so: cannot open shared obj
+ect file: No such file or directory (59633:xla_bridge.py:925)
+14:52:28.359 [I] Created BasePyTreeCheckpointHandler: use_ocd
+bt=True, use_zarr3=False, pytree_metadata_options=PyTreeMetad
+ataOptions(support_rich_types=False), array_metadata_store=<o
+rbax.checkpoint._src.metadata.array_metadata_store.Store obje
+ct at 0x7fe4e8b0dc10> (59633:base_pytree_checkpoint_handler.p
+y:334)
+14:52:28.359 [I] Created BasePyTreeCheckpointHandler: use_ocd
+bt=True, use_zarr3=False, pytree_metadata_options=PyTreeMetad
+ataOptions(support_rich_types=False), array_metadata_store=<o
+rbax.checkpoint._src.metadata.array_metadata_store.Store obje
+ct at 0x7fe4e8b0dc10> (59633:base_pytree_checkpoint_handler.p
+y:334)
+14:52:28.360 [I] [thread=MainThread] Failed to get flag value
+ for EXPERIMENTAL_ORBAX_USE_DISTRIBUTED_PROCESS_ID. (59633:mu
+ltihost.py:390)
+14:52:28.360 [I] [process=0][thread=MainThread] CheckpointMan
+ager init: checkpointers=None, item_names=None, item_handlers
+={'assets': <openpi.training.checkpoints.CallbackHandler obje
+ct at 0x7fe3bfb72f50>, 'train_state': <orbax.checkpoint._src.
+handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler ob
+ject at 0x7fe3bfb72b10>, 'params': <orbax.checkpoint._src.han
+dlers.pytree_checkpoint_handler.PyTreeCheckpointHandler objec
+t at 0x7fe3bf930b50>}, handler_registry=None (59633:checkpoin
+t_manager.py:620)
+14:52:28.360 [I] Deferred registration for item: "assets". Ad
+ding handler `<openpi.training.checkpoints.CallbackHandler ob
+ject at 0x7fe3bfb72f50>` for item "assets" and save args `<cl
+ass 'openpi.training.checkpoints.CallbackSave'>` and restore
+args `<class 'openpi.training.checkpoints.CallbackRestore'>`
+to `_handler_registry`. (59633:composite_checkpoint_handler.p
+y:234)
+14:52:28.360 [I] Deferred registration for item: "train_state
+". Adding handler `<orbax.checkpoint._src.handlers.pytree_che
+ckpoint_handler.PyTreeCheckpointHandler object at 0x7fe3bfb72
+b10>` for item "train_state" and save args `<class 'orbax.che
+ckpoint._src.handlers.pytree_checkpoint_handler.PyTreeSaveArg
+s'>` and restore args `<class 'orbax.checkpoint._src.handlers
+.pytree_checkpoint_handler.PyTreeRestoreArgs'>` to `_handler_
+registry`. (59633:composite_checkpoint_handler.py:234)
+14:52:28.360 [I] Deferred registration for item: "params". Ad
+ding handler `<orbax.checkpoint._src.handlers.pytree_checkpoi
+nt_handler.PyTreeCheckpointHandler object at 0x7fe3bf930b50>`
+ for item "params" and save args `<class 'orbax.checkpoint._s
+rc.handlers.pytree_checkpoint_handler.PyTreeSaveArgs'>` and r
+estore args `<class 'orbax.checkpoint._src.handlers.pytree_ch
+eckpoint_handler.PyTreeRestoreArgs'>` to `_handler_registry`.
+ (59633:composite_checkpoint_handler.py:234)
+14:52:28.361 [I] Deferred registration for item: "metrics". A
+dding handler `<orbax.checkpoint._src.handlers.json_checkpoin
+t_handler.JsonCheckpointHandler object at 0x7fe3bfbbc890>` fo
+r item "metrics" and save args `<class 'orbax.checkpoint._src
+.handlers.json_checkpoint_handler.JsonSaveArgs'>` and restore
+ args `<class 'orbax.checkpoint._src.handlers.json_checkpoint
+_handler.JsonRestoreArgs'>` to `_handler_registry`. (59633:co
+mposite_checkpoint_handler.py:234)
+14:52:28.361 [I] Initialized registry DefaultCheckpointHandle
+rRegistry({('assets', <class 'openpi.training.checkpoints.Cal
+lbackSave'>): <openpi.training.checkpoints.CallbackHandler ob
+ject at 0x7fe3bfb72f50>, ('assets', <class 'openpi.training.c
+heckpoints.CallbackRestore'>): <openpi.training.checkpoints.C
+allbackHandler object at 0x7fe3bfb72f50>, ('train_state', <cl
+ass 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler
+.PyTreeSaveArgs'>): <orbax.checkpoint._src.handlers.pytree_ch
+eckpoint_handler.PyTreeCheckpointHandler object at 0x7fe3bfb7
+2b10>, ('train_state', <class 'orbax.checkpoint._src.handlers
+.pytree_checkpoint_handler.PyTreeRestoreArgs'>): <orbax.check
+point._src.handlers.pytree_checkpoint_handler.PyTreeCheckpoin
+tHandler object at 0x7fe3bfb72b10>, ('params', <class 'orbax.
+checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeSave
+Args'>): <orbax.checkpoint._src.handlers.pytree_checkpoint_ha
+ndler.PyTreeCheckpointHandler object at 0x7fe3bf930b50>, ('pa
+rams', <class 'orbax.checkpoint._src.handlers.pytree_checkpoi
+nt_handler.PyTreeRestoreArgs'>): <orbax.checkpoint._src.handl
+ers.pytree_checkpoint_handler.PyTreeCheckpointHandler object
+at 0x7fe3bf930b50>, ('metrics', <class 'orbax.checkpoint._src
+.handlers.json_checkpoint_handler.JsonSaveArgs'>): <orbax.che
+ckpoint._src.handlers.json_checkpoint_handler.JsonCheckpointH
+andler object at 0x7fe3bfbbc890>, ('metrics', <class 'orbax.c
+heckpoint._src.handlers.json_checkpoint_handler.JsonRestoreAr
+gs'>): <orbax.checkpoint._src.handlers.json_checkpoint_handle
+r.JsonCheckpointHandler object at 0x7fe3bfbbc890>}). (59633:c
+omposite_checkpoint_handler.py:502)
+14:52:28.361 [I] orbax-checkpoint version: 0.11.13
+                                     (59633:abstract_checkpoi
+nter.py:35)
+14:52:28.361 [I] [process=0][thread=MainThread] Using barrier
+_sync_fn: <function get_barrier_sync_fn.<locals>.<lambda> at
+0x7fe3a8fa4900> timeout: 7200 secs and primary_host=0 for asy
+nc checkpoint writes (59633:async_checkpointer.py:170)
+14:52:28.363 [I] Read Metadata={'item_handlers': {'assets': '
+openpi.training.checkpoints.CallbackHandler', 'params': 'orba
+x.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCh
+eckpointHandler', 'train_state': 'orbax.checkpoint._src.handl
+ers.pytree_checkpoint_handler.PyTreeCheckpointHandler'}, 'met
+rics': {}, 'performance_metrics': {}, 'init_timestamp_nsecs':
+ 1779860776734093458, 'commit_timestamp_nsecs': 1779860789724
+941542, 'custom_metadata': {}} from /root/autodl-tmp/openpi_c
+heckpoints/pi05_libero_sam_dim_expert_lora/sam_dim_expert_lor
+a/19000/_CHECKPOINT_METADATA (59633:checkpoint.py:226)
+14:52:28.364 [W] Missing metrics for step 19000
+                                     (59633:checkpoint_manage
+r.py:1654)
+14:52:28.364 [E] File /root/autodl-tmp/openpi_checkpoints/pi0
+5_libero_sam_dim_expert_lora/sam_dim_expert_lora/19000/metric
+s/metrics not found. (59633:checkpoint_manager.py:1655)
+14:52:28.364 [W] Missing metrics for step 17000
+                                     (59633:checkpoint_manage
+r.py:1654)
+14:52:28.365 [E] File /root/autodl-tmp/openpi_checkpoints/pi0
+5_libero_sam_dim_expert_lora/sam_dim_expert_lora/17000/metric
+s/metrics not found. (59633:checkpoint_manager.py:1655)
+14:52:28.365 [I] Found 2 checkpoint steps in /root/autodl-tmp
+/openpi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_e
+xpert_lora (59633:checkpoint_manager.py:1701)
+14:52:28.365 [I] [process=0][thread=MainThread] CheckpointMan
+ager created,  primary_host=0, CheckpointManagerOptions=Check
+pointManagerOptions(save_interval_steps=1, max_to_keep=1, kee
+p_time_interval=None, keep_period=4250, should_keep_fn=None,
+best_fn=None, best_mode='max', keep_checkpoints_without_metri
+cs=True, step_prefix=None, step_format_fixed_length=None, ste
+p_name_format=None, create=False, cleanup_tmp_directories=Fal
+se, save_on_steps=frozenset(), single_host_load_and_broadcast
+=False, todelete_subdir=None, enable_background_delete=False,
+ read_only=False, enable_async_checkpointing=True, async_opti
+ons=AsyncOptions(timeout_secs=7200, barrier_sync_fn=None, pos
+t_finalization_callback=None, create_directories_asynchronous
+ly=True), multiprocessing_options=MultiprocessingOptions(prim
+ary_host=0, active_processes=None, barrier_sync_key_prefix=No
+ne), should_save_fn=None, file_options=FileOptions(path_permi
+ssion_mode=None), save_root_metadata=True, temporary_path_cla
+ss=None, save_decision_policy=None, prevent_write_metrics=Fal
+se), root_directory=/root/autodl-tmp/openpi_checkpoints/pi05_
+libero_sam_dim_expert_lora/sam_dim_expert_lora: <orbax.checkp
+oint.checkpoint_manager.CheckpointManager object at 0x7fe3bfc
+9c9d0> (59633:checkpoint_manager.py:801)
+14:52:28.469 [I] Loaded norm stats from /root/proj/openpi/ass
+ets/pi05_libero_sam_dim_expert_lora/physical-intelligence/lib
+ero_sam_dim (59633:config.py:197)
+14:52:28.471 [I] data_config: DataConfig(repo_id='physical-in
+telligence/libero_sam_dim', asset_id='physical-intelligence/l
+ibero_sam_dim', norm_stats={'state': NormStats(mean=array([-0
+.04652611,  0.03439558,  0.76453263,  2.97220063, -0.22040515
+,
+       -0.1256201 ,  0.02691563, -0.02719223]), std=array([0.
+10494592, 0.15176666, 0.37852946, 0.34429887, 0.90696377,
+       0.32537863, 0.01417543, 0.01405817]), q01=array([-3.99
+227868e-01, -2.68878135e-01,  3.80015922e-02,  1.50832780e+00
+,
+       -2.72100443e+00, -1.08132181e+00,  1.73520013e-03, -4.
+00442422e-02]), q99=array([ 1.35320103e-01,  3.35663146e-01,
+ 1.26987248e+00,  3.27650592e+00,
+        2.40543680e+00,  5.97152898e-01,  4.03033407e-02, -1.
+78783794e-03])), 'actions': NormStats(mean=array([ 0.055158
+,  0.08770469, -0.08735654,  0.00071009,  0.00547124,
+       -0.00553777, -0.04559308]), std=array([0.3318792 , 0.3
+7581694, 0.44810221, 0.03933446, 0.0635809 ,
+       0.07857436, 0.99896008]), q01=array([-0.70725   , -0.7
+98375  , -0.9375    , -0.11467779, -0.16425   ,
+       -0.22404901, -1.        ]), q99=array([0.937125  , 0.8
+6775   , 0.937125  , 0.13150757, 0.1917    ,
+       0.3374295 , 0.9996    ]))}, repack_transforms=Group(in
+puts=[RepackTransform(structure={'observation/image': 'image'
+, 'observation/wrist_image': 'wrist_image', 'observation/stat
+e': 'state', 'actions': 'actions', 'prompt': 'prompt'})], out
+puts=()), data_transforms=Group(inputs=[LiberoInputs(model_ty
+pe=<ModelType.PI05: 'pi05'>)], outputs=[LiberoOutputs()]), mo
+del_transforms=Group(inputs=[InjectDefaultPrompt(prompt=None)
+, ResizeImages(height=224, width=224), TokenizePrompt(tokeniz
+er=<openpi.models.tokenizer.PaligemmaTokenizer object at 0x7f
+e3bfb117d0>, discrete_state_input=False), PadStatesAndActions
+(model_action_dim=32)], outputs=()), use_quantile_norm=True,
+action_sequence_keys=('actions',), prompt_from_task=True, rld
+s_data_dir=None, action_space=None, datasets=()) (59633:data_
+loader.py:243)
+Resolving data files: 100%|██████████████████████████████████
+███████████████████████████████████████| 1693/1693 [00:00<00:
+00, 23486.81it/s]
+Loading dataset shards: 100%|████████████████████████████████
+████████████████████████████████████████████| 63/63 [00:00<00
+:00, 2416.16it/s]
+14:52:39.063 [I] local_batch_size: 32
+                                     (59633:data_loader.py:32
+4)
+14:52:55.741 [I] Initialized data loader:
+[0].images['base_0_rgb']: (32, 224, 224, 3)@float32
+[0].images['left_wrist_0_rgb']: (32, 224, 224, 3)@float32
+[0].images['right_wrist_0_rgb']: (32, 224, 224, 3)@float32
+[0].image_masks['base_0_rgb']: (32,)@bool
+[0].image_masks['left_wrist_0_rgb']: (32,)@bool
+[0].image_masks['right_wrist_0_rgb']: (32,)@bool
+[0].state: (32, 32)@float32
+[0].tokenized_prompt: (32, 200)@int32
+[0].tokenized_prompt_mask: (32, 200)@bool
+[1]: (32, 10, 32)@float32 (59633:train.py:227)
+14:52:56.771 [I] Initialized train state:
+['PaliGemma']['img']['Transformer']['encoder_norm']['bias'].v
+alue: (1152,)@bfloat16
+['PaliGemma']['img']['Transformer']['encoder_norm']['scale'].
+value: (1152,)@bfloat16
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNor
+m_0']['bias'].value: (27, 1152)@bfloat16
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNor
+m_0']['scale'].value: (27, 1152)@bfloat16
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNor
+m_1']['bias'].value: (27, 1152)@bfloat16
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNor
+m_1']['scale'].value: (27, 1152)@bfloat16
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock
+_0']['Dense_0']['bias'].value: (27, 4304)@bfloat16
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock
+_0']['Dense_0']['kernel'].value: (27, 1152, 4304)@bfloat16
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock
+_0']['Dense_1']['bias'].value: (27, 1152)@bfloat16
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock
+_0']['Dense_1']['kernel'].value: (27, 4304, 1152)@bfloat16
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHea
+dDotProductAttention_0']['key']['bias'].value: (27, 16, 72)@b
+float16
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHea
+dDotProductAttention_0']['key']['kernel'].value: (27, 1152, 1
+6, 72)@bfloat16
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHea
+dDotProductAttention_0']['out']['bias'].value: (27, 1152)@bfl
+oat16
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHea
+dDotProductAttention_0']['out']['kernel'].value: (27, 16, 72,
+ 1152)@bfloat16
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHea
+dDotProductAttention_0']['query']['bias'].value: (27, 16, 72)
+@bfloat16
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHea
+dDotProductAttention_0']['query']['kernel'].value: (27, 1152,
+ 16, 72)@bfloat16
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHea
+dDotProductAttention_0']['value']['bias'].value: (27, 16, 72)
+@bfloat16
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHea
+dDotProductAttention_0']['value']['kernel'].value: (27, 1152,
+ 16, 72)@bfloat16
+['PaliGemma']['img']['embedding']['bias'].value: (1152,)@bflo
+at16
+['PaliGemma']['img']['embedding']['kernel'].value: (14, 14, 3
+, 1152)@bfloat16
+['PaliGemma']['img']['head']['bias'].value: (2048,)@bfloat16
+['PaliGemma']['img']['head']['kernel'].value: (1152, 2048)@bf
+loat16
+['PaliGemma']['img']['pos_embedding'].value: (1, 256, 1152)@b
+float16
+['PaliGemma']['llm']['embedder']['input_embedding'].value: (2
+57152, 2048)@bfloat16
+['PaliGemma']['llm']['final_norm']['scale'].value: (2048,)@bf
+loat16
+['PaliGemma']['llm']['final_norm_1']['Dense_0']['bias'].value
+: (3072,)@bfloat16
+['PaliGemma']['llm']['final_norm_1']['Dense_0']['kernel'].val
+ue: (1024, 3072)@bfloat16
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum']['w'
+].value: (18, 8, 256, 2048)@bfloat16
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum_1']['
+lora_a'].value: (18, 8, 256, 32)@float32
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum_1']['
+lora_b'].value: (18, 8, 32, 1024)@float32
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum_1']['
+w'].value: (18, 8, 256, 1024)@bfloat16
+['PaliGemma']['llm']['layers']['attn']['kv_einsum']['w'].valu
+e: (18, 2, 1, 2048, 256)@bfloat16
+['PaliGemma']['llm']['layers']['attn']['kv_einsum_1']['lora_a
+'].value: (18, 2, 1, 1024, 32)@float32
+['PaliGemma']['llm']['layers']['attn']['kv_einsum_1']['lora_b
+'].value: (18, 2, 1, 32, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['kv_einsum_1']['w'].va
+lue: (18, 2, 1, 1024, 256)@bfloat16
+['PaliGemma']['llm']['layers']['attn']['q_einsum']['w'].value
+: (18, 8, 2048, 256)@bfloat16
+['PaliGemma']['llm']['layers']['attn']['q_einsum_1']['lora_a'
+].value: (18, 8, 1024, 32)@float32
+['PaliGemma']['llm']['layers']['attn']['q_einsum_1']['lora_b'
+].value: (18, 8, 32, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['q_einsum_1']['w'].val
+ue: (18, 8, 1024, 256)@bfloat16
+['PaliGemma']['llm']['layers']['mlp']['gating_einsum'].value:
+ (18, 2, 2048, 16384)@bfloat16
+['PaliGemma']['llm']['layers']['mlp']['linear'].value: (18, 1
+6384, 2048)@bfloat16
+['PaliGemma']['llm']['layers']['mlp_1']['gating_einsum'].valu
+e: (18, 2, 1024, 4096)@bfloat16
+['PaliGemma']['llm']['layers']['mlp_1']['gating_einsum_lora_a
+'].value: (18, 2, 1024, 32)@float32
+['PaliGemma']['llm']['layers']['mlp_1']['gating_einsum_lora_b
+'].value: (18, 2, 32, 4096)@float32
+['PaliGemma']['llm']['layers']['mlp_1']['linear'].value: (18,
+ 4096, 1024)@bfloat16
+['PaliGemma']['llm']['layers']['mlp_1']['linear_lora_a'].valu
+e: (18, 4096, 32)@float32
+['PaliGemma']['llm']['layers']['mlp_1']['linear_lora_b'].valu
+e: (18, 32, 1024)@float32
+['PaliGemma']['llm']['layers']['pre_attention_norm']['scale']
+.value: (18, 2048)@bfloat16
+['PaliGemma']['llm']['layers']['pre_attention_norm_1']['Dense
+_0']['bias'].value: (18, 3072)@bfloat16
+['PaliGemma']['llm']['layers']['pre_attention_norm_1']['Dense
+_0']['kernel'].value: (18, 1024, 3072)@bfloat16
+['PaliGemma']['llm']['layers']['pre_ffw_norm']['scale'].value
+: (18, 2048)@bfloat16
+['PaliGemma']['llm']['layers']['pre_ffw_norm_1']['Dense_0']['
+bias'].value: (18, 3072)@bfloat16
+['PaliGemma']['llm']['layers']['pre_ffw_norm_1']['Dense_0']['
+kernel'].value: (18, 1024, 3072)@bfloat16
+['action_in_proj']['bias'].value: (1024,)@bfloat16
+['action_in_proj']['kernel'].value: (32, 1024)@bfloat16
+['action_out_proj']['bias'].value: (32,)@bfloat16
+['action_out_proj']['kernel'].value: (1024, 32)@bfloat16
+['time_mlp_in']['bias'].value: (1024,)@bfloat16
+['time_mlp_in']['kernel'].value: (1024, 1024)@bfloat16
+['time_mlp_out']['bias'].value: (1024,)@bfloat16
+['time_mlp_out']['kernel'].value: (1024, 1024)@bfloat16 (5963
+3:train.py:238)
+14:52:56.775 [I] Restoring checkpoint from /root/autodl-tmp/o
+penpi_checkpoints/pi05_libero_sam_dim_expert_lora/sam_dim_exp
+ert_lora/19000. (59633:checkpointer.py:298)
+/root/proj/openpi/.venv/lib/python3.11/site-packages/orbax/ch
+eckpoint/_src/serialization/type_handlers.py:1251: UserWarnin
+g: Sharding info not provided when restoring. Populating shar
+ding info from sharding file. Please note restoration time wi
+ll be slightly increased due to reading from file. Note also
+that this option is unsafe when restoring on a different topo
+logy than the checkpoint was saved with.
+  warnings.warn(
+14:53:03.074 [I] [process=0] /jax/checkpoint/read/bytes_per_s
+ec: 1.0 GiB/s (total bytes: 6.3 GiB) (time elapsed: 6 seconds
+) (per-host) (59633:base_pytree_checkpoint_handler.py:114)
+14:53:03.242 [I] [process=0] /jax/checkpoint/read/bytes_per_s
+ec: 1010.3 MiB/s (total bytes: 168.8 MiB) (time elapsed: 167
+milliseconds) (per-host) (59633:base_pytree_checkpoint_handle
+r.py:114)
+14:53:03.243 [I] Finished restoring checkpoint in 6.47 second
+s from /root/autodl-tmp/openpi_checkpoints/pi05_libero_sam_di
+m_expert_lora/sam_dim_expert_lora/19000. (59633:checkpointer.
+py:309)
+14:53:03.243 [I] {'step': 19000, 'event_type': 'restore', 'di
+rectory': '/root/autodl-tmp/openpi_checkpoints/pi05_libero_sa
+m_dim_expert_lora/sam_dim_expert_lora', 'checkpointer_start_t
+ime': 1779864776.7756228, 'checkpointer_duration_secs': 6.467
+7956104278564, 'checkpoint_manager_start_time': 1779864776.77
+51842, 'checkpoint_manager_duration_secs': 6.4682416915893555
+} (59633:standard_logger.py:34)
+Step 19100: grad_norm=0.0035, loss=0.0028, param_norm=1832.58
+78
+
+Step 19200: grad_norm=0.0034, loss=0.0026, param_norm=1832.58
+81
+
+Step 19300: grad_norm=0.0033, loss=0.0024, param_norm=1832.58
+81
+
+Step 19400: grad_norm=0.0035, loss=0.0028, param_norm=1832.58
+83
+
+Step 19500: grad_norm=0.0040, loss=0.0031, param_norm=1832.58
+85
+
+Step 19600: grad_norm=0.0036, loss=0.0029, param_norm=1832.58
+87
+
+Step 19700: grad_norm=0.0038, loss=0.0028, param_norm=1832.58
+90
+
+Step 19800: grad_norm=0.0036, loss=0.0027, param_norm=1832.58
+92
+
+Step 19900: grad_norm=0.0038, loss=0.0028, param_norm=1832.58
+92
+Step 20000: grad_norm=0.0038, loss=0.0029, param_norm=1832.58
+94
+Step 20100: grad_norm=0.0036, loss=0.0029, param_norm=1832.58
+95
+Step 20200: grad_norm=0.0035, loss=0.0027, param_norm=1832.58
+95
+Step 20300: grad_norm=0.0038, loss=0.0028, param_norm=1832.58
+98
+Step 20400: grad_norm=0.0034, loss=0.0024, param_norm=1832.58
+98
+Step 20500: grad_norm=0.0035, loss=0.0026, param_norm=1832.58
+98
+Step 20600: grad_norm=0.0037, loss=0.0026, param_norm=1832.58
+98
+Step 20700: grad_norm=0.0038, loss=0.0028, param_norm=1832.59
+01
+ ... (more hidden) ...^[[>0;276;0c^[P>|xterm.js(6.1.0-beta.21
+3)^[\
+
+ ... (more hidden) ...
+
+Step 20800: grad_norm=0.0037, loss=0.0029, param_norm=1832.59
+03
+ ... (more hidden) ...ux capture-pane -p -S -3000 > /root/pro
+j/train/tmux_output.log
+Step 20900: grad_norm=0.0037, loss=0.0028, param_norm=1832.59
+03
+ ... (more hidden) ...

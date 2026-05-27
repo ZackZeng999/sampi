@@ -7,6 +7,9 @@ This README describes how to run the current integration under `/root/proj`.
 /root/proj/openpi/examples/libero/sam_dim_client.py
 /root/proj/sam3/openpi_sam_dim_server.py
 
+## 同步到git repo
+rsync -av   --exclude='.git'   --exclude='.venv'   --exclude='__pycache__'   --exclude='*.pyc'   --exclude='data/libero/videos'   --exclude='eval'   --exclude='checkpoints'   --exclude='assets'   /root/proj/ /root/sampi/
+
 
 
 The full stack has 3 processes:

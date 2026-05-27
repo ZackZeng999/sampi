@@ -1,0 +1,1 @@
+PYOPENGL_PLATFORM=egl MUJOCO_GL=egl python examples/libero/main.py --args.use-sam > /root/proj/eval/openpi_finetune1epoch/10.log 2>&1

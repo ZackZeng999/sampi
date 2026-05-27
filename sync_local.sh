@@ -1,0 +1,1 @@
+rsync -av   --exclude='.git'   --exclude='.venv'   --exclude='__pycache__'   --exclude='*.pyc'   --exclude='data/libero/videos'   --exclude='checkpoints'   --exclude='assets'   /root/proj/ /root/sampi/

@@ -90,6 +90,21 @@ class SamDimClient:
             if image is not None:
                 payload["image"] = _encode_image(image)
             result = self._post_json(extract_url, payload)
+            trace = result.get("prompt_trace") if isinstance(result, dict) else None
+            if trace:
+                LOGGER.info(
+                    "SAM extractor prompt trace: %s",
+                    [
+                        {
+                            "source": item.get("source_prompt"),
+                            "role": item.get("source_role"),
+                            "selected": item.get("selected_prompt"),
+                            "round": item.get("selected_round"),
+                            "status": item.get("status"),
+                        }
+                        for item in trace
+                    ],
+                )
             prompts = result.get("prompts", result.get("objects", result))
             if isinstance(prompts, str):
                 prompts = [prompts]
