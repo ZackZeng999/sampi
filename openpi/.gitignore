@@ -3,6 +3,8 @@ assets/
 checkpoints/
 data/
 wandb/
+!openpi/third_party/libero/libero/libero/assets/
+!openpi/third_party/libero/libero/libero/assets/**
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
