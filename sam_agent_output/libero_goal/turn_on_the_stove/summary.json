@@ -1,0 +1,53 @@
+{
+  "dataset": "libero_goal",
+  "task_stem": "turn_on_the_stove",
+  "bddl_path": "/root/proj/openpi/third_party/libero/libero/libero/bddl_files/libero_goal/turn_on_the_stove.bddl",
+  "status": "completed",
+  "entities": [
+    {
+      "original_prompt": "stove",
+      "role": "manipulated_object",
+      "agent_prompts": [
+        "burner"
+      ],
+      "final_agent_prompt": "burner",
+      "num_masks": 1,
+      "pred_scores": [
+        0.76171875
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.2109040915966034,
+          0.4065021872520447,
+          0.13653898239135742,
+          0.08780977129936218
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          47,
+          91,
+          78,
+          111
+        ]
+      ],
+      "pred_masks_rle": [
+        "T\\:4j64M2N2N2N100O2O000O2O00000O1000O100000000O2O001N1O101N2N2N3KQko0"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_goal/turn_on_the_stove/entities/01_stove/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_goal/turn_on_the_stove/entities/01_stove/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_goal/turn_on_the_stove/entities/01_stove/pred.png",
+      "status": "completed"
+    }
+  ],
+  "task_description": "Turn on the stove",
+  "video_path": "/root/proj/openpi/data/libero/videos/rollout_turn_on_the_stove_success.mp4",
+  "first_frame_path": "/root/proj/sam_agent_output/libero_goal/turn_on_the_stove/input_first_frame.png",
+  "entity_extraction_response": "{\n  \"entities\": [\n    {\n      \"phrase\": \"stove\",\n      \"role\": \"manipulated_object\"\n    }\n  ]\n}",
+  "extracted_entities": [
+    {
+      "phrase": "stove",
+      "role": "manipulated_object"
+    }
+  ]
+}

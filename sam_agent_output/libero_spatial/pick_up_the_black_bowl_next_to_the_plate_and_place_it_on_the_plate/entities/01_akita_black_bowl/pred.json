@@ -1,0 +1,37 @@
+{
+  "original_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate/input_first_frame.png",
+  "orig_img_h": 224,
+  "orig_img_w": 224,
+  "pred_boxes": [
+    [
+      0.07838546484708786,
+      0.4438535273075104,
+      0.13674408197402954,
+      0.10683509707450867
+    ],
+    [
+      0.030740777030587196,
+      0.5844841003417969,
+      0.15427455306053162,
+      0.12531763315200806
+    ],
+    [
+      0.14987586438655853,
+      0.6433011293411255,
+      0.19442911446094513,
+      0.15025198459625244
+    ]
+  ],
+  "pred_scores": [
+    0.62890625,
+    0.6171875,
+    0.53125
+  ],
+  "pred_masks": [
+    "\\Q46h63O2M101N2N2N101N101N101O00000O1000O101O0O100O2N1O2N2N1N4Kj\\V1",
+    "ae13i66L4M2N2N101N2N2O0O2O0O10001O000O10O1000000O100O101N1O2O0N3N1O2M3KllW1",
+    "S\\72j68J4M2M3N2N1O2N2N100O2O0O100O100O10000000000O100000000000O101O0O101O0O2O0O2N2N2M3N3M2N7EUio0"
+  ],
+  "original_prompt": "akita black bowl",
+  "role": "manipulated_object"
+}

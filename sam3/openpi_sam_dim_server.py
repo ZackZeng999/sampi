@@ -18,7 +18,7 @@ import threading
 from typing import Any
 
 import numpy as np
-from PIL import Image
+from PIL import Image, ImageDraw
 import torch
 
 from sam3.agent.client_llm import send_generate_request
@@ -30,24 +30,33 @@ LOGGER = logging.getLogger("openpi_sam_dim_server")
 
 # Default LLM config for prompt extraction. Keep secrets out of source code.
 DEFAULT_LLM_SERVER_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"
-DEFAULT_LLM_MODEL = "qwen3-vl-8b-instruct"
+DEFAULT_LLM_MODEL = "qwen3.6-plus"
 DEFAULT_LLM_API_KEY = ""
 DEFAULT_LLM_API_KEY_FILE = "/root/proj/qwen_api_key.txt"
 
 
 EXTRACT_SYSTEM_PROMPT = """
-You are a robot manipulation prompt refinement assistant. Your job is to map task-relevant physical objects to short SAM-segmentable noun phrases while preserving source-object identity.
-Core rules:
-- Keep every later prompt tied to a source_prompt derived from the original robot task.
-- Use short simple noun phrases, not full referring expressions.
-- No articles, no possessives, no numbers, no verbs.
-- Prefer whole physical objects over object parts, unless the task truly requires an articulated part such as microwave door.
-- Focus on manipulated objects, target receptacles/supports, and necessary articulated parts.
-- Do not introduce unrelated visible objects just because they are easy to segment.
-- Do not casually change colors. Add color only when it is clearly visible and needed for disambiguation.
-- Conservative replacements should stay very close to the source prompt.
-- Aggressive replacements may use broader visual aliases, but only for source prompts that failed in previous rounds.
-- Output strict JSON only, in the exact schema requested by the current round.
+You are a robot manipulation task-analysis and visual-prompt refinement assistant.
+Your goal is to convert a robot task into task-complete, visually grounded, SAM-segmentable prompts.
+
+You operate in one explicitly specified round at a time:
+1. Task decomposition: decompose the task and identify the physical entities and parts required to execute every subtask.
+2. Visual source grounding: use the task decomposition and image to map functional entities to visible source prompts.
+3. Conservative refinement: propose close semantic aliases for source prompts that SAM could not validate.
+4. Aggressive refinement: propose broader but still task-grounded visual aliases for source prompts that failed all previous attempts.
+
+Global rules:
+- Follow only the instructions for the current round.
+- Preserve the identity, task role, parent relationship, and required status of every entity across rounds.
+- Every visual prompt and later replacement must remain tied to an entity from task decomposition.
+- Use an ordinary semantic visual prompt for an entity that the task requires only once. When the task explicitly requires multiple instances of the same named entity, preserve each required instance and distinguish them using the simplest reliable visible difference; this may be appearance, color, type, or a spatial qualifier when useful.
+- Cover every required entity and every task-required instance before considering the task visually complete.
+- Do not introduce unrelated visible objects merely because they are easy to segment.
+- Use short simple noun phrases for visual prompts, not full referring expressions.
+- No articles, no possessives, no numbers, and no verbs in visual prompts.
+- Do not casually replace the target object's category or identity. In refinement rounds, clearly image-supported color, material, shape, surface, or appearance attributes may be added, removed, or replaced when necessary to improve SAM grounding, while the prompt must remain tied to the same target object category.
+- Output strict JSON only, using exactly the schema requested by the current round.
+- Do not output Markdown or explanatory text outside the requested JSON.
 """.strip()
 
 
@@ -71,6 +80,60 @@ def _resize_mask(mask: np.ndarray, height: int, width: int) -> np.ndarray:
     return np.asarray(mask_img) > 0
 
 
+def _bbox_from_mask(mask: np.ndarray) -> list[int] | None:
+    ys, xs = np.where(mask)
+    if xs.size == 0 or ys.size == 0:
+        return None
+    return [int(xs.min()), int(ys.min()), int(xs.max()), int(ys.max())]
+
+
+def _bbox_from_sam_boxes(boxes: Any, keep: list[int], *, height: int, width: int) -> list[int] | None:
+    selected_boxes = _sam_boxes_as_xyxy(boxes, keep, height=height, width=width)
+    return _union_bboxes(selected_boxes)
+
+
+def _sam_boxes_as_xyxy(boxes: Any, keep: list[int], *, height: int, width: int) -> list[list[int]]:
+    if boxes is None or not keep:
+        return []
+    if hasattr(boxes, "detach"):
+        boxes_np = boxes.detach().float().cpu().numpy()
+    else:
+        boxes_np = np.asarray(boxes, dtype=np.float32)
+    if boxes_np.size == 0:
+        return []
+    boxes_np = boxes_np.reshape((-1, boxes_np.shape[-1]))
+    valid_keep = [idx for idx in keep if 0 <= idx < len(boxes_np)]
+    if not valid_keep or boxes_np.shape[-1] < 4:
+        return []
+    selected = boxes_np[valid_keep, :4].astype(np.float32)
+    # SAM3 image processor boxes are expected as absolute xyxy. If a future
+    # backend returns normalized boxes, scale them to the current image size.
+    if float(np.nanmax(np.abs(selected))) <= 1.5:
+        selected[:, [0, 2]] *= width
+        selected[:, [1, 3]] *= height
+    out = []
+    for box in selected:
+        x_min = max(0, min(width - 1, int(np.floor(box[0]))))
+        y_min = max(0, min(height - 1, int(np.floor(box[1]))))
+        x_max = max(0, min(width - 1, int(np.ceil(box[2]))))
+        y_max = max(0, min(height - 1, int(np.ceil(box[3]))))
+        if x_max >= x_min and y_max >= y_min:
+            out.append([x_min, y_min, x_max, y_max])
+    return out
+
+
+def _union_bboxes(bboxes: list[list[int] | None]) -> list[int] | None:
+    valid = [bbox for bbox in bboxes if bbox]
+    if not valid:
+        return None
+    return [
+        int(min(bbox[0] for bbox in valid)),
+        int(min(bbox[1] for bbox in valid)),
+        int(max(bbox[2] for bbox in valid)),
+        int(max(bbox[3] for bbox in valid)),
+    ]
+
+
 def _dedupe(items: list[str]) -> list[str]:
     deduped: list[str] = []
     for item in items:
@@ -78,6 +141,16 @@ def _dedupe(items: list[str]) -> list[str]:
         if normalized and normalized not in deduped:
             deduped.append(normalized)
     return deduped
+
+
+def _as_bool(value: Any, *, default: bool = False) -> bool:
+    if isinstance(value, bool):
+        return value
+    if isinstance(value, str):
+        return value.strip().lower() in {"true", "yes", "1"}
+    if value is None:
+        return default
+    return bool(value)
 
 
 def _read_api_key_file(path: str) -> str:
@@ -124,15 +197,15 @@ class SamAgentService:
         llm_server_url: str = "",
         llm_model: str = "",
         llm_api_key: str | None = None,
-        llm_max_tokens: int = 512,
+        llm_max_tokens: int = 1024,
         extract_max_prompts: int = 3,
-        extract_max_rounds: int = 3,
+        extract_max_rounds: int = 4,
         extract_accept_score_threshold: float = 0.5,
     ):
         self._device = device or ("cuda" if torch.cuda.is_available() else "cpu")
         LOGGER.info("Loading SAM3 image model from %s on %s", checkpoint_path, self._device)
         model = build_sam3_image_model(checkpoint_path=checkpoint_path, device=self._device)
-        self._processor = Sam3Processor(model, confidence_threshold=confidence_threshold)
+        self._processor = Sam3Processor(model, device=self._device, confidence_threshold=confidence_threshold)
         self._use_cuda_autocast = self._device.startswith("cuda")
         self._lock = threading.Lock()
         self._llm_server_url = llm_server_url
@@ -154,7 +227,7 @@ class SamAgentService:
         score_threshold: float,
         max_masks: int,
     ) -> dict[str, Any]:
-        mask, scores = self._predict_mask(
+        mask, scores, sam_bbox = self._predict_mask(
             image,
             object_prompt,
             score_threshold=score_threshold,
@@ -165,6 +238,8 @@ class SamAgentService:
             "mask": _encode_mask(mask),
             "mask_found": bool(mask.any()),
             "mask_pixels": int(mask.sum()),
+            "sam_bbox": sam_bbox,
+            "compute_bbox": _bbox_from_mask(mask),
             "scores": [float(score) for score in scores],
         }
 
@@ -176,12 +251,13 @@ class SamAgentService:
         max_prompts: int | None = None,
         max_rounds: int | None = None,
     ) -> dict[str, Any]:
-        max_prompts = min(max_prompts or self._extract_max_prompts, 3)
+        max_prompts = max_prompts or self._extract_max_prompts
         max_rounds = max_rounds or self._extract_max_rounds
         if not task_description.strip():
             return {
                 "prompts": [],
                 "used_prompts": [],
+                "task_decomposition": {"task": "", "subtasks": []},
                 "source_prompts": [],
                 "prompt_trace": [],
                 "extractor_enabled": self.extractor_enabled(),
@@ -191,6 +267,7 @@ class SamAgentService:
             return {
                 "prompts": [],
                 "used_prompts": [],
+                "task_decomposition": {"task": task_description, "subtasks": []},
                 "source_prompts": [],
                 "prompt_trace": [],
                 "extractor_enabled": False,
@@ -198,6 +275,7 @@ class SamAgentService:
             }
 
         image_path = None
+        grounding_overlay_path = None
         if image is not None:
             tmp = tempfile.NamedTemporaryFile(prefix="sam3_extract_", suffix=".png", delete=False)
             image_path = tmp.name
@@ -209,17 +287,52 @@ class SamAgentService:
             evaluation_trace: list[dict[str, Any]] = []
             candidate_budget = max(max_prompts, min(6, max_prompts * 2))
 
+            # Round 1: decompose the language task without relying on visual appearance.
+            decomposition_text = self._generate_task_decomposition(task_description=task_description)
+            task_decomposition = self._parse_task_decomposition(decomposition_text, task_description=task_description)
+            if max_rounds <= 1:
+                return self._build_extract_response(
+                    [],
+                    task_decomposition=task_decomposition,
+                    used_prompts=used,
+                    evaluation_trace=evaluation_trace,
+                    max_prompts=max_prompts,
+                    fallback_mode="task_decomposition",
+                )
+
+            # Before Round 2, ground each Round 1 entity using its original semantic name.
+            initial_grounding, grounding_overlay_path = self._ground_task_entities(
+                image=image,
+                task_decomposition=task_decomposition,
+            )
+
+            # Round 2: inspect the original-entity SAM evidence and map entities to visible SAM prompts.
             response_text = self._generate_source_prompts(
-                image_path=image_path,
+                image_path=grounding_overlay_path or image_path,
                 task_description=task_description,
+                task_decomposition=task_decomposition,
+                initial_grounding=initial_grounding,
                 remaining_slots=candidate_budget,
             )
-            source_candidates = self._parse_source_prompt_candidates(response_text)[:candidate_budget]
+            all_source_candidates = self._apply_task_metadata(
+                self._parse_source_prompt_candidates(response_text), task_decomposition
+            )
+            required_candidates = [source for source in all_source_candidates if source.get("required")]
+            optional_candidates = [source for source in all_source_candidates if not source.get("required")]
+            source_candidates = required_candidates + optional_candidates[: max(0, candidate_budget - len(required_candidates))]
             source_states: list[dict[str, Any]] = []
             for priority, source in enumerate(source_candidates, start=1):
                 state = {
-                    "source_prompt": source["source_prompt"],
+                    "source_key": f"{source['entity']}::{source['visual_prompt']}",
+                    "source_prompt": source["entity"],
+                    "source_instance": source["visual_prompt"],
                     "source_role": source.get("source_role", "unknown"),
+                    "initial_prompt": source["visual_prompt"],
+                    "directly_contacted": source.get("directly_contacted", False),
+                    "state_change": source.get("state_change"),
+                    "inferred": source.get("inferred", False),
+                    "parent_entity": source.get("parent_entity"),
+                    "required": source.get("required", False),
                     "selected_prompt": None,
                     "selected_round": None,
                     "selected_score": 0.0,
@@ -229,8 +342,8 @@ class SamAgentService:
                 attempt = self._evaluate_source_candidate(
                     image=image,
                     state=state,
-                    prompt=state["source_prompt"],
-                    mode="importance_only",
+                    prompt=state["initial_prompt"],
+                    mode="visual_source_grounding",
                     priority=priority,
                     used=used,
                     evaluation_trace=evaluation_trace,
@@ -238,20 +351,23 @@ class SamAgentService:
                 if attempt["accepted"]:
                     self._select_attempt(state, attempt)
 
-            if self._selected_prompt_count(source_states) >= max_prompts or max_rounds <= 1:
+            if max_rounds <= 2:
                 return self._build_extract_response(
                     source_states,
+                    task_decomposition=task_decomposition,
                     used_prompts=used,
                     evaluation_trace=evaluation_trace,
                     max_prompts=max_prompts,
-                    fallback_mode="importance_only",
+                    fallback_mode="visual_source_grounding",
                 )
 
-            if max_rounds >= 2:
+            # Round 3: propose close aliases only while required entities still lack a valid prompt.
+            if max_rounds >= 3 and not self._required_sources_covered(source_states):
                 self._run_refinement_round(
                     image=image,
                     image_path=image_path,
                     task_description=task_description,
+                    task_decomposition=task_decomposition,
                     source_states=source_states,
                     used=used,
                     evaluation_trace=evaluation_trace,
@@ -259,20 +375,23 @@ class SamAgentService:
                     max_candidates_per_source=3,
                     allow_successful_replacements=True,
                 )
-            if self._selected_prompt_count(source_states) >= max_prompts or max_rounds <= 2:
+            if max_rounds <= 3:
                 return self._build_extract_response(
                     source_states,
+                    task_decomposition=task_decomposition,
                     used_prompts=used,
                     evaluation_trace=evaluation_trace,
                     max_prompts=max_prompts,
                     fallback_mode="conservative",
                 )
 
-            if max_rounds >= 3:
+            # Round 4: broaden aliases only while required entities still lack a valid prompt.
+            if max_rounds >= 4 and not self._required_sources_covered(source_states):
                 self._run_refinement_round(
                     image=image,
                     image_path=image_path,
                     task_description=task_description,
+                    task_decomposition=task_decomposition,
                     source_states=source_states,
                     used=used,
                     evaluation_trace=evaluation_trace,
@@ -282,14 +401,97 @@ class SamAgentService:
                 )
             return self._build_extract_response(
                 source_states,
+                task_decomposition=task_decomposition,
                 used_prompts=used,
                 evaluation_trace=evaluation_trace,
                 max_prompts=max_prompts,
                 fallback_mode="aggressive",
             )
         finally:
-            if image_path and os.path.exists(image_path):
-                os.remove(image_path)
+            for temporary_path in (grounding_overlay_path, image_path):
+                if temporary_path and os.path.exists(temporary_path):
+                    os.remove(temporary_path)
+
+    def _ground_task_entities(
+        self,
+        *,
+        image: np.ndarray | None,
+        task_decomposition: dict[str, Any],
+    ) -> tuple[list[dict[str, Any]], str | None]:
+        entities: list[dict[str, Any]] = []
+        by_entity: dict[str, dict[str, Any]] = {}
+        for subtask in task_decomposition.get("subtasks", []):
+            for argument in subtask.get("arguments", []):
+                entity = str(argument.get("entity", "")).strip().lower()
+                if not entity:
+                    continue
+                if entity not in by_entity:
+                    summary = {
+                        "entity": entity,
+                        "role": argument.get("role", "other"),
+                        "inferred": bool(argument.get("inferred", False)),
+                        "required": bool(argument.get("required", False)),
+                    }
+                    by_entity[entity] = summary
+                    entities.append(summary)
+                else:
+                    by_entity[entity]["required"] = bool(by_entity[entity]["required"] or argument.get("required"))
+
+        grounding: list[dict[str, Any]] = []
+        all_regions: list[tuple[str, dict[str, Any]]] = []
+        for entity_summary in entities:
+            regions = self._predict_regions(
+                image,
+                entity_summary["entity"],
+                score_threshold=0.0,
+                max_regions=3,
+            ) if image is not None else []
+            validated = any(region.get("score", 0.0) >= self._extract_accept_score_threshold for region in regions)
+            grounding_item = {
+                **entity_summary,
+                "sam_prompt": entity_summary["entity"],
+                "found": bool(regions),
+                "validated": validated,
+                "accept_score_threshold": self._extract_accept_score_threshold,
+                "regions": regions,
+            }
+            grounding.append(grounding_item)
+            all_regions.extend((entity_summary["entity"], region) for region in regions)
+            LOGGER.info(
+                "Extractor initial entity grounding for %r found=%s regions=%s",
+                entity_summary["entity"],
+                bool(regions),
+                regions,
+            )
+
+        if image is None:
+            return grounding, None
+        return grounding, self._render_grounding_overlay(image, all_regions)
+
+    def _render_grounding_overlay(
+        self,
+        image: np.ndarray,
+        labeled_regions: list[tuple[str, dict[str, Any]]],
+    ) -> str:
+        canvas = Image.fromarray(image, mode="RGB").convert("RGBA")
+        colors = [(255, 59, 48), (0, 122, 255), (52, 199, 89), (255, 149, 0), (175, 82, 222), (255, 45, 146)]
+        draw = ImageDraw.Draw(canvas)
+        for index, (entity, region) in enumerate(labeled_regions, start=1):
+            bbox = region.get("sam_bbox") or region.get("compute_bbox")
+            if not bbox:
+                continue
+            color = colors[(index - 1) % len(colors)]
+            draw.rectangle(bbox, outline=(*color, 255), width=3)
+            label = f"{entity} {region.get('region_id', f'R{index}')}"
+            label_y = max(0, int(bbox[1]) - 12)
+            text_bbox = draw.textbbox((int(bbox[0]), label_y), label)
+            draw.rectangle(text_bbox, fill=(0, 0, 0, 220))
+            draw.text((int(bbox[0]), label_y), label, fill=(*color, 255))
+        tmp = tempfile.NamedTemporaryFile(prefix="sam3_grounding_", suffix=".png", delete=False)
+        overlay_path = tmp.name
+        tmp.close()
+        canvas.convert("RGB").save(overlay_path)
+        return overlay_path
 
     def _evaluate_source_candidate(
         self,
@@ -304,7 +506,7 @@ class SamAgentService:
     ) -> dict[str, Any]:
         prompt = str(prompt).strip().lower()
         used.append(prompt)
-        mask, scores = self._predict_mask(
+        mask, scores, sam_bbox = self._predict_mask(
             image,
             prompt,
             score_threshold=self._extract_accept_score_threshold,
@@ -315,12 +517,16 @@ class SamAgentService:
         attempt = {
             "mode": mode,
             "priority": priority,
+            "source_key": state["source_key"],
             "source_prompt": state["source_prompt"],
+            "source_instance": state.get("source_instance"),
             "source_role": state.get("source_role", "unknown"),
             "prompt": prompt,
             "scores": [float(score) for score in scores],
             "best_score": float(best_score),
             "accepted": bool(mask.any()),
+            "sam_bbox": sam_bbox,
+            "compute_bbox": _bbox_from_mask(mask),
         }
         state["attempts"].append(attempt)
         evaluation_trace.append(attempt.copy())
@@ -351,9 +557,16 @@ class SamAgentService:
         state["selected_prompt"] = attempt["prompt"]
         state["selected_round"] = attempt["mode"]
         state["selected_score"] = float(attempt["best_score"])
+        state["selected_sam_bbox"] = attempt.get("sam_bbox")
+        state["selected_compute_bbox"] = attempt.get("compute_bbox")
 
     def _selected_prompt_count(self, source_states: list[dict[str, Any]]) -> int:
         return len(_dedupe([state["selected_prompt"] for state in source_states if state.get("selected_prompt")]))
+
+    def _required_sources_covered(self, source_states: list[dict[str, Any]]) -> bool:
+        required_states = [state for state in source_states if state.get("required")]
+        states_to_cover = required_states or source_states
+        return bool(states_to_cover) and all(state.get("selected_prompt") for state in states_to_cover)
 
     def _run_refinement_round(
         self,
@@ -361,6 +574,7 @@ class SamAgentService:
         image: np.ndarray | None,
         image_path: str | None,
         task_description: str,
+        task_decomposition: dict[str, Any],
         source_states: list[dict[str, Any]],
         used: list[str],
         evaluation_trace: list[dict[str, Any]],
@@ -374,18 +588,19 @@ class SamAgentService:
         response_text = self._generate_replacement_prompts(
             image_path=image_path,
             task_description=task_description,
+            task_decomposition=task_decomposition,
             source_states=source_states,
             mode=mode,
             max_candidates_per_source=max_candidates_per_source,
             allow_successful_replacements=allow_successful_replacements,
         )
-        valid_sources = [state["source_prompt"] for state in source_states]
+        valid_sources = [state["source_key"] for state in source_states]
         if mode == "aggressive":
-            valid_sources = [state["source_prompt"] for state in failed_states]
+            valid_sources = [state["source_key"] for state in failed_states]
         replacement_map = self._parse_replacement_candidates(response_text, valid_sources=valid_sources)
-        state_by_source = {state["source_prompt"]: state for state in source_states}
-        for source_prompt, replacement_info in replacement_map.items():
-            state = state_by_source.get(source_prompt)
+        state_by_source = {state["source_key"]: state for state in source_states}
+        for source_key, replacement_info in replacement_map.items():
+            state = state_by_source.get(source_key)
             if state is None:
                 continue
             already_selected = bool(state.get("selected_prompt"))
@@ -401,7 +616,7 @@ class SamAgentService:
             candidates = [
                 candidate
                 for candidate in replacement_info.get("candidates", [])
-                if candidate and candidate not in tried_for_source and candidate != source_prompt
+                if candidate and candidate not in tried_for_source and candidate != state["source_prompt"]
             ]
             for priority, candidate in enumerate(candidates[:max_candidates_per_source], start=1):
                 attempt = self._evaluate_source_candidate(
@@ -426,7 +641,7 @@ class SamAgentService:
                 LOGGER.info(
                     "Keeping original successful prompt %r for source %r because conservative replacement %r scored lower (%.3f < %.3f).",
                     state.get("selected_prompt"),
-                    source_prompt,
+                    state["source_prompt"],
                     best_attempt["prompt"],
                     best_attempt["best_score"],
                     state.get("selected_score", 0.0),
@@ -438,6 +653,7 @@ class SamAgentService:
         self,
         source_states: list[dict[str, Any]],
         *,
+        task_decomposition: dict[str, Any],
         used_prompts: list[str],
         evaluation_trace: list[dict[str, Any]],
         max_prompts: int,
@@ -446,30 +662,63 @@ class SamAgentService:
         selected_states = [state for state in source_states if state.get("selected_prompt")]
         prompts = _dedupe([state["selected_prompt"] for state in selected_states])[:max_prompts]
         selected_modes = [state["selected_round"] for state in selected_states if state.get("selected_round")]
-        mode_used = selected_modes[-1] if selected_modes else fallback_mode
+        round_rank = {"task_decomposition": 1, "visual_source_grounding": 2, "conservative": 3, "aggressive": 4}
+        mode_used = max(selected_modes, key=lambda mode: round_rank.get(mode, 0)) if selected_modes else fallback_mode
         prompt_trace = []
         for state in source_states:
             prompt_trace.append(
                 {
+                    "source_key": state.get("source_key"),
                     "source_prompt": state["source_prompt"],
+                    "source_instance": state.get("source_instance"),
                     "source_role": state.get("source_role", "unknown"),
+                    "initial_prompt": state.get("initial_prompt"),
+                    "directly_contacted": state.get("directly_contacted", False),
+                    "state_change": state.get("state_change"),
+                    "inferred": state.get("inferred", False),
+                    "parent_entity": state.get("parent_entity"),
+                    "required": state.get("required", False),
                     "selected_prompt": state.get("selected_prompt"),
                     "selected_round": state.get("selected_round"),
                     "selected_score": float(state.get("selected_score", 0.0)),
+                    "selected_sam_bbox": state.get("selected_sam_bbox"),
+                    "selected_compute_bbox": state.get("selected_compute_bbox"),
                     "status": "selected" if state.get("selected_prompt") else "failed",
                     "attempts": state.get("attempts", []),
                 }
             )
+        missing_required_states = [
+            state
+            for state in source_states
+            if state.get("required") and state.get("selected_prompt") not in prompts
+        ]
+        missing_required_sources = [state["source_prompt"] for state in missing_required_states]
+        missing_required_instances = [state.get("source_instance") or state["source_prompt"] for state in missing_required_states]
         return {
             "prompts": prompts,
             "used_prompts": _dedupe(used_prompts),
+            "task_decomposition": task_decomposition,
             "source_prompts": [
-                {"source_prompt": state["source_prompt"], "source_role": state.get("source_role", "unknown")}
+                {
+                    "source_key": state.get("source_key"),
+                    "source_prompt": state["source_prompt"],
+                    "source_instance": state.get("source_instance"),
+                    "source_role": state.get("source_role", "unknown"),
+                    "visual_prompt": state.get("initial_prompt"),
+                    "directly_contacted": state.get("directly_contacted", False),
+                    "state_change": state.get("state_change"),
+                    "inferred": state.get("inferred", False),
+                    "parent_entity": state.get("parent_entity"),
+                    "required": state.get("required", False),
+                }
                 for state in source_states
             ],
             "prompt_trace": prompt_trace,
             "extractor_enabled": True,
             "mode_used": mode_used,
+            "required_coverage_complete": not missing_required_sources,
+            "missing_required_sources": missing_required_sources,
+            "missing_required_instances": missing_required_instances,
             "evaluation_trace": evaluation_trace,
         }
 
@@ -481,9 +730,9 @@ class SamAgentService:
         score_threshold: float,
         max_masks: int,
         allow_fallback: bool = True,
-    ) -> tuple[np.ndarray, list[float]]:
+    ) -> tuple[np.ndarray, list[float], list[int] | None]:
         if image is None:
-            return np.zeros((1, 1), dtype=bool), []
+            return np.zeros((1, 1), dtype=bool), [], None
         height, width = image.shape[:2]
         pil_image = Image.fromarray(image, mode="RGB")
         context = (
@@ -503,6 +752,53 @@ class SamAgentService:
                 allow_fallback=allow_fallback,
             )
 
+    def _predict_regions(
+        self,
+        image: np.ndarray,
+        object_prompt: str,
+        *,
+        score_threshold: float,
+        max_regions: int,
+    ) -> list[dict[str, Any]]:
+        height, width = image.shape[:2]
+        pil_image = Image.fromarray(image, mode="RGB")
+        context = (
+            torch.autocast(device_type="cuda", dtype=torch.bfloat16)
+            if self._use_cuda_autocast
+            else contextlib.nullcontext()
+        )
+        with self._lock, torch.inference_mode(), context:
+            state = self._processor.set_image(pil_image)
+            output = self._processor.set_text_prompt(state=state, prompt=object_prompt.strip())
+
+        masks = output.get("masks")
+        if masks is None or len(masks) == 0:
+            return []
+        masks_np = masks.detach().cpu().numpy() if hasattr(masks, "detach") else np.asarray(masks)
+        if masks_np.ndim == 4 and masks_np.shape[1] == 1:
+            masks_np = masks_np[:, 0]
+        scores = output.get("scores")
+        if scores is None:
+            scores_np = np.ones((masks_np.shape[0],), dtype=np.float32)
+        elif hasattr(scores, "detach"):
+            scores_np = scores.detach().float().cpu().numpy().reshape(-1)
+        else:
+            scores_np = np.asarray(scores, dtype=np.float32).reshape(-1)
+        keep = [int(index) for index in np.argsort(scores_np)[::-1] if scores_np[index] >= score_threshold]
+        keep = keep[:max(1, max_regions)]
+        sam_boxes = _sam_boxes_as_xyxy(output.get("boxes"), keep, height=height, width=width)
+        regions = []
+        for region_index, mask_index in enumerate(keep, start=1):
+            mask = _resize_mask(masks_np[mask_index], height, width)
+            regions.append({
+                "region_id": f"R{region_index}",
+                "score": float(scores_np[mask_index]),
+                "sam_bbox": sam_boxes[region_index - 1] if region_index <= len(sam_boxes) else None,
+                "compute_bbox": _bbox_from_mask(mask),
+                "mask_pixels": int(mask.sum()),
+            })
+        return regions
+
     def _segment_from_state(
         self,
         state: dict[str, Any],
@@ -513,10 +809,10 @@ class SamAgentService:
         score_threshold: float,
         max_masks: int,
         allow_fallback: bool = True,
-    ) -> tuple[np.ndarray, list[float]]:
+    ) -> tuple[np.ndarray, list[float], list[int] | None]:
         object_prompt = object_prompt.strip()
         if not object_prompt:
-            return np.zeros((height, width), dtype=bool), []
+            return np.zeros((height, width), dtype=bool), [], None
         output = self._processor.set_text_prompt(state=state, prompt=object_prompt)
         return self._mask_from_output(
             output,
@@ -536,10 +832,10 @@ class SamAgentService:
         score_threshold: float,
         max_masks: int,
         allow_fallback: bool = True,
-    ) -> tuple[np.ndarray, list[float]]:
+    ) -> tuple[np.ndarray, list[float], list[int] | None]:
         masks = output.get("masks")
         if masks is None or len(masks) == 0:
-            return np.zeros((height, width), dtype=bool), []
+            return np.zeros((height, width), dtype=bool), [], None
 
         masks_np = masks.detach().cpu().numpy()
         if masks_np.ndim == 4 and masks_np.shape[1] == 1:
@@ -552,51 +848,116 @@ class SamAgentService:
             scores_np = scores.detach().float().cpu().numpy().reshape(-1)
 
         order = np.argsort(scores_np)[::-1]
-        keep = [idx for idx in order if scores_np[idx] >= score_threshold]
+        keep = [int(idx) for idx in order if scores_np[idx] >= score_threshold]
         if not keep:
             if allow_fallback and len(order) > 0:
                 keep = [int(order[0])]
             else:
-                return np.zeros((height, width), dtype=bool), []
+                return np.zeros((height, width), dtype=bool), [], None
         keep = keep[: max(1, max_masks)]
 
         union_mask = np.zeros((height, width), dtype=bool)
         kept_scores = []
         for idx in keep:
-            union_mask |= _resize_mask(masks_np[idx], height, width)
+            resized = _resize_mask(masks_np[idx], height, width)
+            union_mask |= resized
             kept_scores.append(float(scores_np[idx]))
-        return union_mask, kept_scores
+        sam_bbox = _bbox_from_sam_boxes(output.get("boxes"), keep, height=height, width=width)
+        return union_mask, kept_scores, sam_bbox
 
-    def _generate_source_prompts(
-        self,
-        *,
-        image_path: str | None,
-        task_description: str,
-        remaining_slots: int,
-    ) -> str:
+    def _generate_task_decomposition(self, *, task_description: str) -> str:
         user_text = (
+            "Current round: task_decomposition. "
             f"Task description: {task_description}. "
-            f"Return at most {remaining_slots} source prompts in ranked order of task importance. "
-            "This is the importance_only round. Use exact object wording from the task whenever possible. "
-            "Do not rewrite, simplify, paraphrase, generalize, or replace object phrases in this round. "
-            "Return primary manipulated objects, target receptacles/supports, and necessary articulated parts only. "
-            "If the task uses an implicit object part that is necessary for manipulation, such as close it for microwave, you may include a conservative articulated part like microwave door. "
-            "Assign source_role as one of manipulated_object, target_receptacle, support, articulated_part, or other. "
-            "Output strict JSON only in this form: "
-            "{\"source_prompts\": [{\"source_prompt\": \"alphabet soup\", \"source_role\": \"manipulated_object\"}, "
-            "{\"source_prompt\": \"basket\", \"source_role\": \"target_receptacle\"}]}"
+            "Decompose the task into ordered atomic subtasks. This is a language-only planning round: do not use visual "
+            "appearance and do not generate SAM prompts, visual aliases, masks, or bounding boxes. For every subtask, "
+            "identify the physical objects, regions, controls, or movable parts needed to execute it. Explicitly consider "
+            "what the robot must physically operate. Resolve pronouns. Preserve task wording whenever possible. Infer a "
+            "part only when it is necessary or meaningfully useful for execution. For state-changing actions such as turn "
+            "on, open, close, or press, include the physical control or movable part the robot must operate; use a functional "
+            "name such as stove control when its exact visual form is unknown. Use role values manipulated_object, "
+            "interaction_target, state_change_target, destination, placement_region, context, or other. Set "
+            "directly_contacted=true only when the robot intentionally operates that entity. Set inferred=true only for "
+            "entities not explicitly named in the task. Set parent_entity to the complete containing object for a part or "
+            "region. Set required=true only when visually locating the entity is necessary to execute the subtask. "
+            "Output strict JSON only in exactly this form: "
+            '{"task": "pick up the moka pot", "subtasks": [{"subtask_id": "subtask_1", "action": "pick_up", '
+            '"description": "Pick up the moka pot.", "arguments": [{"entity": "moka pot", '
+            '"role": "manipulated_object", "directly_contacted": true, '
+            '"state_change": "supported_to_grasped", "inferred": false, "parent_entity": null, "required": true}]}]}'
         )
-        messages = self._build_llm_messages(image_path=image_path, user_text=user_text)
-        LOGGER.info("Extractor source round for task %r", task_description)
+        messages = self._build_llm_messages(image_path=None, user_text=user_text)
+        LOGGER.info("Extractor task decomposition round for task %r", task_description)
         response_text = send_generate_request(
             messages,
             server_url=self._llm_server_url,
             model=self._llm_model,
             api_key=self._llm_api_key,
             max_tokens=self._llm_max_tokens,
+            enable_thinking=False,
         )
         if not response_text:
-            raise RuntimeError("LLM extractor returned no text")
+            raise RuntimeError("LLM task decomposition returned no text")
+        return response_text
+
+    def _generate_source_prompts(
+        self,
+        *,
+        image_path: str | None,
+        task_description: str,
+        task_decomposition: dict[str, Any],
+        initial_grounding: list[dict[str, Any]],
+        remaining_slots: int,
+    ) -> str:
+        user_text = (
+            "Current round: visual_source_grounding. "
+            f"Task description: {task_description}. "
+            f"Task decomposition: {json.dumps(task_decomposition, ensure_ascii=True)}. "
+            f"Initial SAM grounding from each Round 1 entity name: {json.dumps(initial_grounding, ensure_ascii=True)}. "
+            f"Return at most {remaining_slots} visually grounded object instances in ranked order, with required instances first. "
+            "The provided image is annotated with the independently returned regions from running SAM on the original Round 1 "
+            "entity names. Use both the annotated image and the structured initial grounding results as evidence. Region scores "
+            "express SAM confidence, and validated indicates whether any region reached the normal acceptance threshold; low-score "
+            "regions are uncertain evidence rather than confirmed targets. If an original entity prompt already identifies a plausible "
+            "task target, preserve that original semantic prompt rather than replacing "
+            "it unnecessarily. Use the evidence to map each useful functional entity from task decomposition to one or more short "
+            "visible noun phrases suitable for SAM. R1, R2, and R3 are region markers for reference only and must not appear in visual_prompt. "
+            "For an entity required only once, use its ordinary semantic visual name without "
+            "adding an instance distinction merely because of its position in the image. Only split an entity into multiple "
+            "source_prompts items when the task explicitly requires multiple physical instances of that same named entity, "
+            "such as two moka pots or all bowls. The phrase both A and B refers to two different named entities and does not "
+            "make either A or B a multi-instance entity. For true same-entity multi-instance cases, repeat the same entity value "
+            "and distinguish each visual_prompt using the simplest reliable visible difference. Prefer stable appearance, color, "
+            "or type differences when available; spatial qualifiers such as left, right, front, back, or middle are also allowed "
+            "when they are the clearest distinction. Do not collapse multiple task-required instances into one item. Preserve "
+            "each entity's role, directly_contacted, state_change, inferred, parent_entity, "
+            "and required values exactly. For a functional inferred entity whose exact visual form is unknown, inspect the "
+            "image and select its most likely visible form; for example, stove control may become stove knob, switch, or "
+            "button. Be especially cautious when adding, removing, or replacing a container-type word such as bottle, box, "
+            "carton, can, jar, or package for any noun explicitly present in the task description. Do so only when the annotated "
+            "image provides clear visual evidence that the task entity has that container type. The existence of other bottles, "
+            "boxes, or cans in the scene is not evidence about the target entity. When uncertain, preserve the task noun unchanged. "
+            "Do not remove required entities, invent new functional entities, or introduce unrelated visible objects. If the exact "
+            "visible form of a required entity remains uncertain, keep the functional entity itself as visual_prompt instead of omitting it. "
+            "Output strict JSON only in exactly this form: "
+            '{"source_prompts": [{"entity": "cream cheese box", "source_role": "manipulated_object", '
+            '"visual_prompt": "cream cheese box", "directly_contacted": true, "state_change": "supported_to_grasped", '
+            '"inferred": false, "parent_entity": null, "required": true}, {"entity": "basket", '
+            '"source_role": "placement_region", "visual_prompt": "basket", "directly_contacted": false, '
+            '"state_change": null, "inferred": false, "parent_entity": null, "required": true}]}'
+        )
+        messages = self._build_llm_messages(image_path=image_path, user_text=user_text)
+        LOGGER.info("Extractor visual source grounding round for task %r", task_description)
+        response_text = send_generate_request(
+            messages,
+            server_url=self._llm_server_url,
+            model=self._llm_model,
+            api_key=self._llm_api_key,
+            max_tokens=self._llm_max_tokens,
+            enable_thinking=False,
+        )
+        if not response_text:
+            raise RuntimeError("LLM visual source grounding returned no text")
         return response_text
 
     def _generate_replacement_prompts(
@@ -604,6 +965,7 @@ class SamAgentService:
         *,
         image_path: str | None,
         task_description: str,
+        task_decomposition: dict[str, Any],
         source_states: list[dict[str, Any]],
         mode: str,
         max_candidates_per_source: int,
@@ -611,8 +973,16 @@ class SamAgentService:
     ) -> str:
         state_summary = [
             {
-                "source_prompt": state["source_prompt"],
+                "source_key": state["source_key"],
+                "entity": state["source_prompt"],
+                "source_instance": state.get("source_instance"),
                 "source_role": state.get("source_role", "unknown"),
+                "initial_prompt": state.get("initial_prompt"),
+                "directly_contacted": state.get("directly_contacted", False),
+                "state_change": state.get("state_change"),
+                "inferred": state.get("inferred", False),
+                "parent_entity": state.get("parent_entity"),
+                "required": state.get("required", False),
                 "selected_prompt": state.get("selected_prompt"),
                 "selected_round": state.get("selected_round"),
                 "attempts": [
@@ -630,32 +1000,44 @@ class SamAgentService:
         ]
         if mode == "conservative":
             mode_text = (
-                "This is the conservative refinement round. Only refine source_prompts whose first-round attempt failed. "
-                "Source prompts that already succeeded should be kept unchanged by default. If a successful source prompt is clearly too broad, too narrow, or semantically risky, you may cautiously propose replacements for it, but set replace_successful to true and explain why. "
-                "If those cautious replacements fail, the service will fall back to the previously successful prompt. "
-                "For each failed source_prompt, propose 1 to "
-                f"{max_candidates_per_source} close semantic aliases derived from that source_prompt and the task. "
-                "Good conservative examples: chocolate pudding -> chocolate dessert, pudding cup, dessert; "
-                "alphabet soup -> soup can, can; salad dressing -> dressing bottle, bottle. "
-                "Do not propose unrelated visible objects."
+                "Current round: conservative_refinement. Primarily refine entities whose visual grounding prompt failed. "
+                "Keep successful prompts unchanged by default. If a successful prompt is clearly too broad, too narrow, or "
+                "semantically risky, you may cautiously propose replacements, but set replace_successful=true and explain "
+                "why. If those replacements fail, the service keeps the previous successful prompt. For each failed entity, "
+                f"propose 1 to {max_candidates_per_source} close semantic or visually precise aliases. Do not casually change "
+                "the target object's category or identity. When the image provides evidence and it is necessary for SAM grounding, "
+                "you may add, remove, or replace color, material, shape, surface, or appearance attributes, including for a "
+                "single-instance entity. Good examples: black bowl -> metallic bowl, reflective bowl, dark bowl; stove control -> "
+                "control knob, black knob, round black control; chocolate pudding -> chocolate dessert, pudding cup, dessert; "
+                "alphabet soup -> soup can, can; salad dressing -> dressing bottle, bottle."
             )
         else:
             mode_text = (
-                "This is the aggressive refinement round. Only refine source_prompts that failed in all previous rounds. "
-                "Never replace or modify any source_prompt that already has selected_prompt. "
-                "For each still-failed source_prompt, read the previous attempts and failures, then propose 1 to "
-                f"{max_candidates_per_source} broader but still task-derived visual aliases. "
-                "Good aggressive examples: cream cheese -> box, carton; alphabet soup -> can; bbq sauce -> bottle. "
-                "Even in aggressive mode, every candidate must remain semantically tied to its source_prompt and task role. "
-                "Do not propose unrelated objects such as robot arm, floor, phone, or toilet unless the source_prompt itself really refers to that object."
+                "Current round: aggressive_refinement. Only refine entities that failed all previous visual prompts. Never "
+                "replace or modify a successful prompt. Read all previous attempts, then propose 1 to "
+                f"{max_candidates_per_source} broader but still task-grounded visual aliases. Good examples: cream cheese "
+                "-> box, carton; alphabet soup -> can; bbq sauce -> bottle."
             )
         user_text = (
             f"Task description: {task_description}. "
-            f"Current source prompt states and SAM validation results: {json.dumps(state_summary, ensure_ascii=True)}. "
-            f"{mode_text} "
-            "Output strict JSON only in this form: "
-            "{\"replacements\": [{\"source_prompt\": \"alphabet soup\", \"candidates\": [\"soup can\", \"can\"], "
-            "\"replace_successful\": false, \"reason\": \"original source prompt failed in SAM\"}]}"
+            f"Task decomposition: {json.dumps(task_decomposition, ensure_ascii=True)}. "
+            f"Current entity states and SAM validation results: {json.dumps(state_summary, ensure_ascii=True)}. "
+            f"{mode_text} Preserve source_key, entity identity, instance distinction, role, parent relationship, and required "
+            "status. Refine each source_key independently. For a single-instance entity, use ordinary semantic aliases and do "
+            "not introduce an instance distinction merely based on image position. Do not casually change the target object's "
+            "category or identity. Color, material, shape, surface, and appearance attributes are visual descriptions rather than "
+            "object identity; they may be added, removed, or replaced when clearly supported by the image and useful for SAM. "
+            "For multiple task-required instances of the same named entity, stable visual attributes or spatial qualifiers may "
+            "also distinguish instances when needed. "
+            "For an entity noun explicitly present in the task description, be especially cautious about adding, removing, or "
+            "replacing a container-type word such as bottle, box, carton, can, jar, or package. Such a change requires clear "
+            "visual evidence that the target entity itself has that container type; unrelated containers elsewhere in the image "
+            "are not evidence. Preserve the entity's core semantic name in candidates whenever possible, and do not reduce it to "
+            "a generic container word alone. Every candidate must remain visually and semantically tied to that exact instance. "
+            "Do not propose unrelated visible objects. Output strict JSON only in exactly this form: "
+            '{"replacements": [{"source_key": "cream cheese box::cream cheese box", "entity": "cream cheese box", '
+            '"candidates": ["cream cheese carton", "rectangular box"], '
+            '"replace_successful": false, "reason": "the initial visual prompt failed SAM validation"}]}'
         )
         messages = self._build_llm_messages(image_path=image_path, user_text=user_text)
         LOGGER.info("Extractor %s refinement round for task %r", mode, task_description)
@@ -665,6 +1047,7 @@ class SamAgentService:
             model=self._llm_model,
             api_key=self._llm_api_key,
             max_tokens=self._llm_max_tokens,
+            enable_thinking=False,
         )
         if not response_text:
             raise RuntimeError("LLM extractor returned no text")
@@ -680,7 +1063,126 @@ class SamAgentService:
             {"role": "user", "content": content},
         ]
 
-    def _parse_source_prompt_candidates(self, response_text: str) -> list[dict[str, str]]:
+    def _parse_task_decomposition(self, response_text: str, *, task_description: str) -> dict[str, Any]:
+        blob = _extract_json_blob(response_text)
+        data = json.loads(blob)
+        if not isinstance(data, dict):
+            raise ValueError("Task decomposition must be a JSON object")
+        raw_subtasks = data.get("subtasks", [])
+        if not isinstance(raw_subtasks, list):
+            raise ValueError("Task decomposition subtasks must be a list")
+
+        valid_roles = {
+            "manipulated_object",
+            "interaction_target",
+            "state_change_target",
+            "destination",
+            "placement_region",
+            "context",
+            "other",
+        }
+        subtasks = []
+        for index, raw_subtask in enumerate(raw_subtasks, start=1):
+            if not isinstance(raw_subtask, dict):
+                continue
+            arguments = []
+            raw_arguments = raw_subtask.get("arguments", [])
+            if isinstance(raw_arguments, dict):
+                raw_arguments = [raw_arguments]
+            for raw_argument in raw_arguments if isinstance(raw_arguments, list) else []:
+                if not isinstance(raw_argument, dict):
+                    continue
+                entity = str(raw_argument.get("entity", "")).strip().lower()
+                if not entity:
+                    continue
+                role = str(raw_argument.get("role", "other")).strip().lower()
+                if role not in valid_roles:
+                    role = "other"
+                parent = raw_argument.get("parent_entity")
+                parent = str(parent).strip().lower() if parent is not None and str(parent).strip() else None
+                state_change = raw_argument.get("state_change")
+                state_change = str(state_change).strip().lower() if state_change is not None and str(state_change).strip() else None
+                arguments.append(
+                    {
+                        "entity": entity,
+                        "role": role,
+                        "directly_contacted": _as_bool(raw_argument.get("directly_contacted")),
+                        "state_change": state_change,
+                        "inferred": _as_bool(raw_argument.get("inferred")),
+                        "parent_entity": parent,
+                        "required": _as_bool(raw_argument.get("required")),
+                    }
+                )
+            subtasks.append(
+                {
+                    "subtask_id": str(raw_subtask.get("subtask_id") or f"subtask_{index}").strip(),
+                    "action": str(raw_subtask.get("action", "other")).strip().lower(),
+                    "description": str(raw_subtask.get("description", "")).strip(),
+                    "arguments": arguments,
+                }
+            )
+        return {"task": str(data.get("task") or task_description).strip(), "subtasks": subtasks}
+
+    def _apply_task_metadata(
+        self, sources: list[dict[str, Any]], task_decomposition: dict[str, Any]
+    ) -> list[dict[str, Any]]:
+        metadata: dict[str, dict[str, Any]] = {}
+        entity_order: list[str] = []
+        for subtask in task_decomposition.get("subtasks", []):
+            for argument in subtask.get("arguments", []):
+                entity = argument.get("entity")
+                if not entity:
+                    continue
+                if entity not in metadata:
+                    metadata[entity] = dict(argument)
+                    entity_order.append(entity)
+                current = metadata[entity]
+                current["required"] = bool(current.get("required") or argument.get("required"))
+                current["directly_contacted"] = bool(
+                    current.get("directly_contacted") or argument.get("directly_contacted")
+                )
+                current["inferred"] = bool(current.get("inferred") and argument.get("inferred"))
+                if not current.get("parent_entity") and argument.get("parent_entity"):
+                    current["parent_entity"] = argument["parent_entity"]
+                if not current.get("state_change") and argument.get("state_change"):
+                    current["state_change"] = argument["state_change"]
+
+        grounded = []
+        grounded_entities: set[str] = set()
+        for source in sources:
+            task_metadata = metadata.get(source["entity"])
+            if task_metadata is None:
+                LOGGER.warning("Ignoring visual source %r because it is absent from task decomposition", source["entity"])
+                continue
+            source = dict(source)
+            source["source_role"] = task_metadata.get("role", source.get("source_role", "unknown"))
+            for key in ("directly_contacted", "state_change", "inferred", "parent_entity", "required"):
+                source[key] = task_metadata.get(key)
+            grounded.append(source)
+            grounded_entities.add(source["entity"])
+
+        for entity in entity_order:
+            task_metadata = metadata[entity]
+            if not task_metadata.get("required") or entity in grounded_entities:
+                continue
+            LOGGER.warning(
+                "Visual grounding omitted required entity %r; using its functional name as the fallback prompt", entity
+            )
+            grounded.append(
+                {
+                    "entity": entity,
+                    "source_role": task_metadata.get("role", "other"),
+                    "visual_prompt": entity,
+                    "directly_contacted": task_metadata.get("directly_contacted", False),
+                    "state_change": task_metadata.get("state_change"),
+                    "inferred": task_metadata.get("inferred", False),
+                    "parent_entity": task_metadata.get("parent_entity"),
+                    "required": True,
+                }
+            )
+        return sorted(grounded, key=lambda source: not source["required"])
+
+    def _parse_source_prompt_candidates(self, response_text: str) -> list[dict[str, Any]]:
         blob = _extract_json_blob(response_text)
         data = json.loads(blob)
         if isinstance(data, dict):
@@ -692,21 +1194,36 @@ class SamAgentService:
         if isinstance(raw_sources, (str, dict)):
             raw_sources = [raw_sources]
 
-        sources: list[dict[str, str]] = []
-        seen: set[str] = set()
+        sources: list[dict[str, Any]] = []
+        seen: set[tuple[str, str]] = set()
         for item in raw_sources:
-            if isinstance(item, dict):
-                prompt = item.get("source_prompt", item.get("prompt", item.get("text", item.get("name", ""))))
-                role = item.get("source_role", item.get("role", "unknown"))
-            else:
-                prompt = item
-                role = "unknown"
-            prompt = str(prompt).strip().lower()
-            role = str(role).strip().lower() or "unknown"
-            if prompt and prompt not in seen:
-                sources.append({"source_prompt": prompt, "source_role": role})
-                seen.add(prompt)
-        return sources
+            if not isinstance(item, dict):
+                continue
+            entity = str(item.get("entity", item.get("source_prompt", ""))).strip().lower()
+            visual_prompt = str(
+                item.get("visual_prompt", item.get("prompt", item.get("text", item.get("name", entity))))
+            ).strip().lower()
+            instance_key = (entity, visual_prompt)
+            if not entity or not visual_prompt or instance_key in seen:
+                continue
+            parent = item.get("parent_entity")
+            parent = str(parent).strip().lower() if parent is not None and str(parent).strip() else None
+            state_change = item.get("state_change")
+            state_change = str(state_change).strip().lower() if state_change is not None and str(state_change).strip() else None
+            sources.append(
+                {
+                    "entity": entity,
+                    "source_role": str(item.get("source_role", item.get("role", "unknown"))).strip().lower() or "unknown",
+                    "visual_prompt": visual_prompt,
+                    "directly_contacted": _as_bool(item.get("directly_contacted")),
+                    "state_change": state_change,
+                    "inferred": _as_bool(item.get("inferred")),
+                    "parent_entity": parent,
+                    "required": _as_bool(item.get("required")),
+                }
+            )
+            seen.add(instance_key)
+        return sorted(sources, key=lambda source: not source["required"])
 
     def _parse_replacement_candidates(
         self,
@@ -717,13 +1234,13 @@ class SamAgentService:
         valid_lookup = {str(source).strip().lower(): str(source).strip().lower() for source in valid_sources}
         blob = _extract_json_blob(response_text)
         data = json.loads(blob)
-        if isinstance(data, dict) and "source_prompt" in data:
+        if isinstance(data, dict) and ("source_key" in data or "entity" in data or "source_prompt" in data):
             raw_replacements = [data]
         elif isinstance(data, dict):
             raw_replacements = data.get("replacements", data.get("refinements", data.get("sources", [])))
             if isinstance(raw_replacements, dict):
                 raw_replacements = [
-                    {"source_prompt": source, "candidates": candidates}
+                    {"source_key": source, "candidates": candidates}
                     for source, candidates in raw_replacements.items()
                 ]
         elif isinstance(data, list):
@@ -738,7 +1255,7 @@ class SamAgentService:
             if not isinstance(item, dict):
                 continue
             source = str(
-                item.get("source_prompt", item.get("source", item.get("original_prompt", item.get("prompt", ""))))
+                item.get("source_key", item.get("entity", item.get("source_prompt", item.get("source", item.get("original_prompt", item.get("prompt", ""))))))
             ).strip().lower()
             if source not in valid_lookup:
                 continue
@@ -758,6 +1275,7 @@ class SamAgentService:
                 "reason": str(item.get("reason", "")),
             }
         return replacements
+
 
 
 class SamRequestHandler(BaseHTTPRequestHandler):
@@ -827,9 +1345,9 @@ def main() -> None:
     parser.add_argument("--llm-model", default=os.environ.get("SAM3_AGENT_MODEL", DEFAULT_LLM_MODEL))
     parser.add_argument("--llm-api-key", default=os.environ.get("SAM3_AGENT_API_KEY", DEFAULT_LLM_API_KEY))
     parser.add_argument("--llm-api-key-file", default=os.environ.get("SAM3_AGENT_API_KEY_FILE", DEFAULT_LLM_API_KEY_FILE))
-    parser.add_argument("--llm-max-tokens", type=int, default=int(os.environ.get("SAM3_AGENT_MAX_TOKENS", "512")))
-    parser.add_argument("--extract-max-prompts", type=int, default=int(os.environ.get("SAM3_EXTRACT_MAX_PROMPTS", "3")))
-    parser.add_argument("--extract-max-rounds", type=int, default=int(os.environ.get("SAM3_EXTRACT_MAX_ROUNDS", "3")))
+    parser.add_argument("--llm-max-tokens", type=int, default=int(os.environ.get("SAM3_AGENT_MAX_TOKENS", "4096")))
+    parser.add_argument("--extract-max-prompts", type=int, default=int(os.environ.get("SAM3_EXTRACT_MAX_PROMPTS", "5")))
+    parser.add_argument("--extract-max-rounds", type=int, default=int(os.environ.get("SAM3_EXTRACT_MAX_ROUNDS", "4")))
     parser.add_argument("--extract-accept-score-threshold", type=float, default=float(os.environ.get("SAM3_EXTRACT_ACCEPT_SCORE_THRESHOLD", "0.5")))
     args = parser.parse_args()
 

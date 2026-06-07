@@ -1,0 +1,9 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket/entities/02_tomato_sauce/sam_out/-root-proj-sam_agent_output-libero_10-LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket-input_first_frame.png/tomato sauce.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [],
+    "pred_masks": [],
+    "pred_scores": []
+}

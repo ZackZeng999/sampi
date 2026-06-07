@@ -1,0 +1,92 @@
+{
+  "dataset": "libero_goal",
+  "task_stem": "put_the_bowl_on_the_stove",
+  "bddl_path": "/root/proj/openpi/third_party/libero/libero/libero/bddl_files/libero_goal/put_the_bowl_on_the_stove.bddl",
+  "status": "completed",
+  "entities": [
+    {
+      "original_prompt": "bowl",
+      "role": "manipulated_object",
+      "agent_prompts": [
+        "bowl"
+      ],
+      "final_agent_prompt": "bowl",
+      "num_masks": 1,
+      "pred_scores": [
+        0.69140625
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.43146979808807373,
+          0.5024644732475281,
+          0.1432289481163025,
+          0.11081421375274658
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          97,
+          113,
+          129,
+          137
+        ]
+      ],
+      "pred_masks_rle": [
+        "gZe07h64L2N3M2N2O1O001N101O000000000000000000O2O001N2N101N2N101M3N4JXed0"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_goal/put_the_bowl_on_the_stove/entities/01_bowl/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_goal/put_the_bowl_on_the_stove/entities/01_bowl/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_goal/put_the_bowl_on_the_stove/entities/01_bowl/pred.png",
+      "status": "completed"
+    },
+    {
+      "original_prompt": "stove",
+      "role": "destination",
+      "agent_prompts": [
+        "white stove"
+      ],
+      "final_agent_prompt": "white stove",
+      "num_masks": 1,
+      "pred_scores": [
+        0.87109375
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.15740618109703064,
+          0.3886665105819702,
+          0.23295223712921143,
+          0.1507142186164856
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          35,
+          87,
+          87,
+          121
+        ]
+      ],
+      "pred_masks_rle": [
+        "^o79d63M4L3M3M3N2M3N200O1000000000000001OO10010OO10001O0001OO100000000000O1000000000O0100000000000O1L5H8F`lm0"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_goal/put_the_bowl_on_the_stove/entities/02_stove/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_goal/put_the_bowl_on_the_stove/entities/02_stove/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_goal/put_the_bowl_on_the_stove/entities/02_stove/pred.png",
+      "status": "completed"
+    }
+  ],
+  "task_description": "Put the bowl on the stove",
+  "video_path": "/root/proj/openpi/data/libero/videos/rollout_put_the_bowl_on_the_stove_success.mp4",
+  "first_frame_path": "/root/proj/sam_agent_output/libero_goal/put_the_bowl_on_the_stove/input_first_frame.png",
+  "entity_extraction_response": "{\n  \"entities\": [\n    {\n      \"phrase\": \"bowl\",\n      \"role\": \"manipulated_object\"\n    },\n    {\n      \"phrase\": \"stove\",\n      \"role\": \"destination\"\n    }\n  ]\n}",
+  "extracted_entities": [
+    {
+      "phrase": "bowl",
+      "role": "manipulated_object"
+    },
+    {
+      "phrase": "stove",
+      "role": "destination"
+    }
+  ]
+}

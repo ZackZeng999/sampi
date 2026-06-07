@@ -1,0 +1,92 @@
+{
+  "dataset": "libero_goal",
+  "task_stem": "push_the_plate_to_the_front_of_the_stove",
+  "bddl_path": "/root/proj/openpi/third_party/libero/libero/libero/bddl_files/libero_goal/push_the_plate_to_the_front_of_the_stove.bddl",
+  "status": "completed",
+  "entities": [
+    {
+      "original_prompt": "plate",
+      "role": "manipulated_object",
+      "agent_prompts": [
+        "white circle"
+      ],
+      "final_agent_prompt": "white circle",
+      "num_masks": 1,
+      "pred_scores": [
+        0.84765625
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.47041428089141846,
+          0.6676705479621887,
+          0.1346033811569214,
+          0.10705834627151489
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          105,
+          150,
+          136,
+          174
+        ]
+      ],
+      "pred_masks_rle": [
+        "mZg07g64M3M2N2N101O1O0O2O00001O000000O101O00001O0O2O0O2O1M3N3MSZc0"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_goal/push_the_plate_to_the_front_of_the_stove/entities/01_plate/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_goal/push_the_plate_to_the_front_of_the_stove/entities/01_plate/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_goal/push_the_plate_to_the_front_of_the_stove/entities/01_plate/pred.png",
+      "status": "completed"
+    },
+    {
+      "original_prompt": "stove",
+      "role": "destination",
+      "agent_prompts": [
+        "stove"
+      ],
+      "final_agent_prompt": "stove",
+      "num_masks": 1,
+      "pred_scores": [
+        0.71484375
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.15963582694530487,
+          0.38910242915153503,
+          0.22747056186199188,
+          0.14433881640434265
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          36,
+          87,
+          87,
+          119
+        ]
+      ],
+      "pred_masks_rle": [
+        "^o79d63N2M3N2N2M3N2N2O1O100O10000000000000000000000001O00000000001OO10000000000O100O1000000001O000N2J7G<C\\lm0"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_goal/push_the_plate_to_the_front_of_the_stove/entities/02_stove/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_goal/push_the_plate_to_the_front_of_the_stove/entities/02_stove/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_goal/push_the_plate_to_the_front_of_the_stove/entities/02_stove/pred.png",
+      "status": "completed"
+    }
+  ],
+  "task_description": "Push the plate to the front of the stove",
+  "video_path": "/root/proj/openpi/data/libero/videos/rollout_push_the_plate_to_the_front_of_the_stove_success.mp4",
+  "first_frame_path": "/root/proj/sam_agent_output/libero_goal/push_the_plate_to_the_front_of_the_stove/input_first_frame.png",
+  "entity_extraction_response": "{\n  \"entities\": [\n    {\n      \"phrase\": \"plate\",\n      \"role\": \"manipulated_object\"\n    },\n    {\n      \"phrase\": \"stove\",\n      \"role\": \"destination\"\n    }\n  ]\n}",
+  "extracted_entities": [
+    {
+      "phrase": "plate",
+      "role": "manipulated_object"
+    },
+    {
+      "phrase": "stove",
+      "role": "destination"
+    }
+  ]
+}

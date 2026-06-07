@@ -1,0 +1,990 @@
+[robosuite WARNING] No private macro file found! (macros.py:53)
+[robosuite WARNING] It is recommended to use a private macro file (macros.py:54)
+[robosuite WARNING] To setup, run: python /root/proj/openpi/examples/libero/.venv/lib/python3.8/site-packages/robosuite/scripts/setup_macros.py (macros.py:55)
+INFO:root:Task suite: libero_10
+INFO:root:Waiting for server at ws://0.0.0.0:8000...
+INFO:root:Using SAM dim-background preprocessing for views: ['base']
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  0%|          | 0/10 [00:00<?, ?it/s]/root/proj/openpi/examples/libero/.venv/lib/python3.8/site-packages/numba/np/arraymath.py:3845: DeprecationWarning: `np.MachAr` is deprecated (NumPy 1.22).
+  @overload(np.MachAr)
+[Warning]: datasets path /root/proj/openpi/third_party/libero/libero/libero/../datasets does not exist!
+[Warning]: datasets path /root/proj/openpi/third_party/libero/libero/libero/../datasets does not exist!
+
+  0%|          | 0/1 [00:00<?, ?it/s][AINFO:root:
+Task: put both the alphabet soup and the tomato sauce in the basket
+INFO:root:Starting episode 1...
+INFO:sam_dim_client:SAM extractor prompt trace: [{'source': 'alphabet soup', 'role': 'manipulated_object', 'selected': None, 'round': None, 'status': 'failed', 'attempts': [{'prompt': 'alphabet soup', 'accepted': False, 'failure_type': 'score_too_low', 'failure_reason': 'SAM found candidates, but the best score 0.355 is below threshold 0.50.', 'masks': [{'id': 0, 'sam_index': 157, 'score': 0.35546875, 'bbox': [146, 124, 170, 172], 'sam_bbox': [146, 124, 172, 173], 'compute_bbox': [146, 124, 170, 172], 'mask_pixels': 1064}, {'id': 1, 'sam_index': 72, 'score': 0.2373046875, 'bbox': [191, 115, 221, 161], 'sam_bbox': [190, 115, 222, 163], 'compute_bbox': [191, 115, 221, 161], 'mask_pixels': 1153}, {'id': 2, 'sam_index': 104, 'score': 0.166015625, 'bbox': [84, 157, 99, 181], 'sam_bbox': [84, 157, 101, 182], 'compute_bbox': [84, 157, 99, 181], 'mask_pixels': 357}]}, {'prompt': 'soup can', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 1 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 44, 'score': 0.86328125, 'bbox': [84, 105, 105, 136], 'sam_bbox': [83, 104, 106, 138], 'compute_bbox': [84, 105, 105, 136], 'mask_pixels': 585, 'valid': True, 'reason': 'matches the prompt'}, {'id': 1, 'sam_index': 25, 'score': 0.77734375, 'bbox': [150, 108, 172, 124], 'sam_bbox': [149, 107, 173, 127], 'compute_bbox': [150, 108, 172, 124], 'mask_pixels': 327, 'valid': False, 'reason': 'clearly different from the prompt'}]}, {'prompt': 'can', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 0 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 44, 'score': 0.90625, 'bbox': [84, 105, 105, 136], 'sam_bbox': [83, 104, 106, 138], 'compute_bbox': [84, 105, 105, 136], 'mask_pixels': 585, 'valid': False, 'reason': 'clearly different from the prompt'}, {'id': 1, 'sam_index': 109, 'score': 0.828125, 'bbox': [150, 108, 172, 124], 'sam_bbox': [150, 107, 173, 127], 'compute_bbox': [150, 108, 172, 124], 'mask_pixels': 326, 'valid': False, 'reason': 'clearly different from the prompt'}, {'id': 2, 'sam_index': 30, 'score': 0.57421875, 'bbox': [174, 159, 196, 184], 'sam_bbox': [174, 158, 197, 185], 'compute_bbox': [174, 159, 196, 184], 'mask_pixels': 446, 'valid': False, 'reason': 'clearly different from the prompt'}]}]}, {'source': 'tomato sauce', 'role': 'manipulated_object', 'selected': None, 'round': None, 'status': 'failed', 'attempts': [{'prompt': 'tomato sauce', 'accepted': False, 'failure_type': 'score_too_low', 'failure_reason': 'SAM found candidates, but the best score 0.113 is below threshold 0.50.', 'masks': [{'id': 0, 'sam_index': 187, 'score': 0.11279296875, 'bbox': [143, 69, 160, 109], 'sam_bbox': [143, 69, 162, 111], 'compute_bbox': [143, 69, 160, 109], 'mask_pixels': 552}, {'id': 1, 'sam_index': 25, 'score': 0.099609375, 'bbox': [146, 124, 170, 172], 'sam_bbox': [146, 124, 172, 173], 'compute_bbox': [146, 124, 170, 172], 'mask_pixels': 1062}, {'id': 2, 'sam_index': 72, 'score': 0.0927734375, 'bbox': [191, 115, 221, 161], 'sam_bbox': [190, 115, 222, 163], 'compute_bbox': [191, 115, 221, 161], 'mask_pixels': 1147}]}, {'prompt': 'sauce bottle', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 0 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 25, 'score': 0.87890625, 'bbox': [143, 69, 160, 109], 'sam_bbox': [143, 69, 162, 110], 'compute_bbox': [143, 69, 160, 109], 'mask_pixels': 552, 'valid': False, 'reason': 'the masked region is a small part of the robot arm, not a sauce bottle'}]}, {'prompt': 'bottle', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 0 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 25, 'score': 0.9296875, 'bbox': [143, 69, 160, 109], 'sam_bbox': [143, 69, 162, 110], 'compute_bbox': [143, 69, 160, 109], 'mask_pixels': 552, 'valid': False, 'reason': 'the masked region is a small part of the robot arm, not a bottle'}]}]}, {'source': 'basket', 'role': 'target_receptacle', 'selected': 'basket', 'round': 'importance_only', 'status': 'selected', 'attempts': [{'prompt': 'basket', 'accepted': True, 'failure_type': None, 'failure_reason': '', 'masks': [{'id': 0, 'sam_index': 104, 'score': 0.71484375, 'bbox': [0, 100, 49, 170], 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3346, 'valid': True, 'reason': 'matches the prompt'}]}]}]
+INFO:root:SAM extract took 21.149s for task 'put both the alphabet soup and the tomato sauce in the basket' and returned prompts=['basket']
+INFO:root:SAM segment/dim took 0.186s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3346, 'scores': [0.71484375]}]}
+INFO:root:OpenPI infer took 0.115s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.172s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3344, 'scores': [0.70703125]}]}
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.174s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3345, 'scores': [0.71484375]}]}
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.186s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3348, 'scores': [0.7578125]}]}
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.172s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3347, 'scores': [0.78125]}]}
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.173s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3345, 'scores': [0.796875]}]}
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.171s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3341, 'scores': [0.7578125]}]}
+INFO:root:OpenPI infer took 0.125s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.171s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3341, 'scores': [0.74609375]}]}
+INFO:root:OpenPI infer took 0.125s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.173s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3345, 'scores': [0.71875]}]}
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.173s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 171], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3346, 'scores': [0.734375]}]}
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.174s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3346, 'scores': [0.7265625]}]}
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.173s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 171], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3345, 'scores': [0.69921875]}]}
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.172s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3344, 'scores': [0.703125]}]}
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.171s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3345, 'scores': [0.69921875]}]}
+INFO:root:OpenPI infer took 0.125s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.173s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3346, 'scores': [0.72265625]}]}
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.171s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3344, 'scores': [0.74609375]}]}
+INFO:root:OpenPI infer took 0.125s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.172s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3343, 'scores': [0.73828125]}]}
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.174s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3346, 'scores': [0.71875]}]}
+INFO:root:OpenPI infer took 0.125s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.173s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3346, 'scores': [0.66015625]}]}
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.174s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3344, 'scores': [0.7265625]}]}
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.172s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3344, 'scores': [0.74609375]}]}
+INFO:root:OpenPI infer took 0.108s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.173s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3336, 'scores': [0.70703125]}]}
+INFO:root:OpenPI infer took 0.114s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.173s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 171], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3338, 'scores': [0.7421875]}]}
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.174s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 171], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3071, 'scores': [0.546875]}]}
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.181s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 171], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 2883, 'scores': [0.373046875]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.173s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 171], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 2786, 'scores': [0.341796875]}]}
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.174s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 171], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 2794, 'scores': [0.30859375]}]}
+INFO:root:OpenPI infer took 0.142s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.174s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 171], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 2813, 'scores': [0.3828125]}]}
+INFO:root:OpenPI infer took 0.124s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.174s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 171], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 2830, 'scores': [0.41015625]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.174s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3139, 'scores': [0.72265625]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.178s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3141, 'scores': [0.73828125]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.176s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3140, 'scores': [0.73828125]}]}
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.174s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3154, 'scores': [0.77734375]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.173s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3162, 'scores': [0.77734375]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.177s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 171], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3153, 'scores': [0.71875]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.173s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3161, 'scores': [0.76953125]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.172s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3161, 'scores': [0.7578125]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.173s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3163, 'scores': [0.73828125]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.173s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3162, 'scores': [0.7109375]}]}
+INFO:root:OpenPI infer took 0.123s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.171s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3165, 'scores': [0.72265625]}]}
+INFO:root:OpenPI infer took 0.125s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.180s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 171], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3164, 'scores': [0.69140625]}]}
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.173s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3163, 'scores': [0.6875]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.174s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3164, 'scores': [0.70703125]}]}
+INFO:root:OpenPI infer took 0.109s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.175s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3163, 'scores': [0.6953125]}]}
+INFO:root:OpenPI infer took 0.130s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.174s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 171], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3163, 'scores': [0.71484375]}]}
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.172s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3159, 'scores': [0.75]}]}
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.174s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3161, 'scores': [0.69921875]}]}
+INFO:root:OpenPI infer took 0.123s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.172s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 171], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3159, 'scores': [0.734375]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.178s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 171], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3158, 'scores': [0.68359375]}]}
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.172s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 171], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3157, 'scores': [0.71875]}]}
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.171s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 171], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 2927, 'scores': [0.5546875]}]}
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.176s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 2761, 'scores': [0.59375]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.174s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 2750, 'scores': [0.6171875]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.175s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 50, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 2748, 'scores': [0.76953125]}]}
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 1
+INFO:root:# successes: 1 (100.0%)
+
+100%|██████████| 1/1 [00:47<00:00, 47.52s/it][A100%|██████████| 1/1 [00:47<00:00, 47.52s/it]
+INFO:root:Current task success rate: 1.0
+INFO:root:Current total success rate: 1.0
+ 10%|█         | 1/10 [00:50<07:33, 50.38s/it][Warning]: datasets path /root/proj/openpi/third_party/libero/libero/libero/../datasets does not exist!
+[Warning]: datasets path /root/proj/openpi/third_party/libero/libero/libero/../datasets does not exist!
+
+  0%|          | 0/1 [00:00<?, ?it/s][AINFO:root:
+Task: put both the cream cheese box and the butter in the basket
+INFO:root:Starting episode 1...
+INFO:sam_dim_client:SAM extractor prompt trace: [{'source': 'cream cheese box', 'role': 'manipulated_object', 'selected': None, 'round': None, 'status': 'failed', 'attempts': [{'prompt': 'cream cheese box', 'accepted': False, 'failure_type': 'score_too_low', 'failure_reason': 'SAM found candidates, but the best score 0.103 is below threshold 0.50.', 'masks': [{'id': 0, 'sam_index': 25, 'score': 0.1025390625, 'bbox': [171, 164, 193, 190], 'sam_bbox': [171, 163, 194, 192], 'compute_bbox': [171, 164, 193, 190], 'mask_pixels': 462}, {'id': 1, 'sam_index': 157, 'score': 0.051025390625, 'bbox': [141, 128, 165, 177], 'sam_bbox': [141, 128, 166, 178], 'compute_bbox': [141, 128, 165, 177], 'mask_pixels': 1104}, {'id': 2, 'sam_index': 44, 'score': 0.043701171875, 'bbox': [83, 152, 98, 175], 'sam_bbox': [83, 152, 99, 176], 'compute_bbox': [83, 152, 98, 175], 'mask_pixels': 337}]}, {'prompt': 'cream cheese carton', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 0 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 157, 'score': 0.5234375, 'bbox': [141, 128, 165, 176], 'sam_bbox': [141, 128, 166, 178], 'compute_bbox': [141, 128, 165, 176], 'mask_pixels': 1094, 'valid': False, 'reason': 'the mask covers a small red rectangular region that does not match the cream cheese carton prompt'}]}, {'prompt': 'carton', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 1 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 157, 'score': 0.82421875, 'bbox': [141, 128, 165, 176], 'sam_bbox': [141, 128, 166, 178], 'compute_bbox': [141, 128, 165, 176], 'mask_pixels': 1094, 'valid': True, 'reason': 'matches the prompt'}, {'id': 1, 'sam_index': 34, 'score': 0.8046875, 'bbox': [188, 110, 215, 155], 'sam_bbox': [187, 109, 217, 156], 'compute_bbox': [188, 110, 215, 155], 'mask_pixels': 1066, 'valid': False, 'reason': 'clearly different from the prompt'}, {'id': 2, 'sam_index': 104, 'score': 0.703125, 'bbox': [83, 152, 98, 175], 'sam_bbox': [83, 152, 99, 176], 'compute_bbox': [83, 152, 98, 175], 'mask_pixels': 336, 'valid': False, 'reason': 'clearly different from the prompt'}]}, {'prompt': 'box', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 1 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 157, 'score': 0.8359375, 'bbox': [141, 128, 165, 176], 'sam_bbox': [141, 128, 166, 178], 'compute_bbox': [141, 128, 165, 176], 'mask_pixels': 1095, 'valid': True, 'reason': 'matches the prompt'}, {'id': 1, 'sam_index': 30, 'score': 0.83203125, 'bbox': [171, 164, 193, 190], 'sam_bbox': [171, 163, 194, 192], 'compute_bbox': [171, 164, 193, 190], 'mask_pixels': 463, 'valid': False, 'reason': 'clearly different from the prompt'}, {'id': 2, 'sam_index': 34, 'score': 0.80859375, 'bbox': [188, 110, 215, 155], 'sam_bbox': [187, 109, 217, 156], 'compute_bbox': [188, 110, 215, 155], 'mask_pixels': 1065, 'valid': True, 'reason': 'matches the prompt'}]}]}, {'source': 'butter', 'role': 'manipulated_object', 'selected': None, 'round': None, 'status': 'failed', 'attempts': [{'prompt': 'butter', 'accepted': False, 'failure_type': 'score_too_low', 'failure_reason': 'SAM found candidates, but the best score 0.081 is below threshold 0.50.', 'masks': [{'id': 0, 'sam_index': 51, 'score': 0.08056640625, 'bbox': [171, 164, 193, 190], 'sam_bbox': [171, 163, 194, 192], 'compute_bbox': [171, 164, 193, 190], 'mask_pixels': 460}, {'id': 1, 'sam_index': 44, 'score': 0.0693359375, 'bbox': [83, 152, 98, 175], 'sam_bbox': [82, 152, 99, 176], 'compute_bbox': [83, 152, 98, 175], 'mask_pixels': 334}, {'id': 2, 'sam_index': 157, 'score': 0.059326171875, 'bbox': [141, 128, 165, 176], 'sam_bbox': [141, 128, 166, 178], 'compute_bbox': [141, 128, 165, 176], 'mask_pixels': 1089}]}, {'prompt': 'butter stick', 'accepted': False, 'failure_type': 'score_too_low', 'failure_reason': 'SAM found candidates, but the best score 0.071 is below threshold 0.50.', 'masks': [{'id': 0, 'sam_index': 44, 'score': 0.07080078125, 'bbox': [83, 152, 98, 175], 'sam_bbox': [82, 152, 99, 176], 'compute_bbox': [83, 152, 98, 175], 'mask_pixels': 334}, {'id': 1, 'sam_index': 51, 'score': 0.06591796875, 'bbox': [171, 164, 193, 190], 'sam_bbox': [171, 163, 194, 192], 'compute_bbox': [171, 164, 193, 190], 'mask_pixels': 462}, {'id': 2, 'sam_index': 157, 'score': 0.03857421875, 'bbox': [141, 128, 165, 177], 'sam_bbox': [141, 128, 166, 178], 'compute_bbox': [141, 128, 165, 177], 'mask_pixels': 1096}]}, {'prompt': 'stick', 'accepted': False, 'failure_type': 'score_too_low', 'failure_reason': 'SAM found candidates, but the best score 0.018 is below threshold 0.50.', 'masks': [{'id': 0, 'sam_index': 146, 'score': 0.018310546875, 'bbox': [130, 60, 140, 72], 'sam_bbox': [130, 59, 142, 73], 'compute_bbox': [130, 60, 140, 72], 'mask_pixels': 81}, {'id': 1, 'sam_index': 166, 'score': 0.016357421875, 'bbox': [91, 60, 100, 72], 'sam_bbox': [90, 59, 102, 73], 'compute_bbox': [91, 60, 100, 72], 'mask_pixels': 71}, {'id': 2, 'sam_index': 128, 'score': 0.00970458984375, 'bbox': [0, 32, 68, 43], 'sam_bbox': [3, 31, 70, 44], 'compute_bbox': [0, 32, 68, 43], 'mask_pixels': 317}]}]}, {'source': 'basket', 'role': 'target_receptacle', 'selected': None, 'round': None, 'status': 'failed', 'attempts': [{'prompt': 'basket', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 0 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 104, 'score': 0.6171875, 'bbox': [0, 101, 50, 172], 'sam_bbox': [0, 101, 51, 174], 'compute_bbox': [0, 101, 50, 172], 'mask_pixels': 3459, 'valid': False, 'reason': 'the masked region is a small, dark object near the top-left corner, which does not resemble a basket'}]}, {'prompt': 'woven basket', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 1 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 104, 'score': 0.5234375, 'bbox': [0, 101, 50, 172], 'sam_bbox': [0, 100, 51, 174], 'compute_bbox': [0, 101, 50, 172], 'mask_pixels': 3456, 'valid': True, 'reason': 'matches the prompt'}, {'id': 1, 'sam_index': 8, 'score': 0.51171875, 'bbox': [0, 118, 50, 172], 'sam_bbox': [0, 117, 51, 174], 'compute_bbox': [0, 118, 50, 172], 'mask_pixels': 1609, 'valid': False, 'reason': 'clearly different from the prompt'}]}]}]
+INFO:root:SAM extract took 24.064s for task 'put both the cream cheese box and the butter in the basket' and returned prompts=[]
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.139s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.125s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.125s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.144s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.125s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.130s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.131s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.133s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.133s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.135s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.132s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.120s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.130s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.130s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.132s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.136s and produced 10 actions (using first 5 for this chunk)
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 2
+INFO:root:# successes: 2 (100.0%)
+
+100%|██████████| 1/1 [00:39<00:00, 39.47s/it][A100%|██████████| 1/1 [00:39<00:00, 39.47s/it]
+INFO:root:Current task success rate: 1.0
+INFO:root:Current total success rate: 1.0
+ 20%|██        | 2/10 [01:31<05:58, 44.75s/it][Warning]: datasets path /root/proj/openpi/third_party/libero/libero/libero/../datasets does not exist!
+[Warning]: datasets path /root/proj/openpi/third_party/libero/libero/libero/../datasets does not exist!
+
+  0%|          | 0/1 [00:00<?, ?it/s][AINFO:root:
+Task: turn on the stove and put the moka pot on it
+INFO:root:Starting episode 1...
+INFO:sam_dim_client:SAM extractor prompt trace: [{'source': 'stove', 'role': 'target_receptacle', 'selected': 'stove', 'round': 'importance_only', 'status': 'selected', 'attempts': [{'prompt': 'stove', 'accepted': True, 'failure_type': None, 'failure_reason': '', 'masks': [{'id': 0, 'sam_index': 92, 'score': 0.59375, 'bbox': [23, 120, 83, 160], 'sam_bbox': [22, 119, 84, 162], 'compute_bbox': [23, 120, 83, 160], 'mask_pixels': 2193, 'valid': True, 'reason': 'matches the prompt'}, {'id': 1, 'sam_index': 104, 'score': 0.58984375, 'bbox': [22, 98, 83, 161], 'sam_bbox': [22, 97, 85, 162], 'compute_bbox': [22, 98, 83, 161], 'mask_pixels': 2545, 'valid': True, 'reason': 'matches the prompt'}]}]}, {'source': 'moka pot', 'role': 'manipulated_object', 'selected': None, 'round': None, 'status': 'failed', 'attempts': [{'prompt': 'moka pot', 'accepted': False, 'failure_type': 'score_too_low', 'failure_reason': 'SAM found candidates, but the best score 0.140 is below threshold 0.50.', 'masks': [{'id': 0, 'sam_index': 171, 'score': 0.1396484375, 'bbox': [96, 122, 129, 165], 'sam_bbox': [96, 122, 131, 166], 'compute_bbox': [96, 122, 129, 165], 'mask_pixels': 939}, {'id': 1, 'sam_index': 144, 'score': 0.091796875, 'bbox': [97, 111, 212, 164], 'sam_bbox': [96, 112, 213, 167], 'compute_bbox': [97, 111, 212, 164], 'mask_pixels': 2938}, {'id': 2, 'sam_index': 128, 'score': 0.06982421875, 'bbox': [71, 0, 90, 8], 'sam_bbox': [71, 0, 91, 9], 'compute_bbox': [71, 0, 90, 8], 'mask_pixels': 171}]}, {'prompt': 'coffee maker', 'accepted': False, 'failure_type': 'score_too_low', 'failure_reason': 'SAM found candidates, but the best score 0.220 is below threshold 0.50.', 'masks': [{'id': 0, 'sam_index': 178, 'score': 0.2197265625, 'bbox': [74, 0, 144, 75], 'sam_bbox': [73, 0, 146, 76], 'compute_bbox': [74, 0, 144, 75], 'mask_pixels': 4068}, {'id': 1, 'sam_index': 25, 'score': 0.130859375, 'bbox': [96, 112, 212, 165], 'sam_bbox': [96, 114, 214, 167], 'compute_bbox': [96, 112, 212, 165], 'mask_pixels': 2994}, {'id': 2, 'sam_index': 84, 'score': 0.11865234375, 'bbox': [96, 123, 129, 165], 'sam_bbox': [96, 122, 131, 166], 'compute_bbox': [96, 123, 129, 165], 'mask_pixels': 932}]}]}]
+INFO:root:SAM extract took 7.960s for task 'turn on the stove and put the moka pot on it' and returned prompts=['stove']
+INFO:root:SAM segment/dim took 0.173s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 84, 162], 'compute_bbox': [23, 120, 83, 160], 'mask_pixels': 2193, 'scores': [0.59375]}]}
+INFO:root:OpenPI infer took 0.130s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.167s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 84, 162], 'compute_bbox': [22, 120, 83, 160], 'mask_pixels': 2198, 'scores': [0.625]}]}
+INFO:root:OpenPI infer took 0.130s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.168s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 84, 162], 'compute_bbox': [22, 120, 83, 161], 'mask_pixels': 2213, 'scores': [0.625]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.168s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 84, 162], 'compute_bbox': [22, 120, 83, 161], 'mask_pixels': 2217, 'scores': [0.70703125]}]}
+INFO:root:OpenPI infer took 0.133s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.167s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 84, 162], 'compute_bbox': [22, 120, 83, 161], 'mask_pixels': 2213, 'scores': [0.640625]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.168s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 84, 162], 'compute_bbox': [22, 120, 83, 161], 'mask_pixels': 2212, 'scores': [0.70703125]}]}
+INFO:root:OpenPI infer took 0.132s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.168s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 84, 162], 'compute_bbox': [22, 120, 83, 161], 'mask_pixels': 2226, 'scores': [0.6875]}]}
+INFO:root:OpenPI infer took 0.117s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.188s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 84, 162], 'compute_bbox': [22, 120, 83, 161], 'mask_pixels': 2213, 'scores': [0.6953125]}]}
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.171s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 84, 162], 'compute_bbox': [22, 120, 83, 161], 'mask_pixels': 2210, 'scores': [0.61328125]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.170s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 84, 162], 'compute_bbox': [22, 120, 83, 161], 'mask_pixels': 2212, 'scores': [0.796875]}]}
+INFO:root:OpenPI infer took 0.140s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.170s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 84, 162], 'compute_bbox': [22, 120, 83, 161], 'mask_pixels': 2210, 'scores': [0.74609375]}]}
+INFO:root:OpenPI infer took 0.130s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.168s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 84, 162], 'compute_bbox': [22, 120, 83, 161], 'mask_pixels': 2213, 'scores': [0.81640625]}]}
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.171s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 84, 162], 'compute_bbox': [22, 120, 83, 161], 'mask_pixels': 2221, 'scores': [0.83203125]}]}
+INFO:root:OpenPI infer took 0.110s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.170s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 84, 162], 'compute_bbox': [22, 120, 83, 161], 'mask_pixels': 2220, 'scores': [0.83984375]}]}
+INFO:root:OpenPI infer took 0.123s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.169s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 0, 165, 162], 'compute_bbox': [22, 0, 164, 161], 'mask_pixels': 3338, 'scores': [0.8203125, 0.61328125]}]}
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.171s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 85, 162], 'compute_bbox': [22, 120, 83, 161], 'mask_pixels': 2218, 'scores': [0.8515625]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.167s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 84, 162], 'compute_bbox': [22, 120, 83, 161], 'mask_pixels': 2205, 'scores': [0.7890625]}]}
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.169s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 0, 165, 162], 'compute_bbox': [22, 0, 163, 161], 'mask_pixels': 3315, 'scores': [0.8203125, 0.6015625]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.178s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 0, 165, 162], 'compute_bbox': [23, 0, 164, 161], 'mask_pixels': 3393, 'scores': [0.8515625, 0.6328125]}]}
+INFO:root:OpenPI infer took 0.150s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.170s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 84, 162], 'compute_bbox': [22, 120, 83, 160], 'mask_pixels': 2195, 'scores': [0.8203125]}]}
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.168s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 84, 162], 'compute_bbox': [22, 120, 83, 160], 'mask_pixels': 2193, 'scores': [0.80078125]}]}
+INFO:root:OpenPI infer took 0.130s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.169s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 84, 162], 'compute_bbox': [22, 120, 83, 160], 'mask_pixels': 2208, 'scores': [0.8671875]}]}
+INFO:root:OpenPI infer took 0.130s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.169s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 84, 162], 'compute_bbox': [22, 120, 83, 161], 'mask_pixels': 2210, 'scores': [0.83984375]}]}
+INFO:root:OpenPI infer took 0.130s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.169s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 84, 162], 'compute_bbox': [22, 120, 83, 161], 'mask_pixels': 2213, 'scores': [0.84765625]}]}
+INFO:root:OpenPI infer took 0.130s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.169s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 84, 162], 'compute_bbox': [22, 120, 83, 161], 'mask_pixels': 2213, 'scores': [0.8359375]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.167s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 84, 162], 'compute_bbox': [22, 120, 83, 161], 'mask_pixels': 2211, 'scores': [0.85546875]}]}
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.166s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 84, 162], 'compute_bbox': [22, 120, 83, 161], 'mask_pixels': 2211, 'scores': [0.828125]}]}
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.169s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 84, 162], 'compute_bbox': [22, 120, 83, 161], 'mask_pixels': 2212, 'scores': [0.8203125]}]}
+INFO:root:OpenPI infer took 0.131s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.169s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 84, 162], 'compute_bbox': [22, 120, 83, 161], 'mask_pixels': 2213, 'scores': [0.796875]}]}
+INFO:root:OpenPI infer took 0.134s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.168s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 84, 162], 'compute_bbox': [22, 120, 83, 161], 'mask_pixels': 2213, 'scores': [0.80859375]}]}
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.169s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 84, 162], 'compute_bbox': [22, 120, 83, 161], 'mask_pixels': 2212, 'scores': [0.80859375]}]}
+INFO:root:OpenPI infer took 0.132s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.168s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 84, 162], 'compute_bbox': [22, 120, 83, 161], 'mask_pixels': 2212, 'scores': [0.80859375]}]}
+INFO:root:OpenPI infer took 0.140s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.170s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 84, 162], 'compute_bbox': [22, 120, 83, 161], 'mask_pixels': 2210, 'scores': [0.8125]}]}
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.167s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 84, 162], 'compute_bbox': [22, 120, 83, 161], 'mask_pixels': 2213, 'scores': [0.80859375]}]}
+INFO:root:OpenPI infer took 0.141s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.169s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 84, 162], 'compute_bbox': [22, 120, 83, 161], 'mask_pixels': 2214, 'scores': [0.796875]}]}
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.169s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 84, 162], 'compute_bbox': [22, 120, 83, 161], 'mask_pixels': 2213, 'scores': [0.83984375]}]}
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.171s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 84, 162], 'compute_bbox': [22, 120, 82, 161], 'mask_pixels': 2219, 'scores': [0.875]}]}
+INFO:root:OpenPI infer took 0.131s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.169s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 83, 162], 'compute_bbox': [22, 120, 81, 161], 'mask_pixels': 2001, 'scores': [0.85546875]}]}
+INFO:root:OpenPI infer took 0.133s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.172s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 84, 162], 'compute_bbox': [22, 120, 83, 161], 'mask_pixels': 1875, 'scores': [0.84765625]}]}
+INFO:root:OpenPI infer took 0.110s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.169s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 84, 162], 'compute_bbox': [22, 120, 83, 161], 'mask_pixels': 1885, 'scores': [0.625]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.172s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 84, 162], 'compute_bbox': [22, 120, 83, 161], 'mask_pixels': 1872, 'scores': [0.67578125]}]}
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.171s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [22, 119, 84, 162], 'compute_bbox': [22, 120, 83, 161], 'mask_pixels': 1811, 'scores': [0.70703125]}]}
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.170s for views=['base'] using prompts=['stove'] segment_details={'base': [{'prompt': 'stove', 'found': True, 'sam_bbox': [33, 0, 165, 17], 'compute_bbox': [34, 0, 163, 16], 'mask_pixels': 1155, 'scores': [0.349609375]}]}
+INFO:root:OpenPI infer took 0.131s and produced 10 actions (using first 5 for this chunk)
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 3
+INFO:root:# successes: 3 (100.0%)
+
+100%|██████████| 1/1 [00:27<00:00, 27.06s/it][A100%|██████████| 1/1 [00:27<00:00, 27.06s/it]
+INFO:root:Current task success rate: 1.0
+INFO:root:Current total success rate: 1.0
+ 30%|███       | 3/10 [01:58<04:19, 37.01s/it][Warning]: datasets path /root/proj/openpi/third_party/libero/libero/libero/../datasets does not exist!
+[Warning]: datasets path /root/proj/openpi/third_party/libero/libero/libero/../datasets does not exist!
+
+  0%|          | 0/1 [00:00<?, ?it/s][AINFO:root:
+Task: put the black bowl in the bottom drawer of the cabinet and close it
+INFO:root:Starting episode 1...
+INFO:sam_dim_client:SAM extractor prompt trace: [{'source': 'black bowl', 'role': 'manipulated_object', 'selected': None, 'round': None, 'status': 'failed', 'attempts': [{'prompt': 'black bowl', 'accepted': False, 'failure_type': 'score_too_low', 'failure_reason': 'SAM found candidates, but the best score 0.202 is below threshold 0.50.', 'masks': [{'id': 0, 'sam_index': 86, 'score': 0.2021484375, 'bbox': [117, 160, 141, 167], 'sam_bbox': [117, 160, 143, 168], 'compute_bbox': [117, 160, 141, 167], 'mask_pixels': 62}, {'id': 1, 'sam_index': 9, 'score': 0.138671875, 'bbox': [137, 4, 151, 10], 'sam_bbox': [136, 4, 152, 11], 'compute_bbox': [137, 4, 151, 10], 'mask_pixels': 83}, {'id': 2, 'sam_index': 157, 'score': 0.1328125, 'bbox': [114, 139, 146, 167], 'sam_bbox': [113, 139, 148, 169], 'compute_bbox': [114, 139, 146, 167], 'mask_pixels': 717}]}, {'prompt': 'bowl', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 0 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 157, 'score': 0.69921875, 'bbox': [114, 139, 146, 166], 'sam_bbox': [113, 139, 148, 168], 'compute_bbox': [114, 139, 146, 166], 'mask_pixels': 709, 'valid': False, 'reason': 'the masked region appears to be a small part of the countertop or cabinet, not a bowl'}]}]}, {'source': 'bottom drawer of the cabinet', 'role': 'target_receptacle', 'selected': None, 'round': None, 'status': 'failed', 'attempts': [{'prompt': 'bottom drawer of the cabinet', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 0 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 103, 'score': 0.828125, 'bbox': [0, 68, 42, 76], 'sam_bbox': [0, 68, 44, 77], 'compute_bbox': [0, 68, 42, 76], 'mask_pixels': 357, 'valid': False, 'reason': 'clearly different from the prompt'}, {'id': 1, 'sam_index': 25, 'score': 0.796875, 'bbox': [141, 68, 180, 76], 'sam_bbox': [140, 67, 181, 77], 'compute_bbox': [141, 68, 180, 76], 'mask_pixels': 321, 'valid': False, 'reason': 'clearly different from the prompt'}, {'id': 2, 'sam_index': 44, 'score': 0.7734375, 'bbox': [42, 116, 92, 175], 'sam_bbox': [41, 115, 98, 177], 'compute_bbox': [42, 116, 92, 175], 'mask_pixels': 2565, 'valid': True, 'reason': 'matches the prompt'}]}, {'prompt': 'drawer', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 1 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 190, 'score': 0.88671875, 'bbox': [0, 38, 41, 67], 'sam_bbox': [0, 38, 42, 69], 'compute_bbox': [0, 38, 41, 67], 'mask_pixels': 1171, 'valid': True, 'reason': 'matches the prompt'}, {'id': 1, 'sam_index': 128, 'score': 0.875, 'bbox': [0, 5, 35, 36], 'sam_bbox': [0, 18, 36, 37], 'compute_bbox': [0, 5, 35, 36], 'mask_pixels': 654, 'valid': False, 'reason': 'clearly different from the prompt'}, {'id': 2, 'sam_index': 133, 'score': 0.8515625, 'bbox': [0, 68, 42, 76], 'sam_bbox': [0, 68, 44, 77], 'compute_bbox': [0, 68, 42, 76], 'mask_pixels': 358, 'valid': True, 'reason': 'matches the prompt'}]}]}, {'source': 'cabinet', 'role': 'support', 'selected': None, 'round': None, 'status': 'failed', 'attempts': [{'prompt': 'cabinet', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 1 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 153, 'score': 0.796875, 'bbox': [34, 20, 86, 76], 'sam_bbox': [34, 20, 87, 77], 'compute_bbox': [34, 20, 86, 76], 'mask_pixels': 2435, 'valid': True, 'reason': 'matches the prompt'}, {'id': 1, 'sam_index': 137, 'score': 0.76171875, 'bbox': [137, 20, 223, 75], 'sam_bbox': [137, 20, 223, 77], 'compute_bbox': [137, 20, 223, 75], 'mask_pixels': 3146, 'valid': False, 'reason': 'clearly different from the prompt'}, {'id': 2, 'sam_index': 103, 'score': 0.67578125, 'bbox': [0, 18, 42, 76], 'sam_bbox': [0, 18, 44, 77], 'compute_bbox': [0, 18, 42, 76], 'mask_pixels': 2203, 'valid': True, 'reason': 'matches the prompt'}]}, {'prompt': 'drawer', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 1 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 190, 'score': 0.88671875, 'bbox': [0, 38, 41, 67], 'sam_bbox': [0, 38, 42, 69], 'compute_bbox': [0, 38, 41, 67], 'mask_pixels': 1171, 'valid': True, 'reason': 'matches the prompt'}, {'id': 1, 'sam_index': 128, 'score': 0.875, 'bbox': [0, 5, 35, 36], 'sam_bbox': [0, 18, 36, 37], 'compute_bbox': [0, 5, 35, 36], 'mask_pixels': 654, 'valid': False, 'reason': 'clearly different from the prompt'}, {'id': 2, 'sam_index': 133, 'score': 0.8515625, 'bbox': [0, 68, 42, 76], 'sam_bbox': [0, 68, 44, 77], 'compute_bbox': [0, 68, 42, 76], 'mask_pixels': 358, 'valid': False, 'reason': 'not explicitly judged'}]}]}]
+INFO:root:SAM extract took 23.069s for task 'put the black bowl in the bottom drawer of the cabinet and close it' and returned prompts=[]
+INFO:root:OpenPI infer took 0.132s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.132s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.122s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.122s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.109s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.125s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.125s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.132s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.132s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.130s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 4
+INFO:root:# successes: 4 (100.0%)
+
+100%|██████████| 1/1 [00:35<00:00, 35.07s/it][A100%|██████████| 1/1 [00:35<00:00, 35.07s/it]
+INFO:root:Current task success rate: 1.0
+INFO:root:Current total success rate: 1.0
+ 40%|████      | 4/10 [02:35<03:40, 36.82s/it][Warning]: datasets path /root/proj/openpi/third_party/libero/libero/libero/../datasets does not exist!
+[Warning]: datasets path /root/proj/openpi/third_party/libero/libero/libero/../datasets does not exist!
+
+  0%|          | 0/1 [00:00<?, ?it/s][AINFO:root:
+Task: put the white mug on the left plate and put the yellow and white mug on the right plate
+INFO:root:Starting episode 1...
+INFO:sam_dim_client:SAM extractor prompt trace: [{'source': 'white mug', 'role': 'manipulated_object', 'selected': None, 'round': None, 'status': 'failed', 'attempts': [{'prompt': 'white mug', 'accepted': False, 'failure_type': 'score_too_low', 'failure_reason': 'SAM found candidates, but the best score 0.322 is below threshold 0.50.', 'masks': [{'id': 0, 'sam_index': 25, 'score': 0.322265625, 'bbox': [141, 98, 185, 140], 'sam_bbox': [141, 98, 187, 142], 'compute_bbox': [141, 98, 185, 140], 'mask_pixels': 1280}, {'id': 1, 'sam_index': 104, 'score': 0.1962890625, 'bbox': [59, 110, 108, 152], 'sam_bbox': [59, 110, 109, 154], 'compute_bbox': [59, 110, 108, 152], 'mask_pixels': 1389}, {'id': 2, 'sam_index': 108, 'score': 0.10205078125, 'bbox': [87, 76, 124, 120], 'sam_bbox': [87, 75, 126, 122], 'compute_bbox': [87, 76, 124, 120], 'mask_pixels': 1096}]}, {'prompt': 'mug', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 1 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 104, 'score': 0.8671875, 'bbox': [59, 110, 108, 152], 'sam_bbox': [59, 109, 109, 154], 'compute_bbox': [59, 110, 108, 152], 'mask_pixels': 1374, 'valid': True, 'reason': 'matches the prompt'}, {'id': 1, 'sam_index': 25, 'score': 0.86328125, 'bbox': [141, 98, 185, 140], 'sam_bbox': [141, 98, 187, 142], 'compute_bbox': [141, 98, 185, 140], 'mask_pixels': 1280, 'valid': False, 'reason': 'clearly different from the prompt'}, {'id': 2, 'sam_index': 166, 'score': 0.85546875, 'bbox': [87, 76, 124, 120], 'sam_bbox': [87, 75, 126, 122], 'compute_bbox': [87, 76, 124, 120], 'mask_pixels': 1073, 'valid': False, 'reason': 'not explicitly judged'}]}]}, {'source': 'left plate', 'role': 'target_receptacle', 'selected': None, 'round': None, 'status': 'failed', 'attempts': [{'prompt': 'left plate', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 0 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 104, 'score': 0.78125, 'bbox': [0, 136, 28, 167], 'sam_bbox': [0, 136, 29, 168], 'compute_bbox': [0, 136, 28, 167], 'mask_pixels': 707, 'valid': False, 'reason': 'the masked region is a small corner of the table, not the left plate'}]}, {'prompt': 'plate', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 1 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 104, 'score': 0.8828125, 'bbox': [0, 136, 28, 167], 'sam_bbox': [0, 136, 29, 168], 'compute_bbox': [0, 136, 28, 167], 'mask_pixels': 707, 'valid': True, 'reason': 'matches the prompt'}, {'id': 1, 'sam_index': 51, 'score': 0.859375, 'bbox': [199, 135, 223, 164], 'sam_bbox': [198, 134, 223, 165], 'compute_bbox': [199, 135, 223, 164], 'mask_pixels': 571, 'valid': False, 'reason': 'clearly different from the prompt'}]}]}, {'source': 'yellow and white mug', 'role': 'manipulated_object', 'selected': None, 'round': None, 'status': 'failed', 'attempts': [{'prompt': 'yellow and white mug', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 0 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 104, 'score': 0.83203125, 'bbox': [59, 110, 108, 152], 'sam_bbox': [59, 109, 109, 154], 'compute_bbox': [59, 110, 108, 152], 'mask_pixels': 1384, 'valid': False, 'reason': 'the masked region is unrelated to the yellow and white mug prompt'}]}, {'prompt': 'mug', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 1 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 104, 'score': 0.8671875, 'bbox': [59, 110, 108, 152], 'sam_bbox': [59, 109, 109, 154], 'compute_bbox': [59, 110, 108, 152], 'mask_pixels': 1374, 'valid': True, 'reason': 'matches the prompt'}, {'id': 1, 'sam_index': 25, 'score': 0.86328125, 'bbox': [141, 98, 185, 140], 'sam_bbox': [141, 98, 187, 142], 'compute_bbox': [141, 98, 185, 140], 'mask_pixels': 1280, 'valid': False, 'reason': 'clearly different from the prompt'}, {'id': 2, 'sam_index': 166, 'score': 0.85546875, 'bbox': [87, 76, 124, 120], 'sam_bbox': [87, 75, 126, 122], 'compute_bbox': [87, 76, 124, 120], 'mask_pixels': 1073, 'valid': False, 'reason': 'clearly different from the prompt'}]}, {'prompt': 'yellow mug', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 0 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 104, 'score': 0.55859375, 'bbox': [59, 110, 108, 152], 'sam_bbox': [59, 109, 109, 154], 'compute_bbox': [59, 110, 108, 152], 'mask_pixels': 1380, 'valid': False, 'reason': "the mask covers a small region near the top-left corner of the image, which is unrelated to the 'yellow mug' prompt"}]}, {'prompt': 'white mug', 'accepted': False, 'failure_type': 'score_too_low', 'failure_reason': 'SAM found candidates, but the best score 0.322 is below threshold 0.50.', 'masks': [{'id': 0, 'sam_index': 25, 'score': 0.322265625, 'bbox': [141, 98, 185, 140], 'sam_bbox': [141, 98, 187, 142], 'compute_bbox': [141, 98, 185, 140], 'mask_pixels': 1280}, {'id': 1, 'sam_index': 104, 'score': 0.1962890625, 'bbox': [59, 110, 108, 152], 'sam_bbox': [59, 110, 109, 154], 'compute_bbox': [59, 110, 108, 152], 'mask_pixels': 1389}, {'id': 2, 'sam_index': 108, 'score': 0.10205078125, 'bbox': [87, 76, 124, 120], 'sam_bbox': [87, 75, 126, 122], 'compute_bbox': [87, 76, 124, 120], 'mask_pixels': 1096}]}]}, {'source': 'right plate', 'role': 'target_receptacle', 'selected': None, 'round': None, 'status': 'failed', 'attempts': [{'prompt': 'right plate', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 0 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 51, 'score': 0.7421875, 'bbox': [199, 135, 223, 164], 'sam_bbox': [198, 134, 223, 165], 'compute_bbox': [199, 135, 223, 164], 'mask_pixels': 571, 'valid': False, 'reason': "the mask covers a small red region near the bottom right, unrelated to the 'right plate' prompt"}]}, {'prompt': 'plate', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 1 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 104, 'score': 0.8828125, 'bbox': [0, 136, 28, 167], 'sam_bbox': [0, 136, 29, 168], 'compute_bbox': [0, 136, 28, 167], 'mask_pixels': 707, 'valid': True, 'reason': 'matches the prompt'}, {'id': 1, 'sam_index': 51, 'score': 0.859375, 'bbox': [199, 135, 223, 164], 'sam_bbox': [198, 134, 223, 165], 'compute_bbox': [199, 135, 223, 164], 'mask_pixels': 571, 'valid': False, 'reason': 'clearly different from the prompt'}]}]}]
+INFO:root:SAM extract took 35.982s for task 'put the white mug on the left plate and put the yellow and white mug on the right plate' and returned prompts=[]
+INFO:root:OpenPI infer took 0.137s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.131s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.130s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.130s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.144s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.133s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.125s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.132s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.130s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 5
+INFO:root:# successes: 5 (100.0%)
+
+100%|██████████| 1/1 [00:50<00:00, 50.53s/it][A100%|██████████| 1/1 [00:50<00:00, 50.53s/it]
+INFO:root:Current task success rate: 1.0
+INFO:root:Current total success rate: 1.0
+ 50%|█████     | 5/10 [03:29<03:34, 42.95s/it][Warning]: datasets path /root/proj/openpi/third_party/libero/libero/libero/../datasets does not exist!
+[Warning]: datasets path /root/proj/openpi/third_party/libero/libero/libero/../datasets does not exist!
+
+  0%|          | 0/1 [00:00<?, ?it/s][AINFO:root:
+Task: pick up the book and place it in the back compartment of the caddy
+INFO:root:Starting episode 1...
+INFO:sam_dim_client:SAM extractor prompt trace: [{'source': 'book', 'role': 'manipulated_object', 'selected': None, 'round': None, 'status': 'failed', 'attempts': [{'prompt': 'book', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 1 and 2 are clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 104, 'score': 0.8125, 'bbox': [48, 112, 75, 160], 'sam_bbox': [47, 112, 77, 162], 'compute_bbox': [48, 112, 75, 160], 'mask_pixels': 823, 'valid': True, 'reason': 'matches the prompt'}, {'id': 1, 'sam_index': 137, 'score': 0.5390625, 'bbox': [167, 0, 182, 10], 'sam_bbox': [167, 0, 183, 12], 'compute_bbox': [167, 0, 182, 10], 'mask_pixels': 160, 'valid': False, 'reason': 'clearly different from the prompt'}, {'id': 2, 'sam_index': 187, 'score': 0.5, 'bbox': [167, 0, 175, 10], 'sam_bbox': [167, 0, 176, 12], 'compute_bbox': [167, 0, 175, 10], 'mask_pixels': 86, 'valid': False, 'reason': 'clearly different from the prompt'}]}, {'prompt': 'black book', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 1 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 104, 'score': 0.9140625, 'bbox': [48, 112, 75, 160], 'sam_bbox': [47, 112, 77, 162], 'compute_bbox': [48, 112, 75, 160], 'mask_pixels': 821, 'valid': True, 'reason': 'matches the prompt'}, {'id': 1, 'sam_index': 137, 'score': 0.59765625, 'bbox': [167, 0, 182, 10], 'sam_bbox': [167, 0, 183, 12], 'compute_bbox': [167, 0, 182, 10], 'mask_pixels': 158, 'valid': False, 'reason': 'clearly different from the prompt'}, {'id': 2, 'sam_index': 187, 'score': 0.58203125, 'bbox': [167, 0, 175, 10], 'sam_bbox': [167, 0, 176, 12], 'compute_bbox': [167, 0, 175, 10], 'mask_pixels': 86, 'valid': False, 'reason': 'clearly different from the prompt'}]}]}, {'source': 'caddy', 'role': 'target_receptacle', 'selected': None, 'round': None, 'status': 'failed', 'attempts': [{'prompt': 'caddy', 'accepted': False, 'failure_type': 'score_too_low', 'failure_reason': 'SAM found candidates, but the best score 0.023 is below threshold 0.50.', 'masks': [{'id': 0, 'sam_index': 128, 'score': 0.0230712890625, 'bbox': [18, 0, 73, 79], 'sam_bbox': [18, 0, 76, 80], 'compute_bbox': [18, 0, 73, 79], 'mask_pixels': 2055}, {'id': 1, 'sam_index': 178, 'score': 0.0203857421875, 'bbox': [65, 0, 147, 85], 'sam_bbox': [64, 0, 149, 87], 'compute_bbox': [65, 0, 147, 85], 'mask_pixels': 4607}, {'id': 2, 'sam_index': 25, 'score': 0.0174560546875, 'bbox': [90, 74, 203, 129], 'sam_bbox': [89, 73, 204, 131], 'compute_bbox': [90, 74, 203, 129], 'mask_pixels': 6138}]}, {'prompt': 'brown caddy', 'accepted': False, 'failure_type': 'score_too_low', 'failure_reason': 'SAM found candidates, but the best score 0.114 is below threshold 0.50.', 'masks': [{'id': 0, 'sam_index': 144, 'score': 0.11376953125, 'bbox': [90, 74, 203, 129], 'sam_bbox': [89, 73, 204, 131], 'compute_bbox': [90, 74, 203, 129], 'mask_pixels': 6135}, {'id': 1, 'sam_index': 89, 'score': 0.01470947265625, 'bbox': [0, 0, 223, 223], 'sam_bbox': [8, 0, 221, 222], 'compute_bbox': [0, 0, 223, 223], 'mask_pixels': 46117}, {'id': 2, 'sam_index': 151, 'score': 0.01361083984375, 'bbox': [0, 80, 223, 223], 'sam_bbox': [0, 76, 221, 223], 'compute_bbox': [0, 80, 223, 223], 'mask_pixels': 23734}]}, {'prompt': 'brown tray', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 0 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 144, 'score': 0.8671875, 'bbox': [90, 74, 203, 129], 'sam_bbox': [89, 73, 204, 131], 'compute_bbox': [90, 74, 203, 129], 'mask_pixels': 6150, 'valid': False, 'reason': "the mask covers a small red area near the robot's base, which is unrelated to the 'brown tray' prompt"}]}]}, {'source': 'back compartment of the caddy', 'role': 'target_receptacle', 'selected': None, 'round': None, 'status': 'failed', 'attempts': [{'prompt': 'back compartment of the caddy', 'accepted': False, 'failure_type': 'score_too_low', 'failure_reason': 'SAM found candidates, but the best score 0.014 is below threshold 0.50.', 'masks': [{'id': 0, 'sam_index': 144, 'score': 0.01446533203125, 'bbox': [90, 74, 203, 129], 'sam_bbox': [89, 73, 204, 131], 'compute_bbox': [90, 74, 203, 129], 'mask_pixels': 6120}, {'id': 1, 'sam_index': 3, 'score': 0.005279541015625, 'bbox': [90, 74, 130, 129], 'sam_bbox': [90, 74, 131, 130], 'compute_bbox': [90, 74, 130, 129], 'mask_pixels': 2031}, {'id': 2, 'sam_index': 184, 'score': 0.0033416748046875, 'bbox': [129, 75, 164, 114], 'sam_bbox': [130, 74, 165, 116], 'compute_bbox': [129, 75, 164, 114], 'mask_pixels': 1264}]}, {'prompt': 'back compartment', 'accepted': False, 'failure_type': 'score_too_low', 'failure_reason': 'SAM found candidates, but the best score 0.008 is below threshold 0.50.', 'masks': [{'id': 0, 'sam_index': 144, 'score': 0.00762939453125, 'bbox': [90, 74, 203, 129], 'sam_bbox': [89, 73, 204, 131], 'compute_bbox': [90, 74, 203, 129], 'mask_pixels': 6109}, {'id': 1, 'sam_index': 154, 'score': 0.005615234375, 'bbox': [165, 75, 201, 113], 'sam_bbox': [164, 74, 203, 115], 'compute_bbox': [165, 75, 201, 113], 'mask_pixels': 1312}, {'id': 2, 'sam_index': 184, 'score': 0.0047607421875, 'bbox': [130, 75, 164, 113], 'sam_bbox': [129, 75, 165, 116], 'compute_bbox': [130, 75, 164, 113], 'mask_pixels': 1270}]}, {'prompt': 'back slot', 'accepted': False, 'failure_type': 'score_too_low', 'failure_reason': 'SAM found candidates, but the best score 0.072 is below threshold 0.50.', 'masks': [{'id': 0, 'sam_index': 157, 'score': 0.072265625, 'bbox': [131, 98, 164, 113], 'sam_bbox': [130, 98, 165, 115], 'compute_bbox': [131, 98, 164, 113], 'mask_pixels': 501}, {'id': 1, 'sam_index': 178, 'score': 0.059814453125, 'bbox': [129, 75, 163, 97], 'sam_bbox': [129, 75, 164, 99], 'compute_bbox': [129, 75, 163, 97], 'mask_pixels': 743}, {'id': 2, 'sam_index': 34, 'score': 0.045166015625, 'bbox': [165, 75, 201, 113], 'sam_bbox': [164, 74, 203, 115], 'compute_bbox': [165, 75, 201, 113], 'mask_pixels': 1332}]}, {'prompt': 'rear compartment', 'accepted': False, 'failure_type': 'score_too_low', 'failure_reason': 'SAM found candidates, but the best score 0.002 is below threshold 0.50.', 'masks': [{'id': 0, 'sam_index': 157, 'score': 0.0022125244140625, 'bbox': [90, 74, 203, 129], 'sam_bbox': [89, 73, 204, 131], 'compute_bbox': [90, 74, 203, 129], 'mask_pixels': 6077}, {'id': 1, 'sam_index': 196, 'score': 0.0010986328125, 'bbox': [165, 75, 201, 113], 'sam_bbox': [164, 74, 203, 116], 'compute_bbox': [165, 75, 201, 113], 'mask_pixels': 1332}, {'id': 2, 'sam_index': 149, 'score': 0.000911712646484375, 'bbox': [130, 75, 164, 113], 'sam_bbox': [130, 75, 165, 116], 'compute_bbox': [130, 75, 164, 113], 'mask_pixels': 1272}]}]}]
+INFO:root:SAM extract took 15.188s for task 'pick up the book and place it in the back compartment of the caddy' and returned prompts=[]
+INFO:root:OpenPI infer took 0.143s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.130s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.130s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.118s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.115s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 6
+INFO:root:# successes: 6 (100.0%)
+
+100%|██████████| 1/1 [00:24<00:00, 24.38s/it][A100%|██████████| 1/1 [00:24<00:00, 24.38s/it]
+INFO:root:Current task success rate: 1.0
+INFO:root:Current total success rate: 1.0
+ 60%|██████    | 6/10 [03:55<02:28, 37.17s/it][Warning]: datasets path /root/proj/openpi/third_party/libero/libero/libero/../datasets does not exist!
+[Warning]: datasets path /root/proj/openpi/third_party/libero/libero/libero/../datasets does not exist!
+
+  0%|          | 0/1 [00:00<?, ?it/s][AINFO:root:
+Task: put the white mug on the plate and put the chocolate pudding to the right of the plate
+INFO:root:Starting episode 1...
+INFO:sam_dim_client:SAM extractor prompt trace: [{'source': 'white mug', 'role': 'manipulated_object', 'selected': None, 'round': None, 'status': 'failed', 'attempts': [{'prompt': 'white mug', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 0 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 25, 'score': 0.6484375, 'bbox': [135, 97, 178, 139], 'sam_bbox': [134, 97, 180, 141], 'compute_bbox': [135, 97, 178, 139], 'mask_pixels': 1250, 'valid': False, 'reason': 'the masked region is too small and appears to be part of the robot arm or background, not a white mug'}]}, {'prompt': 'gray mug', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 0 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 25, 'score': 0.875, 'bbox': [135, 97, 178, 139], 'sam_bbox': [134, 97, 180, 141], 'compute_bbox': [135, 97, 178, 139], 'mask_pixels': 1249, 'valid': False, 'reason': 'the masked region is part of a red mug, not gray'}]}, {'prompt': 'mug', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 1 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 44, 'score': 0.75, 'bbox': [87, 74, 124, 117], 'sam_bbox': [87, 73, 125, 119], 'compute_bbox': [87, 74, 124, 117], 'mask_pixels': 1066, 'valid': True, 'reason': 'matches the prompt'}, {'id': 1, 'sam_index': 25, 'score': 0.73046875, 'bbox': [135, 97, 178, 139], 'sam_bbox': [134, 97, 180, 140], 'compute_bbox': [135, 97, 178, 139], 'mask_pixels': 1247, 'valid': False, 'reason': 'clearly different from the prompt'}]}]}, {'source': 'plate', 'role': 'target_receptacle', 'selected': None, 'round': None, 'status': 'failed', 'attempts': [{'prompt': 'plate', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 0 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 171, 'score': 0.890625, 'bbox': [81, 169, 137, 213], 'sam_bbox': [81, 169, 139, 214], 'compute_bbox': [81, 169, 137, 213], 'mask_pixels': 1976, 'valid': False, 'reason': 'the mask covers a small region near the top-left corner, unrelated to the plate'}]}, {'prompt': 'ceramic plate', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 0 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 171, 'score': 0.87109375, 'bbox': [81, 169, 137, 213], 'sam_bbox': [81, 169, 139, 214], 'compute_bbox': [81, 169, 137, 213], 'mask_pixels': 1974, 'valid': False, 'reason': 'the mask covers a small object near the top-left corner, unrelated to the plate prompt'}]}, {'prompt': 'dish', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 0 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 171, 'score': 0.6875, 'bbox': [81, 169, 137, 213], 'sam_bbox': [81, 169, 139, 214], 'compute_bbox': [81, 169, 137, 213], 'mask_pixels': 1971, 'valid': False, 'reason': 'the mask covers a small object near the top-left, which is unrelated to the plate'}]}]}, {'source': 'chocolate pudding', 'role': 'manipulated_object', 'selected': None, 'round': None, 'status': 'failed', 'attempts': [{'prompt': 'chocolate pudding', 'accepted': False, 'failure_type': 'score_too_low', 'failure_reason': 'SAM found candidates, but the best score 0.004 is below threshold 0.50.', 'masks': [{'id': 0, 'sam_index': 104, 'score': 0.004058837890625, 'bbox': [63, 130, 82, 153], 'sam_bbox': [63, 130, 83, 155], 'compute_bbox': [63, 130, 82, 153], 'mask_pixels': 393}, {'id': 1, 'sam_index': 41, 'score': 0.0032958984375, 'bbox': [65, 131, 78, 146], 'sam_bbox': [64, 130, 79, 147], 'compute_bbox': [65, 131, 78, 146], 'mask_pixels': 132}, {'id': 2, 'sam_index': 178, 'score': 0.0030670166015625, 'bbox': [96, 0, 134, 31], 'sam_bbox': [96, 0, 135, 33], 'compute_bbox': [96, 0, 134, 31], 'mask_pixels': 919}]}, {'prompt': 'chocolate bar', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 0 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 104, 'score': 0.78125, 'bbox': [63, 130, 82, 153], 'sam_bbox': [63, 130, 83, 155], 'compute_bbox': [63, 130, 82, 153], 'mask_pixels': 405, 'valid': False, 'reason': 'the masked region is a small red object on the table, not a chocolate bar'}]}, {'prompt': 'pudding', 'accepted': False, 'failure_type': 'score_too_low', 'failure_reason': 'SAM found candidates, but the best score 0.022 is below threshold 0.50.', 'masks': [{'id': 0, 'sam_index': 78, 'score': 0.022216796875, 'bbox': [90, 177, 129, 207], 'sam_bbox': [89, 176, 131, 209], 'compute_bbox': [90, 177, 129, 207], 'mask_pixels': 966}, {'id': 1, 'sam_index': 171, 'score': 0.015625, 'bbox': [81, 169, 137, 213], 'sam_bbox': [80, 169, 139, 214], 'compute_bbox': [81, 169, 137, 213], 'mask_pixels': 1968}, {'id': 2, 'sam_index': 180, 'score': 0.01416015625, 'bbox': [96, 0, 134, 29], 'sam_bbox': [96, 0, 136, 32], 'compute_bbox': [96, 0, 134, 29], 'mask_pixels': 914}]}]}, {'source': 'table', 'role': 'support', 'selected': 'table', 'round': 'importance_only', 'status': 'selected', 'attempts': [{'prompt': 'table', 'accepted': True, 'failure_type': None, 'failure_reason': '', 'masks': [{'id': 0, 'sam_index': 144, 'score': 0.8984375, 'bbox': [0, 53, 223, 223], 'sam_bbox': [0, 52, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 31663, 'valid': True, 'reason': 'matches the prompt'}]}]}]
+INFO:root:SAM extract took 28.870s for task 'put the white mug on the plate and put the chocolate pudding to the right of the plate' and returned prompts=['table']
+INFO:root:SAM segment/dim took 0.179s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 52, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 31663, 'scores': [0.8984375]}]}
+INFO:root:OpenPI infer took 0.173s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.173s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 52, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 31687, 'scores': [0.91015625]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.174s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 52, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 31683, 'scores': [0.9140625]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.173s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 52, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 31639, 'scores': [0.859375]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.174s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 52, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 31224, 'scores': [0.890625]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.182s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 52, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 30600, 'scores': [0.921875]}]}
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.177s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 52, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 29949, 'scores': [0.91796875]}]}
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.175s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 52, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 29419, 'scores': [0.90234375]}]}
+INFO:root:OpenPI infer took 0.130s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.175s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 52, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 29426, 'scores': [0.91015625]}]}
+INFO:root:OpenPI infer took 0.131s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.176s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 52, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 29547, 'scores': [0.890625]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.175s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 52, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 29573, 'scores': [0.87109375]}]}
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.173s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 52, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 29586, 'scores': [0.8828125]}]}
+INFO:root:OpenPI infer took 0.120s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.173s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 52, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 29784, 'scores': [0.87890625]}]}
+INFO:root:OpenPI infer took 0.131s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.175s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 52, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 29964, 'scores': [0.875]}]}
+INFO:root:OpenPI infer took 0.110s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.174s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 52, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 30056, 'scores': [0.89453125]}]}
+INFO:root:OpenPI infer took 0.137s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.176s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 52, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 30136, 'scores': [0.8984375]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.180s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 52, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 29963, 'scores': [0.8984375]}]}
+INFO:root:OpenPI infer took 0.110s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.173s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 52, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 29444, 'scores': [0.82421875]}]}
+INFO:root:OpenPI infer took 0.130s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.173s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 52, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 28652, 'scores': [0.82421875]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.173s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 52, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 27330, 'scores': [0.73828125]}]}
+INFO:root:OpenPI infer took 0.130s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.173s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 53, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 26477, 'scores': [0.74609375]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.180s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 53, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 26272, 'scores': [0.6875]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.176s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 53, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 26328, 'scores': [0.58984375]}]}
+INFO:root:OpenPI infer took 0.130s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.176s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 52, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 26440, 'scores': [0.6640625]}]}
+INFO:root:OpenPI infer took 0.131s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.172s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 52, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 26418, 'scores': [0.6953125]}]}
+INFO:root:OpenPI infer took 0.130s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.174s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 53, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 26401, 'scores': [0.6640625]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.174s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 53, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 26509, 'scores': [0.703125]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.172s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 53, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 27029, 'scores': [0.76953125]}]}
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.174s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 52, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 27797, 'scores': [0.8515625]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.174s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 52, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 28361, 'scores': [0.89453125]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.173s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 52, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 28552, 'scores': [0.859375]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.175s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 52, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 28448, 'scores': [0.83203125]}]}
+INFO:root:OpenPI infer took 0.110s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.179s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 52, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 28257, 'scores': [0.85546875]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.175s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 52, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 28061, 'scores': [0.76171875]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.174s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 52, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 28003, 'scores': [0.828125]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.173s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 52, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 27997, 'scores': [0.7890625]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.174s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 52, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 27933, 'scores': [0.80859375]}]}
+INFO:root:OpenPI infer took 0.131s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.178s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 52, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 27897, 'scores': [0.83984375]}]}
+INFO:root:OpenPI infer took 0.121s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.179s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 52, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 27723, 'scores': [0.86328125]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.173s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 52, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 27147, 'scores': [0.87890625]}]}
+INFO:root:OpenPI infer took 0.130s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.175s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 52, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 26135, 'scores': [0.8984375]}]}
+INFO:root:OpenPI infer took 0.142s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.176s for views=['base'] using prompts=['table'] segment_details={'base': [{'prompt': 'table', 'found': True, 'sam_bbox': [0, 52, 223, 223], 'compute_bbox': [0, 53, 223, 223], 'mask_pixels': 25173, 'scores': [0.88671875]}]}
+INFO:root:OpenPI infer took 0.110s and produced 10 actions (using first 5 for this chunk)
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 7
+INFO:root:# successes: 7 (100.0%)
+
+100%|██████████| 1/1 [00:48<00:00, 48.29s/it][A100%|██████████| 1/1 [00:48<00:00, 48.29s/it]
+INFO:root:Current task success rate: 1.0
+INFO:root:Current total success rate: 1.0
+ 70%|███████   | 7/10 [04:44<02:03, 41.18s/it][Warning]: datasets path /root/proj/openpi/third_party/libero/libero/libero/../datasets does not exist!
+[Warning]: datasets path /root/proj/openpi/third_party/libero/libero/libero/../datasets does not exist!
+
+  0%|          | 0/1 [00:00<?, ?it/s][AINFO:root:
+Task: put both the alphabet soup and the cream cheese box in the basket
+INFO:root:Starting episode 1...
+INFO:sam_dim_client:SAM extractor prompt trace: [{'source': 'alphabet soup', 'role': 'manipulated_object', 'selected': None, 'round': None, 'status': 'failed', 'attempts': [{'prompt': 'alphabet soup', 'accepted': False, 'failure_type': 'score_too_low', 'failure_reason': 'SAM found candidates, but the best score 0.028 is below threshold 0.50.', 'masks': [{'id': 0, 'sam_index': 157, 'score': 0.02783203125, 'bbox': [137, 135, 162, 172], 'sam_bbox': [136, 134, 164, 174], 'compute_bbox': [137, 135, 162, 172], 'mask_pixels': 832}, {'id': 1, 'sam_index': 51, 'score': 0.027587890625, 'bbox': [171, 149, 200, 190], 'sam_bbox': [170, 149, 202, 192], 'compute_bbox': [171, 149, 200, 190], 'mask_pixels': 1003}, {'id': 2, 'sam_index': 187, 'score': 0.018310546875, 'bbox': [147, 78, 166, 120], 'sam_bbox': [147, 77, 167, 121], 'compute_bbox': [147, 78, 166, 120], 'mask_pixels': 637}]}, {'prompt': 'soup can', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 1 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 51, 'score': 0.87890625, 'bbox': [171, 149, 200, 190], 'sam_bbox': [170, 149, 202, 192], 'compute_bbox': [171, 149, 200, 190], 'mask_pixels': 1013, 'valid': True, 'reason': 'matches the prompt'}, {'id': 1, 'sam_index': 157, 'score': 0.87109375, 'bbox': [137, 134, 162, 172], 'sam_bbox': [136, 134, 164, 173], 'compute_bbox': [137, 134, 162, 172], 'mask_pixels': 850, 'valid': False, 'reason': 'clearly different from the prompt'}]}, {'prompt': 'can', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 1 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 51, 'score': 0.9453125, 'bbox': [171, 149, 200, 190], 'sam_bbox': [170, 149, 202, 192], 'compute_bbox': [171, 149, 200, 190], 'mask_pixels': 1013, 'valid': True, 'reason': 'matches the prompt'}, {'id': 1, 'sam_index': 157, 'score': 0.94140625, 'bbox': [137, 134, 162, 172], 'sam_bbox': [136, 134, 164, 173], 'compute_bbox': [137, 134, 162, 172], 'mask_pixels': 849, 'valid': False, 'reason': 'clearly different from the prompt'}]}]}, {'source': 'cream cheese box', 'role': 'manipulated_object', 'selected': None, 'round': None, 'status': 'failed', 'attempts': [{'prompt': 'cream cheese box', 'accepted': False, 'failure_type': 'score_too_low', 'failure_reason': 'SAM found candidates, but the best score 0.046 is below threshold 0.50.', 'masks': [{'id': 0, 'sam_index': 171, 'score': 0.046142578125, 'bbox': [93, 116, 105, 133], 'sam_bbox': [92, 115, 107, 134], 'compute_bbox': [93, 116, 105, 133], 'mask_pixels': 225}, {'id': 1, 'sam_index': 87, 'score': 0.02197265625, 'bbox': [0, 100, 50, 171], 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 50, 171], 'mask_pixels': 3431}, {'id': 2, 'sam_index': 15, 'score': 0.01068115234375, 'bbox': [0, 99, 48, 139], 'sam_bbox': [0, 99, 50, 140], 'compute_bbox': [0, 99, 48, 139], 'mask_pixels': 1813}]}]}, {'source': 'basket', 'role': 'target_receptacle', 'selected': 'basket', 'round': 'importance_only', 'status': 'selected', 'attempts': [{'prompt': 'basket', 'accepted': True, 'failure_type': None, 'failure_reason': '', 'masks': [{'id': 0, 'sam_index': 104, 'score': 0.78125, 'bbox': [0, 100, 49, 170], 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3405, 'valid': True, 'reason': 'matches the prompt'}]}]}]
+INFO:root:SAM extract took 10.638s for task 'put both the alphabet soup and the cream cheese box in the basket' and returned prompts=['basket']
+INFO:root:SAM segment/dim took 0.187s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3405, 'scores': [0.78125]}]}
+INFO:root:OpenPI infer took 0.133s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.173s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3405, 'scores': [0.77734375]}]}
+INFO:root:OpenPI infer took 0.110s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.174s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3405, 'scores': [0.765625]}]}
+INFO:root:OpenPI infer took 0.110s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.174s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3405, 'scores': [0.76953125]}]}
+INFO:root:OpenPI infer took 0.110s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.174s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3405, 'scores': [0.8046875]}]}
+INFO:root:OpenPI infer took 0.111s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.173s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3405, 'scores': [0.796875]}]}
+INFO:root:OpenPI infer took 0.109s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.172s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3405, 'scores': [0.76953125]}]}
+INFO:root:OpenPI infer took 0.110s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.175s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3402, 'scores': [0.77734375]}]}
+INFO:root:OpenPI infer took 0.109s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.173s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3401, 'scores': [0.7890625]}]}
+INFO:root:OpenPI infer took 0.110s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.174s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3405, 'scores': [0.80859375]}]}
+INFO:root:OpenPI infer took 0.109s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.174s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3405, 'scores': [0.8203125]}]}
+INFO:root:OpenPI infer took 0.109s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.174s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3405, 'scores': [0.8203125]}]}
+INFO:root:OpenPI infer took 0.110s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.173s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3405, 'scores': [0.81640625]}]}
+INFO:root:OpenPI infer took 0.110s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.175s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3405, 'scores': [0.81640625]}]}
+INFO:root:OpenPI infer took 0.110s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.173s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3405, 'scores': [0.81640625]}]}
+INFO:root:OpenPI infer took 0.123s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.172s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3405, 'scores': [0.78125]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.173s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3397, 'scores': [0.78515625]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.174s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3404, 'scores': [0.79296875]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.173s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3343, 'scores': [0.796875]}]}
+INFO:root:OpenPI infer took 0.131s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.175s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3338, 'scores': [0.77734375]}]}
+INFO:root:OpenPI infer took 0.131s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.174s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 100, 51, 172], 'compute_bbox': [0, 101, 49, 171], 'mask_pixels': 2420, 'scores': [0.73046875]}]}
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.175s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 100, 51, 172], 'compute_bbox': [0, 100, 49, 171], 'mask_pixels': 2647, 'scores': [0.7265625]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.175s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 100, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3009, 'scores': [0.7265625]}]}
+INFO:root:OpenPI infer took 0.131s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.173s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 100, 51, 172], 'compute_bbox': [0, 100, 49, 171], 'mask_pixels': 2848, 'scores': [0.71484375]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.172s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3121, 'scores': [0.796875]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.175s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3142, 'scores': [0.7734375]}]}
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.175s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3185, 'scores': [0.78515625]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.179s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3212, 'scores': [0.78515625]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.172s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3157, 'scores': [0.78515625]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.175s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3204, 'scores': [0.78125]}]}
+INFO:root:OpenPI infer took 0.114s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.172s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3175, 'scores': [0.80859375]}]}
+INFO:root:OpenPI infer took 0.119s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.173s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3210, 'scores': [0.78125]}]}
+INFO:root:OpenPI infer took 0.111s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.172s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3214, 'scores': [0.75390625]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.179s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3208, 'scores': [0.76171875]}]}
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.175s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3184, 'scores': [0.77734375]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.175s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3205, 'scores': [0.7734375]}]}
+INFO:root:OpenPI infer took 0.132s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.175s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3209, 'scores': [0.76953125]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.175s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3219, 'scores': [0.78125]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.177s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3211, 'scores': [0.79296875]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.174s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3215, 'scores': [0.80078125]}]}
+INFO:root:OpenPI infer took 0.140s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.176s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3204, 'scores': [0.8046875]}]}
+INFO:root:OpenPI infer took 0.130s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.178s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3149, 'scores': [0.7890625]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.178s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3204, 'scores': [0.79296875]}]}
+INFO:root:OpenPI infer took 0.134s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.175s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 3217, 'scores': [0.828125]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.175s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 100, 51, 172], 'compute_bbox': [0, 100, 49, 170], 'mask_pixels': 2923, 'scores': [0.80078125]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.174s for views=['base'] using prompts=['basket'] segment_details={'base': [{'prompt': 'basket', 'found': True, 'sam_bbox': [0, 99, 51, 172], 'compute_bbox': [0, 100, 49, 171], 'mask_pixels': 2733, 'scores': [0.75390625]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 8
+INFO:root:# successes: 8 (100.0%)
+
+100%|██████████| 1/1 [00:31<00:00, 31.73s/it][A100%|██████████| 1/1 [00:31<00:00, 31.73s/it]
+INFO:root:Current task success rate: 1.0
+INFO:root:Current total success rate: 1.0
+ 80%|████████  | 8/10 [05:17<01:17, 38.50s/it][Warning]: datasets path /root/proj/openpi/third_party/libero/libero/libero/../datasets does not exist!
+[Warning]: datasets path /root/proj/openpi/third_party/libero/libero/libero/../datasets does not exist!
+
+  0%|          | 0/1 [00:00<?, ?it/s][AINFO:root:
+Task: put both moka pots on the stove
+INFO:root:Starting episode 1...
+INFO:sam_dim_client:SAM extractor prompt trace: [{'source': 'moka pots', 'role': 'manipulated_object', 'selected': 'left moka pot', 'round': 'conservative', 'status': 'selected', 'attempts': [{'prompt': 'moka pots', 'accepted': False, 'failure_type': 'score_too_low', 'failure_reason': 'SAM found candidates, but the best score 0.254 is below threshold 0.50.', 'masks': [{'id': 0, 'sam_index': 104, 'score': 0.25390625, 'bbox': [20, 106, 61, 147], 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 946}, {'id': 1, 'sam_index': 157, 'score': 0.2333984375, 'bbox': [80, 125, 124, 168], 'sam_bbox': [80, 124, 126, 169], 'compute_bbox': [80, 125, 124, 168], 'mask_pixels': 1069}, {'id': 2, 'sam_index': 153, 'score': 0.09814453125, 'bbox': [71, 0, 91, 9], 'sam_bbox': [71, 0, 92, 10], 'compute_bbox': [71, 0, 91, 9], 'mask_pixels': 162}]}, {'prompt': 'moka pot', 'accepted': False, 'failure_type': 'score_too_low', 'failure_reason': 'SAM found candidates, but the best score 0.324 is below threshold 0.50.', 'masks': [{'id': 0, 'sam_index': 104, 'score': 0.32421875, 'bbox': [20, 106, 61, 147], 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 949}, {'id': 1, 'sam_index': 157, 'score': 0.298828125, 'bbox': [80, 125, 124, 168], 'sam_bbox': [80, 124, 126, 169], 'compute_bbox': [80, 125, 124, 168], 'mask_pixels': 1069}, {'id': 2, 'sam_index': 153, 'score': 0.11669921875, 'bbox': [71, 0, 91, 8], 'sam_bbox': [71, 0, 92, 9], 'compute_bbox': [71, 0, 91, 8], 'mask_pixels': 158}]}, {'prompt': 'left moka pot', 'accepted': True, 'failure_type': None, 'failure_reason': '', 'masks': [{'id': 0, 'sam_index': 104, 'score': 0.6640625, 'bbox': [20, 106, 61, 147], 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 956, 'valid': True, 'reason': 'matches the prompt'}]}, {'prompt': 'right moka pot', 'accepted': False, 'failure_type': 'score_too_low', 'failure_reason': 'SAM found candidates, but the best score 0.016 is below threshold 0.50.', 'masks': [{'id': 0, 'sam_index': 104, 'score': 0.0162353515625, 'bbox': [20, 106, 61, 147], 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 947}, {'id': 1, 'sam_index': 171, 'score': 0.013427734375, 'bbox': [80, 125, 124, 168], 'sam_bbox': [80, 124, 126, 169], 'compute_bbox': [80, 125, 124, 168], 'mask_pixels': 1072}, {'id': 2, 'sam_index': 153, 'score': 0.0113525390625, 'bbox': [71, 0, 91, 8], 'sam_bbox': [71, 0, 92, 10], 'compute_bbox': [71, 0, 91, 8], 'mask_pixels': 157}]}]}, {'source': 'stove', 'role': 'target_receptacle', 'selected': None, 'round': None, 'status': 'failed', 'attempts': [{'prompt': 'stove', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 0 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 25, 'score': 0.8984375, 'bbox': [141, 119, 201, 159], 'sam_bbox': [140, 118, 203, 161], 'compute_bbox': [141, 119, 201, 159], 'mask_pixels': 2196, 'valid': False, 'reason': 'the mask covers a small dark region near the top of the image, which is unrelated to the stove'}]}, {'prompt': 'electric stove', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 0 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 25, 'score': 0.765625, 'bbox': [141, 119, 201, 159], 'sam_bbox': [140, 118, 203, 161], 'compute_bbox': [141, 119, 201, 159], 'mask_pixels': 2196, 'valid': False, 'reason': 'the mask covers a small dark region on the counter, not the stove'}]}, {'prompt': 'stovetop', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 0 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 25, 'score': 0.70703125, 'bbox': [141, 119, 201, 159], 'sam_bbox': [140, 118, 203, 161], 'compute_bbox': [141, 119, 201, 159], 'mask_pixels': 1962, 'valid': False, 'reason': 'the mask covers a small area on the countertop near the stove, not the stovetop itself'}]}, {'prompt': 'burner', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 1 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 196, 'score': 0.87890625, 'bbox': [152, 123, 186, 148], 'sam_bbox': [151, 123, 188, 149], 'compute_bbox': [152, 123, 186, 148], 'mask_pixels': 704, 'valid': True, 'reason': 'matches the prompt'}, {'id': 1, 'sam_index': 25, 'score': 0.58203125, 'bbox': [141, 119, 201, 159], 'sam_bbox': [140, 118, 203, 161], 'compute_bbox': [141, 119, 201, 159], 'mask_pixels': 2193, 'valid': False, 'reason': 'clearly different from the prompt'}]}]}]
+INFO:root:SAM extract took 18.342s for task 'put both moka pots on the stove' and returned prompts=['left moka pot']
+INFO:root:SAM segment/dim took 0.178s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 956, 'scores': [0.6640625]}]}
+INFO:root:OpenPI infer took 0.137s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.167s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 955, 'scores': [0.7109375]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.171s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 955, 'scores': [0.7109375]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.170s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 955, 'scores': [0.7734375]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.169s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 955, 'scores': [0.7421875]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.168s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 956, 'scores': [0.78515625]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.170s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 954, 'scores': [0.6953125]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.165s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 956, 'scores': [0.76171875]}]}
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.166s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 956, 'scores': [0.79296875]}]}
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.169s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 956, 'scores': [0.796875]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.170s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 956, 'scores': [0.77734375]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.168s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 955, 'scores': [0.78515625]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.169s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 955, 'scores': [0.6875]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.168s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 956, 'scores': [0.734375]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.166s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 954, 'scores': [0.78515625]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.171s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 954, 'scores': [0.76171875]}]}
+INFO:root:OpenPI infer took 0.110s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.169s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 955, 'scores': [0.78125]}]}
+INFO:root:OpenPI infer took 0.124s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.169s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 954, 'scores': [0.76171875]}]}
+INFO:root:OpenPI infer took 0.132s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.169s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 955, 'scores': [0.77734375]}]}
+INFO:root:OpenPI infer took 0.138s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.166s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 955, 'scores': [0.80859375]}]}
+INFO:root:OpenPI infer took 0.132s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.175s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 955, 'scores': [0.7890625]}]}
+INFO:root:OpenPI infer took 0.130s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.168s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 955, 'scores': [0.81640625]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.166s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 955, 'scores': [0.78125]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.169s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 955, 'scores': [0.734375]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.167s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 953, 'scores': [0.6640625]}]}
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.171s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 953, 'scores': [0.5546875]}]}
+INFO:root:OpenPI infer took 0.131s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.169s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 952, 'scores': [0.486328125]}]}
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.167s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 955, 'scores': [0.55078125]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.167s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 952, 'scores': [0.58984375]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.167s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 954, 'scores': [0.6640625]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.167s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 954, 'scores': [0.6484375]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.167s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 955, 'scores': [0.6484375]}]}
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.170s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 953, 'scores': [0.703125]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.167s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 953, 'scores': [0.72265625]}]}
+INFO:root:OpenPI infer took 0.135s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.165s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 953, 'scores': [0.72265625]}]}
+INFO:root:OpenPI infer took 0.131s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.167s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 953, 'scores': [0.70703125]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.168s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 952, 'scores': [0.71484375]}]}
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.169s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 952, 'scores': [0.69921875]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.167s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 953, 'scores': [0.6875]}]}
+INFO:root:OpenPI infer took 0.123s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.165s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 954, 'scores': [0.62109375]}]}
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.168s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 955, 'scores': [0.640625]}]}
+INFO:root:OpenPI infer took 0.124s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.168s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 954, 'scores': [0.6875]}]}
+INFO:root:OpenPI infer took 0.116s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.169s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 954, 'scores': [0.69921875]}]}
+INFO:root:OpenPI infer took 0.123s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.170s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 954, 'scores': [0.6640625]}]}
+INFO:root:OpenPI infer took 0.130s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.166s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 954, 'scores': [0.71484375]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.167s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 954, 'scores': [0.7421875]}]}
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.167s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 954, 'scores': [0.6953125]}]}
+INFO:root:OpenPI infer took 0.132s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.165s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 954, 'scores': [0.66796875]}]}
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.166s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 954, 'scores': [0.6875]}]}
+INFO:root:OpenPI infer took 0.132s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.167s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 954, 'scores': [0.68359375]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.169s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 954, 'scores': [0.65625]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.169s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 954, 'scores': [0.546875]}]}
+INFO:root:OpenPI infer took 0.110s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.167s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 954, 'scores': [0.50390625]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.169s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 955, 'scores': [0.390625]}]}
+INFO:root:OpenPI infer took 0.131s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.168s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 953, 'scores': [0.431640625]}]}
+INFO:root:OpenPI infer took 0.129s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.170s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 106, 62, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 953, 'scores': [0.388671875]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.168s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [20, 106, 63, 148], 'compute_bbox': [20, 106, 61, 147], 'mask_pixels': 957, 'scores': [0.462890625]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.170s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [21, 106, 63, 148], 'compute_bbox': [21, 107, 61, 147], 'mask_pixels': 954, 'scores': [0.49609375]}]}
+INFO:root:OpenPI infer took 0.110s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.169s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [21, 106, 63, 148], 'compute_bbox': [21, 107, 61, 147], 'mask_pixels': 956, 'scores': [0.48828125]}]}
+INFO:root:OpenPI infer took 0.125s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.169s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [21, 106, 63, 148], 'compute_bbox': [21, 107, 61, 147], 'mask_pixels': 955, 'scores': [0.515625]}]}
+INFO:root:OpenPI infer took 0.131s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.171s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [21, 106, 63, 148], 'compute_bbox': [21, 107, 61, 147], 'mask_pixels': 950, 'scores': [0.61328125]}]}
+INFO:root:OpenPI infer took 0.130s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.170s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [21, 106, 63, 148], 'compute_bbox': [21, 107, 61, 147], 'mask_pixels': 946, 'scores': [0.62890625]}]}
+INFO:root:OpenPI infer took 0.131s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.169s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [21, 105, 63, 148], 'compute_bbox': [21, 106, 62, 147], 'mask_pixels': 961, 'scores': [0.474609375]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.170s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [21, 105, 64, 148], 'compute_bbox': [22, 106, 62, 147], 'mask_pixels': 960, 'scores': [0.375]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.167s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [22, 106, 65, 148], 'compute_bbox': [22, 106, 63, 147], 'mask_pixels': 964, 'scores': [0.310546875]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.166s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [23, 106, 67, 148], 'compute_bbox': [23, 107, 65, 147], 'mask_pixels': 968, 'scores': [0.11962890625]}]}
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.171s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 107, 63, 149], 'compute_bbox': [20, 107, 62, 148], 'mask_pixels': 981, 'scores': [0.384765625]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.166s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [20, 107, 65, 149], 'compute_bbox': [21, 107, 63, 148], 'mask_pixels': 975, 'scores': [0.58203125]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.167s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [20, 107, 64, 149], 'compute_bbox': [21, 107, 63, 148], 'mask_pixels': 980, 'scores': [0.443359375]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.167s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [20, 107, 65, 149], 'compute_bbox': [21, 107, 63, 148], 'mask_pixels': 980, 'scores': [0.55078125]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.167s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [20, 107, 64, 149], 'compute_bbox': [21, 107, 63, 148], 'mask_pixels': 980, 'scores': [0.5078125]}]}
+INFO:root:OpenPI infer took 0.117s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.168s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [20, 107, 64, 149], 'compute_bbox': [21, 107, 63, 148], 'mask_pixels': 982, 'scores': [0.41015625]}]}
+INFO:root:OpenPI infer took 0.131s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.167s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [20, 107, 64, 149], 'compute_bbox': [21, 107, 63, 148], 'mask_pixels': 981, 'scores': [0.3046875]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.168s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [20, 107, 63, 149], 'compute_bbox': [21, 107, 61, 148], 'mask_pixels': 946, 'scores': [0.373046875]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.169s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [20, 107, 60, 149], 'compute_bbox': [21, 107, 58, 148], 'mask_pixels': 911, 'scores': [0.5078125]}]}
+INFO:root:OpenPI infer took 0.132s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.167s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [20, 107, 55, 149], 'compute_bbox': [21, 107, 53, 148], 'mask_pixels': 883, 'scores': [0.39453125]}]}
+INFO:root:OpenPI infer took 0.131s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.169s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [20, 107, 55, 149], 'compute_bbox': [21, 107, 53, 148], 'mask_pixels': 880, 'scores': [0.369140625]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.167s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [20, 107, 55, 149], 'compute_bbox': [21, 107, 53, 148], 'mask_pixels': 854, 'scores': [0.3828125]}]}
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.168s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [20, 107, 55, 149], 'compute_bbox': [20, 108, 53, 148], 'mask_pixels': 856, 'scores': [0.2392578125]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.168s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [20, 108, 55, 149], 'compute_bbox': [20, 108, 53, 148], 'mask_pixels': 843, 'scores': [0.322265625]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.167s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [19, 108, 55, 149], 'compute_bbox': [20, 108, 53, 148], 'mask_pixels': 841, 'scores': [0.197265625]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.167s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [22, 105, 56, 149], 'compute_bbox': [22, 105, 54, 147], 'mask_pixels': 850, 'scores': [0.42578125]}]}
+INFO:root:OpenPI infer took 0.130s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.167s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [23, 100, 56, 145], 'compute_bbox': [23, 100, 55, 143], 'mask_pixels': 867, 'scores': [0.435546875]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.169s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [25, 94, 58, 140], 'compute_bbox': [25, 95, 57, 139], 'mask_pixels': 892, 'scores': [0.5078125]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.169s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [28, 88, 62, 136], 'compute_bbox': [29, 89, 61, 135], 'mask_pixels': 953, 'scores': [0.291015625]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.166s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [35, 84, 69, 133], 'compute_bbox': [36, 84, 68, 132], 'mask_pixels': 1037, 'scores': [0.45703125]}]}
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.168s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [47, 80, 82, 132], 'compute_bbox': [47, 80, 81, 130], 'mask_pixels': 1137, 'scores': [0.408203125]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.168s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [61, 78, 99, 132], 'compute_bbox': [62, 79, 98, 131], 'mask_pixels': 1218, 'scores': [0.72265625]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.170s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [79, 78, 118, 133], 'compute_bbox': [79, 79, 113, 132], 'mask_pixels': 1266, 'scores': [0.17578125]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.170s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [95, 81, 135, 137], 'compute_bbox': [96, 82, 133, 135], 'mask_pixels': 1322, 'scores': [0.251953125]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.170s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [110, 84, 147, 140], 'compute_bbox': [111, 85, 145, 138], 'mask_pixels': 1291, 'scores': [0.228515625]}]}
+INFO:root:OpenPI infer took 0.131s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.170s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [123, 86, 162, 141], 'compute_bbox': [124, 87, 159, 140], 'mask_pixels': 1265, 'scores': [0.205078125]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.168s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [70, 0, 90, 10], 'compute_bbox': [71, 0, 89, 8], 'mask_pixels': 146, 'scores': [0.1630859375]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.168s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [70, 0, 90, 10], 'compute_bbox': [71, 0, 89, 9], 'mask_pixels': 148, 'scores': [0.1904296875]}]}
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.170s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [70, 0, 91, 9], 'compute_bbox': [71, 0, 89, 8], 'mask_pixels': 147, 'scores': [0.2412109375]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.168s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [70, 0, 91, 10], 'compute_bbox': [71, 0, 89, 9], 'mask_pixels': 148, 'scores': [0.28125]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:SAM segment/dim took 0.170s for views=['base'] using prompts=['left moka pot'] segment_details={'base': [{'prompt': 'left moka pot', 'found': True, 'sam_bbox': [70, 0, 91, 10], 'compute_bbox': [71, 0, 89, 9], 'mask_pixels': 147, 'scores': [0.1376953125]}]}
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 9
+INFO:root:# successes: 9 (100.0%)
+
+100%|██████████| 1/1 [01:00<00:00, 60.97s/it][A100%|██████████| 1/1 [01:00<00:00, 60.97s/it]
+INFO:root:Current task success rate: 1.0
+INFO:root:Current total success rate: 1.0
+ 90%|█████████ | 9/10 [06:19<00:45, 45.70s/it][Warning]: datasets path /root/proj/openpi/third_party/libero/libero/libero/../datasets does not exist!
+[Warning]: datasets path /root/proj/openpi/third_party/libero/libero/libero/../datasets does not exist!
+
+  0%|          | 0/1 [00:00<?, ?it/s][AINFO:root:
+Task: put the yellow and white mug in the microwave and close it
+INFO:root:Starting episode 1...
+INFO:sam_dim_client:SAM extractor prompt trace: [{'source': 'yellow and white mug', 'role': 'manipulated_object', 'selected': None, 'round': None, 'status': 'failed', 'attempts': [{'prompt': 'yellow and white mug', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 0 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 171, 'score': 0.83203125, 'bbox': [97, 116, 137, 152], 'sam_bbox': [97, 116, 138, 153], 'compute_bbox': [97, 116, 137, 152], 'mask_pixels': 969, 'valid': False, 'reason': 'the masked region is unrelated to the yellow and white mug prompt'}]}, {'prompt': 'mug with yellow handle', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 0 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 171, 'score': 0.9453125, 'bbox': [97, 116, 137, 152], 'sam_bbox': [97, 116, 138, 153], 'compute_bbox': [97, 116, 137, 152], 'mask_pixels': 969, 'valid': False, 'reason': "the masked region is unrelated to the prompt 'mug with yellow handle'"}]}, {'prompt': 'mug', 'accepted': False, 'failure_type': 'wrong_region', 'failure_reason': 'candidate 1 is clearly different from the prompt', 'masks': [{'id': 0, 'sam_index': 171, 'score': 0.9140625, 'bbox': [97, 116, 137, 152], 'sam_bbox': [97, 116, 138, 153], 'compute_bbox': [97, 116, 137, 152], 'mask_pixels': 969, 'valid': True, 'reason': 'matches the prompt'}, {'id': 1, 'sam_index': 25, 'score': 0.90625, 'bbox': [157, 98, 194, 133], 'sam_bbox': [157, 98, 196, 134], 'compute_bbox': [157, 98, 194, 133], 'mask_pixels': 874, 'valid': False, 'reason': 'clearly different from the prompt'}]}]}, {'source': 'microwave', 'role': 'target_receptacle', 'selected': None, 'round': None, 'status': 'failed', 'attempts': [{'prompt': 'microwave', 'accepted': False, 'failure_type': 'score_too_low', 'failure_reason': 'SAM found candidates, but the best score 0.281 is below threshold 0.50.', 'masks': [{'id': 0, 'sam_index': 104, 'score': 0.28125, 'bbox': [0, 76, 46, 190], 'sam_bbox': [0, 76, 46, 191], 'compute_bbox': [0, 76, 46, 190], 'mask_pixels': 4681}, {'id': 1, 'sam_index': 144, 'score': 0.26953125, 'bbox': [0, 73, 113, 189], 'sam_bbox': [0, 72, 114, 190], 'compute_bbox': [0, 73, 113, 189], 'mask_pixels': 7642}, {'id': 2, 'sam_index': 116, 'score': 0.19140625, 'bbox': [11, 126, 39, 189], 'sam_bbox': [13, 125, 41, 191], 'compute_bbox': [11, 126, 39, 189], 'mask_pixels': 1051}]}, {'prompt': 'black microwave', 'accepted': False, 'failure_type': 'score_too_low', 'failure_reason': 'SAM found candidates, but the best score 0.299 is below threshold 0.50.', 'masks': [{'id': 0, 'sam_index': 104, 'score': 0.298828125, 'bbox': [0, 76, 46, 190], 'sam_bbox': [0, 76, 46, 191], 'compute_bbox': [0, 76, 46, 190], 'mask_pixels': 4679}, {'id': 1, 'sam_index': 144, 'score': 0.244140625, 'bbox': [0, 73, 113, 189], 'sam_bbox': [0, 73, 114, 190], 'compute_bbox': [0, 73, 113, 189], 'mask_pixels': 7636}, {'id': 2, 'sam_index': 116, 'score': 0.1943359375, 'bbox': [8, 126, 39, 189], 'sam_bbox': [12, 125, 41, 191], 'compute_bbox': [8, 126, 39, 189], 'mask_pixels': 1072}]}, {'prompt': 'oven', 'accepted': False, 'failure_type': 'score_too_low', 'failure_reason': 'SAM found candidates, but the best score 0.083 is below threshold 0.50.', 'masks': [{'id': 0, 'sam_index': 44, 'score': 0.08251953125, 'bbox': [41, 73, 113, 115], 'sam_bbox': [40, 72, 114, 116], 'compute_bbox': [41, 73, 113, 115], 'mask_pixels': 2852}, {'id': 1, 'sam_index': 92, 'score': 0.04833984375, 'bbox': [0, 73, 113, 189], 'sam_bbox': [0, 72, 114, 190], 'compute_bbox': [0, 73, 113, 189], 'mask_pixels': 7568}, {'id': 2, 'sam_index': 87, 'score': 0.03955078125, 'bbox': [0, 74, 46, 190], 'sam_bbox': [0, 76, 45, 191], 'compute_bbox': [0, 74, 46, 190], 'mask_pixels': 4726}]}]}, {'source': 'microwave door', 'role': 'articulated_part', 'selected': None, 'round': None, 'status': 'failed', 'attempts': [{'prompt': 'microwave door', 'accepted': False, 'failure_type': 'score_too_low', 'failure_reason': 'SAM found candidates, but the best score 0.275 is below threshold 0.50.', 'masks': [{'id': 0, 'sam_index': 104, 'score': 0.275390625, 'bbox': [14, 126, 39, 189], 'sam_bbox': [13, 125, 40, 191], 'compute_bbox': [14, 126, 39, 189], 'mask_pixels': 1014}, {'id': 1, 'sam_index': 178, 'score': 0.23046875, 'bbox': [41, 73, 113, 115], 'sam_bbox': [40, 72, 114, 116], 'compute_bbox': [41, 73, 113, 115], 'mask_pixels': 2883}, {'id': 2, 'sam_index': 94, 'score': 0.08154296875, 'bbox': [0, 76, 45, 190], 'sam_bbox': [0, 76, 43, 191], 'compute_bbox': [0, 76, 45, 190], 'mask_pixels': 4490}]}, {'prompt': 'microwave front panel', 'accepted': False, 'failure_type': 'score_too_low', 'failure_reason': 'SAM found candidates, but the best score 0.459 is below threshold 0.50.', 'masks': [{'id': 0, 'sam_index': 44, 'score': 0.458984375, 'bbox': [41, 73, 113, 115], 'sam_bbox': [40, 73, 114, 116], 'compute_bbox': [41, 73, 113, 115], 'mask_pixels': 2841}, {'id': 1, 'sam_index': 87, 'score': 0.1865234375, 'bbox': [0, 148, 26, 190], 'sam_bbox': [0, 147, 27, 191], 'compute_bbox': [0, 148, 26, 190], 'mask_pixels': 874}, {'id': 2, 'sam_index': 116, 'score': 0.15625, 'bbox': [14, 126, 39, 189], 'sam_bbox': [13, 125, 40, 191], 'compute_bbox': [14, 126, 39, 189], 'mask_pixels': 1015}]}]}]
+INFO:root:SAM extract took 15.947s for task 'put the yellow and white mug in the microwave and close it' and returned prompts=[]
+INFO:root:OpenPI infer took 0.135s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.125s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.125s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.125s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.125s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.125s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.125s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.125s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.125s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.126s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.127s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.130s and produced 10 actions (using first 5 for this chunk)
+INFO:root:OpenPI infer took 0.128s and produced 10 actions (using first 5 for this chunk)
+INFO:root:Success: True
+INFO:root:# episodes completed so far: 10
+INFO:root:# successes: 10 (100.0%)
+
+100%|██████████| 1/1 [00:29<00:00, 29.87s/it][A100%|██████████| 1/1 [00:29<00:00, 29.87s/it]
+INFO:root:Current task success rate: 1.0
+INFO:root:Current total success rate: 1.0
+100%|██████████| 10/10 [06:49<00:00, 41.09s/it]100%|██████████| 10/10 [06:49<00:00, 40.98s/it]
+INFO:root:Total success rate: 1.0
+INFO:root:Total episodes: 10
+Exception ignored in: <function MjRenderContext.__del__ at 0x7fe7998e4280>
+Traceback (most recent call last):
+  File "/root/proj/openpi/examples/libero/.venv/lib/python3.8/site-packages/robosuite/utils/binding_utils.py", line 199, in __del__
+    self.gl_ctx.free()
+  File "/root/proj/openpi/examples/libero/.venv/lib/python3.8/site-packages/robosuite/renderers/context/egl_context.py", line 149, in free
+    EGL.eglMakeCurrent(EGL_DISPLAY, EGL.EGL_NO_SURFACE, EGL.EGL_NO_SURFACE, EGL.EGL_NO_CONTEXT)
+  File "/root/proj/openpi/examples/libero/.venv/lib/python3.8/site-packages/OpenGL/error.py", line 230, in glCheckError
+    raise self._errorClass(
+OpenGL.raw.EGL._errors.EGLError: INFO:OpenGL.platform.ctypesloader:Failed to load library ( 'libGLU.so.0' ): libGLU.so.0: cannot open shared object file: No such file or directory
+EGLError(
+	err = EGL_NOT_INITIALIZED,
+	baseOperation = eglMakeCurrent,
+	cArguments = (
+		<OpenGL._opaque.EGLDisplay_pointer object at 0x7fe78c7fa140>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0x7fe79d7e97c0>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0x7fe79d7e97c0>,
+		<OpenGL._opaque.EGLContext_pointer object at 0x7fe79d7e9b40>,
+	),
+	result = 0
+)
+Exception ignored in: <function EGLGLContext.__del__ at 0x7fe7998e40d0>
+Traceback (most recent call last):
+  File "/root/proj/openpi/examples/libero/.venv/lib/python3.8/site-packages/robosuite/renderers/context/egl_context.py", line 155, in __del__
+    self.free()
+  File "/root/proj/openpi/examples/libero/.venv/lib/python3.8/site-packages/robosuite/renderers/context/egl_context.py", line 149, in free
+    EGL.eglMakeCurrent(EGL_DISPLAY, EGL.EGL_NO_SURFACE, EGL.EGL_NO_SURFACE, EGL.EGL_NO_CONTEXT)
+  File "/root/proj/openpi/examples/libero/.venv/lib/python3.8/site-packages/OpenGL/error.py", line 230, in glCheckError
+    raise self._errorClass(
+OpenGL.raw.EGL._errors.EGLError: EGLError(
+	err = EGL_NOT_INITIALIZED,
+	baseOperation = eglMakeCurrent,
+	cArguments = (
+		<OpenGL._opaque.EGLDisplay_pointer object at 0x7fe78c7fa140>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0x7fe79d7e97c0>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0x7fe79d7e97c0>,
+		<OpenGL._opaque.EGLContext_pointer object at 0x7fe79d7e9b40>,
+	),
+	result = 0
+)

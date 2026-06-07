@@ -1,0 +1,48 @@
+{
+  "open the middle drawer of the cabinet": [
+    "middle drawer handle",
+    "middle drawer",
+    "cabinet"
+  ],
+  "put the bowl on the stove": [
+    "bowl",
+    "stove"
+  ],
+  "put the wine bottle on top of the cabinet": [
+    "wine bottle",
+    "cabinet top",
+    "cabinet"
+  ],
+  "open the top drawer and put the bowl inside": [
+    "top drawer",
+    "top drawer handle",
+    "bowl",
+    "top drawer interior"
+  ],
+  "put the bowl on top of the cabinet": [
+    "bowl",
+    "cabinet top",
+    "cabinet"
+  ],
+  "push the plate to the front of the stove": [
+    "plate",
+    "stove",
+    "front of stove"
+  ],
+  "put the cream cheese in the bowl": [
+    "cream cheese",
+    "bowl"
+  ],
+  "turn on the stove": [
+    "stove control",
+    "stove"
+  ],
+  "put the bowl on the plate": [
+    "bowl",
+    "plate"
+  ],
+  "put the wine bottle on the rack": [
+    "wine bottle",
+    "rack"
+  ]
+}

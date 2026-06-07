@@ -1,0 +1,9 @@
+/root/proj/eval/prompt_mask_audit_first_hit/goal_first_hit_page_01.jpg
+/root/proj/eval/prompt_mask_audit_first_hit/goal_first_hit_page_02.jpg
+/root/proj/eval/prompt_mask_audit_first_hit/goal_first_hit_page_03.jpg
+/root/proj/eval/prompt_mask_audit_first_hit/goal_first_hit_page_04.jpg
+/root/proj/eval/prompt_mask_audit_first_hit/goal_first_hit_page_05.jpg
+/root/proj/eval/prompt_mask_audit_first_hit/goal_first_hit_page_06.jpg
+/root/proj/eval/prompt_mask_audit_first_hit/goal_first_hit_page_07.jpg
+/root/proj/eval/prompt_mask_audit_first_hit/goal_first_hit_page_08.jpg
+/root/proj/eval/prompt_mask_audit_first_hit/goal_first_hit_page_09.jpg

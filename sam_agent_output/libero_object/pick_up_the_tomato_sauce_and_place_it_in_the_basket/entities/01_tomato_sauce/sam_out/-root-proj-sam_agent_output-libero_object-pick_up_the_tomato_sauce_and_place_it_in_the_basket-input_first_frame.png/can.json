@@ -1,0 +1,43 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_tomato_sauce_and_place_it_in_the_basket/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_tomato_sauce_and_place_it_in_the_basket/entities/01_tomato_sauce/sam_out/-root-proj-sam_agent_output-libero_object-pick_up_the_tomato_sauce_and_place_it_in_the_basket-input_first_frame.png/can.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [
+        [
+            0.5799267888069153,
+            0.5217651724815369,
+            0.08037477731704712,
+            0.11749619245529175
+        ],
+        [
+            0.7040147185325623,
+            0.5175889730453491,
+            0.08758562803268433,
+            0.15841233730316162
+        ],
+        [
+            0.7124376893043518,
+            0.3935106694698334,
+            0.0744706392288208,
+            0.12548795342445374
+        ]
+    ],
+    "pred_masks": [
+        "jal0b0[64N2O001N1000000000000001N101N1M5Bc``0",
+        "WfR1<Z6=F8N10000O10000000000000000000L4I9H`U:",
+        "SSS1a0V6:N001000000000000000000000O2Ea]:"
+    ],
+    "pred_scores": [
+        0.8671875,
+        0.796875,
+        0.7265625
+    ],
+    "kept_indices": [
+        0,
+        1,
+        2
+    ],
+    "removed_indices": [],
+    "iom_threshold": 0.3
+}

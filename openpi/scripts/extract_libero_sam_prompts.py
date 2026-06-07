@@ -24,10 +24,12 @@ from __future__ import annotations
 
 import argparse
 import base64
+from collections import defaultdict
 import io
 import json
 import logging
 from pathlib import Path
+import random
 import urllib.error
 import urllib.request
 
@@ -49,7 +51,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--output-root",
         type=Path,
-        default=Path("/root/autodl-tmp/datasets/physical-intelligence/libero_sam_prompts"),
+        default=Path("/root/autodl-tmp/datasets/physical-intelligence/libero_sam_masks_2"),
         help="Where to save mirrored prompt sidecar files.",
     )
     parser.add_argument(
@@ -88,9 +90,27 @@ def parse_args() -> argparse.Namespace:
         help="Episode index to start from.",
     )
     parser.add_argument(
+        "--prompt-group-size",
+        type=int,
+        default=10,
+        help="When caching is enabled, call /extract once per N episodes of the same task. Use 0 to cache once per task.",
+    )
+    parser.add_argument(
+        "--prompt-group-seed",
+        type=int,
+        default=0,
+        help="Random seed for choosing the representative episode in each prompt group.",
+    )
+    parser.add_argument(
+        "--blacklist-path",
+        type=Path,
+        default=None,
+        help="JSON file containing tasks to skip. Defaults to <output-root>/blacklist.json if it exists.",
+    )
+    parser.add_argument(
         "--no-cache-by-task",
         action="store_true",
-        help="Disable task-level reuse and call /extract once per episode.",
+        help="Disable task/group-level reuse and call /extract once per episode.",
     )
     parser.add_argument(
         "--overwrite",
@@ -124,6 +144,49 @@ def _iter_episode_rows(dataset_root: Path) -> list[dict]:
 def _load_task_map(dataset_root: Path) -> dict[int, str]:
     tasks = _load_jsonl(dataset_root / "meta" / "tasks.jsonl")
     return {int(row["task_index"]): str(row["task"]) for row in tasks}
+
+
+def _load_blacklist(path: Path | None) -> set[str]:
+    if path is None or not path.exists():
+        return set()
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    if isinstance(payload, list):
+        items = payload
+    elif isinstance(payload, dict):
+        items = payload.get("exclude_tasks", [])
+    else:
+        raise ValueError(f"Blacklist must be a JSON list or object with exclude_tasks: {path}")
+    return {str(item).strip() for item in items if str(item).strip()}
+
+
+def _build_prompt_groups(
+    episode_rows: list[dict],
+    *,
+    task_to_index: dict[str, int],
+    group_size: int,
+    seed: int,
+) -> tuple[dict[int, tuple[int, int]], dict[tuple[int, int], dict]]:
+    episodes_by_task: dict[int, list[dict]] = defaultdict(list)
+    for row in episode_rows:
+        task = str(row["tasks"][0])
+        episodes_by_task[task_to_index[task]].append(row)
+
+    rng = random.Random(seed)
+    episode_to_group: dict[int, tuple[int, int]] = {}
+    group_representatives: dict[tuple[int, int], dict] = {}
+    for task_index, rows in episodes_by_task.items():
+        rows = sorted(rows, key=lambda row: int(row["episode_index"]))
+        if group_size <= 0:
+            groups = [rows]
+        else:
+            groups = [rows[start : start + group_size] for start in range(0, len(rows), group_size)]
+        for group_id, group_rows in enumerate(groups):
+            key = (task_index, group_id)
+            representative = rng.choice(group_rows)
+            group_representatives[key] = representative
+            for row in group_rows:
+                episode_to_group[int(row["episode_index"])] = key
+    return episode_to_group, group_representatives
 
 
 def _read_first_frame(parquet_path: Path) -> tuple[int, int, bytes]:
@@ -192,22 +255,47 @@ def main() -> None:
     dataset_root = args.dataset_root.resolve()
     output_root = args.output_root.resolve()
     cache_by_task = not args.no_cache_by_task
+    blacklist_path = args.blacklist_path or (output_root / "blacklist.json")
 
     task_map = _load_task_map(dataset_root)
+    task_to_index = {task: task_index for task_index, task in task_map.items()}
     episode_rows = _iter_episode_rows(dataset_root)
     if args.start_episode > 0:
         episode_rows = [row for row in episode_rows if int(row["episode_index"]) >= args.start_episode]
     if args.episode_limit > 0:
         episode_rows = episode_rows[: args.episode_limit]
 
+    blacklist = _load_blacklist(blacklist_path)
+    if blacklist:
+        unknown = sorted(blacklist - set(task_to_index))
+        if unknown:
+            raise ValueError(f"Blacklist contains tasks not present in dataset: {unknown}")
+        before = len(episode_rows)
+        episode_rows = [row for row in episode_rows if str(row["tasks"][0]) not in blacklist]
+        LOGGER.info("Loaded %s blacklisted tasks from %s; skipped %s episodes.", len(blacklist), blacklist_path, before - len(episode_rows))
+    else:
+        LOGGER.info("No blacklist loaded from %s.", blacklist_path)
+
+    episode_to_group: dict[int, tuple[int, int]] = {}
+    group_representatives: dict[tuple[int, int], dict] = {}
+    if cache_by_task:
+        episode_to_group, group_representatives = _build_prompt_groups(
+            episode_rows,
+            task_to_index=task_to_index,
+            group_size=args.prompt_group_size,
+            seed=args.prompt_group_seed,
+        )
+
     LOGGER.info("Dataset root: %s", dataset_root)
     LOGGER.info("Output root: %s", output_root)
     LOGGER.info("Extract URL: %s", args.extract_url)
     LOGGER.info("Episodes to process: %s", len(episode_rows))
-    LOGGER.info("Cache by task: %s", cache_by_task)
+    LOGGER.info("Cache by task/group: %s", cache_by_task)
+    LOGGER.info("Prompt group size: %s", args.prompt_group_size if cache_by_task else "disabled")
+    LOGGER.info("Prompt groups: %s", len(group_representatives) if cache_by_task else len(episode_rows))
 
-    task_cache: dict[int, dict] = {}
-    task_prompt_rows: dict[int, dict] = {}
+    prompt_cache: dict[tuple[int, int] | tuple[str, int], dict] = {}
+    group_prompt_rows: dict[tuple[int, int] | tuple[str, int], dict] = {}
     episode_prompt_rows: list[dict] = []
 
     for ordinal, episode_meta in enumerate(episode_rows, start=1):
@@ -217,26 +305,50 @@ def main() -> None:
             LOGGER.info("Skipping episode %06d because %s already exists.", episode_index, output_path)
             continue
 
+        task_description = str(episode_meta["tasks"][0])
+        task_index = task_to_index[task_description]
+        chunk_index = int(episode_meta["chunk_index"])
         parquet_path = Path(str(episode_meta["parquet_path"]))
-        task_index, frame_index, image_blob = _read_first_frame(parquet_path)
-        task_description = task_map[task_index]
 
-        if cache_by_task and task_index in task_cache:
-            extract_result = task_cache[task_index]
+        if cache_by_task:
+            cache_key = episode_to_group[episode_index]
+            group_id = int(cache_key[1])
+            representative_meta = group_representatives[cache_key]
+            source_episode_index = int(representative_meta["episode_index"])
+            source_chunk_index = int(representative_meta["chunk_index"])
+            source_parquet_path = Path(str(representative_meta["parquet_path"]))
+        else:
+            cache_key = ("episode", episode_index)
+            group_id = 0
+            source_episode_index = episode_index
+            source_chunk_index = chunk_index
+            source_parquet_path = parquet_path
+
+        if cache_key in prompt_cache:
+            extract_result = prompt_cache[cache_key]
+            source_frame_index = int(extract_result.get("_source_frame_index", 0))
             LOGGER.info(
-                "[%s/%s] Reusing cached prompts for episode %06d task_index=%s",
+                "[%s/%s] Reusing cached prompts for episode %06d task_index=%s group_id=%s source_episode=%06d",
                 ordinal,
                 len(episode_rows),
                 episode_index,
                 task_index,
+                group_id,
+                source_episode_index,
             )
         else:
+            read_task_index, source_frame_index, image_blob = _read_first_frame(source_parquet_path)
+            if read_task_index != task_index:
+                raise RuntimeError(
+                    f"Representative episode {source_episode_index} task_index mismatch: parquet has {read_task_index}, expected {task_index}"
+                )
             LOGGER.info(
-                "[%s/%s] Extracting prompts for episode %06d task_index=%s task=%r",
+                "[%s/%s] Extracting prompts for task_index=%s group_id=%s source_episode=%06d task=%r",
                 ordinal,
                 len(episode_rows),
-                episode_index,
                 task_index,
+                group_id,
+                source_episode_index,
                 task_description,
             )
             try:
@@ -249,18 +361,27 @@ def main() -> None:
                     timeout_sec=args.timeout_sec,
                 )
             except (OSError, urllib.error.URLError, TimeoutError, RuntimeError) as exc:
-                raise RuntimeError(f"Failed to extract prompts for episode {episode_index}: {exc}") from exc
-            if cache_by_task:
-                task_cache[task_index] = extract_result
+                raise RuntimeError(
+                    f"Failed to extract prompts for representative episode {source_episode_index}: {exc}"
+                ) from exc
+            extract_result = dict(extract_result)
+            extract_result["_source_frame_index"] = source_frame_index
+            prompt_cache[cache_key] = extract_result
 
         episode_payload = {
             "episode_index": episode_index,
-            "chunk_index": int(episode_meta["chunk_index"]),
-            "frame_index_used": frame_index,
+            "chunk_index": chunk_index,
+            "frame_index_used": source_frame_index,
             "parquet_path": str(parquet_path),
             "task_index": task_index,
             "task": task_description,
             "episode_length": int(episode_meta["length"]),
+            "prompt_group_size": int(args.prompt_group_size) if cache_by_task else 1,
+            "prompt_group_id": group_id,
+            "source_episode_index": source_episode_index,
+            "source_chunk_index": source_chunk_index,
+            "source_frame_index": source_frame_index,
+            "source_parquet_path": str(source_parquet_path),
             "prompts": extract_result.get("prompts", []),
             "used_prompts": extract_result.get("used_prompts", []),
             "source_prompts": extract_result.get("source_prompts", []),
@@ -272,12 +393,14 @@ def main() -> None:
         _write_json(output_path, episode_payload)
         episode_prompt_rows.append(episode_payload)
 
-        if task_index not in task_prompt_rows:
-            task_prompt_rows[task_index] = {
+        if cache_key not in group_prompt_rows:
+            group_prompt_rows[cache_key] = {
                 "task_index": task_index,
                 "task": task_description,
-                "source_episode_index": episode_index,
-                "source_frame_index": frame_index,
+                "prompt_group_size": int(args.prompt_group_size) if cache_by_task else 1,
+                "prompt_group_id": group_id,
+                "source_episode_index": source_episode_index,
+                "source_frame_index": source_frame_index,
                 "prompts": extract_result.get("prompts", []),
                 "used_prompts": extract_result.get("used_prompts", []),
                 "source_prompts": extract_result.get("source_prompts", []),
@@ -288,10 +411,14 @@ def main() -> None:
             }
 
     meta_dir = output_root / "meta"
-    task_prompt_list = [task_prompt_rows[idx] for idx in sorted(task_prompt_rows)]
+    group_prompt_list = sorted(
+        group_prompt_rows.values(),
+        key=lambda row: (int(row["task_index"]), int(row["prompt_group_id"]), int(row["source_episode_index"])),
+    )
     episode_prompt_list = sorted(episode_prompt_rows, key=lambda row: int(row["episode_index"]))
 
-    _write_jsonl(meta_dir / "task_prompts.jsonl", task_prompt_list)
+    _write_jsonl(meta_dir / "task_prompts.jsonl", group_prompt_list)
+    _write_jsonl(meta_dir / "prompt_groups.jsonl", group_prompt_list)
     _write_jsonl(meta_dir / "episode_prompts.jsonl", episode_prompt_list)
     _write_json(
         meta_dir / "info.json",
@@ -301,12 +428,21 @@ def main() -> None:
             "max_prompts": args.max_prompts,
             "max_rounds": args.max_rounds,
             "cache_by_task": cache_by_task,
+            "prompt_group_size": args.prompt_group_size if cache_by_task else 1,
+            "prompt_group_seed": args.prompt_group_seed,
+            "blacklist_path": str(blacklist_path),
+            "blacklisted_tasks": sorted(blacklist),
             "total_episode_prompt_files": len(episode_prompt_list),
-            "total_unique_tasks": len(task_prompt_list),
+            "total_prompt_groups": len(group_prompt_list),
+            "total_unique_tasks": len({row["task_index"] for row in group_prompt_list}),
         },
     )
 
-    LOGGER.info("Wrote %s episode prompt files and %s unique task prompt records.", len(episode_prompt_list), len(task_prompt_list))
+    LOGGER.info(
+        "Wrote %s episode prompt files and %s prompt group records.",
+        len(episode_prompt_list),
+        len(group_prompt_list),
+    )
 
 
 if __name__ == "__main__":

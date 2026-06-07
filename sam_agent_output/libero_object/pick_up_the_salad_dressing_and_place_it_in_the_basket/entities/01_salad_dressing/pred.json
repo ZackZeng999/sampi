@@ -1,0 +1,21 @@
+{
+  "original_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_salad_dressing_and_place_it_in_the_basket/input_first_frame.png",
+  "orig_img_h": 224,
+  "orig_img_w": 224,
+  "pred_boxes": [
+    [
+      0.5775483250617981,
+      0.46350160241127014,
+      0.07710880041122437,
+      0.17025533318519592
+    ]
+  ],
+  "pred_scores": [
+    0.91796875
+  ],
+  "pred_masks": [
+    "lal0<b64M3L3L3F;M2000000001N101WOVJ8\\6M3LVn`0"
+  ],
+  "original_prompt": "salad dressing",
+  "role": "manipulated_object"
+}

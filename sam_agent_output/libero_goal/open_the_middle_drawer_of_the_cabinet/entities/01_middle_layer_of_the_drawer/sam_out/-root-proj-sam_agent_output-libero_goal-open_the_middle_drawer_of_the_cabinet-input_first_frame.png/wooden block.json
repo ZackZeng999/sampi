@@ -1,0 +1,43 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_goal/open_the_middle_drawer_of_the_cabinet/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_goal/open_the_middle_drawer_of_the_cabinet/entities/01_middle_layer_of_the_drawer/sam_out/-root-proj-sam_agent_output-libero_goal-open_the_middle_drawer_of_the_cabinet-input_first_frame.png/wooden block.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [
+        [
+            0.7113410234451294,
+            0.10848244279623032,
+            0.23211097717285156,
+            0.2268722951412201
+        ],
+        [
+            0.6286823153495789,
+            0.39769747853279114,
+            0.05897176265716553,
+            0.11933073401451111
+        ],
+        [
+            0.6602147817611694,
+            0.27627408504486084,
+            0.18941277265548706,
+            0.18967771530151367
+        ]
+    ],
+    "pred_masks": [
+        "[jR12l66K6K3L4L6K4L2M3M2O0O100O100O10O0100O010O010O100O10O01O01O010O1O100UO[J:g5C\\J<e5@^J?e5^O\\Jb0P610O010O100O102M2O2M2O2M2N3M^i2",
+        "kmn05j68I7I6J000O1000O2O4L5J;FcV?",
+        "T^P13l6;E9H4L5J6K1O000O01J5I8H70101O3M3M3M2N0000000000O1000000O10000O100000000O11O1O3M2Md[7"
+    ],
+    "pred_scores": [
+        0.62109375,
+        0.57421875,
+        0.53125
+    ],
+    "kept_indices": [
+        0,
+        1,
+        2
+    ],
+    "removed_indices": [],
+    "iom_threshold": 0.3
+}

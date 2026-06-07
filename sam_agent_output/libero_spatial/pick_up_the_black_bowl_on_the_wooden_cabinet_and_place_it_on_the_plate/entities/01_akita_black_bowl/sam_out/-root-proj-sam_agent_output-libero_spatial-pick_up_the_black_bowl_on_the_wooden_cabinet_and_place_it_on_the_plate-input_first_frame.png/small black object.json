@@ -1,0 +1,52 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate/entities/01_akita_black_bowl/sam_out/-root-proj-sam_agent_output-libero_spatial-pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate-input_first_frame.png/small black object.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [
+        [
+            0.22535671293735504,
+            0.45179831981658936,
+            0.09721089899539948,
+            0.08849954605102539
+        ],
+        [
+            0.34677746891975403,
+            0.20774896442890167,
+            0.3078819811344147,
+            0.13558222353458405
+        ],
+        [
+            0.587367832660675,
+            0.31872063875198364,
+            0.09103536605834961,
+            0.07412940263748169
+        ],
+        [
+            0.5765275359153748,
+            0.376105934381485,
+            0.12578517198562622,
+            0.11421236395835876
+        ]
+    ],
+    "pred_masks": [
+        "\\Q;1m66K4M2M2O1O0O2N100O100001O000O100O2O1N2N3MfTQ1",
+        "lSa08f64M2N2N3M3M1O2N1N2O100O1000000000\\OPJ8P6FSJ9m5EUJ;l5AXJ>V6O1O001O001O00001O000000000000000000O1000000O100O1O1O1O1HClI>P6HnI8R6;O10000001O002N2N1N2L4O001N2N2N3M4IUi`0",
+        "anl06h63O0O010N1O2O1O01000002N3M1O001O001O2N^e?",
+        "Qal06j62M2M3J5O2N1O2O0O10001O000000000000000001O001O0O2J6F`b>"
+    ],
+    "pred_scores": [
+        0.87890625,
+        0.85546875,
+        0.67578125,
+        0.5703125
+    ],
+    "kept_indices": [
+        0,
+        1,
+        2,
+        3
+    ],
+    "removed_indices": [],
+    "iom_threshold": 0.3
+}

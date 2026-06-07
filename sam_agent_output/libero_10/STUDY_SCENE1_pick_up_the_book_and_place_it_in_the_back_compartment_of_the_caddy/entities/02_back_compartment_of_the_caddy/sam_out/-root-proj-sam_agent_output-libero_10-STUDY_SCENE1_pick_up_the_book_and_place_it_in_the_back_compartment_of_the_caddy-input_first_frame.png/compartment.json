@@ -1,0 +1,61 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_10/STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_10/STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy/entities/02_back_compartment_of_the_caddy/sam_out/-root-proj-sam_agent_output-libero_10-STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy-input_first_frame.png/compartment.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [
+        [
+            0.7361266613006592,
+            0.3334710896015167,
+            0.1648637056350708,
+            0.17670938372612
+        ],
+        [
+            0.4102839231491089,
+            0.3329375386238098,
+            0.16477370262145996,
+            0.08757519721984863
+        ],
+        [
+            0.5793501734733582,
+            0.3336428105831146,
+            0.15266942977905273,
+            0.10506075620651245
+        ],
+        [
+            0.5839827656745911,
+            0.43833598494529724,
+            0.1513904333114624,
+            0.07242807745933533
+        ],
+        [
+            0.9540360569953918,
+            0.24215146899223328,
+            0.04675048589706421,
+            0.11286225914955139
+        ]
+    ],
+    "pred_masks": [
+        "\\UT1h0W6<E3M000000000000000000000000000000000000000000000000000000000002N8H`0@7Hef4",
+        "fVd08_69N200000000000000000000000000000000000000000000000000000000000000002N;CZfd0",
+        "]Yl01m6:H:F3MO1000000000000000000000000000000000000000000000000000001O00b0[OUQ=",
+        "_al01d6=M100O11O00O1000000000000001O00000000000000000000O100001OO100001OmP=",
+        "mk^17e66L4M2O2N2N1O1O1O_OmI5]4"
+    ],
+    "pred_scores": [
+        0.8984375,
+        0.85546875,
+        0.8515625,
+        0.78515625,
+        0.6328125
+    ],
+    "kept_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+    ],
+    "removed_indices": [],
+    "iom_threshold": 0.3
+}

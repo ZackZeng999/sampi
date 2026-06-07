@@ -1,0 +1,9 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_goal/open_the_top_drawer_and_put_the_bowl_inside/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_goal/open_the_top_drawer_and_put_the_bowl_inside/entities/02_top_layer_of_the_drawer/sam_out/-root-proj-sam_agent_output-libero_goal-open_the_top_drawer_and_put_the_bowl_inside-input_first_frame.png/chest.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [],
+    "pred_masks": [],
+    "pred_scores": []
+}

@@ -1,0 +1,92 @@
+{
+  "dataset": "libero_goal",
+  "task_stem": "put_the_bowl_on_top_of_the_cabinet",
+  "bddl_path": "/root/proj/openpi/third_party/libero/libero/libero/bddl_files/libero_goal/put_the_bowl_on_top_of_the_cabinet.bddl",
+  "status": "completed",
+  "entities": [
+    {
+      "original_prompt": "bowl",
+      "role": "manipulated_object",
+      "agent_prompts": [
+        "bowl"
+      ],
+      "final_agent_prompt": "bowl",
+      "num_masks": 1,
+      "pred_scores": [
+        0.6796875
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.4193195104598999,
+          0.4985104203224182,
+          0.14208394289016724,
+          0.10954076051712036
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          94,
+          112,
+          126,
+          136
+        ]
+      ],
+      "pred_masks_rle": [
+        "ged06h64M2N3M2O1N2O1N101O001O0000000000000000O101O0O2N2N2N2N2O0N3M[ae0"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_goal/put_the_bowl_on_top_of_the_cabinet/entities/01_bowl/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_goal/put_the_bowl_on_top_of_the_cabinet/entities/01_bowl/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_goal/put_the_bowl_on_top_of_the_cabinet/entities/01_bowl/pred.png",
+      "status": "completed"
+    },
+    {
+      "original_prompt": "top of the drawer",
+      "role": "destination",
+      "agent_prompts": [
+        "top"
+      ],
+      "final_agent_prompt": "top",
+      "num_masks": 1,
+      "pred_scores": [
+        0.50390625
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.7132575511932373,
+          0.3586130440235138,
+          0.2911416292190552,
+          0.24291208386421204
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          160,
+          80,
+          225,
+          135
+        ]
+      ],
+      "pred_masks_rle": [
+        "iRS1121b6722O3M3M6J3M2N4L3M4L3M4L3M2N2N000000000000000000000000001OO1000000000000000000001O00000000000000000000000000000002N1N3O1N2N3LTM"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_goal/put_the_bowl_on_top_of_the_cabinet/entities/02_top_of_the_drawer/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_goal/put_the_bowl_on_top_of_the_cabinet/entities/02_top_of_the_drawer/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_goal/put_the_bowl_on_top_of_the_cabinet/entities/02_top_of_the_drawer/pred.png",
+      "status": "completed"
+    }
+  ],
+  "task_description": "Put the bowl on the top of the drawer",
+  "video_path": "/root/proj/openpi/data/libero/videos/rollout_put_the_bowl_on_top_of_the_cabinet_success.mp4",
+  "first_frame_path": "/root/proj/sam_agent_output/libero_goal/put_the_bowl_on_top_of_the_cabinet/input_first_frame.png",
+  "entity_extraction_response": "```json\n{\"entities\": [{\"phrase\": \"bowl\", \"role\": \"manipulated_object\"}, {\"phrase\": \"top of the drawer\", \"role\": \"destination\"}]}\n```",
+  "extracted_entities": [
+    {
+      "phrase": "bowl",
+      "role": "manipulated_object"
+    },
+    {
+      "phrase": "top of the drawer",
+      "role": "destination"
+    }
+  ]
+}

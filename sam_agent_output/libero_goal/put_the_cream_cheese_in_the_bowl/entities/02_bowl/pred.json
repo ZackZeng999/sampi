@@ -1,0 +1,21 @@
+{
+  "original_image_path": "/root/proj/sam_agent_output/libero_goal/put_the_cream_cheese_in_the_bowl/input_first_frame.png",
+  "orig_img_h": 224,
+  "orig_img_w": 224,
+  "pred_boxes": [
+    [
+      0.4146483838558197,
+      0.5062505602836609,
+      0.15018996596336365,
+      0.11799442768096924
+    ]
+  ],
+  "pred_scores": [
+    0.5234375
+  ],
+  "pred_masks": [
+    "j^d06g65M3M2O1N2N2O001N101O00001O00000000000000O101N100O2O0O1O2N2N2M4LYZe0"
+  ],
+  "original_prompt": "bowl",
+  "role": "destination"
+}

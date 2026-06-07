@@ -1,0 +1,131 @@
+{
+  "dataset": "libero_10",
+  "task_stem": "LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate",
+  "bddl_path": "/root/proj/openpi/third_party/libero/libero/libero/bddl_files/libero_10/LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate.bddl",
+  "status": "completed",
+  "entities": [
+    {
+      "original_prompt": "white mug",
+      "role": "manipulated_object",
+      "agent_prompts": [
+        "white mug"
+      ],
+      "final_agent_prompt": "white mug",
+      "num_masks": 1,
+      "pred_scores": [
+        0.87890625
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.6014460325241089,
+          0.4333166480064392,
+          0.19948118925094604,
+          0.19212055206298828
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          135,
+          97,
+          179,
+          140
+        ]
+      ],
+      "pred_masks_rle": [
+        "ddm09e64M3MFhIOW60kIOT61nIOQ60PJ0o51QJOo50SJOm51SJ0l50TJ0l51RJ0f5i0N201N3N1N2O1O0O2O001O000000000000O101N1O100O2N1O1N3N1N3L4J6L4Ing9"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate/entities/01_white_mug/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate/entities/01_white_mug/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate/entities/01_white_mug/pred.png",
+      "status": "completed"
+    },
+    {
+      "original_prompt": "plate",
+      "role": "destination",
+      "agent_prompts": [
+        "plate"
+      ],
+      "final_agent_prompt": "plate",
+      "num_masks": 1,
+      "pred_scores": [
+        0.89453125
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.3613790273666382,
+          0.7556087374687195,
+          0.2563968300819397,
+          0.19995135068893433
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          81,
+          169,
+          138,
+          214
+        ]
+      ],
+      "pred_masks_rle": [
+        "kla08e66K4M3L3N2N2N2O1N2N101N2O0O2O0O101O001N1000001O000O10000001O000000000O101O000O2O000O2O0O2O0O2N2O1N2N2N2N2N2M4L5KWdb0"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate/entities/02_plate/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate/entities/02_plate/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate/entities/02_plate/pred.png",
+      "status": "completed"
+    },
+    {
+      "original_prompt": "chocolate pudding",
+      "role": "manipulated_object",
+      "agent_prompts": [
+        "brown mug"
+      ],
+      "final_agent_prompt": "brown mug",
+      "num_masks": 1,
+      "pred_scores": [
+        0.87890625
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.3882327377796173,
+          0.3320443034172058,
+          0.17007765173912048,
+          0.19841307401657104
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          87,
+          74,
+          125,
+          119
+        ]
+      ],
+      "pred_masks_rle": [
+        "_Sc05j6>B=C5L2M2O1O001O0O101O0001N011O00O11N2O00001N2N1L6@QJIU6NQJ0P6MRJ3n5OPJ1Q6NoI2R6NmI2U6NhI3Y682O2N2M4J\\be0"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate/entities/03_chocolate_pudding/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate/entities/03_chocolate_pudding/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate/entities/03_chocolate_pudding/pred.png",
+      "status": "completed"
+    }
+  ],
+  "task_description": "put the white mug on the plate and put the chocolate pudding to the right of the plate",
+  "video_path": "/root/proj/openpi/data/libero/videos/rollout_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate_success.mp4",
+  "first_frame_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate/input_first_frame.png",
+  "entity_extraction_response": "{\n  \"entities\": [\n    {\n      \"phrase\": \"white mug\",\n      \"role\": \"manipulated_object\"\n    },\n    {\n      \"phrase\": \"plate\",\n      \"role\": \"destination\"\n    },\n    {\n      \"phrase\": \"chocolate pudding\",\n      \"role\": \"manipulated_object\"\n    }\n  ]\n}",
+  "extracted_entities": [
+    {
+      "phrase": "white mug",
+      "role": "manipulated_object"
+    },
+    {
+      "phrase": "plate",
+      "role": "destination"
+    },
+    {
+      "phrase": "chocolate pudding",
+      "role": "manipulated_object"
+    }
+  ]
+}

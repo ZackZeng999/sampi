@@ -1,0 +1,9 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_10/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_10/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it/entities/02_moka_pot/sam_out/-root-proj-sam_agent_output-libero_10-KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it-input_first_frame.png/coffee pot.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [],
+    "pred_masks": [],
+    "pred_scores": []
+}

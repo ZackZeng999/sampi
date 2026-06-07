@@ -1,0 +1,131 @@
+{
+  "dataset": "libero_10",
+  "task_stem": "LIVING_ROOM_SCENE1_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket",
+  "bddl_path": "/root/proj/openpi/third_party/libero/libero/libero/bddl_files/libero_10/LIVING_ROOM_SCENE1_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket.bddl",
+  "status": "completed",
+  "entities": [
+    {
+      "original_prompt": "alphabet soup",
+      "role": "manipulated_object",
+      "agent_prompts": [
+        "can"
+      ],
+      "final_agent_prompt": "can",
+      "num_masks": 1,
+      "pred_scores": [
+        0.9296875
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.7614441514015198,
+          0.665569007396698,
+          0.12942183017730713,
+          0.1894911527633667
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          171,
+          149,
+          200,
+          192
+        ]
+      ],
+      "pred_masks_rle": [
+        "^bU19]6<G8L4N2N2N101N101O0O10000000000001O001N1O2O1N2M3L5H8H9EVS5"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE1_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket/entities/01_alphabet_soup/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE1_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket/entities/01_alphabet_soup/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE1_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket/entities/01_alphabet_soup/pred.png",
+      "status": "completed"
+    },
+    {
+      "original_prompt": "cream cheese box",
+      "role": "manipulated_object",
+      "agent_prompts": [
+        "white object"
+      ],
+      "final_agent_prompt": "white object",
+      "num_masks": 1,
+      "pred_scores": [
+        0.65234375
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.41383644938468933,
+          0.5170801877975464,
+          0.05927732586860657,
+          0.08318096399307251
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          93,
+          116,
+          106,
+          134
+        ]
+      ],
+      "pred_masks_rle": [
+        "f^d0?_63O000000000000000001N5JYfi0"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE1_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket/entities/02_cream_cheese_box/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE1_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket/entities/02_cream_cheese_box/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE1_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket/entities/02_cream_cheese_box/pred.png",
+      "status": "completed"
+    },
+    {
+      "original_prompt": "basket",
+      "role": "destination",
+      "agent_prompts": [
+        "basket"
+      ],
+      "final_agent_prompt": "basket",
+      "num_masks": 1,
+      "pred_scores": [
+        0.86328125
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          -0.003604941302910447,
+          0.4461022615432739,
+          0.22987885773181915,
+          0.31893390417099
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          -1,
+          100,
+          51,
+          171
+        ]
+      ],
+      "pred_masks_rle": [
+        "U3U2j41000001O00000000000000000000000000000000000000000000000000000000000000000000O1O1O1O1N2N2M3L5K=D:Gb0SO_I012amU1"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE1_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket/entities/03_basket/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE1_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket/entities/03_basket/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE1_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket/entities/03_basket/pred.png",
+      "status": "completed"
+    }
+  ],
+  "task_description": "put both the alphabet soup and the cream cheese box in the basket",
+  "video_path": "/root/proj/openpi/data/libero/videos/rollout_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket_success.mp4",
+  "first_frame_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE1_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket/input_first_frame.png",
+  "entity_extraction_response": "{\n  \"entities\": [\n    {\n      \"phrase\": \"alphabet soup\",\n      \"role\": \"manipulated_object\"\n    },\n    {\n      \"phrase\": \"cream cheese box\",\n      \"role\": \"manipulated_object\"\n    },\n    {\n      \"phrase\": \"basket\",\n      \"role\": \"destination\"\n    }\n  ]\n}",
+  "extracted_entities": [
+    {
+      "phrase": "alphabet soup",
+      "role": "manipulated_object"
+    },
+    {
+      "phrase": "cream cheese box",
+      "role": "manipulated_object"
+    },
+    {
+      "phrase": "basket",
+      "role": "destination"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "original_image_path": "/root/proj/sam_agent_output/libero_10/KITCHEN_SCENE4_put_the_black_bowl_in_the_bottom_drawer_of_the_cabinet_and_close_it/input_first_frame.png",
+  "orig_img_h": 224,
+  "orig_img_w": 224,
+  "pred_boxes": [
+    [
+      -0.00589923607185483,
+      0.16934138536453247,
+      0.19138775765895844,
+      0.13701874017715454
+    ]
+  ],
+  "pred_scores": [
+    0.87890625
+  ],
+  "pred_masks": [
+    "V1n0R60000000000000000000000000000000000000000000000000000000000000000000004L5K5K6J5KQoW1"
+  ],
+  "original_prompt": "bottom drawer of the cabinet",
+  "role": "destination"
+}

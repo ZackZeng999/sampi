@@ -1,0 +1,92 @@
+{
+  "dataset": "libero_10",
+  "task_stem": "KITCHEN_SCENE4_put_the_black_bowl_in_the_bottom_drawer_of_the_cabinet_and_close_it",
+  "bddl_path": "/root/proj/openpi/third_party/libero/libero/libero/bddl_files/libero_10/KITCHEN_SCENE4_put_the_black_bowl_in_the_bottom_drawer_of_the_cabinet_and_close_it.bddl",
+  "status": "completed",
+  "entities": [
+    {
+      "original_prompt": "black bowl",
+      "role": "manipulated_object",
+      "agent_prompts": [
+        "bottle"
+      ],
+      "final_agent_prompt": "bottle",
+      "num_masks": 1,
+      "pred_scores": [
+        0.859375
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.4051629900932312,
+          0.4085627794265747,
+          0.05281838774681091,
+          0.15580487251281738
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          91,
+          92,
+          103,
+          126
+        ]
+      ],
+      "pred_masks_rle": [
+        "[Pd08f63CIiI`0S6>I000008H3M3M2M8F`[j0"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_10/KITCHEN_SCENE4_put_the_black_bowl_in_the_bottom_drawer_of_the_cabinet_and_close_it/entities/01_black_bowl/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_10/KITCHEN_SCENE4_put_the_black_bowl_in_the_bottom_drawer_of_the_cabinet_and_close_it/entities/01_black_bowl/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_10/KITCHEN_SCENE4_put_the_black_bowl_in_the_bottom_drawer_of_the_cabinet_and_close_it/entities/01_black_bowl/pred.png",
+      "status": "completed"
+    },
+    {
+      "original_prompt": "bottom drawer of the cabinet",
+      "role": "destination",
+      "agent_prompts": [
+        "drawer"
+      ],
+      "final_agent_prompt": "drawer",
+      "num_masks": 1,
+      "pred_scores": [
+        0.87890625
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          -0.00589923607185483,
+          0.16934138536453247,
+          0.19138775765895844,
+          0.13701874017715454
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          -1,
+          38,
+          42,
+          69
+        ]
+      ],
+      "pred_masks_rle": [
+        "V1n0R60000000000000000000000000000000000000000000000000000000000000000000004L5K5K6J5KQoW1"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_10/KITCHEN_SCENE4_put_the_black_bowl_in_the_bottom_drawer_of_the_cabinet_and_close_it/entities/02_bottom_drawer_of_the_cabinet/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_10/KITCHEN_SCENE4_put_the_black_bowl_in_the_bottom_drawer_of_the_cabinet_and_close_it/entities/02_bottom_drawer_of_the_cabinet/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_10/KITCHEN_SCENE4_put_the_black_bowl_in_the_bottom_drawer_of_the_cabinet_and_close_it/entities/02_bottom_drawer_of_the_cabinet/pred.png",
+      "status": "completed"
+    }
+  ],
+  "task_description": "put the black bowl in the bottom drawer of the cabinet and close it",
+  "video_path": "/root/proj/openpi/data/libero/videos/rollout_put_the_black_bowl_in_the_bottom_drawer_of_the_cabinet_and_close_it_success.mp4",
+  "first_frame_path": "/root/proj/sam_agent_output/libero_10/KITCHEN_SCENE4_put_the_black_bowl_in_the_bottom_drawer_of_the_cabinet_and_close_it/input_first_frame.png",
+  "entity_extraction_response": "{\n  \"entities\": [\n    {\n      \"phrase\": \"black bowl\",\n      \"role\": \"manipulated_object\"\n    },\n    {\n      \"phrase\": \"bottom drawer of the cabinet\",\n      \"role\": \"destination\"\n    }\n  ]\n}",
+  "extracted_entities": [
+    {
+      "phrase": "black bowl",
+      "role": "manipulated_object"
+    },
+    {
+      "phrase": "bottom drawer of the cabinet",
+      "role": "destination"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "original_image_path": "/root/proj/sam_agent_output/libero_goal/put_the_wine_bottle_on_top_of_the_cabinet/input_first_frame.png",
+  "orig_img_h": 224,
+  "orig_img_w": 224,
+  "pred_boxes": [
+    [
+      0.7113935947418213,
+      0.35801491141319275,
+      0.2922482490539551,
+      0.2414449155330658
+    ]
+  ],
+  "pred_scores": [
+    0.515625
+  ],
+  "pred_masks": [
+    "iRS15c6803M2N4L2N2N3M3M3M4L2N4L3M2N1O001O00000000001OO1001OO11O000O011O000001O000000000000000000000000O11O000000O11O00001O3M1O2N2N3MSM"
+  ],
+  "original_prompt": "top of the drawer",
+  "role": "destination"
+}

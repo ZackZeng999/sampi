@@ -1,0 +1,43 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_orange_juice_and_place_it_in_the_basket/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_orange_juice_and_place_it_in_the_basket/entities/01_orange_juice/sam_out/-root-proj-sam_agent_output-libero_object-pick_up_the_orange_juice_and_place_it_in_the_basket-input_first_frame.png/bottle.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [
+        [
+            0.42204079031944275,
+            0.5312920808792114,
+            0.08133843541145325,
+            0.1788879632949829
+        ],
+        [
+            0.5467416644096375,
+            0.337772935628891,
+            0.062201499938964844,
+            0.14634203910827637
+        ],
+        [
+            0.7017422914505005,
+            0.4810316860675812,
+            0.07052356004714966,
+            0.1795952022075653
+        ]
+    ],
+    "pred_masks": [
+        "Ymd0c0Z65D:L5O0O1000000001O001O3M8G4M3L7GcTh0",
+        "noj0:d64K4C=N100000000001N>B4KUUc0",
+        "Z_R16e68K2N3ZOBfJ`0Z5C^Jb0b5>000000000O102VOZJ4k5F_JMi50QR;"
+    ],
+    "pred_scores": [
+        0.921875,
+        0.91015625,
+        0.8828125
+    ],
+    "kept_indices": [
+        0,
+        1,
+        2
+    ],
+    "removed_indices": [],
+    "iom_threshold": 0.3
+}

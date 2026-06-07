@@ -1,0 +1,131 @@
+{
+  "dataset": "libero_spatial",
+  "task_stem": "pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate",
+  "bddl_path": "/root/proj/openpi/third_party/libero/libero/libero/bddl_files/libero_spatial/pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate.bddl",
+  "status": "completed",
+  "entities": [
+    {
+      "original_prompt": "akita black bowl",
+      "role": "manipulated_object",
+      "agent_prompts": [
+        "small black object"
+      ],
+      "final_agent_prompt": "small black object",
+      "num_masks": 1,
+      "pred_scores": [
+        0.87890625
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.22535671293735504,
+          0.45179831981658936,
+          0.09721089899539948,
+          0.08849954605102539
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          50,
+          101,
+          72,
+          121
+        ]
+      ],
+      "pred_masks_rle": [
+        "\\Q;1m66K4M2M2O1O0O2N100O100001O000O100O2O1N2N3MfTQ1"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate/entities/01_akita_black_bowl/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate/entities/01_akita_black_bowl/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate/entities/01_akita_black_bowl/pred.png",
+      "status": "completed"
+    },
+    {
+      "original_prompt": "wooden cabinet",
+      "role": "source_location",
+      "agent_prompts": [
+        "wooden cabinet"
+      ],
+      "final_agent_prompt": "wooden cabinet",
+      "num_masks": 1,
+      "pred_scores": [
+        0.7265625
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.6782028675079346,
+          0.33275657892227173,
+          0.32657957077026367,
+          0.5019948482513428
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          152,
+          75,
+          225,
+          187
+        ]
+      ],
+      "pred_masks_rle": [
+        "S\\Q16c68I8E:I7G9G:jJXNP5n1M3N1O1O1N3N1O1O1N2O1O2M2O001O0O101O1N102N1O1N3N1O1O1NWMYL\\2f3bM^L]2a3cMaL]2]3bMeL^2Y3bMjL]2U3cMlL^2R3aMQM]2n2dMTM[2k2dMWM[2i2eMXMY2h2hMYMW2g2iMZMU2g2kMZMT2f2lM[MS2d2nM\\MQ2e2oM\\MP2d2PN\\Mo1e2QN[Mo1f2PNZMo1g2QNYMo1g2QNYMo1h2PNXMo1j2PNVMP2k2oMUMP2l2PNTMP2m2PNQMQ2o2oMQMP2Q3oMoLQ2R3nMnLQ2P410O010OO2O10O101NeL"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate/entities/02_wooden_cabinet/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate/entities/02_wooden_cabinet/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate/entities/02_wooden_cabinet/pred.png",
+      "status": "completed"
+    },
+    {
+      "original_prompt": "plate",
+      "role": "destination",
+      "agent_prompts": [
+        "bowl"
+      ],
+      "final_agent_prompt": "bowl",
+      "num_masks": 1,
+      "pred_scores": [
+        0.85546875
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.8307797908782959,
+          0.3647727072238922,
+          0.17394232749938965,
+          0.1376008689403534
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          186,
+          82,
+          225,
+          113
+        ]
+      ],
+      "pred_masks_rle": [
+        "ihX14j64M3M2O1N2O1N3N2N2M2O1O1O1O1O000000001OO101O0000000O2O000O2O0O2N1O2N2O0O2NXM"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate/entities/03_plate/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate/entities/03_plate/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate/entities/03_plate/pred.png",
+      "status": "completed"
+    }
+  ],
+  "task_description": "Pick the akita black bowl on the wooden cabinet and place it on the plate",
+  "video_path": "/root/proj/openpi/data/libero/videos/rollout_pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate_success.mp4",
+  "first_frame_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate/input_first_frame.png",
+  "entity_extraction_response": "{\n  \"entities\": [\n    {\n      \"phrase\": \"akita black bowl\",\n      \"role\": \"manipulated_object\"\n    },\n    {\n      \"phrase\": \"wooden cabinet\",\n      \"role\": \"source_location\"\n    },\n    {\n      \"phrase\": \"plate\",\n      \"role\": \"destination\"\n    }\n  ]\n}",
+  "extracted_entities": [
+    {
+      "phrase": "akita black bowl",
+      "role": "manipulated_object"
+    },
+    {
+      "phrase": "wooden cabinet",
+      "role": "source_location"
+    },
+    {
+      "phrase": "plate",
+      "role": "destination"
+    }
+  ]
+}

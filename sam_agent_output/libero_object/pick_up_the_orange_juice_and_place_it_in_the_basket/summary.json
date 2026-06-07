@@ -1,0 +1,92 @@
+{
+  "dataset": "libero_object",
+  "task_stem": "pick_up_the_orange_juice_and_place_it_in_the_basket",
+  "bddl_path": "/root/proj/openpi/third_party/libero/libero/libero/bddl_files/libero_object/pick_up_the_orange_juice_and_place_it_in_the_basket.bddl",
+  "status": "completed",
+  "entities": [
+    {
+      "original_prompt": "orange juice",
+      "role": "manipulated_object",
+      "agent_prompts": [
+        "bottle"
+      ],
+      "final_agent_prompt": "bottle",
+      "num_masks": 1,
+      "pred_scores": [
+        0.8828125
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.7017422914505005,
+          0.4810316860675812,
+          0.07052356004714966,
+          0.1795952022075653
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          157,
+          108,
+          173,
+          148
+        ]
+      ],
+      "pred_masks_rle": [
+        "Z_R16e68K2N3ZOBfJ`0Z5C^Jb0b5>000000000O102VOZJ4k5F_JMi50QR;"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_orange_juice_and_place_it_in_the_basket/entities/01_orange_juice/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_orange_juice_and_place_it_in_the_basket/entities/01_orange_juice/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_orange_juice_and_place_it_in_the_basket/entities/01_orange_juice/pred.png",
+      "status": "completed"
+    },
+    {
+      "original_prompt": "basket",
+      "role": "destination",
+      "agent_prompts": [
+        "basket"
+      ],
+      "final_agent_prompt": "basket",
+      "num_masks": 1,
+      "pred_scores": [
+        0.828125
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.08467794209718704,
+          0.4067443311214447,
+          0.2361384630203247,
+          0.2250904142856598
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          19,
+          91,
+          72,
+          142
+        ]
+      ],
+      "pred_masks_rle": [
+        "_X41l68I6J5K6I6K5L4L3M2N2N10000000000000000000000000000000000000O1000000001O0000000000000000000000O1O1M3L5J;WOmIJ2NO0O1U[Q1"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_orange_juice_and_place_it_in_the_basket/entities/02_basket/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_orange_juice_and_place_it_in_the_basket/entities/02_basket/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_orange_juice_and_place_it_in_the_basket/entities/02_basket/pred.png",
+      "status": "completed"
+    }
+  ],
+  "task_description": "Pick the orange juice and place it in the basket",
+  "video_path": "/root/proj/openpi/data/libero/videos/rollout_pick_up_the_orange_juice_and_place_it_in_the_basket_success.mp4",
+  "first_frame_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_orange_juice_and_place_it_in_the_basket/input_first_frame.png",
+  "entity_extraction_response": "{\n  \"entities\": [\n    {\n      \"phrase\": \"orange juice\",\n      \"role\": \"manipulated_object\"\n    },\n    {\n      \"phrase\": \"basket\",\n      \"role\": \"destination\"\n    }\n  ]\n}",
+  "extracted_entities": [
+    {
+      "phrase": "orange juice",
+      "role": "manipulated_object"
+    },
+    {
+      "phrase": "basket",
+      "role": "destination"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "original_image_path": "/root/proj/sam_agent_output/libero_goal/open_the_top_drawer_and_put_the_bowl_inside/input_first_frame.png",
+  "orig_img_h": 224,
+  "orig_img_w": 224,
+  "pred_boxes": [
+    [
+      0.6884720921516418,
+      0.35825589299201965,
+      0.3162333369255066,
+      0.45832559466362
+    ]
+  ],
+  "pred_scores": [
+    0.671875
+  ],
+  "pred_masks": [
+    "aPR11o61L8WIG00064JN0]57`J254MJU5d0jJC1Kh4k0ZKYONN0I\\4R1fKWOM=W4=jKWOO?T4:kK?o3ARLb0j3^OULd0j3Y101O000000000000000000000000000000000000000000000000000000000000000000O10000000000001O0000000000O1000100O2N1O2N2M3cNmKQO22V1"
+  ],
+  "original_prompt": "top layer of the drawer",
+  "role": "destination"
+}

@@ -1,0 +1,43 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate/entities/03_yellow_and_white_mug/sam_out/-root-proj-sam_agent_output-libero_10-LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate-input_first_frame.png/mug.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [
+        [
+            0.2648576498031616,
+            0.49091294407844543,
+            0.21986356377601624,
+            0.18929269909858704
+        ],
+        [
+            0.6293352246284485,
+            0.43787506222724915,
+            0.20271313190460205,
+            0.19322481751441956
+        ],
+        [
+            0.3886346220970154,
+            0.3372648358345032,
+            0.1716296672821045,
+            0.20328837633132935
+        ]
+    ],
+    "pred_masks": [
+        "iP=2k66L4K5M4K4M3L4L3N1O1O1N2O001O0O10000000000000000001N1O100O2O0N3N1N3O1CTJDm58VJHP61QJOP60PJOQ60PJ0P60PJ0P60PJ0P60PJ0P60PJ0P60PJ0P60oI1Q60nIOS6?2MTXi0",
+        "gnn06h64L4M2NFhIOW60kIOT61nIOQ61oIOQ60PJ0o51RJOm51SJOm51SJOj5>lIBo5i002N3M2O1N2O1O1O0O2O00000000000001O0O100O100O2N1N3N1N3M2M4L4I7ImV8",
+        "aSc04k64L6K5J8I6I3N1N2O3M2N1O00000000000001O000O1O2N1O2K5ESJ@S6OYJ0i5OWJ0j5OWJ1i5OVJ0l50SJ0n50QJ0P61mI0U6OiI2X6:1N2N[be0"
+    ],
+    "pred_scores": [
+        0.90625,
+        0.8984375,
+        0.86328125
+    ],
+    "kept_indices": [
+        0,
+        1,
+        2
+    ],
+    "removed_indices": [],
+    "iom_threshold": 0.3
+}

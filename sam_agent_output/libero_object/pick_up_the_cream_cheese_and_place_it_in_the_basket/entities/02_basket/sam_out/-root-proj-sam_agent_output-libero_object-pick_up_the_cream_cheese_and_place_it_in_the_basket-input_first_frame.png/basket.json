@@ -1,0 +1,20 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_cream_cheese_and_place_it_in_the_basket/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_cream_cheese_and_place_it_in_the_basket/entities/02_basket/sam_out/-root-proj-sam_agent_output-libero_object-pick_up_the_cream_cheese_and_place_it_in_the_basket-input_first_frame.png/basket.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [
+        [
+            0.06553539633750916,
+            0.4042004346847534,
+            0.23772680759429932,
+            0.22358942031860352
+        ]
+    ],
+    "pred_masks": [
+        "\\\\35i66J7J4K4L5K7I3N3M2N2N100000000000000000000000000000000000000000000000000000000000000000000000O1O1M4L4I9ZOcQR1"
+    ],
+    "pred_scores": [
+        0.83984375
+    ]
+}

@@ -1,0 +1,435 @@
+suite,task_index,task,prompt_group_id,source_episode_index,prompt_index,prompt,source_prompt,source_instance,source_role,first_hit_pos,first_hit_frame_index,first_hit_mask_pixels,semantic_correct,notes
+10,0,put the white mug on the left plate and put the yellow and white mug on the right plate,0,88,0,white mug,white mug,white mug,manipulated_object,40,40,1592,0,manual conservative visual audit by Codex
+10,0,put the white mug on the left plate and put the yellow and white mug on the right plate,0,88,1,left plate,left plate,left plate,destination,0,0,919,1,manual conservative visual audit by Codex
+10,0,put the white mug on the left plate and put the yellow and white mug on the right plate,0,88,2,yellow and white mug,yellow and white mug,yellow and white mug,manipulated_object,40,40,1789,1,manual conservative visual audit by Codex
+10,0,put the white mug on the left plate and put the yellow and white mug on the right plate,0,88,3,right plate,right plate,right plate,destination,0,0,966,1,manual conservative visual audit by Codex
+10,0,put the white mug on the left plate and put the yellow and white mug on the right plate,1,190,0,white mug,white mug,white mug,manipulated_object,,,0,0,manual conservative visual audit by Codex
+10,0,put the white mug on the left plate and put the yellow and white mug on the right plate,1,190,1,left plate,left plate,left plate,destination,0,0,885,1,manual conservative visual audit by Codex
+10,0,put the white mug on the left plate and put the yellow and white mug on the right plate,1,190,2,yellow and white mug,yellow and white mug,yellow and white mug,manipulated_object,40,40,1780,1,manual conservative visual audit by Codex
+10,0,put the white mug on the left plate and put the yellow and white mug on the right plate,1,190,3,right plate,right plate,right plate,destination,0,0,1143,1,manual conservative visual audit by Codex
+10,0,put the white mug on the left plate and put the yellow and white mug on the right plate,2,233,0,white mug,white mug,white mug,manipulated_object,,,0,0,manual conservative visual audit by Codex
+10,0,put the white mug on the left plate and put the yellow and white mug on the right plate,2,233,1,left plate,left plate,left plate,destination,0,0,1114,1,manual conservative visual audit by Codex
+10,0,put the white mug on the left plate and put the yellow and white mug on the right plate,2,233,2,yellow and white mug,yellow and white mug,yellow and white mug,manipulated_object,0,0,1743,1,manual conservative visual audit by Codex
+10,0,put the white mug on the left plate and put the yellow and white mug on the right plate,2,233,3,right plate,right plate,right plate,destination,0,0,762,1,manual conservative visual audit by Codex
+10,0,put the white mug on the left plate and put the yellow and white mug on the right plate,3,343,0,white mug,white mug,white mug,manipulated_object,0,0,1686,0,manual conservative visual audit by Codex
+10,0,put the white mug on the left plate and put the yellow and white mug on the right plate,3,343,1,left plate,left plate,left plate,destination,0,0,822,1,manual conservative visual audit by Codex
+10,0,put the white mug on the left plate and put the yellow and white mug on the right plate,3,343,2,yellow and white mug,yellow and white mug,yellow and white mug,manipulated_object,0,0,1775,1,manual conservative visual audit by Codex
+10,0,put the white mug on the left plate and put the yellow and white mug on the right plate,3,343,3,right plate,right plate,right plate,destination,0,0,872,1,manual conservative visual audit by Codex
+10,1,put the white mug on the plate and put the chocolate pudding to the right of the plate,0,62,0,white mug,white mug,white mug,manipulated_object,0,0,1579,1,manual conservative visual audit by Codex
+10,1,put the white mug on the plate and put the chocolate pudding to the right of the plate,0,62,1,plate,plate,plate,destination,0,0,2360,1,manual conservative visual audit by Codex
+10,1,put the white mug on the plate and put the chocolate pudding to the right of the plate,0,62,2,small brown box,chocolate pudding,chocolate pudding,manipulated_object,0,0,523,1,manual conservative visual audit by Codex
+10,1,put the white mug on the plate and put the chocolate pudding to the right of the plate,0,62,3,table surface,region_right_of_plate,region right of plate,placement_region,0,0,40992,1,manual conservative visual audit by Codex
+10,1,put the white mug on the plate and put the chocolate pudding to the right of the plate,1,168,0,white mug,white mug,white mug,manipulated_object,0,0,1611,1,manual conservative visual audit by Codex
+10,1,put the white mug on the plate and put the chocolate pudding to the right of the plate,1,168,1,plate,plate,plate,destination,0,0,2615,1,manual conservative visual audit by Codex
+10,1,put the white mug on the plate and put the chocolate pudding to the right of the plate,1,168,2,brown rectangular box,chocolate pudding,chocolate pudding,manipulated_object,0,0,530,1,manual conservative visual audit by Codex
+10,1,put the white mug on the plate and put the chocolate pudding to the right of the plate,1,168,3,wooden table surface,region right of plate,region right of plate,placement_region,0,0,40843,1,manual conservative visual audit by Codex
+10,1,put the white mug on the plate and put the chocolate pudding to the right of the plate,2,242,0,white mug,white mug,white mug,manipulated_object,0,0,1564,1,manual conservative visual audit by Codex
+10,1,put the white mug on the plate and put the chocolate pudding to the right of the plate,2,242,1,plate,plate,plate,destination,0,0,2544,1,manual conservative visual audit by Codex
+10,1,put the white mug on the plate and put the chocolate pudding to the right of the plate,2,242,2,small box,chocolate pudding,chocolate pudding,manipulated_object,0,0,460,1,manual conservative visual audit by Codex
+10,1,put the white mug on the plate and put the chocolate pudding to the right of the plate,2,242,3,table surface,region_right_of_plate,region right of plate,placement_region,0,0,40899,1,manual conservative visual audit by Codex
+10,1,put the white mug on the plate and put the chocolate pudding to the right of the plate,3,325,0,white mug,white mug,white mug,manipulated_object,0,0,1535,1,manual conservative visual audit by Codex
+10,1,put the white mug on the plate and put the chocolate pudding to the right of the plate,3,325,1,plate,plate,plate,destination,0,0,2513,1,manual conservative visual audit by Codex
+10,1,put the white mug on the plate and put the chocolate pudding to the right of the plate,3,325,2,small rectangular object,chocolate pudding,chocolate pudding,manipulated_object,0,0,483,1,manual conservative visual audit by Codex
+10,1,put the white mug on the plate and put the chocolate pudding to the right of the plate,3,325,3,table surface,region_right_of_plate,table surface right of plate,placement_region,0,0,40989,1,manual conservative visual audit by Codex
+10,2,put the yellow and white mug in the microwave and close it,0,84,0,black microwave door,microwave door,microwave door,state_change_target,0,0,3775,1,manual conservative visual audit by Codex
+10,2,put the yellow and white mug in the microwave and close it,0,84,1,yellow and white mug,yellow and white mug,yellow and white mug,manipulated_object,0,0,1368,1,manual conservative visual audit by Codex
+10,2,put the yellow and white mug in the microwave and close it,1,164,0,microwave door,microwave door,microwave door,state_change_target,0,0,3551,1,manual conservative visual audit by Codex
+10,2,put the yellow and white mug in the microwave and close it,1,164,1,yellow and white mug,yellow and white mug,yellow and white mug,manipulated_object,0,0,1343,1,manual conservative visual audit by Codex
+10,2,put the yellow and white mug in the microwave and close it,1,164,2,kitchen microwave appliance,microwave,microwave,context,,,0,0,manual conservative visual audit by Codex
+10,2,put the yellow and white mug in the microwave and close it,2,324,0,microwave door,microwave door,microwave door,state_change_target,0,0,3553,1,manual conservative visual audit by Codex
+10,2,put the yellow and white mug in the microwave and close it,2,324,1,yellow and white mug,yellow and white mug,yellow and white mug,manipulated_object,0,0,1311,1,manual conservative visual audit by Codex
+10,2,put the yellow and white mug in the microwave and close it,3,342,0,microwave door,microwave door,microwave door,state_change_target,0,0,3723,1,manual conservative visual audit by Codex
+10,2,put the yellow and white mug in the microwave and close it,3,342,1,yellow and white mug,yellow and white mug,yellow and white mug,manipulated_object,0,0,1286,1,manual conservative visual audit by Codex
+10,3,turn on the stove and put the moka pot on it,0,72,0,black stove knob,stove control,stove knob,state_change_target,0,0,427,1,manual conservative visual audit by Codex
+10,3,turn on the stove and put the moka pot on it,0,72,1,stove,stove,stove,context,0,0,3262,1,manual conservative visual audit by Codex
+10,3,turn on the stove and put the moka pot on it,0,72,2,metal coffee maker,moka pot,moka pot,manipulated_object,0,0,1573,1,manual conservative visual audit by Codex
+10,3,turn on the stove and put the moka pot on it,0,72,3,stove burner,stove top,stove burner,placement_region,0,0,895,1,manual conservative visual audit by Codex
+10,3,turn on the stove and put the moka pot on it,1,134,0,stove knob,stove control,stove knob,state_change_target,140,140,477,0,manual conservative visual audit by Codex
+10,3,turn on the stove and put the moka pot on it,1,134,1,stove burner,stove top,stove burner,placement_region,0,0,905,1,manual conservative visual audit by Codex
+10,3,turn on the stove and put the moka pot on it,1,134,2,metallic coffee maker,moka pot,moka pot,manipulated_object,10,10,1277,1,manual conservative visual audit by Codex
+10,3,turn on the stove and put the moka pot on it,1,134,3,stove,stove,stove,context,0,0,3268,1,manual conservative visual audit by Codex
+10,3,turn on the stove and put the moka pot on it,2,240,0,black knob,stove control,stove knob,state_change_target,0,0,477,0,manual conservative visual audit by Codex
+10,3,turn on the stove and put the moka pot on it,2,240,1,metallic coffee maker,moka pot,moka pot,manipulated_object,270,270,3442,0,manual conservative visual audit by Codex
+10,3,turn on the stove and put the moka pot on it,2,240,2,stove top,stove top,stove top,placement_region,0,0,2851,1,manual conservative visual audit by Codex
+10,3,turn on the stove and put the moka pot on it,2,240,3,stove,stove,stove,context,0,0,2852,1,manual conservative visual audit by Codex
+10,3,turn on the stove and put the moka pot on it,3,287,0,black stove knob,stove control,stove knob,state_change_target,0,0,438,1,manual conservative visual audit by Codex
+10,3,turn on the stove and put the moka pot on it,3,287,1,stove,stove,stove,context,0,0,2919,1,manual conservative visual audit by Codex
+10,3,turn on the stove and put the moka pot on it,3,287,2,coffee pot,moka pot,moka pot,manipulated_object,180,180,1474,1,manual conservative visual audit by Codex
+10,3,turn on the stove and put the moka pot on it,3,287,3,stove top,stove top,stove top,placement_region,0,0,2871,1,manual conservative visual audit by Codex
+10,3,turn on the stove and put the moka pot on it,4,361,0,black knob,stove control,stove knob,state_change_target,0,0,478,1,manual conservative visual audit by Codex
+10,3,turn on the stove and put the moka pot on it,4,361,1,stove burner,stove top,stove burner,placement_region,0,0,925,1,manual conservative visual audit by Codex
+10,3,turn on the stove and put the moka pot on it,4,361,2,silver coffee pot,moka pot,silver moka pot,manipulated_object,0,0,1475,1,manual conservative visual audit by Codex
+10,3,turn on the stove and put the moka pot on it,4,361,3,stove,stove,stove,context,0,0,2911,1,manual conservative visual audit by Codex
+10,4,put both the alphabet soup and the cream cheese box in the basket,0,83,0,cylindrical can,alphabet soup,alphabet soup,manipulated_object,0,0,2440,0,manual conservative visual audit by Codex
+10,4,put both the alphabet soup and the cream cheese box in the basket,0,83,1,small blue box,cream cheese box,cream cheese box,manipulated_object,0,0,282,1,manual conservative visual audit by Codex
+10,4,put both the alphabet soup and the cream cheese box in the basket,0,83,2,basket,basket,basket,destination,0,0,4660,1,manual conservative visual audit by Codex
+10,4,put both the alphabet soup and the cream cheese box in the basket,1,148,0,blue alphabet soup can,alphabet soup,blue alphabet soup can,manipulated_object,0,0,1128,1,manual conservative visual audit by Codex
+10,4,put both the alphabet soup and the cream cheese box in the basket,1,148,1,small blue box,cream cheese box,red cream cheese box,manipulated_object,0,0,284,1,manual conservative visual audit by Codex
+10,4,put both the alphabet soup and the cream cheese box in the basket,1,148,2,woven basket,basket,woven basket,destination,0,0,2497,1,manual conservative visual audit by Codex
+10,4,put both the alphabet soup and the cream cheese box in the basket,2,237,0,cylindrical can,alphabet soup,alphabet soup,manipulated_object,0,0,2345,0,manual conservative visual audit by Codex
+10,4,put both the alphabet soup and the cream cheese box in the basket,2,237,1,small blue box,cream cheese box,cream cheese box,manipulated_object,0,0,267,1,manual conservative visual audit by Codex
+10,4,put both the alphabet soup and the cream cheese box in the basket,2,237,2,basket,basket,basket,destination,0,0,4886,1,manual conservative visual audit by Codex
+10,4,put both the alphabet soup and the cream cheese box in the basket,3,297,0,soup can,alphabet soup,alphabet soup,manipulated_object,0,0,2465,0,manual conservative visual audit by Codex
+10,4,put both the alphabet soup and the cream cheese box in the basket,3,297,1,blue box,cream cheese box,cream cheese box,manipulated_object,190,190,478,1,manual conservative visual audit by Codex
+10,4,put both the alphabet soup and the cream cheese box in the basket,3,297,2,basket,basket,basket,destination,0,0,4334,1,manual conservative visual audit by Codex
+10,4,put both the alphabet soup and the cream cheese box in the basket,4,318,0,metallic can,alphabet soup,alphabet soup,manipulated_object,0,0,2526,0,manual conservative visual audit by Codex
+10,4,put both the alphabet soup and the cream cheese box in the basket,4,318,1,small rectangular box,cream cheese box,cream cheese box,manipulated_object,0,0,274,1,manual conservative visual audit by Codex
+10,4,put both the alphabet soup and the cream cheese box in the basket,4,318,2,basket,basket,basket,destination,0,0,4865,1,manual conservative visual audit by Codex
+10,5,put both the alphabet soup and the tomato sauce in the basket,0,69,0,alphabet soup can,alphabet soup,alphabet soup can,manipulated_object,10,10,778,1,manual conservative visual audit by Codex
+10,5,put both the alphabet soup and the tomato sauce in the basket,0,69,1,tomato sauce can,tomato sauce,tomato sauce can,manipulated_object,0,0,785,1,manual conservative visual audit by Codex
+10,5,put both the alphabet soup and the tomato sauce in the basket,0,69,2,woven basket,basket,woven basket,destination,0,0,3806,1,manual conservative visual audit by Codex
+10,5,put both the alphabet soup and the tomato sauce in the basket,1,118,0,red tomato sauce can,tomato sauce,red tomato sauce can,manipulated_object,60,60,836,1,manual conservative visual audit by Codex
+10,5,put both the alphabet soup and the tomato sauce in the basket,1,118,1,woven basket,basket,woven basket,destination,0,0,4120,1,manual conservative visual audit by Codex
+10,5,put both the alphabet soup and the tomato sauce in the basket,2,241,0,soup can,alphabet soup,alphabet soup,manipulated_object,0,0,1482,0,manual conservative visual audit by Codex
+10,5,put both the alphabet soup and the tomato sauce in the basket,2,241,1,small can,tomato sauce,tomato sauce,manipulated_object,0,0,1483,0,manual conservative visual audit by Codex
+10,5,put both the alphabet soup and the tomato sauce in the basket,2,241,2,basket,basket,basket,destination,0,0,4538,1,manual conservative visual audit by Codex
+10,5,put both the alphabet soup and the tomato sauce in the basket,3,363,0,alphabet soup can,alphabet soup,alphabet soup can,manipulated_object,0,0,790,1,manual conservative visual audit by Codex
+10,5,put both the alphabet soup and the tomato sauce in the basket,3,363,1,tall red tomato sauce bottle,tomato sauce,tall red tomato sauce bottle,manipulated_object,0,0,667,1,manual conservative visual audit by Codex
+10,5,put both the alphabet soup and the tomato sauce in the basket,3,363,2,woven basket,basket,woven basket,destination,0,0,2658,1,manual conservative visual audit by Codex
+10,6,put both moka pots on the stove,0,54,0,left moka pot,first moka pot,red base moka pot,manipulated_object,0,0,1317,1,manual conservative visual audit by Codex
+10,6,put both moka pots on the stove,0,54,1,silver base moka pot,second moka pot,silver base moka pot,manipulated_object,0,0,2698,0,manual conservative visual audit by Codex
+10,6,put both moka pots on the stove,0,54,2,black stove burner,stove,black stove burner,destination,0,0,911,1,manual conservative visual audit by Codex
+10,6,put both moka pots on the stove,1,187,0,left moka pot,moka pot,left moka pot,manipulated_object,0,0,1258,1,manual conservative visual audit by Codex
+10,6,put both moka pots on the stove,1,187,1,metallic coffee maker,moka pot,right moka pot,manipulated_object,0,0,2641,0,manual conservative visual audit by Codex
+10,6,put both moka pots on the stove,1,187,2,stove,stove,stove,destination,0,0,2875,1,manual conservative visual audit by Codex
+10,6,put both moka pots on the stove,2,376,0,metallic coffee maker,first moka pot,moka pot left,manipulated_object,0,0,2664,0,manual conservative visual audit by Codex
+10,6,put both moka pots on the stove,2,376,1,stove burner,stove,stove burner,destination,0,0,933,1,manual conservative visual audit by Codex
+10,7,put both the cream cheese box and the butter in the basket,0,17,0,juice box,cream cheese box,white box,manipulated_object,0,0,3247,0,manual conservative visual audit by Codex
+10,7,put both the cream cheese box and the butter in the basket,0,17,1,woven basket,basket,woven basket,destination,0,0,3612,1,manual conservative visual audit by Codex
+10,7,put both the cream cheese box and the butter in the basket,0,17,2,blue butter package,butter,blue butter package,manipulated_object,0,0,649,1,manual conservative visual audit by Codex
+10,7,put both the cream cheese box and the butter in the basket,1,119,0,carton,cream cheese box,cream cheese box,manipulated_object,0,0,3376,0,manual conservative visual audit by Codex
+10,7,put both the cream cheese box and the butter in the basket,1,119,1,basket,basket,basket,destination,0,0,4826,1,manual conservative visual audit by Codex
+10,7,put both the cream cheese box and the butter in the basket,1,119,2,silver packet,butter,butter,manipulated_object,,,0,0,manual conservative visual audit by Codex
+10,7,put both the cream cheese box and the butter in the basket,2,232,0,cream cheese carton,cream cheese box,cream cheese box,manipulated_object,0,0,2797,0,manual conservative visual audit by Codex
+10,7,put both the cream cheese box and the butter in the basket,2,232,1,rectangular butter package,butter,butter,manipulated_object,0,0,2443,0,manual conservative visual audit by Codex
+10,7,put both the cream cheese box and the butter in the basket,2,232,2,basket,basket,basket,destination,0,0,4373,1,manual conservative visual audit by Codex
+10,7,put both the cream cheese box and the butter in the basket,3,310,0,rectangular box,cream cheese box,cream cheese box,manipulated_object,0,0,3486,0,manual conservative visual audit by Codex
+10,7,put both the cream cheese box and the butter in the basket,3,310,1,butter package,butter,butter,manipulated_object,0,0,2453,0,manual conservative visual audit by Codex
+10,7,put both the cream cheese box and the butter in the basket,3,310,2,basket,basket,basket,destination,0,0,4823,1,manual conservative visual audit by Codex
+10,7,put both the cream cheese box and the butter in the basket,4,335,0,butter package,butter,blue box,manipulated_object,0,0,2388,0,manual conservative visual audit by Codex
+10,7,put both the cream cheese box and the butter in the basket,4,335,1,woven basket,basket,woven basket,destination,0,0,4399,1,manual conservative visual audit by Codex
+10,8,put the black bowl in the bottom drawer of the cabinet and close it,0,90,0,bottom drawer,bottom drawer,bottom drawer,state_change_target,0,0,4400,1,manual conservative visual audit by Codex
+10,8,put the black bowl in the bottom drawer of the cabinet and close it,0,90,1,silver bowl,black bowl,black bowl,manipulated_object,0,0,918,1,manual conservative visual audit by Codex
+10,8,put the black bowl in the bottom drawer of the cabinet and close it,0,90,2,bottom drawer interior,bottom drawer interior,bottom drawer interior,destination,0,0,3356,1,manual conservative visual audit by Codex
+10,8,put the black bowl in the bottom drawer of the cabinet and close it,1,189,0,silver bowl,black bowl,black bowl,manipulated_object,0,0,874,1,manual conservative visual audit by Codex
+10,8,put the black bowl in the bottom drawer of the cabinet and close it,1,189,1,bottom drawer,bottom drawer,bottom drawer,state_change_target,0,0,4408,1,manual conservative visual audit by Codex
+10,8,put the black bowl in the bottom drawer of the cabinet and close it,1,189,2,drawer handle,drawer handle,drawer handle,interaction_target,0,0,564,1,manual conservative visual audit by Codex
+10,8,put the black bowl in the bottom drawer of the cabinet and close it,1,189,3,bottom drawer interior,bottom drawer interior,bottom drawer interior,destination,,,0,0,manual conservative visual audit by Codex
+10,8,put the black bowl in the bottom drawer of the cabinet and close it,1,189,4,drawer front,drawer front,drawer front,interaction_target,0,0,4088,0,manual conservative visual audit by Codex
+10,8,put the black bowl in the bottom drawer of the cabinet and close it,2,319,0,bottom drawer,bottom drawer,bottom drawer,state_change_target,0,0,4361,1,manual conservative visual audit by Codex
+10,8,put the black bowl in the bottom drawer of the cabinet and close it,2,319,1,drawer handle,drawer handle,drawer handle,interaction_target,0,0,578,1,manual conservative visual audit by Codex
+10,8,put the black bowl in the bottom drawer of the cabinet and close it,2,319,2,metallic bowl,black bowl,black bowl,manipulated_object,0,0,941,1,manual conservative visual audit by Codex
+10,8,put the black bowl in the bottom drawer of the cabinet and close it,2,319,3,bottom drawer interior,bottom drawer interior,bottom drawer interior,destination,10,10,3411,1,manual conservative visual audit by Codex
+10,8,put the black bowl in the bottom drawer of the cabinet and close it,3,377,0,bottom drawer,bottom drawer,bottom drawer,state_change_target,0,0,4280,1,manual conservative visual audit by Codex
+10,8,put the black bowl in the bottom drawer of the cabinet and close it,3,377,1,cabinet,cabinet,cabinet,context,0,0,10117,1,manual conservative visual audit by Codex
+10,8,put the black bowl in the bottom drawer of the cabinet and close it,3,377,2,silver bowl,black bowl,black bowl,manipulated_object,0,0,888,1,manual conservative visual audit by Codex
+10,8,put the black bowl in the bottom drawer of the cabinet and close it,3,377,3,bottom drawer interior,bottom drawer interior,bottom drawer interior,destination,0,0,3252,1,manual conservative visual audit by Codex
+10,9,pick up the book and place it in the back compartment of the caddy,0,61,0,black rectangular object,book,black book,manipulated_object,90,90,979,1,manual conservative visual audit by Codex
+10,9,pick up the book and place it in the back compartment of the caddy,0,61,1,back brown divider space,back compartment,back caddy slot,placement_region,0,0,7924,1,manual conservative visual audit by Codex
+10,9,pick up the book and place it in the back compartment of the caddy,0,61,2,brown organizer,caddy,white caddy,context,0,0,7942,1,manual conservative visual audit by Codex
+10,9,pick up the book and place it in the back compartment of the caddy,1,111,0,black book,book,black book,manipulated_object,0,0,1210,1,manual conservative visual audit by Codex
+10,9,pick up the book and place it in the back compartment of the caddy,1,111,1,desk organizer,caddy,white caddy,context,0,0,7942,1,manual conservative visual audit by Codex
+10,9,pick up the book and place it in the back compartment of the caddy,2,279,0,black book,book,black book,manipulated_object,0,0,1149,1,manual conservative visual audit by Codex
+10,9,pick up the book and place it in the back compartment of the caddy,2,279,1,deepest part of brown desk organizer,back compartment,caddy back compartment,placement_region,0,0,7829,1,manual conservative visual audit by Codex
+10,9,pick up the book and place it in the back compartment of the caddy,2,279,2,brown desk organizer,caddy,wooden caddy,context,0,0,7823,1,manual conservative visual audit by Codex
+10,9,pick up the book and place it in the back compartment of the caddy,3,298,0,black book,book,black book,manipulated_object,0,0,664,1,manual conservative visual audit by Codex
+10,9,pick up the book and place it in the back compartment of the caddy,3,298,1,brown organizer,caddy,white caddy,context,0,0,7846,1,manual conservative visual audit by Codex
+10,9,pick up the book and place it in the back compartment of the caddy,4,374,0,black book,book,black book,manipulated_object,0,0,1015,1,manual conservative visual audit by Codex
+10,9,pick up the book and place it in the back compartment of the caddy,4,374,1,brown desk organizer,caddy,white caddy,context,0,0,7786,1,manual conservative visual audit by Codex
+goal,10,put the bowl on the plate,0,448,0,small metal bowl,bowl,white bowl,manipulated_object,0,0,708,,
+goal,10,put the bowl on the plate,0,448,1,round plate with pink rim,plate,purple plate,destination,0,0,1239,,
+goal,10,put the bowl on the plate,1,481,0,bowl,bowl,bowl,manipulated_object,0,0,718,,
+goal,10,put the bowl on the plate,1,481,1,plate,plate,plate,destination,0,0,1224,,
+goal,10,put the bowl on the plate,2,634,0,gray bowl,bowl,gray bowl,manipulated_object,0,0,705,,
+goal,10,put the bowl on the plate,2,634,1,white plate,plate,white plate,destination,0,0,1196,,
+goal,10,put the bowl on the plate,3,708,0,round metal bowl,bowl,small blue bowl,manipulated_object,0,0,695,,
+goal,10,put the bowl on the plate,3,708,1,white plate,plate,white plate,destination,0,0,1239,,
+goal,10,put the bowl on the plate,4,770,0,small bowl,bowl,small bowl,manipulated_object,0,0,707,,
+goal,10,put the bowl on the plate,4,770,1,large plate,plate,large plate,destination,0,0,1266,,
+goal,11,put the wine bottle on the rack,0,407,0,dark bottle,wine bottle,green wine bottle,manipulated_object,0,0,353,,
+goal,11,put the wine bottle on the rack,0,407,1,wood structure,rack,black rack,destination,0,0,3059,,
+goal,11,put the wine bottle on the rack,1,542,0,wine bottle,wine bottle,wine bottle,manipulated_object,0,0,361,,
+goal,11,put the wine bottle on the rack,1,542,1,slatted wood object,rack,rack,destination,0,0,3141,,
+goal,11,put the wine bottle on the rack,2,623,0,wine bottle,wine bottle,wine bottle,manipulated_object,0,0,326,,
+goal,11,put the wine bottle on the rack,2,623,1,slatted wooden rack,rack,wooden rack,destination,0,0,3022,,
+goal,11,put the wine bottle on the rack,3,719,0,dark bottle,wine bottle,green wine bottle,manipulated_object,0,0,332,,
+goal,11,put the wine bottle on the rack,3,719,1,slatted wood object,rack,black wire rack,destination,0,0,3052,,
+goal,12,open the top drawer and put the bowl inside,0,489,0,black cabinet,top drawer,top drawer front,state_change_target,0,0,8278,,
+goal,12,open the top drawer and put the bowl inside,0,489,1,top drawer handle,drawer handle,top drawer handle,interaction_target,0,0,208,,
+goal,12,open the top drawer and put the bowl inside,0,489,2,silver bowl,bowl,white bowl,manipulated_object,0,0,713,,
+goal,12,open the top drawer and put the bowl inside,1,526,0,drawer face,top drawer,top drawer,state_change_target,,,0,,
+goal,12,open the top drawer and put the bowl inside,1,526,1,drawer handle,drawer handle,drawer handle,interaction_target,0,0,554,,
+goal,12,open the top drawer and put the bowl inside,1,526,2,bowl,bowl,bowl,manipulated_object,0,0,710,,
+goal,12,open the top drawer and put the bowl inside,2,627,0,black cabinet top drawer,top drawer,top drawer,state_change_target,0,0,4023,,
+goal,12,open the top drawer and put the bowl inside,2,627,1,drawer handle,drawer handle,drawer handle,interaction_target,0,0,538,,
+goal,12,open the top drawer and put the bowl inside,2,627,2,bowl,bowl,bowl,manipulated_object,0,0,685,,
+goal,12,open the top drawer and put the bowl inside,3,758,0,dark rectangular object,top drawer,black drawer,state_change_target,0,0,8856,,
+goal,12,open the top drawer and put the bowl inside,3,758,1,drawer handle,drawer handle,drawer handle,interaction_target,0,0,562,,
+goal,12,open the top drawer and put the bowl inside,3,758,2,bowl,bowl,bowl,manipulated_object,0,0,684,,
+goal,13,put the cream cheese in the bowl,0,491,0,small blue package,cream cheese,green cream cheese box,manipulated_object,0,0,306,,
+goal,13,put the cream cheese in the bowl,0,491,1,metallic bowl,bowl,white bowl,destination,0,0,714,,
+goal,13,put the cream cheese in the bowl,1,564,0,round black object,cream cheese,black round cream cheese container,manipulated_object,0,0,606,,
+goal,13,put the cream cheese in the bowl,1,564,1,grey bowl,bowl,white bowl,destination,0,0,707,,
+goal,13,put the cream cheese in the bowl,2,610,0,round black object,cream cheese,black circular cream cheese container,manipulated_object,0,0,614,,
+goal,13,put the cream cheese in the bowl,2,610,1,silver bowl,bowl,purple bowl,destination,0,0,699,,
+goal,13,put the cream cheese in the bowl,3,730,0,silver bowl,bowl,white bowl,destination,0,0,704,,
+goal,14,put the wine bottle on top of the cabinet,0,417,0,wine bottle,wine bottle,wine bottle,manipulated_object,0,0,350,,
+goal,14,put the wine bottle on top of the cabinet,0,417,1,cabinet top surface,cabinet top surface,cabinet top surface,placement_region,0,0,3773,,
+goal,14,put the wine bottle on top of the cabinet,0,417,2,cabinet,cabinet,cabinet,destination,0,0,8092,,
+goal,14,put the wine bottle on top of the cabinet,1,480,0,green wine bottle,wine bottle,green wine bottle,manipulated_object,0,0,340,,
+goal,14,put the wine bottle on top of the cabinet,1,480,1,cabinet top,cabinet top,cabinet top,placement_region,0,0,3736,,
+goal,14,put the wine bottle on top of the cabinet,1,480,2,cabinet,cabinet,cabinet,destination,0,0,8079,,
+goal,14,put the wine bottle on top of the cabinet,2,555,0,wine bottle,wine bottle,wine bottle,manipulated_object,0,0,347,,
+goal,14,put the wine bottle on top of the cabinet,2,555,1,cabinet top surface,cabinet top surface,cabinet top surface,placement_region,0,0,3801,,
+goal,14,put the wine bottle on top of the cabinet,2,555,2,cabinet,cabinet,cabinet,destination,0,0,8264,,
+goal,14,put the wine bottle on top of the cabinet,3,591,0,wine bottle,wine bottle,wine bottle,manipulated_object,0,0,359,,
+goal,14,put the wine bottle on top of the cabinet,3,591,1,cabinet top,cabinet top,cabinet top,placement_region,10,10,4222,,
+goal,14,put the wine bottle on top of the cabinet,4,697,0,wine bottle,wine bottle,wine bottle,manipulated_object,0,0,356,,
+goal,14,put the wine bottle on top of the cabinet,4,697,1,cabinet top,cabinet top,cabinet top,placement_region,20,20,3812,,
+goal,14,put the wine bottle on top of the cabinet,4,697,2,cabinet,cabinet,cabinet,destination,20,20,8258,,
+goal,15,push the plate to the front of the stove,0,472,0,plate,plate,plate,manipulated_object,0,0,1235,,
+goal,15,push the plate to the front of the stove,0,472,1,stove,stove,stove,context,0,0,1914,,
+goal,15,push the plate to the front of the stove,0,472,2,front of stove,front of stove,front of stove,destination,0,0,1654,,
+goal,15,push the plate to the front of the stove,1,589,0,white plate,plate,white plate,manipulated_object,0,0,1229,,
+goal,15,push the plate to the front of the stove,1,589,1,wooden surface near oven,front of stove,front of black stove,destination,0,0,27564,,
+goal,15,push the plate to the front of the stove,2,685,0,plate,plate,plate,manipulated_object,0,0,1223,,
+goal,15,push the plate to the front of the stove,2,685,1,stove,stove,stove,context,0,0,1857,,
+goal,15,push the plate to the front of the stove,2,685,2,front of stove,front of stove,front of stove,destination,,,0,,
+goal,15,push the plate to the front of the stove,3,781,0,white plate,plate,white plate,manipulated_object,0,0,1223,,
+goal,15,push the plate to the front of the stove,3,781,1,black object,stove,black stove,context,0,0,2207,,
+goal,15,push the plate to the front of the stove,3,781,2,wooden table surface,front of stove,table in front of black stove,destination,0,0,27762,,
+goal,16,turn on the stove,0,435,0,white electric stove,stove,black stove,context,0,0,1894,,
+goal,16,turn on the stove,1,531,0,stove,stove,stove,context,0,0,1936,,
+goal,16,turn on the stove,1,531,1,black knob,stove control,purple stove knob,interaction_target,,,0,,
+goal,16,turn on the stove,2,578,0,single burner stove,stove,pink electric stove,context,0,0,1879,,
+goal,16,turn on the stove,3,728,0,black object,stove control,stove control,state_change_target,0,0,2271,,
+goal,16,turn on the stove,3,728,1,stove,stove,stove,context,0,0,1922,,
+goal,16,turn on the stove,4,799,0,cooking device,stove,black stove,context,0,0,8705,,
+goal,16,turn on the stove,4,799,1,black knob,stove control,stove knob,state_change_target,10,10,63,,
+goal,17,put the bowl on the stove,0,500,0,bowl,bowl,bowl,manipulated_object,0,0,707,,
+goal,17,put the bowl on the stove,0,500,1,stove,stove,stove,destination,0,0,1909,,
+goal,17,put the bowl on the stove,1,550,0,round metal bowl,bowl,white bowl,manipulated_object,0,0,716,,
+goal,17,put the bowl on the stove,1,550,1,black stove burner,stove,black stove burner,destination,0,0,609,,
+goal,17,put the bowl on the stove,2,643,0,bowl,bowl,bowl,manipulated_object,0,0,727,,
+goal,17,put the bowl on the stove,2,643,1,stove,stove,stove,destination,0,0,1905,,
+goal,17,put the bowl on the stove,3,688,0,round metal bowl,bowl,white bowl,manipulated_object,0,0,698,,
+goal,17,put the bowl on the stove,3,688,1,black stove burner,stove,black stove burner,placement_region,0,0,600,,
+goal,17,put the bowl on the stove,4,804,0,round bowl,bowl,white bowl,manipulated_object,0,0,709,,
+goal,17,put the bowl on the stove,4,804,1,square stove,stove,purple stove,destination,0,0,1934,,
+goal,18,put the bowl on top of the cabinet,0,452,0,metallic bowl,bowl,green bowl,manipulated_object,0,0,695,,
+goal,18,put the bowl on top of the cabinet,0,452,1,wooden cabinet top,cabinet top,wooden cabinet top,placement_region,20,20,4155,,
+goal,18,put the bowl on top of the cabinet,0,452,2,wooden cabinet,cabinet,wooden cabinet,destination,0,0,8724,,
+goal,18,put the bowl on top of the cabinet,1,608,0,bowl,bowl,bowl,manipulated_object,0,0,705,,
+goal,18,put the bowl on top of the cabinet,1,608,1,cabinet,cabinet,cabinet,destination,0,0,8672,,
+goal,18,put the bowl on top of the cabinet,1,608,2,cabinet top surface,top of cabinet,top of cabinet,placement_region,0,0,4039,,
+goal,18,put the bowl on top of the cabinet,2,660,0,bowl,bowl,bowl,manipulated_object,0,0,705,,
+goal,18,put the bowl on top of the cabinet,2,660,1,cabinet,cabinet,cabinet,destination,0,0,8275,,
+goal,18,put the bowl on top of the cabinet,2,660,2,cabinet top surface,top of cabinet,top of cabinet,placement_region,0,0,3820,,
+goal,18,put the bowl on top of the cabinet,3,706,0,bowl,bowl,bowl,manipulated_object,0,0,706,,
+goal,18,put the bowl on top of the cabinet,3,706,1,cabinet top surface,cabinet top surface,cabinet top surface,placement_region,0,0,3979,,
+goal,18,put the bowl on top of the cabinet,4,767,0,bowl,bowl,bowl,manipulated_object,0,0,687,,
+goal,18,put the bowl on top of the cabinet,4,767,1,cabinet top,cabinet top,cabinet top,placement_region,0,0,3775,,
+goal,18,put the bowl on top of the cabinet,4,767,2,cabinet,cabinet,cabinet,destination,0,0,8153,,
+goal,19,open the middle drawer of the cabinet,0,421,0,cabinet,cabinet,cabinet,context,0,0,8643,,
+goal,19,open the middle drawer of the cabinet,0,421,1,drawer handle,middle drawer,middle drawer,interaction_target,0,0,525,,
+goal,19,open the middle drawer of the cabinet,1,516,0,cabinet,cabinet,cabinet,context,0,0,8133,,
+goal,19,open the middle drawer of the cabinet,1,516,1,drawer handle,middle drawer,middle drawer,state_change_target,0,0,548,,
+goal,19,open the middle drawer of the cabinet,2,577,0,cabinet,cabinet,cabinet,context,0,0,8280,,
+goal,19,open the middle drawer of the cabinet,2,577,1,cabinet handle,middle drawer,middle drawer,interaction_target,0,0,529,,
+goal,19,open the middle drawer of the cabinet,3,779,0,middle drawer handle,middle drawer handle,middle drawer handle,manipulated_object,,,0,,
+goal,19,open the middle drawer of the cabinet,3,779,1,cabinet,cabinet,cabinet,context,0,0,8412,,
+goal,19,open the middle drawer of the cabinet,4,802,0,drawer handle,middle drawer,middle drawer,interaction_target,0,0,555,,
+object,20,pick up the orange juice and place it in the basket,0,837,0,orange juice bottle,orange juice,orange juice bottle,manipulated_object,0,0,1169,0,manual conservative visual audit by Codex
+object,20,pick up the orange juice and place it in the basket,0,837,1,woven basket,basket,woven basket,destination,0,0,3019,1,manual conservative visual audit by Codex
+object,20,pick up the orange juice and place it in the basket,1,1044,0,orange juice,orange juice,orange juice,manipulated_object,0,0,684,1,manual conservative visual audit by Codex
+object,20,pick up the orange juice and place it in the basket,1,1044,1,basket,basket,basket,destination,0,0,3037,1,manual conservative visual audit by Codex
+object,20,pick up the orange juice and place it in the basket,2,1049,0,orange juice,orange juice,orange juice,manipulated_object,0,0,684,1,manual conservative visual audit by Codex
+object,20,pick up the orange juice and place it in the basket,2,1049,1,basket,basket,basket,destination,0,0,3044,1,manual conservative visual audit by Codex
+object,20,pick up the orange juice and place it in the basket,3,1146,0,orange juice,orange juice,orange juice,manipulated_object,0,0,684,1,manual conservative visual audit by Codex
+object,20,pick up the orange juice and place it in the basket,3,1146,1,basket,basket,basket,destination,0,0,3110,1,manual conservative visual audit by Codex
+object,20,pick up the orange juice and place it in the basket,4,1200,0,orange juice,orange juice,orange juice,manipulated_object,0,0,684,1,manual conservative visual audit by Codex
+object,20,pick up the orange juice and place it in the basket,4,1200,1,basket,basket,basket,destination,0,0,2979,1,manual conservative visual audit by Codex
+object,21,pick up the ketchup and place it in the basket,0,815,0,green bottle,ketchup,green ketchup bottle,manipulated_object,0,0,446,1,manual conservative visual audit by Codex
+object,21,pick up the ketchup and place it in the basket,0,815,1,woven basket,basket,woven basket,destination,0,0,2639,1,manual conservative visual audit by Codex
+object,21,pick up the ketchup and place it in the basket,1,924,0,green bottle,ketchup,green ketchup bottle,manipulated_object,0,0,447,1,manual conservative visual audit by Codex
+object,21,pick up the ketchup and place it in the basket,1,924,1,woven basket,basket,woven basket,destination,0,0,2974,1,manual conservative visual audit by Codex
+object,21,pick up the ketchup and place it in the basket,2,1010,0,red bottle,ketchup,red ketchup bottle,manipulated_object,60,60,377,1,manual conservative visual audit by Codex
+object,21,pick up the ketchup and place it in the basket,2,1010,1,woven basket,basket,woven basket,destination,0,0,2963,1,manual conservative visual audit by Codex
+object,21,pick up the ketchup and place it in the basket,3,1150,0,bottle,ketchup,green ketchup bottle,manipulated_object,0,0,1355,0,manual conservative visual audit by Codex
+object,21,pick up the ketchup and place it in the basket,3,1150,1,woven basket,basket,woven basket,destination,0,0,2210,1,manual conservative visual audit by Codex
+object,21,pick up the ketchup and place it in the basket,4,1255,0,green bottle,ketchup,green ketchup bottle,manipulated_object,0,0,447,1,manual conservative visual audit by Codex
+object,21,pick up the ketchup and place it in the basket,4,1255,1,woven basket,basket,woven basket,destination,0,0,2741,1,manual conservative visual audit by Codex
+object,23,pick up the bbq sauce and place it in the basket,0,867,0,condiment bottle,bbq sauce,red bbq sauce bottle,manipulated_object,0,0,1521,0,manual conservative visual audit by Codex
+object,23,pick up the bbq sauce and place it in the basket,0,867,1,woven basket,basket,woven basket,destination,0,0,2641,1,manual conservative visual audit by Codex
+object,23,pick up the bbq sauce and place it in the basket,1,943,0,bottle,bbq sauce,red bbq sauce bottle,manipulated_object,0,0,1522,0,manual conservative visual audit by Codex
+object,23,pick up the bbq sauce and place it in the basket,1,943,1,woven basket,basket,woven basket,destination,0,0,2120,1,manual conservative visual audit by Codex
+object,23,pick up the bbq sauce and place it in the basket,2,1077,0,sauce bottle,bbq sauce,red bbq sauce bottle,manipulated_object,0,0,1519,0,manual conservative visual audit by Codex
+object,23,pick up the bbq sauce and place it in the basket,2,1077,1,woven basket,basket,woven basket,destination,0,0,2579,1,manual conservative visual audit by Codex
+object,23,pick up the bbq sauce and place it in the basket,3,1135,0,sauce bottle,bbq sauce,red bbq sauce bottle,manipulated_object,0,0,1505,0,manual conservative visual audit by Codex
+object,23,pick up the bbq sauce and place it in the basket,3,1135,1,woven basket,basket,woven basket,destination,0,0,1789,1,manual conservative visual audit by Codex
+object,23,pick up the bbq sauce and place it in the basket,4,1231,0,blue can,bbq sauce,blue can,manipulated_object,0,0,650,1,manual conservative visual audit by Codex
+object,23,pick up the bbq sauce and place it in the basket,4,1231,1,woven basket,basket,woven basket,destination,0,0,2967,1,manual conservative visual audit by Codex
+object,24,pick up the alphabet soup and place it in the basket,0,887,0,metallic can,alphabet soup,red alphabet soup can,manipulated_object,0,0,631,1,manual conservative visual audit by Codex
+object,24,pick up the alphabet soup and place it in the basket,0,887,1,woven basket,basket,woven basket,destination,0,0,2987,1,manual conservative visual audit by Codex
+object,24,pick up the alphabet soup and place it in the basket,1,984,0,cylindrical can,alphabet soup,green alphabet soup can,manipulated_object,0,0,1010,0,manual conservative visual audit by Codex
+object,24,pick up the alphabet soup and place it in the basket,1,984,1,woven basket,basket,woven basket,destination,0,0,1797,1,manual conservative visual audit by Codex
+object,24,pick up the alphabet soup and place it in the basket,2,1143,0,cylindrical can,alphabet soup,red alphabet soup can,manipulated_object,0,0,1012,0,manual conservative visual audit by Codex
+object,24,pick up the alphabet soup and place it in the basket,2,1143,1,woven basket,basket,woven basket,destination,0,0,1666,1,manual conservative visual audit by Codex
+object,24,pick up the alphabet soup and place it in the basket,3,1171,0,can,alphabet soup,green can,manipulated_object,0,0,1008,0,manual conservative visual audit by Codex
+object,24,pick up the alphabet soup and place it in the basket,3,1171,1,woven basket,basket,woven basket,destination,0,0,1897,1,manual conservative visual audit by Codex
+object,24,pick up the alphabet soup and place it in the basket,4,1245,0,cylindrical soup can,alphabet soup,alphabet soup can,manipulated_object,0,0,632,1,manual conservative visual audit by Codex
+object,24,pick up the alphabet soup and place it in the basket,4,1245,1,woven basket,basket,woven basket,destination,0,0,2617,1,manual conservative visual audit by Codex
+object,25,pick up the milk and place it in the basket,0,901,0,red milk carton,milk,red milk carton,manipulated_object,0,0,594,1,manual conservative visual audit by Codex
+object,25,pick up the milk and place it in the basket,0,901,1,woven basket,basket,woven basket,destination,0,0,3016,1,manual conservative visual audit by Codex
+object,25,pick up the milk and place it in the basket,1,957,0,red milk carton,milk,red milk carton,manipulated_object,0,0,581,1,manual conservative visual audit by Codex
+object,25,pick up the milk and place it in the basket,1,957,1,woven basket,basket,woven basket,destination,0,0,2005,1,manual conservative visual audit by Codex
+object,25,pick up the milk and place it in the basket,2,1023,0,red milk carton,milk,tall milk carton,manipulated_object,0,0,591,1,manual conservative visual audit by Codex
+object,25,pick up the milk and place it in the basket,2,1023,1,woven basket,basket,woven basket,destination,0,0,3000,1,manual conservative visual audit by Codex
+object,25,pick up the milk and place it in the basket,3,1134,0,red milk carton,milk,red milk carton,manipulated_object,0,0,589,1,manual conservative visual audit by Codex
+object,25,pick up the milk and place it in the basket,3,1134,1,woven basket,basket,woven basket,destination,0,0,2386,1,manual conservative visual audit by Codex
+object,25,pick up the milk and place it in the basket,4,1248,0,red milk carton,milk,milk carton,manipulated_object,0,0,577,1,manual conservative visual audit by Codex
+object,25,pick up the milk and place it in the basket,4,1248,1,woven basket,basket,woven basket,destination,0,0,2886,1,manual conservative visual audit by Codex
+object,26,pick up the salad dressing and place it in the basket,0,822,0,tall bottle,salad dressing,salad dressing,manipulated_object,0,0,1117,0,manual conservative visual audit by Codex
+object,26,pick up the salad dressing and place it in the basket,0,822,1,basket,basket,basket,destination,0,0,3078,1,manual conservative visual audit by Codex
+object,26,pick up the salad dressing and place it in the basket,1,976,0,brown bottle,salad dressing,red salad dressing bottle,manipulated_object,0,0,527,1,manual conservative visual audit by Codex
+object,26,pick up the salad dressing and place it in the basket,1,976,1,woven basket,basket,woven basket,destination,0,0,2906,1,manual conservative visual audit by Codex
+object,26,pick up the salad dressing and place it in the basket,2,1071,0,dressing bottle,salad dressing,red salad dressing bottle,manipulated_object,0,0,1118,0,manual conservative visual audit by Codex
+object,26,pick up the salad dressing and place it in the basket,2,1071,1,woven basket,basket,woven basket,destination,0,0,3046,1,manual conservative visual audit by Codex
+object,26,pick up the salad dressing and place it in the basket,3,1164,0,orange bottle,salad dressing,red salad dressing bottle,manipulated_object,0,0,526,1,manual conservative visual audit by Codex
+object,26,pick up the salad dressing and place it in the basket,3,1164,1,woven basket,basket,woven basket,destination,0,0,2926,1,manual conservative visual audit by Codex
+object,26,pick up the salad dressing and place it in the basket,4,1252,0,salad dressing bottle,salad dressing,salad dressing bottle,manipulated_object,,,0,0,manual conservative visual audit by Codex
+object,26,pick up the salad dressing and place it in the basket,4,1252,1,woven basket,basket,woven basket,destination,0,0,1830,1,manual conservative visual audit by Codex
+spatial,30,pick up the black bowl next to the cookie box and place it on the plate,0,1291,0,metallic bowl,black bowl,black bowl,manipulated_object,0,0,2172,,
+spatial,30,pick up the black bowl next to the cookie box and place it on the plate,0,1291,1,plate,plate,plate,destination,0,0,1235,,
+spatial,30,pick up the black bowl next to the cookie box and place it on the plate,1,1338,0,metallic bowl,black bowl,black bowl,manipulated_object,0,0,2113,,
+spatial,30,pick up the black bowl next to the cookie box and place it on the plate,1,1338,1,small rectangular box,cookie box,cookie box,context,0,0,561,,
+spatial,30,pick up the black bowl next to the cookie box and place it on the plate,1,1338,2,plate,plate,plate,destination,0,0,1313,,
+spatial,30,pick up the black bowl next to the cookie box and place it on the plate,2,1421,0,metallic bowl,black bowl,black bowl,manipulated_object,0,0,2073,,
+spatial,30,pick up the black bowl next to the cookie box and place it on the plate,2,1421,1,small box,cookie box,cookie box,context,100,100,549,,
+spatial,30,pick up the black bowl next to the cookie box and place it on the plate,2,1421,2,plate,plate,plate,destination,0,0,1242,,
+spatial,30,pick up the black bowl next to the cookie box and place it on the plate,3,1575,0,metallic bowl,black bowl,black bowl,manipulated_object,0,0,2201,,
+spatial,30,pick up the black bowl next to the cookie box and place it on the plate,3,1575,1,brown object,cookie box,cookie box,context,0,0,8767,,
+spatial,30,pick up the black bowl next to the cookie box and place it on the plate,3,1575,2,plate,plate,plate,destination,0,0,1240,,
+spatial,30,pick up the black bowl next to the cookie box and place it on the plate,4,1613,0,metallic bowl,black bowl,black bowl,manipulated_object,0,0,2172,,
+spatial,30,pick up the black bowl next to the cookie box and place it on the plate,4,1613,1,small box,cookie box,cookie box,context,0,0,555,,
+spatial,30,pick up the black bowl next to the cookie box and place it on the plate,4,1613,2,plate,plate,plate,destination,0,0,1307,,
+spatial,31,pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate,0,1276,0,dark object,wooden cabinet,wooden cabinet,context,0,0,10638,,
+spatial,31,pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate,0,1276,1,handle,top drawer,top drawer,state_change_target,0,0,288,,
+spatial,31,pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate,0,1276,2,metallic bowl,black bowl,black bowl,manipulated_object,0,0,2770,,
+spatial,31,pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate,0,1276,3,plate,plate,plate,destination,0,0,1301,,
+spatial,31,pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate,1,1420,0,handle,top drawer,wooden cabinet top drawer,state_change_target,0,0,287,,
+spatial,31,pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate,1,1420,1,metallic bowl,black bowl,black bowl,manipulated_object,0,0,2507,,
+spatial,31,pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate,1,1420,2,white plate,plate,white plate,destination,30,30,1294,,
+spatial,31,pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate,2,1474,0,drawer handle,drawer handle,drawer handle,interaction_target,0,0,286,,
+spatial,31,pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate,2,1474,1,metallic bowl,black bowl,black bowl,manipulated_object,0,0,2514,,
+spatial,31,pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate,2,1474,2,white plate,plate,white plate,destination,0,0,1263,,
+spatial,31,pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate,3,1620,0,metallic bowl,black bowl,black bowl,manipulated_object,0,0,2807,,
+spatial,31,pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate,3,1620,1,plate,plate,plate,destination,0,0,1279,,
+spatial,31,pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate,4,1687,0,brown furniture,wooden cabinet,wooden cabinet,context,0,0,8261,,
+spatial,31,pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate,4,1687,1,metallic bowl,black bowl,black bowl,manipulated_object,0,0,2672,,
+spatial,31,pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate,4,1687,2,plate,plate,plate,destination,0,0,1339,,
+spatial,32,pick up the black bowl on the ramekin and place it on the plate,0,1264,0,metallic bowl,black bowl,black bowl,manipulated_object,0,0,1039,,
+spatial,32,pick up the black bowl on the ramekin and place it on the plate,0,1264,1,silver container,ramekin,ramekin,context,0,0,1964,,
+spatial,32,pick up the black bowl on the ramekin and place it on the plate,0,1264,2,plate,plate,plate,destination,0,0,1247,,
+spatial,32,pick up the black bowl on the ramekin and place it on the plate,1,1433,0,small metal cup,black bowl,black bowl on ramekin,manipulated_object,,,0,,
+spatial,32,pick up the black bowl on the ramekin and place it on the plate,1,1433,1,wooden coaster,ramekin,ramekin,context,100,100,191,,
+spatial,32,pick up the black bowl on the ramekin and place it on the plate,1,1433,2,plate,plate,plate,destination,0,0,1268,,
+spatial,32,pick up the black bowl on the ramekin and place it on the plate,2,1524,0,silver bowl,black bowl,black bowl on ramekin,manipulated_object,0,0,1942,,
+spatial,32,pick up the black bowl on the ramekin and place it on the plate,2,1524,1,wooden coaster,ramekin,ramekin under black bowl,context,90,90,205,,
+spatial,32,pick up the black bowl on the ramekin and place it on the plate,2,1524,2,white plate,plate,white plate,destination,0,0,1285,,
+spatial,32,pick up the black bowl on the ramekin and place it on the plate,3,1647,0,silver bowl,black bowl,black bowl,manipulated_object,10,10,1018,,
+spatial,32,pick up the black bowl on the ramekin and place it on the plate,3,1647,1,wooden base,ramekin,ramekin,context,,,0,,
+spatial,32,pick up the black bowl on the ramekin and place it on the plate,3,1647,2,plate,plate,plate,destination,0,0,1299,,
+spatial,33,pick up the black bowl on the stove and place it on the plate,0,1267,0,small metal bowl,black bowl,black bowl,manipulated_object,0,0,1986,,
+spatial,33,pick up the black bowl on the stove and place it on the plate,0,1267,1,stove,stove,stove,context,0,0,1123,,
+spatial,33,pick up the black bowl on the stove and place it on the plate,0,1267,2,plate,plate,plate,destination,0,0,1249,,
+spatial,33,pick up the black bowl on the stove and place it on the plate,1,1538,0,small metal bowl,black bowl,black bowl,manipulated_object,0,0,2002,,
+spatial,33,pick up the black bowl on the stove and place it on the plate,1,1538,1,stove,stove,stove,context,0,0,836,,
+spatial,33,pick up the black bowl on the stove and place it on the plate,1,1538,2,plate,plate,plate,destination,0,0,1301,,
+spatial,33,pick up the black bowl on the stove and place it on the plate,2,1636,0,small metal bowl,black bowl,black bowl,manipulated_object,0,0,1765,,
+spatial,33,pick up the black bowl on the stove and place it on the plate,2,1636,1,stove,stove,stove,context,0,0,1190,,
+spatial,33,pick up the black bowl on the stove and place it on the plate,2,1636,2,plate,plate,plate,destination,0,0,1299,,
+spatial,33,pick up the black bowl on the stove and place it on the plate,3,1691,0,metallic bowl,black bowl,black bowl,manipulated_object,0,0,1836,,
+spatial,33,pick up the black bowl on the stove and place it on the plate,3,1691,1,stove,stove,stove,context,60,60,1276,,
+spatial,33,pick up the black bowl on the stove and place it on the plate,3,1691,2,plate,plate,plate,destination,0,0,1289,,
+spatial,34,pick up the black bowl between the plate and the ramekin and place it on the plate,0,1273,0,small metal bowl,black bowl,black bowl,manipulated_object,0,0,1815,,
+spatial,34,pick up the black bowl between the plate and the ramekin and place it on the plate,0,1273,1,plate,plate,plate,context,0,0,1284,,
+spatial,34,pick up the black bowl between the plate and the ramekin and place it on the plate,0,1273,2,small metal container,ramekin,blue ramekin,context,0,0,1819,,
+spatial,34,pick up the black bowl between the plate and the ramekin and place it on the plate,1,1368,0,small metal bowl,black bowl,black bowl,manipulated_object,0,0,1783,,
+spatial,34,pick up the black bowl between the plate and the ramekin and place it on the plate,1,1368,1,white plate,plate,white plate,context,0,0,1329,,
+spatial,34,pick up the black bowl between the plate and the ramekin and place it on the plate,1,1368,2,small metal container,ramekin,blue ramekin,context,0,0,1784,,
+spatial,34,pick up the black bowl between the plate and the ramekin and place it on the plate,2,1493,0,bowl,black bowl,black bowl,manipulated_object,0,0,1837,,
+spatial,34,pick up the black bowl between the plate and the ramekin and place it on the plate,2,1493,1,plate,plate,plate,context,0,0,1320,,
+spatial,34,pick up the black bowl between the plate and the ramekin and place it on the plate,2,1493,2,small cup,ramekin,ramekin,context,0,0,466,,
+spatial,34,pick up the black bowl between the plate and the ramekin and place it on the plate,3,1579,0,bowl,black bowl,black bowl,manipulated_object,0,0,1828,,
+spatial,34,pick up the black bowl between the plate and the ramekin and place it on the plate,3,1579,1,plate,plate,plate,context,0,0,1304,,
+spatial,34,pick up the black bowl between the plate and the ramekin and place it on the plate,3,1579,2,small metal container,ramekin,ramekin,context,0,0,1827,,
+spatial,34,pick up the black bowl between the plate and the ramekin and place it on the plate,4,1679,0,small metal bowl,black bowl,black bowl,manipulated_object,0,0,1834,,
+spatial,34,pick up the black bowl between the plate and the ramekin and place it on the plate,4,1679,1,white plate,plate,white plate,context,0,0,1364,,
+spatial,34,pick up the black bowl between the plate and the ramekin and place it on the plate,4,1679,2,shiny bowl,ramekin,blue ramekin,context,50,50,1185,,
+spatial,35,pick up the black bowl on the cookie box and place it on the plate,0,1367,0,metallic bowl,black bowl,black bowl,manipulated_object,0,0,2152,,
+spatial,35,pick up the black bowl on the cookie box and place it on the plate,0,1367,1,plate,plate,plate,destination,0,0,1317,,
+spatial,35,pick up the black bowl on the cookie box and place it on the plate,1,1386,0,metallic bowl,black bowl,black bowl,manipulated_object,0,0,2558,,
+spatial,35,pick up the black bowl on the cookie box and place it on the plate,1,1386,1,plate,plate,plate,destination,0,0,1289,,
+spatial,35,pick up the black bowl on the cookie box and place it on the plate,2,1554,0,small metal bowl,black bowl,black bowl,manipulated_object,0,0,2534,,
+spatial,35,pick up the black bowl on the cookie box and place it on the plate,2,1554,1,black object,cookie box,cookie box,context,0,0,8973,,
+spatial,35,pick up the black bowl on the cookie box and place it on the plate,2,1554,2,plate,plate,plate,destination,0,0,1298,,
+spatial,35,pick up the black bowl on the cookie box and place it on the plate,3,1592,0,metallic bowl,black bowl,black bowl,manipulated_object,0,0,2718,,
+spatial,35,pick up the black bowl on the cookie box and place it on the plate,3,1592,1,plate,plate,plate,destination,0,0,1263,,
+spatial,35,pick up the black bowl on the cookie box and place it on the plate,4,1662,0,metallic bowl,black bowl,black bowl,manipulated_object,0,0,2438,,
+spatial,35,pick up the black bowl on the cookie box and place it on the plate,4,1662,1,plate,plate,plate,destination,0,0,1322,,
+spatial,36,pick up the black bowl next to the plate and place it on the plate,0,1285,0,metallic bowl,black bowl,black bowl,manipulated_object,0,0,1980,,
+spatial,36,pick up the black bowl next to the plate and place it on the plate,0,1285,1,plate,plate,plate,context,0,0,1309,,
+spatial,36,pick up the black bowl next to the plate and place it on the plate,1,1387,0,metallic bowl,black bowl,black bowl,manipulated_object,0,0,1904,,
+spatial,36,pick up the black bowl next to the plate and place it on the plate,1,1387,1,white plate,plate,white plate,context,0,0,1271,,
+spatial,36,pick up the black bowl next to the plate and place it on the plate,2,1536,0,small metal bowl,black bowl,black bowl,manipulated_object,0,0,2004,,
+spatial,36,pick up the black bowl next to the plate and place it on the plate,2,1536,1,white plate,plate,white plate,context,40,40,1286,,
+spatial,36,pick up the black bowl next to the plate and place it on the plate,3,1540,0,metallic bowl,black bowl,black bowl,manipulated_object,0,0,1931,,
+spatial,36,pick up the black bowl next to the plate and place it on the plate,3,1540,1,white plate,plate,white plate,context,0,0,1274,,
+spatial,36,pick up the black bowl next to the plate and place it on the plate,4,1623,0,small dark bowl,black bowl,black bowl,manipulated_object,0,0,1497,,
+spatial,36,pick up the black bowl next to the plate and place it on the plate,4,1623,1,plate,plate,plate,context,0,0,1338,,
+spatial,37,pick up the black bowl next to the ramekin and place it on the plate,0,1294,0,metallic bowl,black bowl,black bowl,manipulated_object,0,0,2254,,
+spatial,37,pick up the black bowl next to the ramekin and place it on the plate,0,1294,1,small silver bowl,ramekin,ramekin,context,0,0,2254,,
+spatial,37,pick up the black bowl next to the ramekin and place it on the plate,0,1294,2,plate,plate,plate,destination,0,0,1309,,
+spatial,37,pick up the black bowl next to the ramekin and place it on the plate,1,1370,0,small metal bowl,black bowl,black bowl,manipulated_object,0,0,2230,,
+spatial,37,pick up the black bowl next to the ramekin and place it on the plate,1,1370,1,small metal container,ramekin,ramekin,context,0,0,2233,,
+spatial,37,pick up the black bowl next to the ramekin and place it on the plate,1,1370,2,plate,plate,plate,destination,0,0,1302,,
+spatial,37,pick up the black bowl next to the ramekin and place it on the plate,2,1529,0,dark metal bowl,black bowl,black bowl,manipulated_object,0,0,1737,,
+spatial,37,pick up the black bowl next to the ramekin and place it on the plate,2,1529,1,shiny silver bowl,ramekin,ramekin,context,0,0,2198,,
+spatial,37,pick up the black bowl next to the ramekin and place it on the plate,2,1529,2,plate,plate,plate,destination,0,0,1252,,
+spatial,37,pick up the black bowl next to the ramekin and place it on the plate,3,1587,0,metallic bowl,black bowl,black bowl,manipulated_object,0,0,2257,,
+spatial,37,pick up the black bowl next to the ramekin and place it on the plate,3,1587,1,small metal bowl,ramekin,ramekin,context,0,0,2253,,
+spatial,37,pick up the black bowl next to the ramekin and place it on the plate,3,1587,2,plate,plate,plate,destination,0,0,1317,,
+spatial,37,pick up the black bowl next to the ramekin and place it on the plate,4,1656,0,metallic bowl,black bowl,black bowl,manipulated_object,0,0,2228,,
+spatial,37,pick up the black bowl next to the ramekin and place it on the plate,4,1656,1,small metal cup,ramekin,ramekin,context,10,10,487,,
+spatial,37,pick up the black bowl next to the ramekin and place it on the plate,4,1656,2,plate,plate,plate,destination,0,0,1295,,
+spatial,38,pick up the black bowl from table center and place it on the plate,0,1283,0,silver bowl,black bowl,black bowl,manipulated_object,0,0,2087,,
+spatial,38,pick up the black bowl from table center and place it on the plate,0,1283,1,plate,plate,plate,destination,0,0,1302,,
+spatial,38,pick up the black bowl from table center and place it on the plate,0,1283,2,wooden table surface,table center,table center,placement_region,0,0,28355,,
+spatial,38,pick up the black bowl from table center and place it on the plate,1,1428,0,small metal bowl,black bowl,black bowl,manipulated_object,0,0,2104,,
+spatial,38,pick up the black bowl from table center and place it on the plate,1,1428,1,plate,plate,plate,destination,0,0,1254,,
+spatial,38,pick up the black bowl from table center and place it on the plate,1,1428,2,table surface,table center,table surface,placement_region,0,0,28249,,
+spatial,38,pick up the black bowl from table center and place it on the plate,2,1478,0,metallic bowl,black bowl,black bowl,manipulated_object,0,0,2079,,
+spatial,38,pick up the black bowl from table center and place it on the plate,2,1478,1,white plate,plate,white plate,destination,0,0,1253,,
+spatial,38,pick up the black bowl from table center and place it on the plate,2,1478,2,wooden table surface,table center,wooden table surface,placement_region,0,0,28552,,
+spatial,38,pick up the black bowl from table center and place it on the plate,3,1641,0,silver bowl,black bowl,black bowl,manipulated_object,0,0,2067,,
+spatial,38,pick up the black bowl from table center and place it on the plate,3,1641,1,red rimmed plate,plate,orange square plate,destination,0,0,1333,,
+spatial,38,pick up the black bowl from table center and place it on the plate,3,1641,2,wooden table surface,table center,table center,placement_region,0,0,28317,,
+spatial,38,pick up the black bowl from table center and place it on the plate,4,1652,0,silver bowl,black bowl,black bowl,manipulated_object,0,0,2088,,
+spatial,38,pick up the black bowl from table center and place it on the plate,4,1652,1,white plate,plate,white plate,destination,0,0,1264,,
+spatial,38,pick up the black bowl from table center and place it on the plate,4,1652,2,table surface,table center,table surface,placement_region,0,0,28150,,
+spatial,39,pick up the black bowl on the wooden cabinet and place it on the plate,0,1312,0,metallic bowl,black bowl,black bowl,manipulated_object,0,0,2055,,
+spatial,39,pick up the black bowl on the wooden cabinet and place it on the plate,0,1312,1,wooden cabinet,wooden cabinet,wooden cabinet,context,0,0,7450,,
+spatial,39,pick up the black bowl on the wooden cabinet and place it on the plate,0,1312,2,plate,plate,plate,destination,0,0,1306,,
+spatial,39,pick up the black bowl on the wooden cabinet and place it on the plate,1,1400,0,metallic bowl,black bowl,black bowl,manipulated_object,0,0,2170,,
+spatial,39,pick up the black bowl on the wooden cabinet and place it on the plate,1,1400,1,wooden cabinet,wooden cabinet,wooden cabinet,context,0,0,6669,,
+spatial,39,pick up the black bowl on the wooden cabinet and place it on the plate,1,1400,2,white plate,plate,white plate,destination,0,0,1221,,
+spatial,39,pick up the black bowl on the wooden cabinet and place it on the plate,2,1476,0,metallic bowl,black bowl,black bowl,manipulated_object,0,0,2095,,
+spatial,39,pick up the black bowl on the wooden cabinet and place it on the plate,2,1476,1,wooden cabinet,wooden cabinet,wooden cabinet,context,0,0,6823,,
+spatial,39,pick up the black bowl on the wooden cabinet and place it on the plate,2,1476,2,white plate,plate,white plate,destination,0,0,1328,,
+spatial,39,pick up the black bowl on the wooden cabinet and place it on the plate,3,1523,0,metallic bowl,black bowl,black bowl,manipulated_object,0,0,2097,,
+spatial,39,pick up the black bowl on the wooden cabinet and place it on the plate,3,1523,1,wooden cabinet,wooden cabinet,wooden cabinet,context,0,0,7021,,
+spatial,39,pick up the black bowl on the wooden cabinet and place it on the plate,3,1523,2,plate,plate,plate,destination,0,0,1296,,
+spatial,39,pick up the black bowl on the wooden cabinet and place it on the plate,4,1683,0,metallic bowl,black bowl,black bowl,manipulated_object,0,0,2111,,
+spatial,39,pick up the black bowl on the wooden cabinet and place it on the plate,4,1683,1,wooden cabinet,wooden cabinet,wooden cabinet,context,0,0,7082,,
+spatial,39,pick up the black bowl on the wooden cabinet and place it on the plate,4,1683,2,plate,plate,plate,destination,0,0,1262,,

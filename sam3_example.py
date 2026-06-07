@@ -6,14 +6,16 @@ from sam3.model_builder import build_sam3_image_model
 from sam3.model.sam3_image_processor import Sam3Processor
 # Load the model
 device = "cuda" if torch.cuda.is_available() else "cpu"
-model = build_sam3_image_model(checkpoint_path="/root/autodl-tmp/sam3_model/sam3.pt")
+import os
+print("bpe exists:", os.path.exists("/root/proj/sam3/sam3/assets/bpe_simple_vocab_16e6.txt.gz"))
+model = build_sam3_image_model(checkpoint_path="/root/autodl-tmp/sam3_model/sam3.pt", bpe_path="/root/proj/sam3/sam3/assets/bpe_simple_vocab_16e6.txt.gz")
 processor = Sam3Processor(model)
 # Load an image
-image = Image.open("/root/proj/shouji.jpg")
+image = Image.open("/root/proj/cabinet_rollout_first_frame.png")
 with torch.inference_mode(), torch.autocast(device_type=device, dtype=torch.bfloat16):
     inference_state = processor.set_image(image)
 # Prompt the model with text
-    output = processor.set_text_prompt(state=inference_state, prompt="a mobile phone")
+    output = processor.set_text_prompt(state=inference_state, prompt="cabinet")
 
 # Get the masks, bounding boxes, and scores
 masks, boxes, scores = output["masks"], output["boxes"], output["scores"]
@@ -43,14 +45,16 @@ box_width = 2      # 边界框线条宽度
 mask_alpha = 0.5   # 掩码的透明度 (0.0 完全透明, 1.0 完全不透明)
 
 # 遍历每个实例进行绘制
-for i, (box, mask) in enumerate(zip(boxes_np, masks_np)):
+for i, (box, mask, score) in enumerate(zip(boxes_np, masks_np, scores.float().cpu().numpy())):
     # 获取当前实例的颜色
     color_name = colors[i % len(colors)]
     color_rgb = ImageColor.getrgb(color_name)
+    yellow_rgb = ImageColor.getrgb("yellow")
 
     # 1. 绘制边界框 (Box)
     x_min, y_min, x_max, y_max = box
     draw_boxes.rectangle([x_min, y_min, x_max, y_max], outline=color_rgb, width=box_width)
+    draw_boxes.text((x_min + 2, y_min + 2), f"{float(score):.3f}", fill=yellow_rgb)
 
     # 2. 绘制掩码 (Mask)
     # 创建一个与原图大小相同的、具有透明通道的图像层
@@ -72,7 +76,7 @@ for i, (box, mask) in enumerate(zip(boxes_np, masks_np)):
     image_for_masks = Image.alpha_composite(image_for_masks.convert("RGBA"), mask_layer).convert("RGB")
 
 # 生成输出图片路径
-image_path = "/root/proj/shouji.jpg"
+image_path = "/root/proj/cabinet.jpg"
 base_path = image_path.rsplit('.', 1)
 output_boxes_path = f"{base_path[0]}_with_boxes.{base_path[1]}"
 output_masks_path = f"{base_path[0]}_with_masks.{base_path[1]}"

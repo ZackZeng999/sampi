@@ -47,12 +47,17 @@ class SamDimClient:
 
     def dim_background_with_prompts(self, image: np.ndarray, prompts: list[str]) -> np.ndarray:
         prompts = _dedupe([str(prompt).strip() for prompt in prompts if str(prompt).strip()])
+        segment_details = []
         if not prompts:
+            object.__setattr__(self, "_last_segment_details", segment_details)
             return image
 
         union_mask = np.zeros(image.shape[:2], dtype=bool)
         for prompt in prompts:
-            union_mask |= self.segment_object(image, prompt)
+            mask, detail = self.segment_object_with_info(image, prompt)
+            segment_details.append(detail)
+            union_mask |= mask
+        object.__setattr__(self, "_last_segment_details", segment_details)
 
         if not union_mask.any():
             LOGGER.warning("SAM did not find any masks. Prompts used: %s", prompts)
@@ -60,6 +65,10 @@ class SamDimClient:
         return _dim_background(image, union_mask, background_scale=self.background_scale, blur_radius=self.blur_radius)
 
     def segment_object(self, image: np.ndarray, object_prompt: str) -> np.ndarray:
+        mask, _ = self.segment_object_with_info(image, object_prompt)
+        return mask
+
+    def segment_object_with_info(self, image: np.ndarray, object_prompt: str) -> tuple[np.ndarray, dict]:
         payload = {
             "image": _encode_image(image),
             "object": object_prompt,
@@ -72,12 +81,32 @@ class SamDimClient:
                 raise RuntimeError(result["error"])
             if not result.get("mask_found", False):
                 LOGGER.warning("SAM did not find a mask for object prompt: %s", object_prompt)
-            return _decode_mask(result["mask"], image.shape[:2])
+            mask = _decode_mask(result["mask"], image.shape[:2])
+            return mask, {
+                "prompt": object_prompt,
+                "found": bool(result.get("mask_found", False) and mask.any()),
+                "sam_bbox": result.get("sam_bbox"),
+                "compute_bbox": _bbox_from_mask(mask),
+                "mask_pixels": int(mask.sum()),
+                "scores": result.get("scores", []),
+            }
         except (OSError, RuntimeError, urllib.error.URLError, TimeoutError) as exc:
             if not self.fail_open:
                 raise
             LOGGER.warning("SAM segment request failed for %r; ignoring this object. Error: %s", object_prompt, exc)
-            return np.zeros(image.shape[:2], dtype=bool)
+            return np.zeros(image.shape[:2], dtype=bool), {
+                "prompt": object_prompt,
+                "found": False,
+                "sam_bbox": None,
+                "compute_bbox": None,
+                "mask_pixels": 0,
+                "scores": [],
+                "error": str(exc),
+            }
+
+    @property
+    def last_segment_details(self) -> list[dict]:
+        return list(getattr(self, "_last_segment_details", []))
 
     def _extract_prompts_from_url(
         self,
@@ -96,11 +125,26 @@ class SamDimClient:
                     "SAM extractor prompt trace: %s",
                     [
                         {
+                            "source_key": item.get("source_key"),
                             "source": item.get("source_prompt"),
+                            "source_instance": item.get("source_instance"),
                             "role": item.get("source_role"),
                             "selected": item.get("selected_prompt"),
                             "round": item.get("selected_round"),
                             "status": item.get("status"),
+                            "selected_sam_bbox": item.get("selected_sam_bbox"),
+                            "selected_compute_bbox": item.get("selected_compute_bbox"),
+                            "attempts": [
+                                {
+                                    "prompt": attempt.get("prompt"),
+                                    "accepted": attempt.get("accepted"),
+                                    "best_score": attempt.get("best_score"),
+                                    "scores": attempt.get("scores", []),
+                                    "sam_bbox": attempt.get("sam_bbox"),
+                                    "compute_bbox": attempt.get("compute_bbox"),
+                                }
+                                for attempt in item.get("attempts", [])
+                            ],
                         }
                         for item in trace
                     ],
@@ -154,6 +198,13 @@ def _decode_mask(encoded: str, shape: tuple[int, int]) -> np.ndarray:
     if mask.size != (shape[1], shape[0]):
         mask = mask.resize((shape[1], shape[0]), resample=Image.NEAREST)
     return np.asarray(mask) > 0
+
+
+def _bbox_from_mask(mask: np.ndarray) -> list[int] | None:
+    ys, xs = np.where(mask)
+    if xs.size == 0 or ys.size == 0:
+        return None
+    return [int(xs.min()), int(ys.min()), int(xs.max()), int(ys.max())]
 
 
 def _dim_background(image: np.ndarray, mask: np.ndarray, *, background_scale: float, blur_radius: float) -> np.ndarray:

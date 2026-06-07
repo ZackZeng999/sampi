@@ -1,0 +1,92 @@
+{
+  "dataset": "libero_goal",
+  "task_stem": "put_the_wine_bottle_on_top_of_the_cabinet",
+  "bddl_path": "/root/proj/openpi/third_party/libero/libero/libero/bddl_files/libero_goal/put_the_wine_bottle_on_top_of_the_cabinet.bddl",
+  "status": "completed",
+  "entities": [
+    {
+      "original_prompt": "wine bottle",
+      "role": "manipulated_object",
+      "agent_prompts": [
+        "wine bottle"
+      ],
+      "final_agent_prompt": "wine bottle",
+      "num_masks": 1,
+      "pred_scores": [
+        0.89453125
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.5197610855102539,
+          0.3726280629634857,
+          0.05026674270629883,
+          0.1427575647830963
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          116,
+          83,
+          128,
+          115
+        ]
+      ],
+      "pred_masks_rle": [
+        "X_i01j6<H1M4E:O101O02N;F2M4Eold0"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_goal/put_the_wine_bottle_on_top_of_the_cabinet/entities/01_wine_bottle/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_goal/put_the_wine_bottle_on_top_of_the_cabinet/entities/01_wine_bottle/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_goal/put_the_wine_bottle_on_top_of_the_cabinet/entities/01_wine_bottle/pred.png",
+      "status": "completed"
+    },
+    {
+      "original_prompt": "top of the drawer",
+      "role": "destination",
+      "agent_prompts": [
+        "cabinet top"
+      ],
+      "final_agent_prompt": "cabinet top",
+      "num_masks": 1,
+      "pred_scores": [
+        0.515625
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.7113935947418213,
+          0.35801491141319275,
+          0.2922482490539551,
+          0.2414449155330658
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          159,
+          80,
+          225,
+          134
+        ]
+      ],
+      "pred_masks_rle": [
+        "iRS15c6803M2N4L2N2N3M3M3M4L2N4L3M2N1O001O00000000001OO1001OO11O000O011O000001O000000000000000000000000O11O000000O11O00001O3M1O2N2N3MSM"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_goal/put_the_wine_bottle_on_top_of_the_cabinet/entities/02_top_of_the_drawer/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_goal/put_the_wine_bottle_on_top_of_the_cabinet/entities/02_top_of_the_drawer/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_goal/put_the_wine_bottle_on_top_of_the_cabinet/entities/02_top_of_the_drawer/pred.png",
+      "status": "completed"
+    }
+  ],
+  "task_description": "Put the wine bottle on the top of the drawer",
+  "video_path": "/root/proj/openpi/data/libero/videos/rollout_put_the_wine_bottle_on_top_of_the_cabinet_success.mp4",
+  "first_frame_path": "/root/proj/sam_agent_output/libero_goal/put_the_wine_bottle_on_top_of_the_cabinet/input_first_frame.png",
+  "entity_extraction_response": "{\n  \"entities\": [\n    {\n      \"phrase\": \"wine bottle\",\n      \"role\": \"manipulated_object\"\n    },\n    {\n      \"phrase\": \"top of the drawer\",\n      \"role\": \"destination\"\n    }\n  ]\n}",
+  "extracted_entities": [
+    {
+      "phrase": "wine bottle",
+      "role": "manipulated_object"
+    },
+    {
+      "phrase": "top of the drawer",
+      "role": "destination"
+    }
+  ]
+}

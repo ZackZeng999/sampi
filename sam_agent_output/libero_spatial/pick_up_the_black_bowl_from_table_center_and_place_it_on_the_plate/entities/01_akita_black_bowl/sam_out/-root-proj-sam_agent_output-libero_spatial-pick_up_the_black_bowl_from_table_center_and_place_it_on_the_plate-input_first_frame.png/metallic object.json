@@ -1,0 +1,72 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_from_table_center_and_place_it_on_the_plate/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_from_table_center_and_place_it_on_the_plate/entities/01_akita_black_bowl/sam_out/-root-proj-sam_agent_output-libero_spatial-pick_up_the_black_bowl_from_table_center_and_place_it_on_the_plate-input_first_frame.png/metallic object.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [
+        [
+            0.24530093371868134,
+            0.4471341073513031,
+            0.09647350013256073,
+            0.09183987975120544
+        ],
+        [
+            0.0281605813652277,
+            0.5760472416877747,
+            0.14615324139595032,
+            0.11971241235733032
+        ],
+        [
+            0.41531097888946533,
+            0.517635703086853,
+            0.1343134641647339,
+            0.11101424694061279
+        ],
+        [
+            0.13655298948287964,
+            0.6626359224319458,
+            0.18723171949386597,
+            0.14318430423736572
+        ],
+        [
+            0.5444022417068481,
+            0.392877995967865,
+            0.15860825777053833,
+            0.14890766143798828
+        ],
+        [
+            0.3477630913257599,
+            -0.00143823039252311,
+            0.32637742161750793,
+            0.3520575165748596
+        ]
+    ],
+    "pred_masks": [
+        "ZT<6i64L3N1N2N2O0O101O0O10O1000001O000O2N1O2N3HmQP1",
+        "^^14j64L3N2N2N2N2O1N1O2O0O101N100000000O10O10001O0O100O1O1O2N1O2M4L4JlZX1",
+        "m^d05i64L3N3N1N2N2O1N2O000O2O0000000001O000O101N100O2N1O2N2M2O4KVoe0",
+        "Sn68f64L3N2N2N2N1O2O1N100O2N1O10000O10000000000000O1000000O1O2O000O2O0O2O0O2N2N2N2M5K5IRlP1",
+        "jhj0=1E07T6f0L1O0000000O100001O00001O00000000000000000000000000O10000000N2L4J6Ebb>",
+        "lSa08f64M2N2N3jNAhJOj0b0\\43TKOj44SKMl44SKM^4ZOgKj0HN`4YOhKi0G0`4XOhKh0G1a4WOhKh0G1a4XOgKg0G2b4WOgKg1Y4ZNfKf1Z4ZNfKf1Z4ZNfKf1Z4ZNfKf1Z4[NeKe1[4\\NcKe1]4?00000000000000000000000000000000000000000000000000000000000000000jM^Kn1b4RN_Kn0OIb4XOaKm0OJ5TOR44kKn0OI3VOS42mKn0NI^4XOgKm0LJ0WOV40QLn0KH1ZO`46YK>71V5KlJ4Y5FhJ:[5@iJ>n5O1K6Kk7K]HO]Z`0"
+    ],
+    "pred_scores": [
+        0.734375,
+        0.703125,
+        0.68359375,
+        0.61328125,
+        0.59375,
+        0.515625
+    ],
+    "kept_indices": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6
+    ],
+    "removed_indices": [
+        2
+    ],
+    "iom_threshold": 0.3
+}

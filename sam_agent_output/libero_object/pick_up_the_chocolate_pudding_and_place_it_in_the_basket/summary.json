@@ -1,0 +1,92 @@
+{
+  "dataset": "libero_object",
+  "task_stem": "pick_up_the_chocolate_pudding_and_place_it_in_the_basket",
+  "bddl_path": "/root/proj/openpi/third_party/libero/libero/libero/bddl_files/libero_object/pick_up_the_chocolate_pudding_and_place_it_in_the_basket.bddl",
+  "status": "completed",
+  "entities": [
+    {
+      "original_prompt": "chocolate pudding",
+      "role": "manipulated_object",
+      "agent_prompts": [
+        "box"
+      ],
+      "final_agent_prompt": "box",
+      "num_masks": 1,
+      "pred_scores": [
+        0.51171875
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.583733320236206,
+          0.4817010760307312,
+          0.07240462303161621,
+          0.15390992164611816
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          131,
+          108,
+          147,
+          142
+        ]
+      ],
+      "pred_masks_rle": [
+        "_hl0o0o520000O10000000000000000000K6BPh`0"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_chocolate_pudding_and_place_it_in_the_basket/entities/01_chocolate_pudding/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_chocolate_pudding_and_place_it_in_the_basket/entities/01_chocolate_pudding/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_chocolate_pudding_and_place_it_in_the_basket/entities/01_chocolate_pudding/pred.png",
+      "status": "completed"
+    },
+    {
+      "original_prompt": "basket",
+      "role": "destination",
+      "agent_prompts": [
+        "basket"
+      ],
+      "final_agent_prompt": "basket",
+      "num_masks": 1,
+      "pred_scores": [
+        0.8984375
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.07884696125984192,
+          0.41569575667381287,
+          0.2398490011692047,
+          0.22880050539970398
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          18,
+          93,
+          71,
+          144
+        ]
+      ],
+      "pred_masks_rle": [
+        "`Q46h67J5J4M4L5J6I4M4M1O2N100O10000000000O100000000001O00000000000000000000000000000000000000000O10000M3L4M6[OWJCRbQ1"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_chocolate_pudding_and_place_it_in_the_basket/entities/02_basket/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_chocolate_pudding_and_place_it_in_the_basket/entities/02_basket/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_chocolate_pudding_and_place_it_in_the_basket/entities/02_basket/pred.png",
+      "status": "completed"
+    }
+  ],
+  "task_description": "Pick the chocolate pudding and place it in the basket",
+  "video_path": "/root/proj/openpi/data/libero/videos/rollout_pick_up_the_chocolate_pudding_and_place_it_in_the_basket_success.mp4",
+  "first_frame_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_chocolate_pudding_and_place_it_in_the_basket/input_first_frame.png",
+  "entity_extraction_response": "```json\n{\n  \"entities\": [\n    {\n      \"phrase\": \"chocolate pudding\",\n      \"role\": \"manipulated_object\"\n    },\n    {\n      \"phrase\": \"basket\",\n      \"role\": \"destination\"\n    }\n  ]\n}\n```",
+  "extracted_entities": [
+    {
+      "phrase": "chocolate pudding",
+      "role": "manipulated_object"
+    },
+    {
+      "phrase": "basket",
+      "role": "destination"
+    }
+  ]
+}

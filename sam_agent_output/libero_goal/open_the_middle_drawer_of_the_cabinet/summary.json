@@ -1,0 +1,53 @@
+{
+  "dataset": "libero_goal",
+  "task_stem": "open_the_middle_drawer_of_the_cabinet",
+  "bddl_path": "/root/proj/openpi/third_party/libero/libero/libero/bddl_files/libero_goal/open_the_middle_drawer_of_the_cabinet.bddl",
+  "status": "completed",
+  "entities": [
+    {
+      "original_prompt": "middle layer of the drawer",
+      "role": "manipulated_object",
+      "agent_prompts": [
+        "wooden block"
+      ],
+      "final_agent_prompt": "wooden block",
+      "num_masks": 1,
+      "pred_scores": [
+        0.57421875
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.6286823153495789,
+          0.39769747853279114,
+          0.05897176265716553,
+          0.11933073401451111
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          141,
+          89,
+          154,
+          116
+        ]
+      ],
+      "pred_masks_rle": [
+        "kmn05j68I7I6J000O1000O2O4L5J;FcV?"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_goal/open_the_middle_drawer_of_the_cabinet/entities/01_middle_layer_of_the_drawer/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_goal/open_the_middle_drawer_of_the_cabinet/entities/01_middle_layer_of_the_drawer/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_goal/open_the_middle_drawer_of_the_cabinet/entities/01_middle_layer_of_the_drawer/pred.png",
+      "status": "completed"
+    }
+  ],
+  "task_description": "Open the middle layer of the drawer",
+  "video_path": "/root/proj/openpi/data/libero/videos/rollout_open_the_middle_drawer_of_the_cabinet_success.mp4",
+  "first_frame_path": "/root/proj/sam_agent_output/libero_goal/open_the_middle_drawer_of_the_cabinet/input_first_frame.png",
+  "entity_extraction_response": "{\n  \"entities\": [\n    {\n      \"phrase\": \"middle layer of the drawer\",\n      \"role\": \"manipulated_object\"\n    }\n  ]\n}",
+  "extracted_entities": [
+    {
+      "phrase": "middle layer of the drawer",
+      "role": "manipulated_object"
+    }
+  ]
+}

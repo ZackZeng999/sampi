@@ -1,0 +1,9 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_goal/open_the_middle_drawer_of_the_cabinet/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_goal/open_the_middle_drawer_of_the_cabinet/entities/01_middle_layer_of_the_drawer/sam_out/-root-proj-sam_agent_output-libero_goal-open_the_middle_drawer_of_the_cabinet-input_first_frame.png/drawer.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [],
+    "pred_masks": [],
+    "pred_scores": []
+}

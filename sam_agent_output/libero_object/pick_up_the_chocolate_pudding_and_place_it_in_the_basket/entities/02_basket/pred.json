@@ -1,0 +1,21 @@
+{
+  "original_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_chocolate_pudding_and_place_it_in_the_basket/input_first_frame.png",
+  "orig_img_h": 224,
+  "orig_img_w": 224,
+  "pred_boxes": [
+    [
+      0.07884696125984192,
+      0.41569575667381287,
+      0.2398490011692047,
+      0.22880050539970398
+    ]
+  ],
+  "pred_scores": [
+    0.8984375
+  ],
+  "pred_masks": [
+    "`Q46h67J5J4M4L5J6I4M4M1O2N100O10000000000O100000000001O00000000000000000000000000000000000000000O10000M3L4M6[OWJCRbQ1"
+  ],
+  "original_prompt": "basket",
+  "role": "destination"
+}

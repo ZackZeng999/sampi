@@ -1,0 +1,21 @@
+{
+  "original_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate/input_first_frame.png",
+  "orig_img_h": 224,
+  "orig_img_w": 224,
+  "pred_boxes": [
+    [
+      0.67668616771698,
+      0.33442485332489014,
+      0.32720839977264404,
+      0.4986076354980469
+    ]
+  ],
+  "pred_scores": [
+    0.59765625
+  ],
+  "pred_masks": [
+    "R\\Q17b68G:G8I7E;J7iJYNQ5m1N1N3N1O1N3N1O1O1N2O1O2N1N101O000O2O001N3N1O1N2O1O1O2M2O1O1O2M2O1OQM]Lb2b3[McLc2\\3]MgLa2Y3^MjL`2V3_MmL_2R3bMPM[2Q3dMRMZ2n2fMSMX2n2hMTMV2k2jMVMU2k2kMWMS2i2mMXMQ2j2nMWMQ2i2oMWMQ2i2oMXMo1j2PNVMP2k2oMUMP2m2oMTMP2m2oMSMP2n2PNRMP2o300O100O10O010000O100O1^OoJeN1=`1"
+  ],
+  "original_prompt": "stove",
+  "role": "source_location"
+}

@@ -1,0 +1,21 @@
+{
+  "original_image_path": "/root/proj/sam_agent_output/libero_goal/turn_on_the_stove/input_first_frame.png",
+  "orig_img_h": 224,
+  "orig_img_w": 224,
+  "pred_boxes": [
+    [
+      0.2109040915966034,
+      0.4065021872520447,
+      0.13653898239135742,
+      0.08780977129936218
+    ]
+  ],
+  "pred_scores": [
+    0.76171875
+  ],
+  "pred_masks": [
+    "T\\:4j64M2N2N2N100O2O000O2O00000O1000O100000000O2O001N1O101N2N2N3KQko0"
+  ],
+  "original_prompt": "stove",
+  "role": "manipulated_object"
+}

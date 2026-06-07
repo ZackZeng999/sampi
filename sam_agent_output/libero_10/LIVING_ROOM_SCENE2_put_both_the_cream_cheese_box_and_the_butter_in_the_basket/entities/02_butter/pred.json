@@ -1,0 +1,21 @@
+{
+  "original_image_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE2_put_both_the_cream_cheese_box_and_the_butter_in_the_basket/input_first_frame.png",
+  "orig_img_h": 224,
+  "orig_img_w": 224,
+  "pred_boxes": [
+    [
+      0.8443118333816528,
+      0.49236348271369934,
+      0.12194490432739258,
+      0.19750532507896423
+    ]
+  ],
+  "pred_scores": [
+    0.640625
+  ],
+  "pred_masks": [
+    "^_Y12e6<G9E;J4M2O1O1O100O11O0000000000000O1O100N2M3K6L4K5Hed1"
+  ],
+  "original_prompt": "butter",
+  "role": "manipulated_object"
+}

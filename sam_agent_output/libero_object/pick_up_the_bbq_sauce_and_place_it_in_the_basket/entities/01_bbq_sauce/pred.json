@@ -1,0 +1,21 @@
+{
+  "original_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_bbq_sauce_and_place_it_in_the_basket/input_first_frame.png",
+  "orig_img_h": 224,
+  "orig_img_w": 224,
+  "pred_boxes": [
+    [
+      0.575145959854126,
+      0.4978700876235962,
+      0.05769383907318115,
+      0.12796294689178467
+    ]
+  ],
+  "pred_scores": [
+    0.91015625
+  ],
+  "pred_masks": [
+    "nZl0=`64L3I7O100000000001O9F6HTja0"
+  ],
+  "original_prompt": "bbq sauce",
+  "role": "manipulated_object"
+}

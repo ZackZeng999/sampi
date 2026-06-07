@@ -1,0 +1,92 @@
+{
+  "dataset": "libero_object",
+  "task_stem": "pick_up_the_ketchup_and_place_it_in_the_basket",
+  "bddl_path": "/root/proj/openpi/third_party/libero/libero/libero/bddl_files/libero_object/pick_up_the_ketchup_and_place_it_in_the_basket.bddl",
+  "status": "completed",
+  "entities": [
+    {
+      "original_prompt": "ketchup",
+      "role": "manipulated_object",
+      "agent_prompts": [
+        "bottle"
+      ],
+      "final_agent_prompt": "bottle",
+      "num_masks": 1,
+      "pred_scores": [
+        0.91796875
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.41079476475715637,
+          0.36062467098236084,
+          0.06318172812461853,
+          0.14788639545440674
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          92,
+          81,
+          106,
+          114
+        ]
+      ],
+      "pred_masks_rle": [
+        "UWd07f66]OLPJ9n5>O001O000001O;D4L3M3Kofi0"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_ketchup_and_place_it_in_the_basket/entities/01_ketchup/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_ketchup_and_place_it_in_the_basket/entities/01_ketchup/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_ketchup_and_place_it_in_the_basket/entities/01_ketchup/pred.png",
+      "status": "completed"
+    },
+    {
+      "original_prompt": "basket",
+      "role": "destination",
+      "agent_prompts": [
+        "basket"
+      ],
+      "final_agent_prompt": "basket",
+      "num_masks": 1,
+      "pred_scores": [
+        0.90625
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.06353655457496643,
+          0.410439670085907,
+          0.23800277709960938,
+          0.2272655963897705
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          14,
+          92,
+          68,
+          143
+        ]
+      ],
+      "pred_masks_rle": [
+        "`U31m6:F5K5L4J6L4L4L3L2N3O0O1O100000000O10000000000000000001O0000O11O00000000000000000000000000O1000N3K4N3K:Df0ZObPR1"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_ketchup_and_place_it_in_the_basket/entities/02_basket/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_ketchup_and_place_it_in_the_basket/entities/02_basket/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_ketchup_and_place_it_in_the_basket/entities/02_basket/pred.png",
+      "status": "completed"
+    }
+  ],
+  "task_description": "Pick the ketchup and place it in the basket",
+  "video_path": "/root/proj/openpi/data/libero/videos/rollout_pick_up_the_ketchup_and_place_it_in_the_basket_success.mp4",
+  "first_frame_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_ketchup_and_place_it_in_the_basket/input_first_frame.png",
+  "entity_extraction_response": "```json\n{\"entities\": [{\"phrase\": \"ketchup\", \"role\": \"manipulated_object\"}, {\"phrase\": \"basket\", \"role\": \"destination\"}]}\n```",
+  "extracted_entities": [
+    {
+      "phrase": "ketchup",
+      "role": "manipulated_object"
+    },
+    {
+      "phrase": "basket",
+      "role": "destination"
+    }
+  ]
+}

@@ -785,6 +785,26 @@ _CONFIGS = [
         ema_decay=None,
     ),
     TrainConfig(
+        name="pi05_libero_sam_dim_2_expert_lora",
+        # Same setup as pi05_libero_sam_dim_expert_lora, but pointed at the
+        # second rendered SAM-dim dataset.
+        model=pi0_config.Pi0Config(
+            pi05=True,
+            action_horizon=10,
+            discrete_state_input=False,
+            action_expert_variant="gemma_300m_lora",
+        ),
+        data=LeRobotLiberoDataConfig(
+            repo_id="physical-intelligence/libero_sam_dim_2",
+            base_config=DataConfig(prompt_from_task=True),
+            extra_delta_transform=False,
+        ),
+        weight_loader=weight_loaders.CheckpointWeightLoader("/root/autodl-tmp/pi0.5_libero/params"),
+        num_train_steps=30_000,
+        freeze_filter=nnx.Not(nnx_utils.PathRegex(".*lora.*")),
+        ema_decay=None,
+    ),
+    TrainConfig(
         name="pi05_libero_sam_dim_debug_expert_lora",
         # Debug variant for checkpoints trained on the smaller SAM-dim debug dataset.
         model=pi0_config.Pi0Config(

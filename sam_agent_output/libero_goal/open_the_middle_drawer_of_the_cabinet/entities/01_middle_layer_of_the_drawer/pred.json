@@ -1,0 +1,21 @@
+{
+  "original_image_path": "/root/proj/sam_agent_output/libero_goal/open_the_middle_drawer_of_the_cabinet/input_first_frame.png",
+  "orig_img_h": 224,
+  "orig_img_w": 224,
+  "pred_boxes": [
+    [
+      0.6286823153495789,
+      0.39769747853279114,
+      0.05897176265716553,
+      0.11933073401451111
+    ]
+  ],
+  "pred_scores": [
+    0.57421875
+  ],
+  "pred_masks": [
+    "kmn05j68I7I6J000O1000O2O4L5J;FcV?"
+  ],
+  "original_prompt": "middle layer of the drawer",
+  "role": "manipulated_object"
+}

@@ -1,0 +1,34 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE1_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE1_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket/entities/02_cream_cheese_box/sam_out/-root-proj-sam_agent_output-libero_10-LIVING_ROOM_SCENE1_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket-input_first_frame.png/white object.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [
+        [
+            0.41383644938468933,
+            0.5170801877975464,
+            0.05927732586860657,
+            0.08318096399307251
+        ],
+        [
+            0.29368579387664795,
+            0.0002964138984680176,
+            0.36075156927108765,
+            0.40082183480262756
+        ]
+    ],
+    "pred_masks": [
+        "f^d0?_63O000000000000000001N5JYfi0",
+        "n^>:e63N`0_O4L2O1N10000001OO11OZOnN^KR1a4SO[Km0d4UO[Kk0e4WOYKj0e4XOZKh0f4YOYKg0g4ZOWKg0j4XOVKh0j4YOUKg0k4ZOTKe0l4i0N10000_KTNm3m1QLVNn3j1gKXNOOZ4i1fKbNZ4S2O1O00001O1O00001O000000000010N10O2OO1000000000000O100O2O0O10O\\OgKbNZ4]1nK[NS4e1PLXNP4h1RLVNn3j1ULRNl3n1c0000000O10000bNRKj0n4VOSKi0m4UOVKj0j4UOYKi0g4UOhK>X4^OPL=^5J7I`i`0"
+    ],
+    "pred_scores": [
+        0.65234375,
+        0.55078125
+    ],
+    "kept_indices": [
+        0,
+        1
+    ],
+    "removed_indices": [],
+    "iom_threshold": 0.3
+}

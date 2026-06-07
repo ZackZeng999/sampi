@@ -1,0 +1,9 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_goal/put_the_wine_bottle_on_the_rack/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_goal/put_the_wine_bottle_on_the_rack/entities/02_rack/sam_out/-root-proj-sam_agent_output-libero_goal-put_the_wine_bottle_on_the_rack-input_first_frame.png/rack.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [],
+    "pred_masks": [],
+    "pred_scores": []
+}

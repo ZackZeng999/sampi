@@ -1,0 +1,9 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_goal/put_the_cream_cheese_in_the_bowl/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_goal/put_the_cream_cheese_in_the_bowl/entities/01_cream_cheese/sam_out/-root-proj-sam_agent_output-libero_goal-put_the_cream_cheese_in_the_bowl-input_first_frame.png/cream cheese.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [],
+    "pred_masks": [],
+    "pred_scores": []
+}

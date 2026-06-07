@@ -1,0 +1,92 @@
+{
+  "dataset": "libero_object",
+  "task_stem": "pick_up_the_salad_dressing_and_place_it_in_the_basket",
+  "bddl_path": "/root/proj/openpi/third_party/libero/libero/libero/bddl_files/libero_object/pick_up_the_salad_dressing_and_place_it_in_the_basket.bddl",
+  "status": "completed",
+  "entities": [
+    {
+      "original_prompt": "salad dressing",
+      "role": "manipulated_object",
+      "agent_prompts": [
+        "bottle"
+      ],
+      "final_agent_prompt": "bottle",
+      "num_masks": 1,
+      "pred_scores": [
+        0.91796875
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.5775483250617981,
+          0.46350160241127014,
+          0.07710880041122437,
+          0.17025533318519592
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          129,
+          104,
+          147,
+          142
+        ]
+      ],
+      "pred_masks_rle": [
+        "lal0<b64M3L3L3F;M2000000001N101WOVJ8\\6M3LVn`0"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_salad_dressing_and_place_it_in_the_basket/entities/01_salad_dressing/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_salad_dressing_and_place_it_in_the_basket/entities/01_salad_dressing/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_salad_dressing_and_place_it_in_the_basket/entities/01_salad_dressing/pred.png",
+      "status": "completed"
+    },
+    {
+      "original_prompt": "basket",
+      "role": "destination",
+      "agent_prompts": [
+        "basket"
+      ],
+      "final_agent_prompt": "basket",
+      "num_masks": 1,
+      "pred_scores": [
+        0.8984375
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.06926341354846954,
+          0.40338486433029175,
+          0.23377366364002228,
+          0.2246498465538025
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          16,
+          90,
+          68,
+          141
+        ]
+      ],
+      "pred_masks_rle": [
+        "\\c371Lc6=K2M5J6L3L5K3M4M3M100O10000000000000000000000000000000000000000000000000000000000000000000O1O1L4M4J=UORJNPWR1"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_salad_dressing_and_place_it_in_the_basket/entities/02_basket/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_salad_dressing_and_place_it_in_the_basket/entities/02_basket/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_salad_dressing_and_place_it_in_the_basket/entities/02_basket/pred.png",
+      "status": "completed"
+    }
+  ],
+  "task_description": "Pick the salad dressing and place it in the basket",
+  "video_path": "/root/proj/openpi/data/libero/videos/rollout_pick_up_the_salad_dressing_and_place_it_in_the_basket_success.mp4",
+  "first_frame_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_salad_dressing_and_place_it_in_the_basket/input_first_frame.png",
+  "entity_extraction_response": "```json\n{\"entities\": [{\"phrase\": \"salad dressing\", \"role\": \"manipulated_object\"}, {\"phrase\": \"basket\", \"role\": \"destination\"}]}\n```",
+  "extracted_entities": [
+    {
+      "phrase": "salad dressing",
+      "role": "manipulated_object"
+    },
+    {
+      "phrase": "basket",
+      "role": "destination"
+    }
+  ]
+}

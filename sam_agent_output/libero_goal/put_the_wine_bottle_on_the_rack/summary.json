@@ -1,0 +1,92 @@
+{
+  "dataset": "libero_goal",
+  "task_stem": "put_the_wine_bottle_on_the_rack",
+  "bddl_path": "/root/proj/openpi/third_party/libero/libero/libero/bddl_files/libero_goal/put_the_wine_bottle_on_the_rack.bddl",
+  "status": "completed",
+  "entities": [
+    {
+      "original_prompt": "wine bottle",
+      "role": "manipulated_object",
+      "agent_prompts": [
+        "wine bottle"
+      ],
+      "final_agent_prompt": "wine bottle",
+      "num_masks": 1,
+      "pred_scores": [
+        0.91015625
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.5182737112045288,
+          0.3671802878379822,
+          0.04904377460479736,
+          0.15451890230178833
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          116,
+          82,
+          127,
+          117
+        ]
+      ],
+      "pred_masks_rle": [
+        "V_i06g68H4J5H9O00001<C3N1MlSe0"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_goal/put_the_wine_bottle_on_the_rack/entities/01_wine_bottle/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_goal/put_the_wine_bottle_on_the_rack/entities/01_wine_bottle/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_goal/put_the_wine_bottle_on_the_rack/entities/01_wine_bottle/pred.png",
+      "status": "completed"
+    },
+    {
+      "original_prompt": "rack",
+      "role": "destination",
+      "agent_prompts": [
+        "wooden planks"
+      ],
+      "final_agent_prompt": "wooden planks",
+      "num_masks": 1,
+      "pred_scores": [
+        0.62109375
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.7102589011192322,
+          0.1101926788687706,
+          0.23916882276535034,
+          0.2279776930809021
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          159,
+          25,
+          213,
+          76
+        ]
+      ],
+      "pred_masks_rle": [
+        "ZjR13l64L5L4K4M5J4M2N3L2N2O0O100O100O00100O10O0010O10O0100O1O100O0100O100RO_J<c5@`J`0a5^O`Jb0a5[OaJd0m5010O010O0101N3N1N3N1N3N1N3M2N]b2"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_goal/put_the_wine_bottle_on_the_rack/entities/02_rack/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_goal/put_the_wine_bottle_on_the_rack/entities/02_rack/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_goal/put_the_wine_bottle_on_the_rack/entities/02_rack/pred.png",
+      "status": "completed"
+    }
+  ],
+  "task_description": "Put the wine bottle on the rack",
+  "video_path": "/root/proj/openpi/data/libero/videos/rollout_put_the_wine_bottle_on_the_rack_success.mp4",
+  "first_frame_path": "/root/proj/sam_agent_output/libero_goal/put_the_wine_bottle_on_the_rack/input_first_frame.png",
+  "entity_extraction_response": "```json\n{\"entities\": [{\"phrase\": \"wine bottle\", \"role\": \"manipulated_object\"}, {\"phrase\": \"rack\", \"role\": \"destination\"}]}\n```",
+  "extracted_entities": [
+    {
+      "phrase": "wine bottle",
+      "role": "manipulated_object"
+    },
+    {
+      "phrase": "rack",
+      "role": "destination"
+    }
+  ]
+}

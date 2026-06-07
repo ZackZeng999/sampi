@@ -1,0 +1,92 @@
+{
+  "dataset": "libero_10",
+  "task_stem": "STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy",
+  "bddl_path": "/root/proj/openpi/third_party/libero/libero/libero/bddl_files/libero_10/STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy.bddl",
+  "status": "completed",
+  "entities": [
+    {
+      "original_prompt": "book",
+      "role": "manipulated_object",
+      "agent_prompts": [
+        "book"
+      ],
+      "final_agent_prompt": "book",
+      "num_masks": 1,
+      "pred_scores": [
+        0.87109375
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.2119569182395935,
+          0.5005425810813904,
+          0.1276654601097107,
+          0.21857291460037231
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          47,
+          112,
+          76,
+          161
+        ]
+      ],
+      "pred_masks_rle": [
+        "dc:9f65K3N5J6K3M1O1O1O1O100010O0000000000000000O01N3N7I6I6J_WP1"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_10/STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy/entities/01_book/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_10/STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy/entities/01_book/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_10/STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy/entities/01_book/pred.png",
+      "status": "completed"
+    },
+    {
+      "original_prompt": "back compartment of the caddy",
+      "role": "destination",
+      "agent_prompts": [
+        "compartment"
+      ],
+      "final_agent_prompt": "compartment",
+      "num_masks": 1,
+      "pred_scores": [
+        0.85546875
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.4102839231491089,
+          0.3329375386238098,
+          0.16477370262145996,
+          0.08757519721984863
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          92,
+          75,
+          129,
+          94
+        ]
+      ],
+      "pred_masks_rle": [
+        "fVd08_69N200000000000000000000000000000000000000000000000000000000000000002N;CZfd0"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_10/STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy/entities/02_back_compartment_of_the_caddy/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_10/STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy/entities/02_back_compartment_of_the_caddy/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_10/STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy/entities/02_back_compartment_of_the_caddy/pred.png",
+      "status": "completed"
+    }
+  ],
+  "task_description": "pick up the book and place it in the back compartment of the caddy",
+  "video_path": "/root/proj/openpi/data/libero/videos/rollout_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy_success.mp4",
+  "first_frame_path": "/root/proj/sam_agent_output/libero_10/STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy/input_first_frame.png",
+  "entity_extraction_response": "```json\n{\n  \"entities\": [\n    {\n      \"phrase\": \"book\",\n      \"role\": \"manipulated_object\"\n    },\n    {\n      \"phrase\": \"back compartment of the caddy\",\n      \"role\": \"destination\"\n    }\n  ]\n}\n```",
+  "extracted_entities": [
+    {
+      "phrase": "book",
+      "role": "manipulated_object"
+    },
+    {
+      "phrase": "back compartment of the caddy",
+      "role": "destination"
+    }
+  ]
+}

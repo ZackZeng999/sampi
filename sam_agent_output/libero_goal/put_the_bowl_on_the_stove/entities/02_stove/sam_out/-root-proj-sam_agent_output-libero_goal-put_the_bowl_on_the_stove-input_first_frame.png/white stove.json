@@ -1,0 +1,20 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_goal/put_the_bowl_on_the_stove/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_goal/put_the_bowl_on_the_stove/entities/02_stove/sam_out/-root-proj-sam_agent_output-libero_goal-put_the_bowl_on_the_stove-input_first_frame.png/white stove.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [
+        [
+            0.15740618109703064,
+            0.3886665105819702,
+            0.23295223712921143,
+            0.1507142186164856
+        ]
+    ],
+    "pred_masks": [
+        "^o79d63M4L3M3M3N2M3N200O1000000000000001OO10010OO10001O0001OO100000000000O1000000000O0100000000000O1L5H8F`lm0"
+    ],
+    "pred_scores": [
+        0.87109375
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_milk_and_place_it_in_the_basket/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_milk_and_place_it_in_the_basket/entities/02_basket/sam_out/-root-proj-sam_agent_output-libero_object-pick_up_the_milk_and_place_it_in_the_basket-input_first_frame.png/basket.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [
+        [
+            0.056589525192976,
+            0.4156396687030792,
+            0.24189446866512299,
+            0.2309373915195465
+        ]
+    ],
+    "pred_masks": [
+        "_n27h66J4K5L7H6K3L3M3M2O1O2O0O10000000000O10000001O00O1001O00O10000001O00000000000000000000000000000O100L4K6KU_R1"
+    ],
+    "pred_scores": [
+        0.91796875
+    ]
+}

@@ -1,0 +1,79 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate/entities/01_akita_black_bowl/sam_out/-root-proj-sam_agent_output-libero_spatial-pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate-input_first_frame.png/metal object.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [
+        [
+            0.07838546484708786,
+            0.4438535273075104,
+            0.13674408197402954,
+            0.10683509707450867
+        ],
+        [
+            0.030740777030587196,
+            0.5844841003417969,
+            0.15427455306053162,
+            0.12531763315200806
+        ],
+        [
+            0.21979983150959015,
+            0.4568558931350708,
+            0.09689764678478241,
+            0.08563542366027832
+        ],
+        [
+            0.36967867612838745,
+            -0.0002294331934535876,
+            0.2787676453590393,
+            0.29714658856391907
+        ],
+        [
+            0.14987586438655853,
+            0.6433011293411255,
+            0.19442911446094513,
+            0.15025198459625244
+        ],
+        [
+            0.7129889726638794,
+            0.5840939879417419,
+            0.10911065340042114,
+            0.10186463594436646
+        ],
+        [
+            0.7258225083351135,
+            0.5050418376922607,
+            0.11564874649047852,
+            0.10229074954986572
+        ]
+    ],
+    "pred_masks": [
+        "\\Q46h63O2M101N2N2N101N101N101O00000O1000O101O0O100O2N1O2N2N1N4Kj\\V1",
+        "ae13i66L4M2N2N101N2N2O0O2O0O10001O000O10O1000000O100O101N1O2O0N3N1O2M3KllW1",
+        "[j:4j67K2N2N0O2O000O10000O100001O00000O2O1N3M3Le[Q1",
+        "ecb06i67ZIKa5LkJf0T5[OkJf0T5ZOkJh0T5YOkJg0U5YOkJg0U5YOkJg0U5YOkJg0U5ZOjJf0V5ZOjJf0OUOk45VKf0MXOl42WKf0LYOm41WKf0I]Oo4MXKf0H_Oo4LXKe0J_Om4LYKf0ISOO8o4W1UKjNj4X1TKiNk4f10001O00000000000000000000O10000O100O100O1O1DoJiNQ5U1TKgNm4Y1UKdNm4[1<O0kN`Jl0`5SObJl0^5SOdJl0\\5TOdJl0\\5SOeJm0[5ROfJn0Z5POiJo0d50001O1O2N6I7ITXa0",
+        "S\\72j68J4M2M3N2N1O2N2N100O2O0O100O100O10000000000O100000000000O101O0O101O0O2O0O2N2N2M3N3M2N7EUio0",
+        "TTS13l63N1O2O000O2N1O2ND`I9d6O10000000000O100N10OO2O1O1O`c8",
+        "bhS14k62O1O10001N1O1N2O1OF`I5_6JcI6d60O10000001OO01OO01O1N2O2NQh7"
+    ],
+    "pred_scores": [
+        0.62890625,
+        0.6171875,
+        0.6171875,
+        0.546875,
+        0.53125,
+        0.52734375,
+        0.51953125
+    ],
+    "kept_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+    ],
+    "removed_indices": [],
+    "iom_threshold": 0.3
+}

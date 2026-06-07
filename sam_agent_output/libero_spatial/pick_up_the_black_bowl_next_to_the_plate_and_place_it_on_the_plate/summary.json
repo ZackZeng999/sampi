@@ -1,0 +1,120 @@
+{
+  "dataset": "libero_spatial",
+  "task_stem": "pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate",
+  "bddl_path": "/root/proj/openpi/third_party/libero/libero/libero/bddl_files/libero_spatial/pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate.bddl",
+  "status": "completed",
+  "entities": [
+    {
+      "original_prompt": "akita black bowl",
+      "role": "manipulated_object",
+      "agent_prompts": [
+        "metal object"
+      ],
+      "final_agent_prompt": "metal object",
+      "num_masks": 3,
+      "pred_scores": [
+        0.62890625,
+        0.6171875,
+        0.53125
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.07838546484708786,
+          0.4438535273075104,
+          0.13674408197402954,
+          0.10683509707450867
+        ],
+        [
+          0.030740777030587196,
+          0.5844841003417969,
+          0.15427455306053162,
+          0.12531763315200806
+        ],
+        [
+          0.14987586438655853,
+          0.6433011293411255,
+          0.19442911446094513,
+          0.15025198459625244
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          18,
+          99,
+          48,
+          123
+        ],
+        [
+          7,
+          131,
+          41,
+          159
+        ],
+        [
+          34,
+          144,
+          77,
+          178
+        ]
+      ],
+      "pred_masks_rle": [
+        "\\Q46h63O2M101N2N2N101N101N101O00000O1000O101O0O100O2N1O2N2N1N4Kj\\V1",
+        "ae13i66L4M2N2N101N2N2O0O2O0O10001O000O10O1000000O100O101N1O2O0N3N1O2M3KllW1",
+        "S\\72j68J4M2M3N2N1O2N2N100O2O0O100O100O10000000000O100000000000O101O0O101O0O2O0O2N2N2M3N3M2N7EUio0"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate/entities/01_akita_black_bowl/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate/entities/01_akita_black_bowl/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate/entities/01_akita_black_bowl/pred.png",
+      "status": "completed"
+    },
+    {
+      "original_prompt": "plate",
+      "role": "destination",
+      "agent_prompts": [
+        "white circle"
+      ],
+      "final_agent_prompt": "white circle",
+      "num_masks": 1,
+      "pred_scores": [
+        0.8671875
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.1805567890405655,
+          0.6723713278770447,
+          0.13681982457637787,
+          0.1029241681098938
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          40,
+          151,
+          71,
+          174
+        ]
+      ],
+      "pred_masks_rle": [
+        "QT97f64N3M1O2N1O2O0O10000O2O000000O100000000O100O2O0O2O1N2N3L5JSZQ1"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate/entities/02_plate/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate/entities/02_plate/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate/entities/02_plate/pred.png",
+      "status": "completed"
+    }
+  ],
+  "task_description": "Pick the akita black bowl next to the plate and place it on the plate",
+  "video_path": "/root/proj/openpi/data/libero/videos/rollout_pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate_success.mp4",
+  "first_frame_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate/input_first_frame.png",
+  "entity_extraction_response": "{\n  \"entities\": [\n    {\n      \"phrase\": \"akita black bowl\",\n      \"role\": \"manipulated_object\"\n    },\n    {\n      \"phrase\": \"plate\",\n      \"role\": \"destination\"\n    }\n  ]\n}",
+  "extracted_entities": [
+    {
+      "phrase": "akita black bowl",
+      "role": "manipulated_object"
+    },
+    {
+      "phrase": "plate",
+      "role": "destination"
+    }
+  ]
+}

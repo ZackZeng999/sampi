@@ -1,0 +1,21 @@
+{
+  "original_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_butter_and_place_it_in_the_basket/input_first_frame.png",
+  "orig_img_h": 224,
+  "orig_img_w": 224,
+  "pred_boxes": [
+    [
+      0.06291171163320541,
+      0.41424673795700073,
+      0.23888996243476868,
+      0.23038208484649658
+    ]
+  ],
+  "pred_scores": [
+    0.8984375
+  ],
+  "pred_masks": [
+    "aU32j68J8I4K4L5K6K3L4M3M1O2O000000000O10000000000000000000000000000000000000000001O000000O1000000000O1O2K4M6EWXR1"
+  ],
+  "original_prompt": "basket",
+  "role": "destination"
+}

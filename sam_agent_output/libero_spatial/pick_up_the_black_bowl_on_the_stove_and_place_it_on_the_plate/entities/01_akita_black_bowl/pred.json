@@ -1,0 +1,21 @@
+{
+  "original_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate/input_first_frame.png",
+  "orig_img_h": 224,
+  "orig_img_w": 224,
+  "pred_boxes": [
+    [
+      0.5858332514762878,
+      0.3208678960800171,
+      0.10330188274383545,
+      0.1361241340637207
+    ]
+  ],
+  "pred_scores": [
+    0.66796875
+  ],
+  "pred_masks": [
+    "ggl05e6;J2N2N2O1N1N2O2N1O100003M2O0O0O2O1O1N5L1N2N2O1MYi>"
+  ],
+  "original_prompt": "akita black bowl",
+  "role": "manipulated_object"
+}

@@ -1,0 +1,43 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate/entities/02_plate/sam_out/-root-proj-sam_agent_output-libero_spatial-pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate-input_first_frame.png/white circle.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [
+        [
+            0.1805567890405655,
+            0.6723713278770447,
+            0.13681982457637787,
+            0.1029241681098938
+        ],
+        [
+            0.06568089127540588,
+            0.6205079555511475,
+            0.10652439296245575,
+            0.07308381795883179
+        ],
+        [
+            0.10899552702903748,
+            0.4782688617706299,
+            0.09179429709911346,
+            0.049385011196136475
+        ]
+    ],
+    "pred_masks": [
+        "QT97f64N3M1O2N1O2O0O10000O2O000000O100000000O100O2O0O2O1N2N3L5JSZQ1",
+        "d]35h65M1N2O100O10000O1000O1000000O101N100O2N101N4KaZX1",
+        "b[53k63N100O1O1O10000O1000O1000000O2O000O2O2LcQW1"
+    ],
+    "pred_scores": [
+        0.8671875,
+        0.62109375,
+        0.578125
+    ],
+    "kept_indices": [
+        0,
+        1,
+        2
+    ],
+    "removed_indices": [],
+    "iom_threshold": 0.3
+}

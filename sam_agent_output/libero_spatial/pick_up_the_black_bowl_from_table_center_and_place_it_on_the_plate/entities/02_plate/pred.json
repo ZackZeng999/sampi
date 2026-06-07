@@ -1,0 +1,21 @@
+{
+  "original_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_from_table_center_and_place_it_on_the_plate/input_first_frame.png",
+  "orig_img_h": 224,
+  "orig_img_w": 224,
+  "pred_boxes": [
+    [
+      0.13679596781730652,
+      0.6631906032562256,
+      0.18689683079719543,
+      0.14157402515411377
+    ]
+  ],
+  "pred_scores": [
+    0.62109375
+  ],
+  "pred_masks": [
+    "Sn68f64L3N2N2N2N1O2O0O2O0O2N100O100O10000000000000O10000O100O2O000O2O0O2N101N2N2N2M5KSSQ1"
+  ],
+  "original_prompt": "plate",
+  "role": "destination"
+}

@@ -1,0 +1,21 @@
+{
+  "original_image_path": "/root/proj/sam_agent_output/libero_goal/put_the_wine_bottle_on_the_rack/input_first_frame.png",
+  "orig_img_h": 224,
+  "orig_img_w": 224,
+  "pred_boxes": [
+    [
+      0.7102589011192322,
+      0.1101926788687706,
+      0.23916882276535034,
+      0.2279776930809021
+    ]
+  ],
+  "pred_scores": [
+    0.62109375
+  ],
+  "pred_masks": [
+    "ZjR13l64L5L4K4M5J4M2N3L2N2O0O100O100O00100O10O0010O10O0100O1O100O0100O100RO_J<c5@`J`0a5^O`Jb0a5[OaJd0m5010O010O0101N3N1N3N1N3N1N3M2N]b2"
+  ],
+  "original_prompt": "rack",
+  "role": "destination"
+}

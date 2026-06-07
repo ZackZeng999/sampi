@@ -1,0 +1,15 @@
+/root/proj/eval/prompt_mask_audit_v2/spatial_page_01.jpg
+/root/proj/eval/prompt_mask_audit_v2/spatial_page_02.jpg
+/root/proj/eval/prompt_mask_audit_v2/spatial_page_03.jpg
+/root/proj/eval/prompt_mask_audit_v2/spatial_page_04.jpg
+/root/proj/eval/prompt_mask_audit_v2/object_page_01.jpg
+/root/proj/eval/prompt_mask_audit_v2/object_page_02.jpg
+/root/proj/eval/prompt_mask_audit_v2/object_page_03.jpg
+/root/proj/eval/prompt_mask_audit_v2/goal_page_01.jpg
+/root/proj/eval/prompt_mask_audit_v2/goal_page_02.jpg
+/root/proj/eval/prompt_mask_audit_v2/goal_page_03.jpg
+/root/proj/eval/prompt_mask_audit_v2/goal_page_04.jpg
+/root/proj/eval/prompt_mask_audit_v2/10_page_01.jpg
+/root/proj/eval/prompt_mask_audit_v2/10_page_02.jpg
+/root/proj/eval/prompt_mask_audit_v2/10_page_03.jpg
+/root/proj/eval/prompt_mask_audit_v2/10_page_04.jpg

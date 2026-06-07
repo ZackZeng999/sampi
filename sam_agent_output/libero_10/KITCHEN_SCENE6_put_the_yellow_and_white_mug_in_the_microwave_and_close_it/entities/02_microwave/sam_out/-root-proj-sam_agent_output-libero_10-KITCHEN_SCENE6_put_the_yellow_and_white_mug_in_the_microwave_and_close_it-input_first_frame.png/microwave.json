@@ -1,0 +1,9 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_10/KITCHEN_SCENE6_put_the_yellow_and_white_mug_in_the_microwave_and_close_it/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_10/KITCHEN_SCENE6_put_the_yellow_and_white_mug_in_the_microwave_and_close_it/entities/02_microwave/sam_out/-root-proj-sam_agent_output-libero_10-KITCHEN_SCENE6_put_the_yellow_and_white_mug_in_the_microwave_and_close_it-input_first_frame.png/microwave.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [],
+    "pred_masks": [],
+    "pred_scores": []
+}

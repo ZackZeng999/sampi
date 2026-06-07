@@ -1,0 +1,29 @@
+{
+    "original_image_path": "/root/proj/sam_agent_example_output/input_first_frame.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [
+        [
+            0.3735024034976959,
+            0.46792343258857727,
+            0.09036773443222046,
+            0.1435655653476715
+        ],
+        [
+            0.3768479526042938,
+            0.7005178332328796,
+            0.0712849497795105,
+            0.11002463102340698
+        ]
+    ],
+    "pred_scores": [
+        0.91015625,
+        0.51171875
+    ],
+    "pred_masks": [
+        "\\_b08g69G5L7H2O00001O00000000000001O0O2O1N3YOnIOM5jZj0",
+        "Thb0a0Z65O100O10000000000000000001GhIB`Uk0"
+    ],
+    "text_prompt": "put both the alphabet soup and the tomato sauce in the basket",
+    "image_path": "/root/proj/sam_agent_example_output/input_first_frame.png"
+}

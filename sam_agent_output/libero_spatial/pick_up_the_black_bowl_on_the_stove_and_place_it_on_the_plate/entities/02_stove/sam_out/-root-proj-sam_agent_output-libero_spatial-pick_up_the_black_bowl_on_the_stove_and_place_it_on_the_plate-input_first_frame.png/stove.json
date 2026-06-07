@@ -1,0 +1,20 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate/entities/02_stove/sam_out/-root-proj-sam_agent_output-libero_spatial-pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate-input_first_frame.png/stove.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [
+        [
+            0.5374962091445923,
+            0.38698095083236694,
+            0.15911829471588135,
+            0.15531152486801147
+        ]
+    ],
+    "pred_masks": [
+        "kaj0f0W6:H101O0000000001O5K5K001O1O001O001O0000001O000000O1000000O1O10L3K6ITi>"
+    ],
+    "pred_scores": [
+        0.640625
+    ]
+}

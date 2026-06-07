@@ -1,0 +1,61 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_plate/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_plate/entities/02_plate/sam_out/-root-proj-sam_agent_output-libero_spatial-pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_plate-input_first_frame.png/metal object.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [
+        [
+            0.23047451674938202,
+            0.4562686085700989,
+            0.11145816743373871,
+            0.10244238376617432
+        ],
+        [
+            0.5389625430107117,
+            0.7084399461746216,
+            0.17334896326065063,
+            0.15270531177520752
+        ],
+        [
+            0.07985543459653854,
+            0.4320198893547058,
+            0.13468021154403687,
+            0.10827082395553589
+        ],
+        [
+            0.14728271961212158,
+            0.6578179597854614,
+            0.19804376363754272,
+            0.15511339902877808
+        ],
+        [
+            0.3520600199699402,
+            0.0005522072315216064,
+            0.27582848072052,
+            0.29423248767852783
+        ]
+    ],
+    "pred_masks": [
+        "\\_;6h66K3N1N3N1N101N10000000000000O2O00001N1O2N2N1N5KeQP1",
+        "Ydj07g65K4M3M3M2O1N2O1N101O1N101O000000001O00000001O0O101N101O0O2O0O2N2N2N2N3M3LgQ>",
+        "ZQ46h64M2N2N2O1N100O2O1N10001O000O100000O10001N1O101N1O2N2N1M5Lk\\V1",
+        "R\\77g65L3M3M1O2N2N1O2O0O2N1O2O0O1O101O0000O10000000000000000O10001N100O2O0O1O2N2N2M3N2N2M4MSPP1",
+        "cYa05j63Ma0@1N101O000AVOhJj0X5WOhJh0X5XOhJh0X5YOfJh0Z5XOfJi0Y5XOfJh0Z5XOfJh0[5WOeJi0Z5YOeJg02VOk4Z1RKiNm4Y1oJjNo4d101O1O1O001O00001O0000000000000000000000O10000O1O2O0O1CnJkNR5S1SKjNn4OmJn08QOl40mJn0a5SO_Jm0a5SO`Jl0a5SO_Jm0`5SOaJm0_5SObJl0^5SOdJl0\\5SOfJk0[5TOiJi0W5VOPKd0i5L8HQ[b0"
+    ],
+    "pred_scores": [
+        0.75390625,
+        0.75,
+        0.71875,
+        0.640625,
+        0.5625
+    ],
+    "kept_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+    ],
+    "removed_indices": [],
+    "iom_threshold": 0.3
+}

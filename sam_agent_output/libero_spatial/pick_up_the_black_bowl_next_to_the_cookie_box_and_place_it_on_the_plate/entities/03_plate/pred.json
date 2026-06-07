@@ -1,0 +1,37 @@
+{
+  "original_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_plate/input_first_frame.png",
+  "orig_img_h": 224,
+  "orig_img_w": 224,
+  "pred_boxes": [
+    [
+      0.24076193571090698,
+      0.4378128945827484,
+      0.10455131530761719,
+      0.10088875889778137
+    ],
+    [
+      0.5178217887878418,
+      0.7070187330245972,
+      0.17428475618362427,
+      0.15225094556808472
+    ],
+    [
+      0.13939325511455536,
+      0.6572592854499817,
+      0.19761405885219574,
+      0.1531023383140564
+    ]
+  ],
+  "pred_scores": [
+    0.87890625,
+    0.8515625,
+    0.84765625
+  ],
+  "pred_masks": [
+    "Xm;7g65L3N1N2O1N101O0O10001OO1000001O0O101N101N2MlQP1",
+    "[ai05h66K4M2M4M2O1N2O1N2O1N101O00001O0000000000000001O000O2O0O2O0O2N2N2N2N2N3M2M5Jfm>",
+    "PU7<c63M2N2M2O2N1O2O1N100O2O0O10001N100000000O1000O2O000000000O2O0O1O2O0O2O0O2O1M3N2M4L4LS^P1"
+  ],
+  "original_prompt": "plate",
+  "role": "destination"
+}

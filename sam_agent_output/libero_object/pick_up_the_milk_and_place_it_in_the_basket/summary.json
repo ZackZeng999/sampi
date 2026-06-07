@@ -1,0 +1,92 @@
+{
+  "dataset": "libero_object",
+  "task_stem": "pick_up_the_milk_and_place_it_in_the_basket",
+  "bddl_path": "/root/proj/openpi/third_party/libero/libero/libero/bddl_files/libero_object/pick_up_the_milk_and_place_it_in_the_basket.bddl",
+  "status": "completed",
+  "entities": [
+    {
+      "original_prompt": "milk",
+      "role": "manipulated_object",
+      "agent_prompts": [
+        "object"
+      ],
+      "final_agent_prompt": "object",
+      "num_masks": 1,
+      "pred_scores": [
+        0.671875
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.7162198424339294,
+          0.3936549723148346,
+          0.07487314939498901,
+          0.13960334658622742
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          160,
+          88,
+          177,
+          119
+        ]
+      ],
+      "pred_masks_rle": [
+        "SZS1b0W69L2O1O10000001O000000000O1M4DaV:"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_milk_and_place_it_in_the_basket/entities/01_milk/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_milk_and_place_it_in_the_basket/entities/01_milk/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_milk_and_place_it_in_the_basket/entities/01_milk/pred.png",
+      "status": "completed"
+    },
+    {
+      "original_prompt": "basket",
+      "role": "destination",
+      "agent_prompts": [
+        "basket"
+      ],
+      "final_agent_prompt": "basket",
+      "num_masks": 1,
+      "pred_scores": [
+        0.91796875
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.056589525192976,
+          0.4156396687030792,
+          0.24189446866512299,
+          0.2309373915195465
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          13,
+          93,
+          67,
+          145
+        ]
+      ],
+      "pred_masks_rle": [
+        "_n27h66J4K5L7H6K3L3M3M2O1O2O0O10000000000O10000001O00O1001O00O10000001O00000000000000000000000000000O100L4K6KU_R1"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_milk_and_place_it_in_the_basket/entities/02_basket/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_milk_and_place_it_in_the_basket/entities/02_basket/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_milk_and_place_it_in_the_basket/entities/02_basket/pred.png",
+      "status": "completed"
+    }
+  ],
+  "task_description": "Pick the milk and place it in the basket",
+  "video_path": "/root/proj/openpi/data/libero/videos/rollout_pick_up_the_milk_and_place_it_in_the_basket_success.mp4",
+  "first_frame_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_milk_and_place_it_in_the_basket/input_first_frame.png",
+  "entity_extraction_response": "{\n  \"entities\": [\n    {\n      \"phrase\": \"milk\",\n      \"role\": \"manipulated_object\"\n    },\n    {\n      \"phrase\": \"basket\",\n      \"role\": \"destination\"\n    }\n  ]\n}",
+  "extracted_entities": [
+    {
+      "phrase": "milk",
+      "role": "manipulated_object"
+    },
+    {
+      "phrase": "basket",
+      "role": "destination"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "original_image_path": "/root/proj/sam_agent_output/libero_goal/put_the_bowl_on_the_stove/input_first_frame.png",
+  "orig_img_h": 224,
+  "orig_img_w": 224,
+  "pred_boxes": [
+    [
+      0.43146979808807373,
+      0.5024644732475281,
+      0.1432289481163025,
+      0.11081421375274658
+    ]
+  ],
+  "pred_scores": [
+    0.69140625
+  ],
+  "pred_masks": [
+    "gZe07h64L2N3M2N2O1O001N101O000000000000000000O2O001N2N101N2N101M3N4JXed0"
+  ],
+  "original_prompt": "bowl",
+  "role": "manipulated_object"
+}

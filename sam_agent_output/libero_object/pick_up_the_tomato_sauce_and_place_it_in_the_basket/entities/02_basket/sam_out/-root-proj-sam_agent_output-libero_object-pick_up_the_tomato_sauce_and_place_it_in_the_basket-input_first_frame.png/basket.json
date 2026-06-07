@@ -1,0 +1,20 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_tomato_sauce_and_place_it_in_the_basket/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_tomato_sauce_and_place_it_in_the_basket/entities/02_basket/sam_out/-root-proj-sam_agent_output-libero_object-pick_up_the_tomato_sauce_and_place_it_in_the_basket-input_first_frame.png/basket.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [
+        [
+            0.06896314024925232,
+            0.40856650471687317,
+            0.2377954125404358,
+            0.23066756129264832
+        ]
+    ],
+    "pred_masks": [
+        "\\c38g68G4K5L6K4K5L3N1N2O1N1O1000O02O00000000O1001O0000000000001O00O100001O00000000000000O10000O100O1N3L3K7JUQR1"
+    ],
+    "pred_scores": [
+        0.890625
+    ]
+}

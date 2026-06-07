@@ -1,0 +1,21 @@
+{
+  "original_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_alphabet_soup_and_place_it_in_the_basket/input_first_frame.png",
+  "orig_img_h": 224,
+  "orig_img_w": 224,
+  "pred_boxes": [
+    [
+      0.0753856673836708,
+      0.41607987880706787,
+      0.24090227484703064,
+      0.22822952270507812
+    ]
+  ],
+  "pred_scores": [
+    0.890625
+  ],
+  "pred_masks": [
+    "`j34j65J6L5J7I4M3L5L4K4M2O0O100000000000000000000000000000000000000000000000000000000000000000000000O1M3M3M4J:oNoI0O0022N[bQ1"
+  ],
+  "original_prompt": "basket",
+  "role": "destination"
+}

@@ -1,0 +1,21 @@
+{
+  "original_image_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate/input_first_frame.png",
+  "orig_img_h": 224,
+  "orig_img_w": 224,
+  "pred_boxes": [
+    [
+      0.6292934417724609,
+      0.43786171078681946,
+      0.20290648937225342,
+      0.1931038200855255
+    ]
+  ],
+  "pred_scores": [
+    0.90234375
+  ],
+  "pred_masks": [
+    "gnn06h64L4MK`IM^60hIOW60kIOT61nIOQ61oIOQ60PJ0o51RJOm51SJOm51SJOj5>lIBo5i002N3M2O1N2O1O1O0O101O000000000001O0O100O1O101N1N3N1N3M2M4K5I7JlV8"
+  ],
+  "original_prompt": "white mug",
+  "role": "manipulated_object"
+}

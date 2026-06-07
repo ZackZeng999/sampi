@@ -1,0 +1,21 @@
+{
+  "original_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_orange_juice_and_place_it_in_the_basket/input_first_frame.png",
+  "orig_img_h": 224,
+  "orig_img_w": 224,
+  "pred_boxes": [
+    [
+      0.7017422914505005,
+      0.4810316860675812,
+      0.07052356004714966,
+      0.1795952022075653
+    ]
+  ],
+  "pred_scores": [
+    0.8828125
+  ],
+  "pred_masks": [
+    "Z_R16e68K2N3ZOBfJ`0Z5C^Jb0b5>000000000O102VOZJ4k5F_JMi50QR;"
+  ],
+  "original_prompt": "orange juice",
+  "role": "manipulated_object"
+}

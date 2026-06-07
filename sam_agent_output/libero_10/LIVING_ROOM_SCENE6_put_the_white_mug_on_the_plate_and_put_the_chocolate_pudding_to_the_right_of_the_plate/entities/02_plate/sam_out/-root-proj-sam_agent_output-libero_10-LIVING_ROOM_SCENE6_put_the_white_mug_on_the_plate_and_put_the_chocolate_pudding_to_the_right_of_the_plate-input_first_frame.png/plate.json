@@ -1,0 +1,20 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate/entities/02_plate/sam_out/-root-proj-sam_agent_output-libero_10-LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate-input_first_frame.png/plate.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [
+        [
+            0.3613790273666382,
+            0.7556087374687195,
+            0.2563968300819397,
+            0.19995135068893433
+        ]
+    ],
+    "pred_masks": [
+        "kla08e66K4M3L3N2N2N2O1N2N101N2O0O2O0O101O001N1000001O000O10000001O000000000O101O000O2O000O2O0O2O0O2N2O1N2N2N2N2N2M4L5KWdb0"
+    ],
+    "pred_scores": [
+        0.89453125
+    ]
+}

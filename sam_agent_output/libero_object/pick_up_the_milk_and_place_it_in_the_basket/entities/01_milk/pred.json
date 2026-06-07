@@ -1,0 +1,21 @@
+{
+  "original_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_milk_and_place_it_in_the_basket/input_first_frame.png",
+  "orig_img_h": 224,
+  "orig_img_w": 224,
+  "pred_boxes": [
+    [
+      0.7162198424339294,
+      0.3936549723148346,
+      0.07487314939498901,
+      0.13960334658622742
+    ]
+  ],
+  "pred_scores": [
+    0.671875
+  ],
+  "pred_masks": [
+    "SZS1b0W69L2O1O10000001O000000000O1M4DaV:"
+  ],
+  "original_prompt": "milk",
+  "role": "manipulated_object"
+}

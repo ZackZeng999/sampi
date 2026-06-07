@@ -1,0 +1,52 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_cream_cheese_and_place_it_in_the_basket/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_cream_cheese_and_place_it_in_the_basket/entities/01_cream_cheese/sam_out/-root-proj-sam_agent_output-libero_object-pick_up_the_cream_cheese_and_place_it_in_the_basket-input_first_frame.png/box.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [
+        [
+            0.06591477245092392,
+            0.4039064347743988,
+            0.2364324927330017,
+            0.22406503558158875
+        ],
+        [
+            0.4020937383174896,
+            0.3720085918903351,
+            0.06376290321350098,
+            0.14398756623268127
+        ],
+        [
+            0.5489190816879272,
+            0.3536826968193054,
+            0.061317384243011475,
+            0.13541850447654724
+        ],
+        [
+            0.4376538395881653,
+            0.6458566784858704,
+            0.05549630522727966,
+            0.082427978515625
+        ]
+    ],
+    "pred_masks": [
+        "\\\\36h66J7I4L5K5L5J3N3M2N2N100000000000000000000000000000000000000000000000000000000000000000000000O1O1M4L4I:YObQR1",
+        "ehc0g0X67J1O0000000O10000001O001Og0WOfmi0",
+        "eoj0h0S6500000000O2O000001O0O10<@Xnb0",
+        "bbe0?`63N000000000000000001O6@bbh0"
+    ],
+    "pred_scores": [
+        0.59375,
+        0.58203125,
+        0.578125,
+        0.5078125
+    ],
+    "kept_indices": [
+        0,
+        1,
+        2,
+        3
+    ],
+    "removed_indices": [],
+    "iom_threshold": 0.3
+}

@@ -1,0 +1,9 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_orange_juice_and_place_it_in_the_basket/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_orange_juice_and_place_it_in_the_basket/entities/01_orange_juice/sam_out/-root-proj-sam_agent_output-libero_object-pick_up_the_orange_juice_and_place_it_in_the_basket-input_first_frame.png/carton.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [],
+    "pred_masks": [],
+    "pred_scores": []
+}

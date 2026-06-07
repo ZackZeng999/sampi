@@ -1,0 +1,20 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_on_the_plate/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_on_the_plate/entities/01_akita_black_bowl/sam_out/-root-proj-sam_agent_output-libero_spatial-pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_on_the_plate-input_first_frame.png/black tray.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [
+        [
+            0.52372807264328,
+            0.4282158613204956,
+            0.4286905527114868,
+            0.3662504553794861
+        ]
+    ],
+    "pred_masks": [
+        "_fi0?^64O2N1O2N1O0O2O00000O100QJVOh5j0WJXOg5S1N1O1O1O1N3NO1POdJ<[5CiJ;W5DkJ:I^OT57UK:FBR54ZK:CCR53\\K9AFR50_Kg0^4YOdKg0[4YOfKg0Y4YOhKg0V4YOmKg0Q4YOPLg0o3YOQLh0m3YOSLi0k3WOVLi0i3VOXLl0f3TO[Ll0c3UO]Ll0b3TO^Lm0a3SO_Lm0`3TOaLj0`3WO_Lh0b3XO^Lh0b3XO^Lg0c3YO\\Lh0d3XO\\Lg0e3ZOZLf0g3YOYLg0h3XOWLh0k3XOTLh0m3WORLi0P4WOnKj0S4UOmKj0T4WOjKj0W4UOhKl0Y4TOeKl0]4TObKl0_4TO_Kl0c4TO[Km0f4SOXKn0i4SOSKn0o4a01O1N2O2N0O102M2O1N101O1N101O1N2N2O1N2N2O1N2M3N2O1O1O1N2O1O1N3N0M5JeX2"
+    ],
+    "pred_scores": [
+        0.55078125
+    ]
+}

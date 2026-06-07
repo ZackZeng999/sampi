@@ -1,0 +1,92 @@
+{
+  "dataset": "libero_object",
+  "task_stem": "pick_up_the_bbq_sauce_and_place_it_in_the_basket",
+  "bddl_path": "/root/proj/openpi/third_party/libero/libero/libero/bddl_files/libero_object/pick_up_the_bbq_sauce_and_place_it_in_the_basket.bddl",
+  "status": "completed",
+  "entities": [
+    {
+      "original_prompt": "bbq sauce",
+      "role": "manipulated_object",
+      "agent_prompts": [
+        "bottle"
+      ],
+      "final_agent_prompt": "bottle",
+      "num_masks": 1,
+      "pred_scores": [
+        0.91015625
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.575145959854126,
+          0.4978700876235962,
+          0.05769383907318115,
+          0.12796294689178467
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          129,
+          112,
+          142,
+          140
+        ]
+      ],
+      "pred_masks_rle": [
+        "nZl0=`64L3I7O100000000001O9F6HTja0"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_bbq_sauce_and_place_it_in_the_basket/entities/01_bbq_sauce/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_bbq_sauce_and_place_it_in_the_basket/entities/01_bbq_sauce/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_bbq_sauce_and_place_it_in_the_basket/entities/01_bbq_sauce/pred.png",
+      "status": "completed"
+    },
+    {
+      "original_prompt": "basket",
+      "role": "destination",
+      "agent_prompts": [
+        "basket"
+      ],
+      "final_agent_prompt": "basket",
+      "num_masks": 1,
+      "pred_scores": [
+        0.89453125
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.08422635495662689,
+          0.4069683253765106,
+          0.23114646971225739,
+          0.22557172179222107
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          19,
+          91,
+          71,
+          142
+        ]
+      ],
+      "pred_masks_rle": [
+        "]X462Lc6=J5K5K6J6J5K3N1O2N001000000000000O10000001O00000000000000000000000000000000000000000000000O1L4N2L5KWcQ1"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_bbq_sauce_and_place_it_in_the_basket/entities/02_basket/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_bbq_sauce_and_place_it_in_the_basket/entities/02_basket/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_bbq_sauce_and_place_it_in_the_basket/entities/02_basket/pred.png",
+      "status": "completed"
+    }
+  ],
+  "task_description": "Pick the bbq sauce and place it in the basket",
+  "video_path": "/root/proj/openpi/data/libero/videos/rollout_pick_up_the_bbq_sauce_and_place_it_in_the_basket_success.mp4",
+  "first_frame_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_bbq_sauce_and_place_it_in_the_basket/input_first_frame.png",
+  "entity_extraction_response": "```json\n{\"entities\": [{\"phrase\": \"bbq sauce\", \"role\": \"manipulated_object\"}, {\"phrase\": \"basket\", \"role\": \"destination\"}]}\n```",
+  "extracted_entities": [
+    {
+      "phrase": "bbq sauce",
+      "role": "manipulated_object"
+    },
+    {
+      "phrase": "basket",
+      "role": "destination"
+    }
+  ]
+}

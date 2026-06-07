@@ -1,0 +1,92 @@
+{
+  "dataset": "libero_10",
+  "task_stem": "KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it",
+  "bddl_path": "/root/proj/openpi/third_party/libero/libero/libero/bddl_files/libero_10/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it.bddl",
+  "status": "completed",
+  "entities": [
+    {
+      "original_prompt": "stove",
+      "role": "destination",
+      "agent_prompts": [
+        "stove"
+      ],
+      "final_agent_prompt": "stove",
+      "num_masks": 1,
+      "pred_scores": [
+        0.73046875
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.09678009897470474,
+          0.5308952331542969,
+          0.27843597531318665,
+          0.1922045350074768
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          22,
+          119,
+          84,
+          162
+        ]
+      ],
+      "pred_masks_rle": [
+        "jn46g64L3L4M3M3N2M3N2N2M3L4O1O101O00O11O0000O100001O000000000000O100000000010O0O10000001N010000000000000000O10001OO2O000O1@a0F:H]`n0"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_10/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it/entities/01_stove/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_10/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it/entities/01_stove/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_10/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it/entities/01_stove/pred.png",
+      "status": "completed"
+    },
+    {
+      "original_prompt": "moka pot",
+      "role": "manipulated_object",
+      "agent_prompts": [
+        "kettle"
+      ],
+      "final_agent_prompt": "kettle",
+      "num_masks": 1,
+      "pred_scores": [
+        0.67578125
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.4336702227592468,
+          0.5438847541809082,
+          0.2605621814727783,
+          0.19835668802261353
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          97,
+          122,
+          156,
+          166
+        ]
+      ],
+      "pred_masks_rle": [
+        "S[e02m62N2N2N2O2M3M8bICj5l0N1N2O001O001O0O1001O0000000O100N3N1O1_OZJGg53f0N200O1000dIGQ68oIIQ67mIKS65kILV64hIMY6<1O1N2O1O2J^IIe663000001O01O001O010O1O0001NQo>"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_10/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it/entities/02_moka_pot/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_10/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it/entities/02_moka_pot/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_10/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it/entities/02_moka_pot/pred.png",
+      "status": "completed"
+    }
+  ],
+  "task_description": "turn on the stove and put the moka pot on it",
+  "video_path": "/root/proj/openpi/data/libero/videos/rollout_turn_on_the_stove_and_put_the_moka_pot_on_it_success.mp4",
+  "first_frame_path": "/root/proj/sam_agent_output/libero_10/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it/input_first_frame.png",
+  "entity_extraction_response": "{\n  \"entities\": [\n    {\n      \"phrase\": \"stove\",\n      \"role\": \"destination\"\n    },\n    {\n      \"phrase\": \"moka pot\",\n      \"role\": \"manipulated_object\"\n    }\n  ]\n}",
+  "extracted_entities": [
+    {
+      "phrase": "stove",
+      "role": "destination"
+    },
+    {
+      "phrase": "moka pot",
+      "role": "manipulated_object"
+    }
+  ]
+}

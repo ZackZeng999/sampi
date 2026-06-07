@@ -1,0 +1,74 @@
+{
+  "dataset": "libero_object",
+  "task_stem": "pick_up_the_cream_cheese_and_place_it_in_the_basket",
+  "bddl_path": "/root/proj/openpi/third_party/libero/libero/libero/bddl_files/libero_object/pick_up_the_cream_cheese_and_place_it_in_the_basket.bddl",
+  "status": "completed",
+  "entities": [
+    {
+      "original_prompt": "cream cheese",
+      "role": "manipulated_object",
+      "agent_prompts": [
+        "yellow box"
+      ],
+      "final_agent_prompt": "yellow box",
+      "num_masks": 0,
+      "pred_scores": [],
+      "pred_boxes_normalized_xywh": [],
+      "pred_boxes_pixel_xyxy": [],
+      "pred_masks_rle": [],
+      "history_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_cream_cheese_and_place_it_in_the_basket/entities/01_cream_cheese/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_cream_cheese_and_place_it_in_the_basket/entities/01_cream_cheese/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_cream_cheese_and_place_it_in_the_basket/entities/01_cream_cheese/pred.png",
+      "status": "completed"
+    },
+    {
+      "original_prompt": "basket",
+      "role": "destination",
+      "agent_prompts": [
+        "basket"
+      ],
+      "final_agent_prompt": "basket",
+      "num_masks": 1,
+      "pred_scores": [
+        0.83984375
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.06553539633750916,
+          0.4042004346847534,
+          0.23772680759429932,
+          0.22358942031860352
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          15,
+          91,
+          68,
+          141
+        ]
+      ],
+      "pred_masks_rle": [
+        "\\\\35i66J7J4K4L5K7I3N3M2N2N100000000000000000000000000000000000000000000000000000000000000000000000O1O1M4L4I9ZOcQR1"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_cream_cheese_and_place_it_in_the_basket/entities/02_basket/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_cream_cheese_and_place_it_in_the_basket/entities/02_basket/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_cream_cheese_and_place_it_in_the_basket/entities/02_basket/pred.png",
+      "status": "completed"
+    }
+  ],
+  "task_description": "Pick the cream cheese and place it in the basket",
+  "video_path": "/root/proj/openpi/data/libero/videos/rollout_pick_up_the_cream_cheese_and_place_it_in_the_basket_success.mp4",
+  "first_frame_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_cream_cheese_and_place_it_in_the_basket/input_first_frame.png",
+  "entity_extraction_response": "```json\n{\"entities\": [{\"phrase\": \"cream cheese\", \"role\": \"manipulated_object\"}, {\"phrase\": \"basket\", \"role\": \"destination\"}]}\n```",
+  "extracted_entities": [
+    {
+      "phrase": "cream cheese",
+      "role": "manipulated_object"
+    },
+    {
+      "phrase": "basket",
+      "role": "destination"
+    }
+  ]
+}

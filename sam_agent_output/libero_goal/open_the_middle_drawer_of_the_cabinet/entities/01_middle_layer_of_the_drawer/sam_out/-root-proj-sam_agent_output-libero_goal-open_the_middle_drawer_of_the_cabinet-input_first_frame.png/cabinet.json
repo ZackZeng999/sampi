@@ -1,0 +1,20 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_goal/open_the_middle_drawer_of_the_cabinet/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_goal/open_the_middle_drawer_of_the_cabinet/entities/01_middle_layer_of_the_drawer/sam_out/-root-proj-sam_agent_output-libero_goal-open_the_middle_drawer_of_the_cabinet-input_first_frame.png/cabinet.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [
+        [
+            0.6710635423660278,
+            0.3585611879825592,
+            0.3341466188430786,
+            0.45851776003837585
+        ]
+    ],
+    "pred_masks": [
+        "nWR16U6M\\J:BJ^50aJL;:EMT55kJI76J0f4;YKB43M7]46bKA0519X4P1hKUOS4R2JWNRLc0k3]OULd0j3\\OWLc0i3[1O00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001O1O1O2M3N2N2MUM"
+    ],
+    "pred_scores": [
+        0.6015625
+    ]
+}

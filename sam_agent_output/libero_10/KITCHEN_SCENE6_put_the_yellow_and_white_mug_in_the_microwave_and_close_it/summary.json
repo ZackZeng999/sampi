@@ -1,0 +1,92 @@
+{
+  "dataset": "libero_10",
+  "task_stem": "KITCHEN_SCENE6_put_the_yellow_and_white_mug_in_the_microwave_and_close_it",
+  "bddl_path": "/root/proj/openpi/third_party/libero/libero/libero/bddl_files/libero_10/KITCHEN_SCENE6_put_the_yellow_and_white_mug_in_the_microwave_and_close_it.bddl",
+  "status": "completed",
+  "entities": [
+    {
+      "original_prompt": "yellow and white mug",
+      "role": "manipulated_object",
+      "agent_prompts": [
+        "yellow and white mug"
+      ],
+      "final_agent_prompt": "yellow and white mug",
+      "num_masks": 1,
+      "pred_scores": [
+        0.70703125
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.4304458498954773,
+          0.5149246454238892,
+          0.18837809562683105,
+          0.16984635591506958
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          96,
+          115,
+          139,
+          153
+        ]
+      ],
+      "pred_masks_rle": [
+        "kZe09e64M6J5L3L3N1N2O001N2O00001O00000O10O2O0O2O0O1O101N2M2O2O1EiIJY63kIKZ60fI0[6OeI1[6OeI1[6OeI1[6OdI2\\690O100N3J8Jo^b0"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_10/KITCHEN_SCENE6_put_the_yellow_and_white_mug_in_the_microwave_and_close_it/entities/01_yellow_and_white_mug/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_10/KITCHEN_SCENE6_put_the_yellow_and_white_mug_in_the_microwave_and_close_it/entities/01_yellow_and_white_mug/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_10/KITCHEN_SCENE6_put_the_yellow_and_white_mug_in_the_microwave_and_close_it/entities/01_yellow_and_white_mug/pred.png",
+      "status": "completed"
+    },
+    {
+      "original_prompt": "microwave",
+      "role": "destination",
+      "agent_prompts": [
+        "appliance"
+      ],
+      "final_agent_prompt": "appliance",
+      "num_masks": 1,
+      "pred_scores": [
+        0.50390625
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          -0.002232089638710022,
+          -0.0026723446790128946,
+          0.14550288021564484,
+          0.0792851597070694
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          0,
+          -1,
+          32,
+          17
+        ]
+      ],
+      "pred_masks_rle": [
+        "0a07Fj5;UJBn5>RJAo5?QJAo5?QJ@P6?QJAo5?QJ@P6`08000kI@j5`0;0000001O000000O1000000001O00O11OO1000000@bI128\\VZ1"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_10/KITCHEN_SCENE6_put_the_yellow_and_white_mug_in_the_microwave_and_close_it/entities/02_microwave/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_10/KITCHEN_SCENE6_put_the_yellow_and_white_mug_in_the_microwave_and_close_it/entities/02_microwave/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_10/KITCHEN_SCENE6_put_the_yellow_and_white_mug_in_the_microwave_and_close_it/entities/02_microwave/pred.png",
+      "status": "completed"
+    }
+  ],
+  "task_description": "put the yellow and white mug in the microwave and close it",
+  "video_path": "/root/proj/openpi/data/libero/videos/rollout_put_the_yellow_and_white_mug_in_the_microwave_and_close_it_success.mp4",
+  "first_frame_path": "/root/proj/sam_agent_output/libero_10/KITCHEN_SCENE6_put_the_yellow_and_white_mug_in_the_microwave_and_close_it/input_first_frame.png",
+  "entity_extraction_response": "{\n  \"entities\": [\n    {\n      \"phrase\": \"yellow and white mug\",\n      \"role\": \"manipulated_object\"\n    },\n    {\n      \"phrase\": \"microwave\",\n      \"role\": \"destination\"\n    }\n  ]\n}",
+  "extracted_entities": [
+    {
+      "phrase": "yellow and white mug",
+      "role": "manipulated_object"
+    },
+    {
+      "phrase": "microwave",
+      "role": "destination"
+    }
+  ]
+}

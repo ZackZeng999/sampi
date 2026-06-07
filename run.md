@@ -59,6 +59,9 @@ The current implementation uses these environments:
 ## Terminal 1: Start SAM3 Server
 
 ```bash
+unset HTTP_PROXY HTTPS_PROXY ALL_PROXY http_proxy https_proxy all_proxy
+export NO_PROXY=localhost,127.0.0.1,0.0.0.0
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 cd /root/proj/sam3
 conda activate sam3
 python openpi_sam_dim_server.py --checkpoint-path /root/autodl-tmp/sam3_model/sam3.pt

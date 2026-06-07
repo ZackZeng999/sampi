@@ -1,0 +1,21 @@
+{
+  "original_image_path": "/root/proj/sam_agent_output/libero_goal/push_the_plate_to_the_front_of_the_stove/input_first_frame.png",
+  "orig_img_h": 224,
+  "orig_img_w": 224,
+  "pred_boxes": [
+    [
+      0.15963582694530487,
+      0.38910242915153503,
+      0.22747056186199188,
+      0.14433881640434265
+    ]
+  ],
+  "pred_scores": [
+    0.71484375
+  ],
+  "pred_masks": [
+    "^o79d63N2M3N2N2M3N2N2O1O100O10000000000000000000000001O00000000001OO10000000000O100O1000000001O000N2J7G<C\\lm0"
+  ],
+  "original_prompt": "stove",
+  "role": "destination"
+}

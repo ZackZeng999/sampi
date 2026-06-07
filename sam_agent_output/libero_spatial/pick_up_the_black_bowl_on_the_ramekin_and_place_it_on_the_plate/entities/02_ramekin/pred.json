@@ -1,0 +1,37 @@
+{
+  "original_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_plate/input_first_frame.png",
+  "orig_img_h": 224,
+  "orig_img_w": 224,
+  "pred_boxes": [
+    [
+      0.20825646817684174,
+      0.3962424099445343,
+      0.12378548085689545,
+      0.14730510115623474
+    ],
+    [
+      0.3659658133983612,
+      0.6156244277954102,
+      0.14996150135993958,
+      0.12549817562103271
+    ],
+    [
+      0.5443071722984314,
+      0.3914812207221985,
+      0.15749311447143555,
+      0.14215171337127686
+    ]
+  ],
+  "pred_scores": [
+    0.62890625,
+    0.58984375,
+    0.54296875
+  ],
+  "pred_masks": [
+    "Q\\:7g64M3M2N3N4K4M1N2N101O001O000000O101O001N101N2N2N3CfIO]6L[gP1",
+    "dRb05h65M3M3M2N3M2O1O1N100000001N1000000000000001O0O101N101N1O2M3M3N2Mafg0",
+    "ihj0c03AR6k0L1O00000000000000000001O0000000000000000000000O11OO100000O1N3I6I7G`b>"
+  ],
+  "original_prompt": "ramekin",
+  "role": "source"
+}

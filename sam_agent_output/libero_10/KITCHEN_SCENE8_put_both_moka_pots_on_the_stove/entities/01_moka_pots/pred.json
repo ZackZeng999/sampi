@@ -1,0 +1,29 @@
+{
+  "original_image_path": "/root/proj/sam_agent_output/libero_10/KITCHEN_SCENE8_put_both_moka_pots_on_the_stove/input_first_frame.png",
+  "orig_img_h": 224,
+  "orig_img_w": 224,
+  "pred_boxes": [
+    [
+      0.09380332380533218,
+      0.4712780714035034,
+      0.1843222975730896,
+      0.19485175609588623
+    ],
+    [
+      0.36047521233558655,
+      0.552192211151123,
+      0.20067080855369568,
+      0.20629620552062988
+    ]
+  ],
+  "pred_scores": [
+    0.77734375,
+    0.73046875
+  ],
+  "pred_masks": [
+    "bf42m63M3M2N3N1N2O2M8I7H4M1N2O1O1O00001O000001O0O2O001N101N1UO\\J:e5D^J8d5H^J5c5KdJK_54WJKU65iIOU62gI1Y6:2O0O2M3L4M_ZS1",
+    "Uka03l62O2M2N2N3M3Mb0_O3L2O1O0O2O1O000O10000001O00001O000O2O1N1O2N1VO[JMOMi55YJKS64mIMS63mILT64kIMU62jIOW61gI1Y60dI1^680N2O2M3N2M4MiYe0"
+  ],
+  "original_prompt": "moka pots",
+  "role": "manipulated_object"
+}

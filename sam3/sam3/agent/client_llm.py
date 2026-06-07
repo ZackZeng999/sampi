@@ -39,6 +39,7 @@ def send_generate_request(
     model="meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
     api_key=None,
     max_tokens=4096,
+    enable_thinking=None,
 ):
     """
     Sends a request to the OpenAI-compatible API endpoint using the OpenAI client library.
@@ -48,6 +49,7 @@ def send_generate_request(
         messages (list): A list of message dicts, each containing role and content.
         model (str): The model to use for generation (default: "llama-4")
         max_tokens (int): Maximum number of tokens to generate (default: 4096)
+        enable_thinking (bool | None): Optional provider-specific thinking mode.
 
     Returns:
         str: The generated response text from the server.
@@ -107,17 +109,27 @@ def send_generate_request(
 
     try:
         print(f"🔍 Calling model {model}...")
-        response = client.chat.completions.create(
+        request_kwargs = dict(
             model=model,
             messages=processed_messages,
             max_completion_tokens=max_tokens,
             n=1,
         )
+        if enable_thinking is not None:
+            request_kwargs["extra_body"] = {"enable_thinking": enable_thinking}
+        response = client.chat.completions.create(**request_kwargs)
         # print(f"Received response: {response.choices[0].message}")
 
         # Extract the response content
         if response.choices and len(response.choices) > 0:
-            return response.choices[0].message.content
+            choice = response.choices[0]
+            content = choice.message.content
+            if not content:
+                print(
+                    "Model returned no response content: "
+                    f"finish_reason={choice.finish_reason}, usage={response.usage}"
+                )
+            return content
         else:
             print(f"Unexpected response format: {response}")
             return None

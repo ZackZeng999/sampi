@@ -1,0 +1,145 @@
+{
+  "dataset": "libero_spatial",
+  "task_stem": "pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_plate",
+  "bddl_path": "/root/proj/openpi/third_party/libero/libero/libero/bddl_files/libero_spatial/pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_plate.bddl",
+  "status": "completed",
+  "entities": [
+    {
+      "original_prompt": "akita black bowl",
+      "role": "manipulated_object",
+      "agent_prompts": [
+        "black box"
+      ],
+      "final_agent_prompt": "black box",
+      "num_masks": 1,
+      "pred_scores": [
+        0.640625
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.6772478818893433,
+          0.3339141607284546,
+          0.3270453214645386,
+          0.49868011474609375
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          152,
+          75,
+          225,
+          187
+        ]
+      ],
+      "pred_masks_rle": [
+        "Q\\Q18a69F9H8G9D<N3N5K2M2O1O1N3N1O1O1N3N1O1O1N2O000O101O1N2O2N1O1N2O1O1O2M2O1O2N1N2O1OkLcLh2\\3WMfLh2Y3XMjLf2V3YMlLf2T3YMnLf2Q3[MRMa2o2_MTM^2l2aMVM]2k2cMVM\\2i2eMXMZ2h2fMYMX2h2hMYMW2g2iMYMV2i2iMXMV2h2jMYMU2h2jMXMU2j300O100O100O010O01000O010O010O2MgL"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_plate/entities/01_akita_black_bowl/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_plate/entities/01_akita_black_bowl/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_plate/entities/01_akita_black_bowl/pred.png",
+      "status": "completed"
+    },
+    {
+      "original_prompt": "cookies box",
+      "role": "source_location",
+      "agent_prompts": [
+        "black box"
+      ],
+      "final_agent_prompt": "black box",
+      "num_masks": 1,
+      "pred_scores": [
+        0.640625
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.6772478818893433,
+          0.3339141607284546,
+          0.3270453214645386,
+          0.49868011474609375
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          152,
+          75,
+          225,
+          187
+        ]
+      ],
+      "pred_masks_rle": [
+        "Q\\Q18a69F9H8G9D<N3N5K2M2O1O1N3N1O1O1N3N1O1O1N2O000O101O1N2O2N1O1N2O1O1O2M2O1O2N1N2O1OkLcLh2\\3WMfLh2Y3XMjLf2V3YMlLf2T3YMnLf2Q3[MRMa2o2_MTM^2l2aMVM]2k2cMVM\\2i2eMXMZ2h2fMYMX2h2hMYMW2g2iMYMV2i2iMXMV2h2jMYMU2h2jMXMU2j300O100O100O010O01000O010O010O2MgL"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_plate/entities/02_cookies_box/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_plate/entities/02_cookies_box/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_plate/entities/02_cookies_box/pred.png",
+      "status": "completed"
+    },
+    {
+      "original_prompt": "plate",
+      "role": "destination",
+      "agent_prompts": [
+        "circle"
+      ],
+      "final_agent_prompt": "circle",
+      "num_masks": 2,
+      "pred_scores": [
+        0.7890625,
+        0.77734375
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.38561898469924927,
+          0.6218065023422241,
+          0.1636229157447815,
+          0.1259860396385193
+        ],
+        [
+          0.14676430821418762,
+          0.6587530374526978,
+          0.19139224290847778,
+          0.1526498794555664
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          86,
+          139,
+          123,
+          168
+        ],
+        [
+          33,
+          148,
+          76,
+          182
+        ]
+      ],
+      "pred_masks_rle": [
+        "eUc08f64L4M2N3N1N101N10001N1000000000000000000000O10001O001O0O2O0O2M3N3M3M3K\\ne0",
+        "R\\79e64L4M2N1O2O1N1O2O0O101N2O0O100O100O1000000000000000O101O0O100O2O0O101N2O1N1O3L3M3N2MTWP1"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_plate/entities/03_plate/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_plate/entities/03_plate/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_plate/entities/03_plate/pred.png",
+      "status": "completed"
+    }
+  ],
+  "task_description": "Pick the akita black bowl on the cookies box and place it on the plate",
+  "video_path": "/root/proj/openpi/data/libero/videos/rollout_pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_plate_success.mp4",
+  "first_frame_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_plate/input_first_frame.png",
+  "entity_extraction_response": "{\n  \"entities\": [\n    {\n      \"phrase\": \"akita black bowl\",\n      \"role\": \"manipulated_object\"\n    },\n    {\n      \"phrase\": \"cookies box\",\n      \"role\": \"source_location\"\n    },\n    {\n      \"phrase\": \"plate\",\n      \"role\": \"destination\"\n    }\n  ]\n}",
+  "extracted_entities": [
+    {
+      "phrase": "akita black bowl",
+      "role": "manipulated_object"
+    },
+    {
+      "phrase": "cookies box",
+      "role": "source_location"
+    },
+    {
+      "phrase": "plate",
+      "role": "destination"
+    }
+  ]
+}

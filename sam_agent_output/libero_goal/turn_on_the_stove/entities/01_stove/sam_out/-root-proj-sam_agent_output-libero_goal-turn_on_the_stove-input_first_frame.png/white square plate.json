@@ -1,0 +1,9 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_goal/turn_on_the_stove/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_goal/turn_on_the_stove/entities/01_stove/sam_out/-root-proj-sam_agent_output-libero_goal-turn_on_the_stove-input_first_frame.png/white square plate.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [],
+    "pred_masks": [],
+    "pred_scores": []
+}

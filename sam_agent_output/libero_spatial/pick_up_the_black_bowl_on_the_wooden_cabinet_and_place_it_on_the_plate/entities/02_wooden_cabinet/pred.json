@@ -1,0 +1,21 @@
+{
+  "original_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate/input_first_frame.png",
+  "orig_img_h": 224,
+  "orig_img_w": 224,
+  "pred_boxes": [
+    [
+      0.6782028675079346,
+      0.33275657892227173,
+      0.32657957077026367,
+      0.5019948482513428
+    ]
+  ],
+  "pred_scores": [
+    0.7265625
+  ],
+  "pred_masks": [
+    "S\\Q16c68I8E:I7G9G:jJXNP5n1M3N1O1O1N3N1O1O1N2O1O2M2O001O0O101O1N102N1O1N3N1O1O1NWMYL\\2f3bM^L]2a3cMaL]2]3bMeL^2Y3bMjL]2U3cMlL^2R3aMQM]2n2dMTM[2k2dMWM[2i2eMXMY2h2hMYMW2g2iMZMU2g2kMZMT2f2lM[MS2d2nM\\MQ2e2oM\\MP2d2PN\\Mo1e2QN[Mo1f2PNZMo1g2QNYMo1g2QNYMo1h2PNXMo1j2PNVMP2k2oMUMP2l2PNTMP2m2PNQMQ2o2oMQMP2Q3oMoLQ2R3nMnLQ2P410O010OO2O10O101NeL"
+  ],
+  "original_prompt": "wooden cabinet",
+  "role": "source_location"
+}

@@ -1,0 +1,79 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_plate/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_plate/entities/01_akita_black_bowl/sam_out/-root-proj-sam_agent_output-libero_spatial-pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_plate-input_first_frame.png/small object.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [
+        [
+            0.2082977443933487,
+            0.396016925573349,
+            0.12360136210918427,
+            0.1475904881954193
+        ],
+        [
+            0.3660661578178406,
+            0.6161406636238098,
+            0.1499374508857727,
+            0.12460505962371826
+        ],
+        [
+            0.15055611729621887,
+            0.658910870552063,
+            0.19873586297035217,
+            0.15744256973266602
+        ],
+        [
+            0.5442320704460144,
+            0.3919357657432556,
+            0.15721136331558228,
+            0.14266401529312134
+        ],
+        [
+            0.39689531922340393,
+            0.7302473187446594,
+            0.09484592080116272,
+            0.050198495388031006
+        ],
+        [
+            0.5881630182266235,
+            0.322975754737854,
+            0.08945578336715698,
+            0.0743580162525177
+        ],
+        [
+            0.3464682400226593,
+            0.21930091083049774,
+            0.30739280581474304,
+            0.12429441511631012
+        ]
+    ],
+    "pred_masks": [
+        "Q\\:7g64M2N3N2M5K3N2M2O0O2O00001O0000O2O00001N2O0O2N2N3CgIN\\6M[gP1",
+        "dRb05i64L4M3M2N3N1N2O1N100000001N1000000000000001N10001N101N1O2M3M3N2Lbfg0",
+        "Tc79d65L3N2N2N1O2N2N1O2N101O0O100O10000O2O00O100000000000000O2O000O2O1N1O2O0O2N2N2N2N2N3L3MRio0",
+        "ihj0b04BQ6k0L001O00000000000000000001O00000000001O00O1000O11O0O1000O101M2J6I7I^b>",
+        "Udc08h61O1O000001O0000000000000O010000O1000O1Omhh0",
+        "anl06h63O0O100O2L3N2000000002N3M1N101O001O2Kae?",
+        "lSa08f64M2N2N2O3L1N2O1O1O2O0000000002N2[OiI=^6O001O1O1O001O1O00001O00000000000000000000O10000O10000O1O1O1O1HBnI>P6GlI:T6900O10000001O002M2N2L4O001O1N2N3LVPa0"
+    ],
+    "pred_scores": [
+        0.88671875,
+        0.80859375,
+        0.77734375,
+        0.76953125,
+        0.765625,
+        0.56640625,
+        0.515625
+    ],
+    "kept_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+    ],
+    "removed_indices": [],
+    "iom_threshold": 0.3
+}

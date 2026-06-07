@@ -1,0 +1,168 @@
+suite,task_index,task,prompt_group_id,source_episode_index,first_frame_mask_success,prompt_count,prompts,mask_pixels_first_frame
+10,0,put the white mug on the left plate and put the yellow and white mug on the right plate,0,88,2,4,white mug | left plate | yellow and white mug | right plate,0 | 919 | 0 | 966
+10,0,put the white mug on the left plate and put the yellow and white mug on the right plate,1,190,2,4,white mug | left plate | yellow and white mug | right plate,0 | 885 | 0 | 1143
+10,0,put the white mug on the left plate and put the yellow and white mug on the right plate,2,233,3,4,white mug | left plate | yellow and white mug | right plate,0 | 1114 | 1743 | 762
+10,0,put the white mug on the left plate and put the yellow and white mug on the right plate,3,343,4,4,white mug | left plate | yellow and white mug | right plate,1686 | 822 | 1775 | 872
+10,1,put the white mug on the plate and put the chocolate pudding to the right of the plate,0,62,4,4,white mug | plate | small brown box | table surface,1579 | 2360 | 523 | 40992
+10,1,put the white mug on the plate and put the chocolate pudding to the right of the plate,1,168,4,4,white mug | plate | brown rectangular box | wooden table surface,1611 | 2615 | 530 | 40843
+10,1,put the white mug on the plate and put the chocolate pudding to the right of the plate,2,242,4,4,white mug | plate | small box | table surface,1564 | 2544 | 460 | 40899
+10,1,put the white mug on the plate and put the chocolate pudding to the right of the plate,3,325,4,4,white mug | plate | small rectangular object | table surface,1535 | 2513 | 483 | 40989
+10,2,put the yellow and white mug in the microwave and close it,0,84,2,2,black microwave door | yellow and white mug,3775 | 1368
+10,2,put the yellow and white mug in the microwave and close it,1,164,2,3,microwave door | yellow and white mug | kitchen microwave appliance,3551 | 1343 | 0
+10,2,put the yellow and white mug in the microwave and close it,2,324,2,2,microwave door | yellow and white mug,3553 | 1311
+10,2,put the yellow and white mug in the microwave and close it,3,342,2,2,microwave door | yellow and white mug,3723 | 1286
+10,3,turn on the stove and put the moka pot on it,0,72,4,4,black stove knob | stove | metal coffee maker | stove burner,427 | 3262 | 1573 | 895
+10,3,turn on the stove and put the moka pot on it,1,134,2,4,stove knob | stove burner | metallic coffee maker | stove,0 | 905 | 0 | 3268
+10,3,turn on the stove and put the moka pot on it,2,240,3,4,black knob | metallic coffee maker | stove top | stove,477 | 0 | 2851 | 2852
+10,3,turn on the stove and put the moka pot on it,3,287,3,4,black stove knob | stove | coffee pot | stove top,438 | 2919 | 0 | 2871
+10,3,turn on the stove and put the moka pot on it,4,361,4,4,black knob | stove burner | silver coffee pot | stove,478 | 925 | 1475 | 2911
+10,4,put both the alphabet soup and the cream cheese box in the basket,0,83,3,3,cylindrical can | small blue box | basket,2440 | 282 | 4660
+10,4,put both the alphabet soup and the cream cheese box in the basket,1,148,3,3,blue alphabet soup can | small blue box | woven basket,1128 | 284 | 2497
+10,4,put both the alphabet soup and the cream cheese box in the basket,2,237,3,3,cylindrical can | small blue box | basket,2345 | 267 | 4886
+10,4,put both the alphabet soup and the cream cheese box in the basket,3,297,2,3,soup can | blue box | basket,2465 | 0 | 4334
+10,4,put both the alphabet soup and the cream cheese box in the basket,4,318,3,3,metallic can | small rectangular box | basket,2526 | 274 | 4865
+10,5,put both the alphabet soup and the tomato sauce in the basket,0,69,2,3,alphabet soup can | tomato sauce can | woven basket,0 | 785 | 3806
+10,5,put both the alphabet soup and the tomato sauce in the basket,1,118,1,2,red tomato sauce can | woven basket,0 | 4120
+10,5,put both the alphabet soup and the tomato sauce in the basket,2,241,3,3,soup can | small can | basket,1482 | 1483 | 4538
+10,5,put both the alphabet soup and the tomato sauce in the basket,3,363,3,3,alphabet soup can | tall red tomato sauce bottle | woven basket,790 | 667 | 2658
+10,6,put both moka pots on the stove,0,54,3,3,left moka pot | silver base moka pot | black stove burner,1317 | 2698 | 911
+10,6,put both moka pots on the stove,1,187,3,3,left moka pot | metallic coffee maker | stove,1258 | 2641 | 2875
+10,6,put both moka pots on the stove,2,376,2,2,metallic coffee maker | stove burner,2664 | 933
+10,7,put both the cream cheese box and the butter in the basket,0,17,3,3,juice box | woven basket | blue butter package,3247 | 3612 | 649
+10,7,put both the cream cheese box and the butter in the basket,1,119,2,3,carton | basket | silver packet,3376 | 4826 | 0
+10,7,put both the cream cheese box and the butter in the basket,2,232,3,3,cream cheese carton | rectangular butter package | basket,2797 | 2443 | 4373
+10,7,put both the cream cheese box and the butter in the basket,3,310,3,3,rectangular box | butter package | basket,3486 | 2453 | 4823
+10,7,put both the cream cheese box and the butter in the basket,4,335,2,2,butter package | woven basket,2388 | 4399
+10,8,put the black bowl in the bottom drawer of the cabinet and close it,0,90,3,3,bottom drawer | silver bowl | bottom drawer interior,4400 | 918 | 3356
+10,8,put the black bowl in the bottom drawer of the cabinet and close it,1,189,4,5,silver bowl | bottom drawer | drawer handle | bottom drawer interior | drawer front,874 | 4408 | 564 | 0 | 4088
+10,8,put the black bowl in the bottom drawer of the cabinet and close it,2,319,3,4,bottom drawer | drawer handle | metallic bowl | bottom drawer interior,4361 | 578 | 941 | 0
+10,8,put the black bowl in the bottom drawer of the cabinet and close it,3,377,4,4,bottom drawer | cabinet | silver bowl | bottom drawer interior,4280 | 10117 | 888 | 3252
+10,9,pick up the book and place it in the back compartment of the caddy,0,61,2,3,black rectangular object | back brown divider space | brown organizer,0 | 7924 | 7942
+10,9,pick up the book and place it in the back compartment of the caddy,1,111,2,2,black book | desk organizer,1210 | 7942
+10,9,pick up the book and place it in the back compartment of the caddy,2,279,3,3,black book | deepest part of brown desk organizer | brown desk organizer,1149 | 7829 | 7823
+10,9,pick up the book and place it in the back compartment of the caddy,3,298,2,2,black book | brown organizer,664 | 7846
+10,9,pick up the book and place it in the back compartment of the caddy,4,374,2,2,black book | brown desk organizer,1015 | 7786
+goal,10,put the bowl on the plate,0,448,2,2,small metal bowl | round plate with pink rim,708 | 1239
+goal,10,put the bowl on the plate,1,481,2,2,bowl | plate,718 | 1224
+goal,10,put the bowl on the plate,2,634,2,2,gray bowl | white plate,705 | 1196
+goal,10,put the bowl on the plate,3,708,2,2,round metal bowl | white plate,695 | 1239
+goal,10,put the bowl on the plate,4,770,2,2,small bowl | large plate,707 | 1266
+goal,11,put the wine bottle on the rack,0,407,2,2,dark bottle | wood structure,353 | 3059
+goal,11,put the wine bottle on the rack,1,542,2,2,wine bottle | slatted wood object,361 | 3141
+goal,11,put the wine bottle on the rack,2,623,2,2,wine bottle | slatted wooden rack,326 | 3022
+goal,11,put the wine bottle on the rack,3,719,2,2,dark bottle | slatted wood object,332 | 3052
+goal,12,open the top drawer and put the bowl inside,0,489,3,3,black cabinet | top drawer handle | silver bowl,8278 | 208 | 713
+goal,12,open the top drawer and put the bowl inside,1,526,2,3,drawer face | drawer handle | bowl,0 | 554 | 710
+goal,12,open the top drawer and put the bowl inside,2,627,3,3,black cabinet top drawer | drawer handle | bowl,4023 | 538 | 685
+goal,12,open the top drawer and put the bowl inside,3,758,3,3,dark rectangular object | drawer handle | bowl,8856 | 562 | 684
+goal,13,put the cream cheese in the bowl,0,491,2,2,small blue package | metallic bowl,306 | 714
+goal,13,put the cream cheese in the bowl,1,564,2,2,round black object | grey bowl,606 | 707
+goal,13,put the cream cheese in the bowl,2,610,2,2,round black object | silver bowl,614 | 699
+goal,13,put the cream cheese in the bowl,3,730,1,1,silver bowl,704
+goal,14,put the wine bottle on top of the cabinet,0,417,3,3,wine bottle | cabinet top surface | cabinet,350 | 3773 | 8092
+goal,14,put the wine bottle on top of the cabinet,1,480,3,3,green wine bottle | cabinet top | cabinet,340 | 3736 | 8079
+goal,14,put the wine bottle on top of the cabinet,2,555,3,3,wine bottle | cabinet top surface | cabinet,347 | 3801 | 8264
+goal,14,put the wine bottle on top of the cabinet,3,591,1,2,wine bottle | cabinet top,359 | 0
+goal,14,put the wine bottle on top of the cabinet,4,697,1,3,wine bottle | cabinet top | cabinet,356 | 0 | 0
+goal,15,push the plate to the front of the stove,0,472,3,3,plate | stove | front of stove,1235 | 1914 | 1654
+goal,15,push the plate to the front of the stove,1,589,2,2,white plate | wooden surface near oven,1229 | 27564
+goal,15,push the plate to the front of the stove,2,685,2,3,plate | stove | front of stove,1223 | 1857 | 0
+goal,15,push the plate to the front of the stove,3,781,3,3,white plate | black object | wooden table surface,1223 | 2207 | 27762
+goal,16,turn on the stove,0,435,1,1,white electric stove,1894
+goal,16,turn on the stove,1,531,1,2,stove | black knob,1936 | 0
+goal,16,turn on the stove,2,578,1,1,single burner stove,1879
+goal,16,turn on the stove,3,728,2,2,black object | stove,2271 | 1922
+goal,16,turn on the stove,4,799,1,2,cooking device | black knob,8705 | 0
+goal,17,put the bowl on the stove,0,500,2,2,bowl | stove,707 | 1909
+goal,17,put the bowl on the stove,1,550,2,2,round metal bowl | black stove burner,716 | 609
+goal,17,put the bowl on the stove,2,643,2,2,bowl | stove,727 | 1905
+goal,17,put the bowl on the stove,3,688,2,2,round metal bowl | black stove burner,698 | 600
+goal,17,put the bowl on the stove,4,804,2,2,round bowl | square stove,709 | 1934
+goal,18,put the bowl on top of the cabinet,0,452,2,3,metallic bowl | wooden cabinet top | wooden cabinet,695 | 0 | 8724
+goal,18,put the bowl on top of the cabinet,1,608,3,3,bowl | cabinet | cabinet top surface,705 | 8672 | 4039
+goal,18,put the bowl on top of the cabinet,2,660,3,3,bowl | cabinet | cabinet top surface,705 | 8275 | 3820
+goal,18,put the bowl on top of the cabinet,3,706,2,2,bowl | cabinet top surface,706 | 3979
+goal,18,put the bowl on top of the cabinet,4,767,3,3,bowl | cabinet top | cabinet,687 | 3775 | 8153
+goal,19,open the middle drawer of the cabinet,0,421,2,2,cabinet | drawer handle,8643 | 525
+goal,19,open the middle drawer of the cabinet,1,516,2,2,cabinet | drawer handle,8133 | 548
+goal,19,open the middle drawer of the cabinet,2,577,2,2,cabinet | cabinet handle,8280 | 529
+goal,19,open the middle drawer of the cabinet,3,779,1,2,middle drawer handle | cabinet,0 | 8412
+goal,19,open the middle drawer of the cabinet,4,802,1,1,drawer handle,555
+object,20,pick up the orange juice and place it in the basket,0,837,2,2,orange juice bottle | woven basket,1169 | 3019
+object,20,pick up the orange juice and place it in the basket,1,1044,2,2,orange juice | basket,684 | 3037
+object,20,pick up the orange juice and place it in the basket,2,1049,2,2,orange juice | basket,684 | 3044
+object,20,pick up the orange juice and place it in the basket,3,1146,2,2,orange juice | basket,684 | 3110
+object,20,pick up the orange juice and place it in the basket,4,1200,2,2,orange juice | basket,684 | 2979
+object,21,pick up the ketchup and place it in the basket,0,815,2,2,green bottle | woven basket,446 | 2639
+object,21,pick up the ketchup and place it in the basket,1,924,2,2,green bottle | woven basket,447 | 2974
+object,21,pick up the ketchup and place it in the basket,2,1010,1,2,red bottle | woven basket,0 | 2963
+object,21,pick up the ketchup and place it in the basket,3,1150,2,2,bottle | woven basket,1355 | 2210
+object,21,pick up the ketchup and place it in the basket,4,1255,2,2,green bottle | woven basket,447 | 2741
+object,23,pick up the bbq sauce and place it in the basket,0,867,2,2,condiment bottle | woven basket,1521 | 2641
+object,23,pick up the bbq sauce and place it in the basket,1,943,2,2,bottle | woven basket,1522 | 2120
+object,23,pick up the bbq sauce and place it in the basket,2,1077,2,2,sauce bottle | woven basket,1519 | 2579
+object,23,pick up the bbq sauce and place it in the basket,3,1135,2,2,sauce bottle | woven basket,1505 | 1789
+object,23,pick up the bbq sauce and place it in the basket,4,1231,2,2,blue can | woven basket,650 | 2967
+object,24,pick up the alphabet soup and place it in the basket,0,887,2,2,metallic can | woven basket,631 | 2987
+object,24,pick up the alphabet soup and place it in the basket,1,984,2,2,cylindrical can | woven basket,1010 | 1797
+object,24,pick up the alphabet soup and place it in the basket,2,1143,2,2,cylindrical can | woven basket,1012 | 1666
+object,24,pick up the alphabet soup and place it in the basket,3,1171,2,2,can | woven basket,1008 | 1897
+object,24,pick up the alphabet soup and place it in the basket,4,1245,2,2,cylindrical soup can | woven basket,632 | 2617
+object,25,pick up the milk and place it in the basket,0,901,2,2,red milk carton | woven basket,594 | 3016
+object,25,pick up the milk and place it in the basket,1,957,2,2,red milk carton | woven basket,581 | 2005
+object,25,pick up the milk and place it in the basket,2,1023,2,2,red milk carton | woven basket,591 | 3000
+object,25,pick up the milk and place it in the basket,3,1134,2,2,red milk carton | woven basket,589 | 2386
+object,25,pick up the milk and place it in the basket,4,1248,2,2,red milk carton | woven basket,577 | 2886
+object,26,pick up the salad dressing and place it in the basket,0,822,2,2,tall bottle | basket,1117 | 3078
+object,26,pick up the salad dressing and place it in the basket,1,976,2,2,brown bottle | woven basket,527 | 2906
+object,26,pick up the salad dressing and place it in the basket,2,1071,2,2,dressing bottle | woven basket,1118 | 3046
+object,26,pick up the salad dressing and place it in the basket,3,1164,2,2,orange bottle | woven basket,526 | 2926
+object,26,pick up the salad dressing and place it in the basket,4,1252,1,2,salad dressing bottle | woven basket,0 | 1830
+spatial,30,pick up the black bowl next to the cookie box and place it on the plate,0,1291,2,2,metallic bowl | plate,2172 | 1235
+spatial,30,pick up the black bowl next to the cookie box and place it on the plate,1,1338,3,3,metallic bowl | small rectangular box | plate,2113 | 561 | 1313
+spatial,30,pick up the black bowl next to the cookie box and place it on the plate,2,1421,2,3,metallic bowl | small box | plate,2073 | 0 | 1242
+spatial,30,pick up the black bowl next to the cookie box and place it on the plate,3,1575,3,3,metallic bowl | brown object | plate,2201 | 8767 | 1240
+spatial,30,pick up the black bowl next to the cookie box and place it on the plate,4,1613,3,3,metallic bowl | small box | plate,2172 | 555 | 1307
+spatial,31,pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate,0,1276,4,4,dark object | handle | metallic bowl | plate,10638 | 288 | 2770 | 1301
+spatial,31,pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate,1,1420,2,3,handle | metallic bowl | white plate,287 | 2507 | 0
+spatial,31,pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate,2,1474,3,3,drawer handle | metallic bowl | white plate,286 | 2514 | 1263
+spatial,31,pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate,3,1620,2,2,metallic bowl | plate,2807 | 1279
+spatial,31,pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate,4,1687,3,3,brown furniture | metallic bowl | plate,8261 | 2672 | 1339
+spatial,32,pick up the black bowl on the ramekin and place it on the plate,0,1264,3,3,metallic bowl | silver container | plate,1039 | 1964 | 1247
+spatial,32,pick up the black bowl on the ramekin and place it on the plate,1,1433,1,3,small metal cup | wooden coaster | plate,0 | 0 | 1268
+spatial,32,pick up the black bowl on the ramekin and place it on the plate,2,1524,2,3,silver bowl | wooden coaster | white plate,1942 | 0 | 1285
+spatial,32,pick up the black bowl on the ramekin and place it on the plate,3,1647,1,3,silver bowl | wooden base | plate,0 | 0 | 1299
+spatial,33,pick up the black bowl on the stove and place it on the plate,0,1267,3,3,small metal bowl | stove | plate,1986 | 1123 | 1249
+spatial,33,pick up the black bowl on the stove and place it on the plate,1,1538,3,3,small metal bowl | stove | plate,2002 | 836 | 1301
+spatial,33,pick up the black bowl on the stove and place it on the plate,2,1636,3,3,small metal bowl | stove | plate,1765 | 1190 | 1299
+spatial,33,pick up the black bowl on the stove and place it on the plate,3,1691,2,3,metallic bowl | stove | plate,1836 | 0 | 1289
+spatial,34,pick up the black bowl between the plate and the ramekin and place it on the plate,0,1273,3,3,small metal bowl | plate | small metal container,1815 | 1284 | 1819
+spatial,34,pick up the black bowl between the plate and the ramekin and place it on the plate,1,1368,3,3,small metal bowl | white plate | small metal container,1783 | 1329 | 1784
+spatial,34,pick up the black bowl between the plate and the ramekin and place it on the plate,2,1493,3,3,bowl | plate | small cup,1837 | 1320 | 466
+spatial,34,pick up the black bowl between the plate and the ramekin and place it on the plate,3,1579,3,3,bowl | plate | small metal container,1828 | 1304 | 1827
+spatial,34,pick up the black bowl between the plate and the ramekin and place it on the plate,4,1679,2,3,small metal bowl | white plate | shiny bowl,1834 | 1364 | 0
+spatial,35,pick up the black bowl on the cookie box and place it on the plate,0,1367,2,2,metallic bowl | plate,2152 | 1317
+spatial,35,pick up the black bowl on the cookie box and place it on the plate,1,1386,2,2,metallic bowl | plate,2558 | 1289
+spatial,35,pick up the black bowl on the cookie box and place it on the plate,2,1554,3,3,small metal bowl | black object | plate,2534 | 8973 | 1298
+spatial,35,pick up the black bowl on the cookie box and place it on the plate,3,1592,2,2,metallic bowl | plate,2718 | 1263
+spatial,35,pick up the black bowl on the cookie box and place it on the plate,4,1662,2,2,metallic bowl | plate,2438 | 1322
+spatial,36,pick up the black bowl next to the plate and place it on the plate,0,1285,2,2,metallic bowl | plate,1980 | 1309
+spatial,36,pick up the black bowl next to the plate and place it on the plate,1,1387,2,2,metallic bowl | white plate,1904 | 1271
+spatial,36,pick up the black bowl next to the plate and place it on the plate,2,1536,1,2,small metal bowl | white plate,2004 | 0
+spatial,36,pick up the black bowl next to the plate and place it on the plate,3,1540,2,2,metallic bowl | white plate,1931 | 1274
+spatial,36,pick up the black bowl next to the plate and place it on the plate,4,1623,2,2,small dark bowl | plate,1497 | 1338
+spatial,37,pick up the black bowl next to the ramekin and place it on the plate,0,1294,3,3,metallic bowl | small silver bowl | plate,2254 | 2254 | 1309
+spatial,37,pick up the black bowl next to the ramekin and place it on the plate,1,1370,3,3,small metal bowl | small metal container | plate,2230 | 2233 | 1302
+spatial,37,pick up the black bowl next to the ramekin and place it on the plate,2,1529,3,3,dark metal bowl | shiny silver bowl | plate,1737 | 2198 | 1252
+spatial,37,pick up the black bowl next to the ramekin and place it on the plate,3,1587,3,3,metallic bowl | small metal bowl | plate,2257 | 2253 | 1317
+spatial,37,pick up the black bowl next to the ramekin and place it on the plate,4,1656,2,3,metallic bowl | small metal cup | plate,2228 | 0 | 1295
+spatial,38,pick up the black bowl from table center and place it on the plate,0,1283,3,3,silver bowl | plate | wooden table surface,2087 | 1302 | 28355
+spatial,38,pick up the black bowl from table center and place it on the plate,1,1428,3,3,small metal bowl | plate | table surface,2104 | 1254 | 28249
+spatial,38,pick up the black bowl from table center and place it on the plate,2,1478,3,3,metallic bowl | white plate | wooden table surface,2079 | 1253 | 28552
+spatial,38,pick up the black bowl from table center and place it on the plate,3,1641,3,3,silver bowl | red rimmed plate | wooden table surface,2067 | 1333 | 28317
+spatial,38,pick up the black bowl from table center and place it on the plate,4,1652,3,3,silver bowl | white plate | table surface,2088 | 1264 | 28150
+spatial,39,pick up the black bowl on the wooden cabinet and place it on the plate,0,1312,3,3,metallic bowl | wooden cabinet | plate,2055 | 7450 | 1306
+spatial,39,pick up the black bowl on the wooden cabinet and place it on the plate,1,1400,3,3,metallic bowl | wooden cabinet | white plate,2170 | 6669 | 1221
+spatial,39,pick up the black bowl on the wooden cabinet and place it on the plate,2,1476,3,3,metallic bowl | wooden cabinet | white plate,2095 | 6823 | 1328
+spatial,39,pick up the black bowl on the wooden cabinet and place it on the plate,3,1523,3,3,metallic bowl | wooden cabinet | plate,2097 | 7021 | 1296
+spatial,39,pick up the black bowl on the wooden cabinet and place it on the plate,4,1683,3,3,metallic bowl | wooden cabinet | plate,2111 | 7082 | 1262

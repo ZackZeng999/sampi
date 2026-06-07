@@ -1,0 +1,37 @@
+{
+  "original_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_plate/input_first_frame.png",
+  "orig_img_h": 224,
+  "orig_img_w": 224,
+  "pred_boxes": [
+    [
+      0.07146164029836655,
+      0.4362732768058777,
+      0.13792192935943604,
+      0.10529094934463501
+    ],
+    [
+      0.2372090071439743,
+      0.44865337014198303,
+      0.10685823857784271,
+      0.09246638417243958
+    ],
+    [
+      0.1781642884016037,
+      0.5282689929008484,
+      0.14618022739887238,
+      0.11195331811904907
+    ]
+  ],
+  "pred_scores": [
+    0.75390625,
+    0.75,
+    0.75
+  ],
+  "pred_masks": [
+    "[c35i64L201N2N2O1O1N2O000O2O000O1000000000O100O1O2O0O1O2N1N3N2N2MkcV1",
+    "[f;5j64L3L3O0O101N10000000001O001O000000O2N2N101N3MgQP1",
+    "Pl85i64L3N2N3M2O1N2O000O2O0O100000000001O00000O100O101N1O2N1O2N2M3MVTQ1"
+  ],
+  "original_prompt": "plate",
+  "role": "destination"
+}

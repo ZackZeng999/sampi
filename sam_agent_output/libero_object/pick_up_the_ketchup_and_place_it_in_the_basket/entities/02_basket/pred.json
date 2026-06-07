@@ -1,0 +1,21 @@
+{
+  "original_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_ketchup_and_place_it_in_the_basket/input_first_frame.png",
+  "orig_img_h": 224,
+  "orig_img_w": 224,
+  "pred_boxes": [
+    [
+      0.06353655457496643,
+      0.410439670085907,
+      0.23800277709960938,
+      0.2272655963897705
+    ]
+  ],
+  "pred_scores": [
+    0.90625
+  ],
+  "pred_masks": [
+    "`U31m6:F5K5L4J6L4L4L3L2N3O0O1O100000000O10000000000000000001O0000O11O00000000000000000000000000O1000N3K4N3K:Df0ZObPR1"
+  ],
+  "original_prompt": "basket",
+  "role": "destination"
+}

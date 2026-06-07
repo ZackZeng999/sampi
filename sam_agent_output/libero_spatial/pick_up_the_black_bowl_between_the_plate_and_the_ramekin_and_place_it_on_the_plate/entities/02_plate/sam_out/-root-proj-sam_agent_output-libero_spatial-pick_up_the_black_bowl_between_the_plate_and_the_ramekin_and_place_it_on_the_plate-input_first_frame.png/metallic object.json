@@ -1,0 +1,61 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_plate/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_plate/entities/02_plate/sam_out/-root-proj-sam_agent_output-libero_spatial-pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_plate-input_first_frame.png/metallic object.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [
+        [
+            0.07146164029836655,
+            0.4362732768058777,
+            0.13792192935943604,
+            0.10529094934463501
+        ],
+        [
+            0.2372090071439743,
+            0.44865337014198303,
+            0.10685823857784271,
+            0.09246638417243958
+        ],
+        [
+            0.1781642884016037,
+            0.5282689929008484,
+            0.14618022739887238,
+            0.11195331811904907
+        ],
+        [
+            0.12842166423797607,
+            0.643652617931366,
+            0.19956356287002563,
+            0.14980429410934448
+        ],
+        [
+            0.3493043780326843,
+            0.00015179812908172607,
+            0.3302207589149475,
+            0.39882582426071167
+        ]
+    ],
+    "pred_masks": [
+        "[c35i64L201N2N2O1O1N2O000O2O000O1000000000O100O1O2O0O1O2N1N3N2N2MkcV1",
+        "[f;5j64L3L3O0O101N10000000001O001O000000O2N2N101N3MgQP1",
+        "Pl85i64L3N2N3M2O1N2O000O2O0O100000000001O00000O100O101N1O2N1O2N2M3MVTQ1",
+        "n_69e64L4M2N2N2N2O0O2O0O10001N1O101O0O1000000O010000000001N10000O2O000O101N1O2N2N2N1O2N3L3L6IWeP1",
+        "lSa08f64M2N2N3N1oN@_Kb0i3[OQL:O<P4\\OnKd0E2]4[OlKf0C1a4YOkKf1T4[NkKe1U4\\NjKd1V4\\NjKd1V4\\NjKd1V4\\NjKd1V4]NiKc1W4]NiKc1W4]NiKc1W4]NiKc1W4]NiKc1W4^NhKb1X4^NgKc1Y4b0000000000000000000000000000O11O0000000000000000000000000000lM_Ki1a4UNaKk1_4UNbKj10UNS40nKk1NWNS4MPLl1LXNT4KRLl1JYNT4JSLP1IGO@U4HULo0JGKCe4e0aK3`4L`K4b4J_K6b4H_K7c4F_K9i4^OYKMG4n5HWJ5\\6M2O001O1O1N^e?"
+    ],
+    "pred_scores": [
+        0.75390625,
+        0.75,
+        0.75,
+        0.60546875,
+        0.50390625
+    ],
+    "kept_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+    ],
+    "removed_indices": [],
+    "iom_threshold": 0.3
+}

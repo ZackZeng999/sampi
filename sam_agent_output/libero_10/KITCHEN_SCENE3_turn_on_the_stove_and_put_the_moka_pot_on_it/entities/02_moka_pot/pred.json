@@ -1,0 +1,21 @@
+{
+  "original_image_path": "/root/proj/sam_agent_output/libero_10/KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it/input_first_frame.png",
+  "orig_img_h": 224,
+  "orig_img_w": 224,
+  "pred_boxes": [
+    [
+      0.4336702227592468,
+      0.5438847541809082,
+      0.2605621814727783,
+      0.19835668802261353
+    ]
+  ],
+  "pred_scores": [
+    0.67578125
+  ],
+  "pred_masks": [
+    "S[e02m62N2N2N2O2M3M8bICj5l0N1N2O001O001O0O1001O0000000O100N3N1O1_OZJGg53f0N200O1000dIGQ68oIIQ67mIKS65kILV64hIMY6<1O1N2O1O2J^IIe663000001O01O001O010O1O0001NQo>"
+  ],
+  "original_prompt": "moka pot",
+  "role": "manipulated_object"
+}

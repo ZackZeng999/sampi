@@ -1,0 +1,21 @@
+{
+  "original_image_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE6_put_the_white_mug_on_the_plate_and_put_the_chocolate_pudding_to_the_right_of_the_plate/input_first_frame.png",
+  "orig_img_h": 224,
+  "orig_img_w": 224,
+  "pred_boxes": [
+    [
+      0.6014460325241089,
+      0.4333166480064392,
+      0.19948118925094604,
+      0.19212055206298828
+    ]
+  ],
+  "pred_scores": [
+    0.87890625
+  ],
+  "pred_masks": [
+    "ddm09e64M3MFhIOW60kIOT61nIOQ60PJ0o51QJOo50SJOm51SJ0l50TJ0l51RJ0f5i0N201N3N1N2O1O0O2O001O000000000000O101N1O100O2N1O1N3N1N3L4J6L4Ing9"
+  ],
+  "original_prompt": "white mug",
+  "role": "manipulated_object"
+}

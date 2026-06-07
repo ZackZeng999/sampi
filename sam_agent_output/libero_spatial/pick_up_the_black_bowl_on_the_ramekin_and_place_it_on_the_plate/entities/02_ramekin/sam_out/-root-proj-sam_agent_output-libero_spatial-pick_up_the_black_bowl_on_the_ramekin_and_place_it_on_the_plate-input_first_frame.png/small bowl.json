@@ -1,0 +1,20 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_plate/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_plate/entities/02_ramekin/sam_out/-root-proj-sam_agent_output-libero_spatial-pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_plate-input_first_frame.png/small bowl.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [
+        [
+            0.20857159793376923,
+            0.39628997445106506,
+            0.12337498366832733,
+            0.14686307311058044
+        ]
+    ],
+    "pred_masks": [
+        "Q\\:7g64M3M2N3N4K3N2M2O0O2O0000001OO101O00001N101N2N2N3DfIM]6NZgP1"
+    ],
+    "pred_scores": [
+        0.50390625
+    ]
+}

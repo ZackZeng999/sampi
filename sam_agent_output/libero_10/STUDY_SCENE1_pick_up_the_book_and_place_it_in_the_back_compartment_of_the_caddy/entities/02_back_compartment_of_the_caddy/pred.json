@@ -1,0 +1,21 @@
+{
+  "original_image_path": "/root/proj/sam_agent_output/libero_10/STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy/input_first_frame.png",
+  "orig_img_h": 224,
+  "orig_img_w": 224,
+  "pred_boxes": [
+    [
+      0.4102839231491089,
+      0.3329375386238098,
+      0.16477370262145996,
+      0.08757519721984863
+    ]
+  ],
+  "pred_scores": [
+    0.85546875
+  ],
+  "pred_masks": [
+    "fVd08_69N200000000000000000000000000000000000000000000000000000000000000002N;CZfd0"
+  ],
+  "original_prompt": "back compartment of the caddy",
+  "role": "destination"
+}

@@ -1,0 +1,131 @@
+{
+  "dataset": "libero_10",
+  "task_stem": "LIVING_ROOM_SCENE2_put_both_the_cream_cheese_box_and_the_butter_in_the_basket",
+  "bddl_path": "/root/proj/openpi/third_party/libero/libero/libero/bddl_files/libero_10/LIVING_ROOM_SCENE2_put_both_the_cream_cheese_box_and_the_butter_in_the_basket.bddl",
+  "status": "completed",
+  "entities": [
+    {
+      "original_prompt": "cream cheese box",
+      "role": "manipulated_object",
+      "agent_prompts": [
+        "box"
+      ],
+      "final_agent_prompt": "box",
+      "num_masks": 1,
+      "pred_scores": [
+        0.7734375
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.7691935300827026,
+          0.730913519859314,
+          0.09404963254928589,
+          0.12211263179779053
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          172,
+          164,
+          193,
+          191
+        ]
+      ],
+      "pred_masks_rle": [
+        "UiU14k64M4L4L4L5K2N00000000000001O1O3M3L4M4L3MZc6"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE2_put_both_the_cream_cheese_box_and_the_butter_in_the_basket/entities/01_cream_cheese_box/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE2_put_both_the_cream_cheese_box_and_the_butter_in_the_basket/entities/01_cream_cheese_box/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE2_put_both_the_cream_cheese_box_and_the_butter_in_the_basket/entities/01_cream_cheese_box/pred.png",
+      "status": "completed"
+    },
+    {
+      "original_prompt": "butter",
+      "role": "manipulated_object",
+      "agent_prompts": [
+        "package"
+      ],
+      "final_agent_prompt": "package",
+      "num_masks": 1,
+      "pred_scores": [
+        0.640625
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.8443118333816528,
+          0.49236348271369934,
+          0.12194490432739258,
+          0.19750532507896423
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          189,
+          110,
+          216,
+          155
+        ]
+      ],
+      "pred_masks_rle": [
+        "^_Y12e6<G9E;J4M2O1O1O100O11O0000000000000O1O100N2M3K6L4K5Hed1"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE2_put_both_the_cream_cheese_box_and_the_butter_in_the_basket/entities/02_butter/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE2_put_both_the_cream_cheese_box_and_the_butter_in_the_basket/entities/02_butter/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE2_put_both_the_cream_cheese_box_and_the_butter_in_the_basket/entities/02_butter/pred.png",
+      "status": "completed"
+    },
+    {
+      "original_prompt": "basket",
+      "role": "destination",
+      "agent_prompts": [
+        "basket"
+      ],
+      "final_agent_prompt": "basket",
+      "num_masks": 1,
+      "pred_scores": [
+        0.79296875
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          -0.004103340208530426,
+          0.45187175273895264,
+          0.23082920908927917,
+          0.3215979337692261
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          -1,
+          101,
+          51,
+          173
+        ]
+      ],
+      "pred_masks_rle": [
+        "U3W2i400001O00000001O00O1000000000000001O000000O1001O000000O1001OO1000000001O00O11O0O1O1N1N3M3M4^NnJP1W5kNPKn0d5M3M:YOfI5]mU1"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE2_put_both_the_cream_cheese_box_and_the_butter_in_the_basket/entities/03_basket/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE2_put_both_the_cream_cheese_box_and_the_butter_in_the_basket/entities/03_basket/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE2_put_both_the_cream_cheese_box_and_the_butter_in_the_basket/entities/03_basket/pred.png",
+      "status": "completed"
+    }
+  ],
+  "task_description": "put both the cream cheese box and the butter in the basket",
+  "video_path": "/root/proj/openpi/data/libero/videos/rollout_put_both_the_cream_cheese_box_and_the_butter_in_the_basket_success.mp4",
+  "first_frame_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE2_put_both_the_cream_cheese_box_and_the_butter_in_the_basket/input_first_frame.png",
+  "entity_extraction_response": "{\n  \"entities\": [\n    {\n      \"phrase\": \"cream cheese box\",\n      \"role\": \"manipulated_object\"\n    },\n    {\n      \"phrase\": \"butter\",\n      \"role\": \"manipulated_object\"\n    },\n    {\n      \"phrase\": \"basket\",\n      \"role\": \"destination\"\n    }\n  ]\n}",
+  "extracted_entities": [
+    {
+      "phrase": "cream cheese box",
+      "role": "manipulated_object"
+    },
+    {
+      "phrase": "butter",
+      "role": "manipulated_object"
+    },
+    {
+      "phrase": "basket",
+      "role": "destination"
+    }
+  ]
+}

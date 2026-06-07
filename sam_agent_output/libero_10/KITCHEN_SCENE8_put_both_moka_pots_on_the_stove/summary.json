@@ -1,0 +1,106 @@
+{
+  "dataset": "libero_10",
+  "task_stem": "KITCHEN_SCENE8_put_both_moka_pots_on_the_stove",
+  "bddl_path": "/root/proj/openpi/third_party/libero/libero/libero/bddl_files/libero_10/KITCHEN_SCENE8_put_both_moka_pots_on_the_stove.bddl",
+  "status": "completed",
+  "entities": [
+    {
+      "original_prompt": "moka pots",
+      "role": "manipulated_object",
+      "agent_prompts": [
+        "coffee pot"
+      ],
+      "final_agent_prompt": "coffee pot",
+      "num_masks": 2,
+      "pred_scores": [
+        0.77734375,
+        0.73046875
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.09380332380533218,
+          0.4712780714035034,
+          0.1843222975730896,
+          0.19485175609588623
+        ],
+        [
+          0.36047521233558655,
+          0.552192211151123,
+          0.20067080855369568,
+          0.20629620552062988
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          21,
+          106,
+          62,
+          149
+        ],
+        [
+          81,
+          124,
+          126,
+          170
+        ]
+      ],
+      "pred_masks_rle": [
+        "bf42m63M3M2N3N1N2O2M8I7H4M1N2O1O1O00001O000001O0O2O001N101N1UO\\J:e5D^J8d5H^J5c5KdJK_54WJKU65iIOU62gI1Y6:2O0O2M3L4M_ZS1",
+        "Uka03l62O2M2N2N3M3Mb0_O3L2O1O0O2O1O000O10000001O00001O000O2O1N1O2N1VO[JMOMi55YJKS64mIMS63mILT64kIMU62jIOW61gI1Y60dI1^680N2O2M3N2M4MiYe0"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_10/KITCHEN_SCENE8_put_both_moka_pots_on_the_stove/entities/01_moka_pots/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_10/KITCHEN_SCENE8_put_both_moka_pots_on_the_stove/entities/01_moka_pots/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_10/KITCHEN_SCENE8_put_both_moka_pots_on_the_stove/entities/01_moka_pots/pred.png",
+      "status": "completed"
+    },
+    {
+      "original_prompt": "stove",
+      "role": "destination",
+      "agent_prompts": [
+        "stove"
+      ],
+      "final_agent_prompt": "stove",
+      "num_masks": 1,
+      "pred_scores": [
+        0.8203125
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.6265957951545715,
+          0.5266830325126648,
+          0.27650195360183716,
+          0.18839383125305176
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          140,
+          118,
+          202,
+          160
+        ]
+      ],
+      "pred_masks_rle": [
+        "hnn08g6;E9H8H5K1O00000000000001O0000000000000000000000000000000000000000O1000000000000001OO10000001O00001O2N3M4L3M3M3M2N3M4L5JYe4"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_10/KITCHEN_SCENE8_put_both_moka_pots_on_the_stove/entities/02_stove/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_10/KITCHEN_SCENE8_put_both_moka_pots_on_the_stove/entities/02_stove/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_10/KITCHEN_SCENE8_put_both_moka_pots_on_the_stove/entities/02_stove/pred.png",
+      "status": "completed"
+    }
+  ],
+  "task_description": "put both moka pots on the stove",
+  "video_path": "/root/proj/openpi/data/libero/videos/rollout_put_both_moka_pots_on_the_stove_success.mp4",
+  "first_frame_path": "/root/proj/sam_agent_output/libero_10/KITCHEN_SCENE8_put_both_moka_pots_on_the_stove/input_first_frame.png",
+  "entity_extraction_response": "{\n  \"entities\": [\n    {\n      \"phrase\": \"moka pots\",\n      \"role\": \"manipulated_object\"\n    },\n    {\n      \"phrase\": \"stove\",\n      \"role\": \"destination\"\n    }\n  ]\n}",
+  "extracted_entities": [
+    {
+      "phrase": "moka pots",
+      "role": "manipulated_object"
+    },
+    {
+      "phrase": "stove",
+      "role": "destination"
+    }
+  ]
+}

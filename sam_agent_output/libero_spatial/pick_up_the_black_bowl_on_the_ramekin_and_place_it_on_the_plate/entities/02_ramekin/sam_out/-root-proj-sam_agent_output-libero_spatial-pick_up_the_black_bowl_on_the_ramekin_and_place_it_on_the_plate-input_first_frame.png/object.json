@@ -1,0 +1,61 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_plate/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_plate/entities/02_ramekin/sam_out/-root-proj-sam_agent_output-libero_spatial-pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_plate-input_first_frame.png/object.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [
+        [
+            0.20825646817684174,
+            0.3962424099445343,
+            0.12378548085689545,
+            0.14730510115623474
+        ],
+        [
+            0.677435040473938,
+            0.3326559066772461,
+            0.3283083438873291,
+            0.4998719096183777
+        ],
+        [
+            0.34387868642807007,
+            -0.002122625708580017,
+            0.33242833614349365,
+            0.3948480486869812
+        ],
+        [
+            0.3659658133983612,
+            0.6156244277954102,
+            0.14996150135993958,
+            0.12549817562103271
+        ],
+        [
+            0.5443071722984314,
+            0.3914812207221985,
+            0.15749311447143555,
+            0.14215171337127686
+        ]
+    ],
+    "pred_masks": [
+        "Q\\:7g64M3M2N3N4K4M1N2N101O001O000000O101O001N101N2N2N3CfIO]6L[gP1",
+        "Q\\Q18a68G:G8H8G:I6kJXNP5n1M2O2N1O2M2O1O2N1N2O1O1N2O1O000O101O1N2O1O1O1N2O2N1O1N2O2N1O1N2O1O1N1000000O0100O010O10000O2O001N2O1N2O0O2O1N2O0O2O1O1N101N2O0O2dMgKU11iN12_1",
+        "lSa08l4JmL9Q3GlK636P4DlKd0GH]4DkKg0EH^4AmKh0CJ^4^OnKj0BJ_4]OnKi0BK`4\\OnKj0_OLc4ZOnKd1R4]NmKc1S4^NlKb1T4^NlKb1T4_NkKa1U4_NkKa1U4_NkKa1V4^NjKb1V4_NiKa1W4`NcKe1\\4`0000000000000000000001O00O2O0000000000000000000000000000000000oM^Kd1b4ZNaKe1_4ZNcKe1]4ZNdKf1\\4YNfKf1MUNU45oKe1I\\NU4NTLe1F^NV4LVLe1D_NV4KYLd1@bNW4I^Le0]O<R5_OPK`0V5XOmJg0g5O001O1O1]OSJ1P6JTJ4]6O1O001O1N`l?",
+        "dRb05h65M3M3M2N3M2O1O1N100000001N1000000000000001O0O101N101N1O2M3M3N2Mafg0",
+        "ihj0c03AR6k0L1O00000000000000000001O0000000000000000000000O11OO100000O1N3I6I7G`b>"
+    ],
+    "pred_scores": [
+        0.62890625,
+        0.625,
+        0.609375,
+        0.58984375,
+        0.54296875
+    ],
+    "kept_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+    ],
+    "removed_indices": [],
+    "iom_threshold": 0.3
+}

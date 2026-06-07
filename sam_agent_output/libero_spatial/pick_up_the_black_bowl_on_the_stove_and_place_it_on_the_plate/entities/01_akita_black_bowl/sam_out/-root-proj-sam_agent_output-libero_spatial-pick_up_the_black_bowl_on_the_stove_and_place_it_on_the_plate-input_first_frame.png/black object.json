@@ -1,0 +1,72 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate/entities/01_akita_black_bowl/sam_out/-root-proj-sam_agent_output-libero_spatial-pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate-input_first_frame.png/black object.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [
+        [
+            0.6768185496330261,
+            0.3332464396953583,
+            0.32909029722213745,
+            0.5003939867019653
+        ],
+        [
+            0.347046434879303,
+            0.22297342121601105,
+            0.307536244392395,
+            0.12074552476406097
+        ],
+        [
+            0.22090335190296173,
+            0.46038609743118286,
+            0.096785768866539,
+            0.08630567789077759
+        ],
+        [
+            0.32476526498794556,
+            -0.0008633854449726641,
+            0.08649921417236328,
+            0.025174282491207123
+        ],
+        [
+            0.5858332514762878,
+            0.3208678960800171,
+            0.10330188274383545,
+            0.1361241340637207
+        ],
+        [
+            0.42575281858444214,
+            0.6739327907562256,
+            0.08500242233276367,
+            0.10085976123809814
+        ]
+    ],
+    "pred_masks": [
+        "R\\Q17a6:F9I7H8B>N3N6I2O2N1O2M2O1O1O1N3N1O1O1N2OO1001N2O1O1N2O1O1N2O1O1O2M2O1O1O2M2O1O1OmLcLc2\\3]MgLa2Y3^MjL`2V3_MlL`2S3aMoL\\2R3cMSMY2m2gMSMX2n2hMTMV2k2jMWMU2i2kMXMS2i2mMXMR2i2mMXMQ2i2oMWMQ2i2oMXMP2i2oMWMP2k2oMVMP2k2oMUMP2l2PNTMP2m2oMSMP2o300O100O100O01000O10001bNoJG1O<5T1",
+        "lSa09e63N2N2N3N2M1O1O1O2O0001O000000O11O7I2N001O1O1O001O001O000000000000000000000000O10000O100O1O1O100GBoI?P6DmI=S6800000000O100002N1N2M3O1N1O2O1M4LVPa0",
+        "]j:1l67L4L2M2O001N1000000000000000O10001N2N2N3Md[Q1",
+        "Po?1o61O1O1O1O000000000000000000000000000Pll0",
+        "ggl05e6;J2N2N2O1N1N2O2N1O100003M2O0O0O2O1O1N5L1N2N2O1MYi>",
+        "Tnd08\\6=N100000001OO100000000000000000001O4\\Odfg0"
+    ],
+    "pred_scores": [
+        0.921875,
+        0.87890625,
+        0.7890625,
+        0.71875,
+        0.66796875,
+        0.62890625
+    ],
+    "kept_indices": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6
+    ],
+    "removed_indices": [
+        1
+    ],
+    "iom_threshold": 0.3
+}

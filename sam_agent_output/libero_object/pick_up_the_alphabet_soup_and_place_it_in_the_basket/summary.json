@@ -1,0 +1,92 @@
+{
+  "dataset": "libero_object",
+  "task_stem": "pick_up_the_alphabet_soup_and_place_it_in_the_basket",
+  "bddl_path": "/root/proj/openpi/third_party/libero/libero/libero/bddl_files/libero_object/pick_up_the_alphabet_soup_and_place_it_in_the_basket.bddl",
+  "status": "completed",
+  "entities": [
+    {
+      "original_prompt": "alphabet soup",
+      "role": "manipulated_object",
+      "agent_prompts": [
+        "can"
+      ],
+      "final_agent_prompt": "can",
+      "num_masks": 1,
+      "pred_scores": [
+        0.91015625
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.41653314232826233,
+          0.5861091613769531,
+          0.09080561995506287,
+          0.13568931818008423
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          93,
+          131,
+          114,
+          162
+        ]
+      ],
+      "pred_masks_rle": [
+        "Z_d02l66J?C2M2O0O2O000O10000001O00001O0O2N2N4ZOYng0"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_alphabet_soup_and_place_it_in_the_basket/entities/01_alphabet_soup/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_alphabet_soup_and_place_it_in_the_basket/entities/01_alphabet_soup/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_alphabet_soup_and_place_it_in_the_basket/entities/01_alphabet_soup/pred.png",
+      "status": "completed"
+    },
+    {
+      "original_prompt": "basket",
+      "role": "destination",
+      "agent_prompts": [
+        "basket"
+      ],
+      "final_agent_prompt": "basket",
+      "num_masks": 1,
+      "pred_scores": [
+        0.890625
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.0753856673836708,
+          0.41607987880706787,
+          0.24090227484703064,
+          0.22822952270507812
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          17,
+          93,
+          71,
+          144
+        ]
+      ],
+      "pred_masks_rle": [
+        "`j34j65J6L5J7I4M3L5L4K4M2O0O100000000000000000000000000000000000000000000000000000000000000000000000O1M3M3M4J:oNoI0O0022N[bQ1"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_alphabet_soup_and_place_it_in_the_basket/entities/02_basket/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_alphabet_soup_and_place_it_in_the_basket/entities/02_basket/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_alphabet_soup_and_place_it_in_the_basket/entities/02_basket/pred.png",
+      "status": "completed"
+    }
+  ],
+  "task_description": "Pick the alphabet soup and place it in the basket",
+  "video_path": "/root/proj/openpi/data/libero/videos/rollout_pick_up_the_alphabet_soup_and_place_it_in_the_basket_success.mp4",
+  "first_frame_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_alphabet_soup_and_place_it_in_the_basket/input_first_frame.png",
+  "entity_extraction_response": "```json\n{\n  \"entities\": [\n    {\n      \"phrase\": \"alphabet soup\",\n      \"role\": \"manipulated_object\"\n    },\n    {\n      \"phrase\": \"basket\",\n      \"role\": \"destination\"\n    }\n  ]\n}\n```",
+  "extracted_entities": [
+    {
+      "phrase": "alphabet soup",
+      "role": "manipulated_object"
+    },
+    {
+      "phrase": "basket",
+      "role": "destination"
+    }
+  ]
+}

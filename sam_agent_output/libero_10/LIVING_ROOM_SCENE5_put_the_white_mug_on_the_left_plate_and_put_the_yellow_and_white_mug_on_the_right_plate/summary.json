@@ -1,0 +1,170 @@
+{
+  "dataset": "libero_10",
+  "task_stem": "LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate",
+  "bddl_path": "/root/proj/openpi/third_party/libero/libero/libero/bddl_files/libero_10/LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate.bddl",
+  "status": "completed",
+  "entities": [
+    {
+      "original_prompt": "white mug",
+      "role": "manipulated_object",
+      "agent_prompts": [
+        "white mug"
+      ],
+      "final_agent_prompt": "white mug",
+      "num_masks": 1,
+      "pred_scores": [
+        0.90234375
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.6292934417724609,
+          0.43786171078681946,
+          0.20290648937225342,
+          0.1931038200855255
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          141,
+          98,
+          186,
+          141
+        ]
+      ],
+      "pred_masks_rle": [
+        "gnn06h64L4MK`IM^60hIOW60kIOT61nIOQ61oIOQ60PJ0o51RJOm51SJOm51SJOj5>lIBo5i002N3M2O1N2O1O1O0O101O000000000001O0O100O1O101N1N3N1N3M2M4K5I7JlV8"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate/entities/01_white_mug/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate/entities/01_white_mug/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate/entities/01_white_mug/pred.png",
+      "status": "completed"
+    },
+    {
+      "original_prompt": "left plate",
+      "role": "destination",
+      "agent_prompts": [
+        "plate"
+      ],
+      "final_agent_prompt": "plate",
+      "num_masks": 1,
+      "pred_scores": [
+        0.81640625
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          -0.007111173588782549,
+          0.6085280179977417,
+          0.13516263663768768,
+          0.1408589482307434
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          -2,
+          136,
+          29,
+          168
+        ]
+      ],
+      "pred_masks_rle": [
+        "Z4n0R60O010000000000O01000O101O0O1O100O2O0O101N1O1O2N2N2M3M6I``Z1"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate/entities/02_left_plate/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate/entities/02_left_plate/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate/entities/02_left_plate/pred.png",
+      "status": "completed"
+    },
+    {
+      "original_prompt": "yellow and white mug",
+      "role": "manipulated_object",
+      "agent_prompts": [
+        "mug"
+      ],
+      "final_agent_prompt": "mug",
+      "num_masks": 1,
+      "pred_scores": [
+        0.86328125
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.3886346220970154,
+          0.3372648358345032,
+          0.1716296672821045,
+          0.20328837633132935
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          87,
+          76,
+          125,
+          121
+        ]
+      ],
+      "pred_masks_rle": [
+        "aSc04k64L6K5J8I6I3N1N2O3M2N1O00000000000001O000O1O2N1O2K5ESJ@S6OYJ0i5OWJ0j5OWJ1i5OVJ0l50SJ0n50QJ0P61mI0U6OiI2X6:1N2N[be0"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate/entities/03_yellow_and_white_mug/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate/entities/03_yellow_and_white_mug/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate/entities/03_yellow_and_white_mug/pred.png",
+      "status": "completed"
+    },
+    {
+      "original_prompt": "right plate",
+      "role": "destination",
+      "agent_prompts": [
+        "plate"
+      ],
+      "final_agent_prompt": "plate",
+      "num_masks": 1,
+      "pred_scores": [
+        0.81640625
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.8873640298843384,
+          0.6012847423553467,
+          0.12351405620574951,
+          0.13572412729263306
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          199,
+          135,
+          226,
+          165
+        ]
+      ],
+      "pred_masks_rle": [
+        "]e[18g63M3M2N1O2O1O1N2O001O1O001O001O001O00001O000010OhK"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate/entities/04_right_plate/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate/entities/04_right_plate/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate/entities/04_right_plate/pred.png",
+      "status": "completed"
+    }
+  ],
+  "task_description": "put the white mug on the left plate and put the yellow and white mug on the right plate",
+  "video_path": "/root/proj/openpi/data/libero/videos/rollout_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate_success.mp4",
+  "first_frame_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate/input_first_frame.png",
+  "entity_extraction_response": "{\n  \"entities\": [\n    {\n      \"phrase\": \"white mug\",\n      \"role\": \"manipulated_object\"\n    },\n    {\n      \"phrase\": \"left plate\",\n      \"role\": \"destination\"\n    },\n    {\n      \"phrase\": \"yellow and white mug\",\n      \"role\": \"manipulated_object\"\n    },\n    {\n      \"phrase\": \"right plate\",\n      \"role\": \"destination\"\n    }\n  ]\n}",
+  "extracted_entities": [
+    {
+      "phrase": "white mug",
+      "role": "manipulated_object"
+    },
+    {
+      "phrase": "left plate",
+      "role": "destination"
+    },
+    {
+      "phrase": "yellow and white mug",
+      "role": "manipulated_object"
+    },
+    {
+      "phrase": "right plate",
+      "role": "destination"
+    }
+  ]
+}

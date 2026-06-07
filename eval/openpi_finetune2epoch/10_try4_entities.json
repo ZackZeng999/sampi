@@ -1,0 +1,56 @@
+{
+  "put both the alphabet soup and the tomato sauce in the basket": [
+    "alphabet soup",
+    "tomato sauce",
+    "basket"
+  ],
+  "put both the cream cheese box and the butter in the basket": [
+    "cream cheese box",
+    "basket",
+    "butter"
+  ],
+  "turn on the stove and put the moka pot on it": [
+    "stove control",
+    "stove",
+    "moka pot",
+    "stove top"
+  ],
+  "put the black bowl in the bottom drawer of the cabinet and close it": [
+    "black bowl",
+    "bottom drawer",
+    "cabinet"
+  ],
+  "put the white mug on the left plate and put the yellow and white mug on the right plate": [
+    "white mug",
+    "left plate",
+    "yellow and white mug",
+    "right plate"
+  ],
+  "pick up the book and place it in the back compartment of the caddy": [
+    "book",
+    "back compartment",
+    "caddy"
+  ],
+  "put the white mug on the plate and put the chocolate pudding to the right of the plate": [
+    "white mug",
+    "plate",
+    "chocolate pudding",
+    "region_right_of_plate"
+  ],
+  "put both the alphabet soup and the cream cheese box in the basket": [
+    "alphabet soup",
+    "cream cheese box",
+    "basket"
+  ],
+  "put both moka pots on the stove": [
+    "moka pot",
+    "moka pot",
+    "stove"
+  ],
+  "put the yellow and white mug in the microwave and close it": [
+    "microwave",
+    "microwave door",
+    "yellow and white mug",
+    "microwave interior"
+  ]
+}

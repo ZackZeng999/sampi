@@ -1,0 +1,43 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_butter_and_place_it_in_the_basket/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_butter_and_place_it_in_the_basket/entities/01_butter/sam_out/-root-proj-sam_agent_output-libero_object-pick_up_the_butter_and_place_it_in_the_basket-input_first_frame.png/small box.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [
+        [
+            0.7198007106781006,
+            0.47928670048713684,
+            0.054412901401519775,
+            0.056966036558151245
+        ],
+        [
+            0.7033783197402954,
+            0.598191499710083,
+            0.07594966888427734,
+            0.08762061595916748
+        ],
+        [
+            0.06323500722646713,
+            0.414219468832016,
+            0.23814868927001953,
+            0.2305852472782135
+        ]
+    ],
+    "pred_masks": [
+        "\\ZS14l63M3L3N00000001O002N2N4I_j:",
+        "[_R14h68L3L4M1O0000O100000001O002N2N4Lai:",
+        "aU32j68J8I4K5K4L6K4K3N3M1O2O000O10000000000000000000000000000000000000000000000000000000000000000000O1O1L5L6EWXR1"
+    ],
+    "pred_scores": [
+        0.65625,
+        0.640625,
+        0.55078125
+    ],
+    "kept_indices": [
+        0,
+        1,
+        2
+    ],
+    "removed_indices": [],
+    "iom_threshold": 0.3
+}

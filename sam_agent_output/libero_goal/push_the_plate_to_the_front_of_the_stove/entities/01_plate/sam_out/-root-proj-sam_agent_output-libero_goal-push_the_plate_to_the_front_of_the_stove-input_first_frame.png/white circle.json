@@ -1,0 +1,20 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_goal/push_the_plate_to_the_front_of_the_stove/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_goal/push_the_plate_to_the_front_of_the_stove/entities/01_plate/sam_out/-root-proj-sam_agent_output-libero_goal-push_the_plate_to_the_front_of_the_stove-input_first_frame.png/white circle.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [
+        [
+            0.47041428089141846,
+            0.6676705479621887,
+            0.1346033811569214,
+            0.10705834627151489
+        ]
+    ],
+    "pred_masks": [
+        "mZg07g64M3M2N2N101O1O0O2O00001O000000O101O00001O0O2O0O2O1M3N3MSZc0"
+    ],
+    "pred_scores": [
+        0.84765625
+    ]
+}

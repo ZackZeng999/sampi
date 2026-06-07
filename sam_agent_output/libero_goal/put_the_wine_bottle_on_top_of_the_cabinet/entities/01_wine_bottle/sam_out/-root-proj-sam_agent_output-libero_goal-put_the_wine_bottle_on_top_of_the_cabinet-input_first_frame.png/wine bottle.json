@@ -1,0 +1,20 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_goal/put_the_wine_bottle_on_top_of_the_cabinet/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_goal/put_the_wine_bottle_on_top_of_the_cabinet/entities/01_wine_bottle/sam_out/-root-proj-sam_agent_output-libero_goal-put_the_wine_bottle_on_top_of_the_cabinet-input_first_frame.png/wine bottle.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [
+        [
+            0.5197610855102539,
+            0.3726280629634857,
+            0.05026674270629883,
+            0.1427575647830963
+        ]
+    ],
+    "pred_masks": [
+        "X_i01j6<H1M4E:O101O02N;F2M4Eold0"
+    ],
+    "pred_scores": [
+        0.89453125
+    ]
+}

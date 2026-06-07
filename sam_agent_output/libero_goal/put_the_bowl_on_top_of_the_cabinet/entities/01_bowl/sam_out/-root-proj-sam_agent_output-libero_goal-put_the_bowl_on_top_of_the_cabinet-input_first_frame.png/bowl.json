@@ -1,0 +1,20 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_goal/put_the_bowl_on_top_of_the_cabinet/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_goal/put_the_bowl_on_top_of_the_cabinet/entities/01_bowl/sam_out/-root-proj-sam_agent_output-libero_goal-put_the_bowl_on_top_of_the_cabinet-input_first_frame.png/bowl.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [
+        [
+            0.4193195104598999,
+            0.4985104203224182,
+            0.14208394289016724,
+            0.10954076051712036
+        ]
+    ],
+    "pred_masks": [
+        "ged06h64M2N3M2O1N2O1N101O001O0000000000000000O101O0O2N2N2N2N2O0N3M[ae0"
+    ],
+    "pred_scores": [
+        0.6796875
+    ]
+}

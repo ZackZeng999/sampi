@@ -1,0 +1,21 @@
+{
+  "original_image_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket/input_first_frame.png",
+  "orig_img_h": 224,
+  "orig_img_w": 224,
+  "pred_boxes": [
+    [
+      -0.005817533005028963,
+      0.44370540976524353,
+      0.22848911583423615,
+      0.32071569561958313
+    ]
+  ],
+  "pred_scores": [
+    0.82421875
+  ],
+  "pred_masks": [
+    "T3V2j4000000000000001O0000000000000000000000000000000000000000000000000000000000O1O1O1O1O1M3N2N3H;I?B>@SnU1"
+  ],
+  "original_prompt": "basket",
+  "role": "destination"
+}

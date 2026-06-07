@@ -1,0 +1,2 @@
+ export HF_LEROBOT_HOME=/root/autodl-tmp/datasets
+ XLA_PYTHON_CLIENT_MEM_FRACTION=0.95 uv run scripts/train.py pi05_libero_sam_dim_2_expert_lora   --exp-name=sam_dim_2_lora   --checkpoint-base-dir=/root/autodl-tmp/openpi_checkpoints   --overwrite   --num-train-steps=31000 --save-interval=7685

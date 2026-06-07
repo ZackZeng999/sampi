@@ -1,0 +1,131 @@
+{
+  "dataset": "libero_spatial",
+  "task_stem": "pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate",
+  "bddl_path": "/root/proj/openpi/third_party/libero/libero/libero/bddl_files/libero_spatial/pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate.bddl",
+  "status": "completed",
+  "entities": [
+    {
+      "original_prompt": "akita black bowl",
+      "role": "manipulated_object",
+      "agent_prompts": [
+        "black object"
+      ],
+      "final_agent_prompt": "black object",
+      "num_masks": 1,
+      "pred_scores": [
+        0.66796875
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.5858332514762878,
+          0.3208678960800171,
+          0.10330188274383545,
+          0.1361241340637207
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          131,
+          72,
+          154,
+          102
+        ]
+      ],
+      "pred_masks_rle": [
+        "ggl05e6;J2N2N2O1N1N2O2N1O100003M2O0O0O2O1O1N5L1N2N2O1MYi>"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate/entities/01_akita_black_bowl/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate/entities/01_akita_black_bowl/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate/entities/01_akita_black_bowl/pred.png",
+      "status": "completed"
+    },
+    {
+      "original_prompt": "stove",
+      "role": "source_location",
+      "agent_prompts": [
+        "black box"
+      ],
+      "final_agent_prompt": "black box",
+      "num_masks": 1,
+      "pred_scores": [
+        0.59765625
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.67668616771698,
+          0.33442485332489014,
+          0.32720839977264404,
+          0.4986076354980469
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          152,
+          75,
+          225,
+          187
+        ]
+      ],
+      "pred_masks_rle": [
+        "R\\Q17b68G:G8I7E;J7iJYNQ5m1N1N3N1O1N3N1O1O1N2O1O2N1N101O000O2O001N3N1O1N2O1O1O2M2O1O1O2M2O1OQM]Lb2b3[McLc2\\3]MgLa2Y3^MjL`2V3_MmL_2R3bMPM[2Q3dMRMZ2n2fMSMX2n2hMTMV2k2jMVMU2k2kMWMS2i2mMXMQ2j2nMWMQ2i2oMWMQ2i2oMXMo1j2PNVMP2k2oMUMP2m2oMTMP2m2oMSMP2n2PNRMP2o300O100O10O010000O100O1^OoJeN1=`1"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate/entities/02_stove/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate/entities/02_stove/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate/entities/02_stove/pred.png",
+      "status": "completed"
+    },
+    {
+      "original_prompt": "plate",
+      "role": "destination",
+      "agent_prompts": [
+        "bowl"
+      ],
+      "final_agent_prompt": "bowl",
+      "num_masks": 1,
+      "pred_scores": [
+        0.56640625
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.8591654300689697,
+          0.3655432462692261,
+          0.1453925371170044,
+          0.1348133087158203
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          192,
+          82,
+          225,
+          112
+        ]
+      ],
+      "pred_masks_rle": [
+        "hYZ16h64N1N3M2O2M2O2N1O1N2O1O001O00001O0000000001O00000000001O0O2N\\M"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate/entities/03_plate/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate/entities/03_plate/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate/entities/03_plate/pred.png",
+      "status": "completed"
+    }
+  ],
+  "task_description": "Pick the akita black bowl on the stove and place it on the plate",
+  "video_path": "/root/proj/openpi/data/libero/videos/rollout_pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate_success.mp4",
+  "first_frame_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate/input_first_frame.png",
+  "entity_extraction_response": "{\n  \"entities\": [\n    {\n      \"phrase\": \"akita black bowl\",\n      \"role\": \"manipulated_object\"\n    },\n    {\n      \"phrase\": \"stove\",\n      \"role\": \"source_location\"\n    },\n    {\n      \"phrase\": \"plate\",\n      \"role\": \"destination\"\n    }\n  ]\n}",
+  "extracted_entities": [
+    {
+      "phrase": "akita black bowl",
+      "role": "manipulated_object"
+    },
+    {
+      "phrase": "stove",
+      "role": "source_location"
+    },
+    {
+      "phrase": "plate",
+      "role": "destination"
+    }
+  ]
+}

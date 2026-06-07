@@ -1,0 +1,43 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_alphabet_soup_and_place_it_in_the_basket/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_alphabet_soup_and_place_it_in_the_basket/entities/01_alphabet_soup/sam_out/-root-proj-sam_agent_output-libero_object-pick_up_the_alphabet_soup_and_place_it_in_the_basket-input_first_frame.png/can.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [
+        [
+            0.41653314232826233,
+            0.5861091613769531,
+            0.09080561995506287,
+            0.13568931818008423
+        ],
+        [
+            0.7105372548103333,
+            0.42718377709388733,
+            0.07709133625030518,
+            0.095671147108078
+        ],
+        [
+            0.6999836564064026,
+            0.5232316851615906,
+            0.08631294965744019,
+            0.1554567813873291
+        ]
+    ],
+    "pred_masks": [
+        "Z_d02l66J?C2M2O0O2O000O10000001O00001O0O2N2N4ZOYng0",
+        "alR13^6`0N100O100000000000000001N10001FW]:",
+        "V_R1=Y6=H7M10000000000000000000000O10M3I8Fc\\:"
+    ],
+    "pred_scores": [
+        0.91015625,
+        0.875,
+        0.625
+    ],
+    "kept_indices": [
+        0,
+        1,
+        2
+    ],
+    "removed_indices": [],
+    "iom_threshold": 0.3
+}

@@ -1,0 +1,92 @@
+{
+  "dataset": "libero_object",
+  "task_stem": "pick_up_the_butter_and_place_it_in_the_basket",
+  "bddl_path": "/root/proj/openpi/third_party/libero/libero/libero/bddl_files/libero_object/pick_up_the_butter_and_place_it_in_the_basket.bddl",
+  "status": "completed",
+  "entities": [
+    {
+      "original_prompt": "butter",
+      "role": "manipulated_object",
+      "agent_prompts": [
+        "small box"
+      ],
+      "final_agent_prompt": "small box",
+      "num_masks": 1,
+      "pred_scores": [
+        0.65625
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.7198007106781006,
+          0.47928670048713684,
+          0.054412901401519775,
+          0.056966036558151245
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          161,
+          107,
+          173,
+          120
+        ]
+      ],
+      "pred_masks_rle": [
+        "\\ZS14l63M3L3N00000001O002N2N4I_j:"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_butter_and_place_it_in_the_basket/entities/01_butter/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_butter_and_place_it_in_the_basket/entities/01_butter/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_butter_and_place_it_in_the_basket/entities/01_butter/pred.png",
+      "status": "completed"
+    },
+    {
+      "original_prompt": "basket",
+      "role": "destination",
+      "agent_prompts": [
+        "basket"
+      ],
+      "final_agent_prompt": "basket",
+      "num_masks": 1,
+      "pred_scores": [
+        0.8984375
+      ],
+      "pred_boxes_normalized_xywh": [
+        [
+          0.06291171163320541,
+          0.41424673795700073,
+          0.23888996243476868,
+          0.23038208484649658
+        ]
+      ],
+      "pred_boxes_pixel_xyxy": [
+        [
+          14,
+          93,
+          68,
+          144
+        ]
+      ],
+      "pred_masks_rle": [
+        "aU32j68J8I4K4L5K6K3L4M3M1O2O000000000O10000000000000000000000000000000000000000001O000000O1000000000O1O2K4M6EWXR1"
+      ],
+      "history_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_butter_and_place_it_in_the_basket/entities/02_basket/history.json",
+      "pred_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_butter_and_place_it_in_the_basket/entities/02_basket/pred.json",
+      "output_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_butter_and_place_it_in_the_basket/entities/02_basket/pred.png",
+      "status": "completed"
+    }
+  ],
+  "task_description": "Pick the butter and place it in the basket",
+  "video_path": "/root/proj/openpi/data/libero/videos/rollout_pick_up_the_butter_and_place_it_in_the_basket_success.mp4",
+  "first_frame_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_butter_and_place_it_in_the_basket/input_first_frame.png",
+  "entity_extraction_response": "{\n  \"entities\": [\n    {\n      \"phrase\": \"butter\",\n      \"role\": \"manipulated_object\"\n    },\n    {\n      \"phrase\": \"basket\",\n      \"role\": \"destination\"\n    }\n  ]\n}",
+  "extracted_entities": [
+    {
+      "phrase": "butter",
+      "role": "manipulated_object"
+    },
+    {
+      "phrase": "basket",
+      "role": "destination"
+    }
+  ]
+}

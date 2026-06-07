@@ -1,0 +1,21 @@
+{
+  "original_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_on_the_plate/input_first_frame.png",
+  "orig_img_h": 224,
+  "orig_img_w": 224,
+  "pred_boxes": [
+    [
+      0.12941890954971313,
+      0.6476768255233765,
+      0.18303614854812622,
+      0.1379973292350769
+    ]
+  ],
+  "pred_scores": [
+    0.51171875
+  ],
+  "pred_masks": [
+    "P`66g66L2M3N2N2O0O2N101N100O1O2O0O10000000000O10O1000001N10000O2O0O2N101N101N2N2M4L3MWaQ1"
+  ],
+  "original_prompt": "plate",
+  "role": "destination"
+}

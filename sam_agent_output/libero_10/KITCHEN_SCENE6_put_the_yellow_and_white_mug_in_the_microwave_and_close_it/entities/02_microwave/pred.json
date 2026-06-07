@@ -1,0 +1,21 @@
+{
+  "original_image_path": "/root/proj/sam_agent_output/libero_10/KITCHEN_SCENE6_put_the_yellow_and_white_mug_in_the_microwave_and_close_it/input_first_frame.png",
+  "orig_img_h": 224,
+  "orig_img_w": 224,
+  "pred_boxes": [
+    [
+      -0.002232089638710022,
+      -0.0026723446790128946,
+      0.14550288021564484,
+      0.0792851597070694
+    ]
+  ],
+  "pred_scores": [
+    0.50390625
+  ],
+  "pred_masks": [
+    "0a07Fj5;UJBn5>RJAo5?QJAo5?QJ@P6?QJAo5?QJ@P6`08000kI@j5`0;0000001O000000O1000000001O00O11OO1000000@bI128\\VZ1"
+  ],
+  "original_prompt": "microwave",
+  "role": "destination"
+}

@@ -1,0 +1,61 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE2_put_both_the_cream_cheese_box_and_the_butter_in_the_basket/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_10/LIVING_ROOM_SCENE2_put_both_the_cream_cheese_box_and_the_butter_in_the_basket/entities/01_cream_cheese_box/sam_out/-root-proj-sam_agent_output-libero_10-LIVING_ROOM_SCENE2_put_both_the_cream_cheese_box_and_the_butter_in_the_basket-input_first_frame.png/box.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [
+        [
+            0.6346796154975891,
+            0.5736393928527832,
+            0.10565483570098877,
+            0.21591109037399292
+        ],
+        [
+            0.844081461429596,
+            0.4923614263534546,
+            0.12206077575683594,
+            0.1977824568748474
+        ],
+        [
+            0.7691935300827026,
+            0.730913519859314,
+            0.09404963254928589,
+            0.12211263179779053
+        ],
+        [
+            -0.004552580416202545,
+            0.4520185887813568,
+            0.23073643445968628,
+            0.32155731320381165
+        ],
+        [
+            0.36874279379844666,
+            0.6786988973617554,
+            0.07216167449951172,
+            0.10771781206130981
+        ]
+    ],
+    "pred_masks": [
+        "SWo0:h54]J:]5f0O100000000000001O0000000000000000O1N2H:Bd0Bka<",
+        "^_Y12e6=E:E:L3M2O1O1O100O1001O00000000000O1O100N2M3L5L4J6H>CXI1Rd1",
+        "UiU14k64M4L4L4L5K2N00000000000001O1O3M3L4M4L3MZc6",
+        "V3V2i410001O000000000000000000000000000000000000000000000000000000000000000000000000O1O1O1M3M3N3]NnJQ1X5jNPKo0d5K3N7[OjI2]mU1",
+        "QZb0>[68N100O10000000000000000001M2AfVk0"
+    ],
+    "pred_scores": [
+        0.84375,
+        0.7890625,
+        0.7734375,
+        0.734375,
+        0.6015625
+    ],
+    "kept_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+    ],
+    "removed_indices": [],
+    "iom_threshold": 0.3
+}

@@ -1,0 +1,20 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_goal/open_the_top_drawer_and_put_the_bowl_inside/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_goal/open_the_top_drawer_and_put_the_bowl_inside/entities/02_top_layer_of_the_drawer/sam_out/-root-proj-sam_agent_output-libero_goal-open_the_top_drawer_and_put_the_bowl_inside-input_first_frame.png/cabinet.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [
+        [
+            0.6802491545677185,
+            0.358452171087265,
+            0.32481271028518677,
+            0.45860710740089417
+        ]
+    ],
+    "pred_masks": [
+        "aPR12n61UINO99G`50WJ639OG[51bJO78JKT5`0oJEMMh4j0YKYOO7\\4a0fKXON;X4>hKYOO>T49lK?o3AQLc0k3]OULd0j3Z1O000000000000000000000000000000000000000000000000000000000000000000000000O11O00O11O000000000000000001O1O2N1O2M3N3LTM"
+    ],
+    "pred_scores": [
+        0.6171875
+    ]
+}

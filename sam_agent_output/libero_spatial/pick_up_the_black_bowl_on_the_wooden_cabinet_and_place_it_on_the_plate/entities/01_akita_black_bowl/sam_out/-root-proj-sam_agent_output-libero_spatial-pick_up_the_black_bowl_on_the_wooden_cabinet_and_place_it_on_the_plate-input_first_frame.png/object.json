@@ -1,0 +1,20 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_spatial/pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate/entities/01_akita_black_bowl/sam_out/-root-proj-sam_agent_output-libero_spatial-pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate-input_first_frame.png/object.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [
+        [
+            0.348092257976532,
+            -0.0011163651943206787,
+            0.3270420432090759,
+            0.38105955719947815
+        ]
+    ],
+    "pred_masks": [
+        "lSa07g65L2N2mNC`K`0\\4F_K=_40SK1l43PKN]4ZOlKj0EM_4[OjKi0DNb4ZOiKe1W4[NiKe1W4\\NhKe1W4[NiKe1W4[NiKe1W4\\NhKd1X4\\NhKd1X4\\NhKd1X4\\NhKd1X4]NgKc1Y4]NgKc1Y4a010000001O000000000000000000000000000000000000O11OO10001OO2O00lM^Kj1b4UN`Kj1`4UNaKk1_4UNaKk10RNW42kKk1MUNW4OmKl1KVNX4MoKn0JIN\\OZ4LPLn0J0V4POSLn0I1e4M\\K1k4IVK6n4DTK<i5N2N2CnIKS61QJMb6O010O001O_l?"
+    ],
+    "pred_scores": [
+        0.53515625
+    ]
+}

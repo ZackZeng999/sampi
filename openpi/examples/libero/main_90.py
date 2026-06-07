@@ -177,16 +177,20 @@ def eval_libero(args: Args) -> None:
                             )
                         if sam_client is not None and cached_task_prompts:
                             sam_segment_start = time.perf_counter()
+                            sam_segment_details = {}
                             if "base" in sam_views:
                                 policy_img = sam_client.dim_background_with_prompts(policy_img, cached_task_prompts)
+                                sam_segment_details["base"] = sam_client.last_segment_details
                             if "wrist" in sam_views:
                                 policy_wrist_img = sam_client.dim_background_with_prompts(policy_wrist_img, cached_task_prompts)
+                                sam_segment_details["wrist"] = sam_client.last_segment_details
                             sam_segment_duration = time.perf_counter() - sam_segment_start
                             logging.info(
-                                "SAM segment/dim took %.3fs for views=%s using prompts=%s",
+                                "SAM segment/dim took %.3fs for views=%s using prompts=%s segment_details=%s",
                                 sam_segment_duration,
                                 sorted(sam_views),
                                 cached_task_prompts,
+                                sam_segment_details,
                             )
                         replay_img = policy_img
 

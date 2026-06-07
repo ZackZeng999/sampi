@@ -1,0 +1,15 @@
+[robosuite WARNING] No private macro file found! (macros.py:53)
+[robosuite WARNING] It is recommended to use a private macro file (macros.py:54)
+[robosuite WARNING] To setup, run: python /root/proj/openpi/examples/libero/.venv/lib/python3.8/site-packages/robosuite/scripts/setup_macros.py (macros.py:55)
+INFO:root:Task suite: libero_goal
+INFO:root:Waiting for server at ws://0.0.0.0:8000...
+INFO:root:Using SAM dim-background preprocessing for views: ['base']
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  0%|          | 0/10 [00:00<?, ?it/s]/root/proj/openpi/examples/libero/.venv/lib/python3.8/site-packages/numba/np/arraymath.py:3845: DeprecationWarning: `np.MachAr` is deprecated (NumPy 1.22).
+  @overload(np.MachAr)
+[Warning]: datasets path /root/proj/openpi/third_party/libero/libero/libero/../datasets does not exist!
+[Warning]: datasets path /root/proj/openpi/third_party/libero/libero/libero/../datasets does not exist!
+
+  0%|          | 0/50 [00:00<?, ?it/s][AINFO:root:
+Task: open the middle drawer of the cabinet
+INFO:root:Starting episode 1...

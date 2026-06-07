@@ -1,0 +1,43 @@
+{
+    "original_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_bbq_sauce_and_place_it_in_the_basket/input_first_frame.png",
+    "output_image_path": "/root/proj/sam_agent_output/libero_object/pick_up_the_bbq_sauce_and_place_it_in_the_basket/entities/01_bbq_sauce/sam_out/-root-proj-sam_agent_output-libero_object-pick_up_the_bbq_sauce_and_place_it_in_the_basket-input_first_frame.png/bottle.png",
+    "orig_img_h": 224,
+    "orig_img_w": 224,
+    "pred_boxes": [
+        [
+            0.7031623125076294,
+            0.4966054856777191,
+            0.07926368713378906,
+            0.1699167788028717
+        ],
+        [
+            0.40852075815200806,
+            0.3551023602485657,
+            0.06502294540405273,
+            0.15454059839248657
+        ],
+        [
+            0.575145959854126,
+            0.4978700876235962,
+            0.05769383907318115,
+            0.12796294689178467
+        ]
+    ],
+    "pred_masks": [
+        "UfR1<b64M2M3N1M3E;O1000000000O100N3XOXJ5]6Kmb:",
+        "mVd0d0U67K6N100000000001O2N9G3L5Knfi0",
+        "nZl0=`64L3I7O100000000001O9F6HTja0"
+    ],
+    "pred_scores": [
+        0.9296875,
+        0.9140625,
+        0.91015625
+    ],
+    "kept_indices": [
+        0,
+        1,
+        2
+    ],
+    "removed_indices": [],
+    "iom_threshold": 0.3
+}
