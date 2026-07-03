@@ -4,7 +4,6 @@ import logging
 import math
 import pathlib
 import time
-from typing import List
 
 import imageio
 from libero.libero import benchmark
@@ -54,7 +53,6 @@ class Args:
     )
     num_steps_wait: int = 10  # Number of steps to wait for objects to stabilize i n sim
     num_trials_per_task: int = 50  # Number of rollouts per task
-    task_orders: str = "4,5,6,7,8,9"  # Comma-separated task ids to run, or "all".
 
     #################################################################################################################
     # Utils
@@ -111,12 +109,9 @@ def eval_libero(args: Args) -> None:
         logging.info("Using SAM dim-background preprocessing for views: %s", sorted(sam_views))
 
 
-    task_orders = _parse_task_orders(args.task_orders, num_tasks_in_suite)
-    logging.info("Using task orders %s", task_orders)
-
     # Start evaluation
     total_episodes, total_successes = 0, 0
-    for task_id in tqdm.tqdm(task_orders):
+    for task_id in tqdm.tqdm(range(num_tasks_in_suite)):
         # Get task
         task = task_suite.get_task(task_id)
 
@@ -277,23 +272,6 @@ def _get_libero_env(task, resolution, seed):
     env = OffScreenRenderEnv(**env_args)
     env.seed(seed)  # IMPORTANT: seed seems to affect object positions even when using fixed initial state
     return env, task_description
-
-
-def _parse_task_orders(task_orders: str, num_tasks_in_suite: int) -> List[int]:
-    if task_orders.strip().lower() == "all":
-        return list(range(num_tasks_in_suite))
-
-    parsed_orders = [int(task_id.strip()) for task_id in task_orders.split(",") if task_id.strip()]
-    if not parsed_orders:
-        raise ValueError("task_orders must be a comma-separated list of task ids, or 'all'.")
-
-    invalid_orders = [task_id for task_id in parsed_orders if task_id < 0 or task_id >= num_tasks_in_suite]
-    if invalid_orders:
-        raise ValueError(
-            f"Invalid task ids {invalid_orders}; expected ids in [0, {num_tasks_in_suite - 1}]."
-        )
-
-    return parsed_orders
 
 
 def _quat2axisangle(quat):
